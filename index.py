@@ -7,10 +7,8 @@ import asyncio
 
 
 
-# print(client.functions.orderInfo(1,1).call())
 def main():
 
-    url = constants.avax_url
     my_provider = constants.avax_url
     load_dotenv()
     private_key = os.getenv("PRIVATE_KEY")

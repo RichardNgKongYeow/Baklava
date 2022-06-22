@@ -4,6 +4,7 @@ from web3 import Web3
 from web3.exceptions import BadFunctionCallOutput
 import re
 import asyncio
+import grpcClient
 
 
 class BaklavaObject(object):
@@ -108,6 +109,10 @@ class BaklavaClient(BaklavaObject):
         nonce = self.conn.eth.get_transaction_count("0xF9d22FE4CfA4ab792DEa8775b74278346Ea01fDD") 
         orderInfo = self.contract.functions.orderInfo(pid,order_id).call()
         orderStatus = orderInfo[10]
+        
+
+
+
 
 
         # if order_type == 0 and orderStatus == 0:
@@ -131,15 +136,41 @@ class BaklavaClient(BaklavaObject):
             direction = "SELL"
         else:
             pass
-        return pair_id, direction, price, base_quantity
+        # return pair_id, direction, price, base_quantity
     
-    
+        acc_seq = grpcClient.get_account_sequence()
+        tx_response = grpcClient.client.create_order(
+            tx_builder=grpcClient.tx_builder,
+            # need to convert pid into list of str
+            pair_id=pair_id,
+            # ordertype
+            direction=direction,
+            # tokenprice
+            price=grpcClient.Decimal(price),
+            # synTokenAmount
+            base_quantity=grpcClient.Decimal(base_quantity),
+            leverage=5,
+            acc_seq=acc_seq,
+            mode=grpcClient.BROADCAST_MODE_BLOCK,
+        )
+
+        order_id = None
+        print(tx_response)
+        events = json.loads(tx_response.raw_log)[0]['events']
+        for event in events:
+            if 'type' in event and event['type']=='fx.dex.Order':
+                for attr in event['attributes']:
+                    if attr['key']=='order_id':
+                        order_id = attr['value']
+                        break
+                break
+        return tx_response
     
     
     def handle_event(self, event):
         events = json.loads(Web3.toJSON(event))
-        self.get_event_vars(events)
-        
+        event_vars = self.get_event_vars(events)
+        print(event_vars)
 
 
 
@@ -165,5 +196,3 @@ class BaklavaClient(BaklavaObject):
         f2 = loop.create_task(self.log_loop(co_event_filter, 2))
         # await asyncio.wait([f1,f2])
         await asyncio.wait([f1,f2])
-
-    
