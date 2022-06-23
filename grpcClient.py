@@ -18,10 +18,12 @@ from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
 
 
 
+# TODO check for different chains?
+# client = GRPCClient("https://testnet-fx-grpc.marginx.io:9090")
+# client = GRPCClient("https://testnet-tsla-fxdex-grpc.functionx.io:9090")
+client = GRPCClient("https://testnet-tsla-grpc.marginx.io:9090")
 
-client = GRPCClient("https://testnet-fx-grpc.marginx.io:9090")
-
-seed = "camp debris design clump crater toast client magnet century chest change ghost pattern defense ocean garbage error system omit legend priority eagle absurd frost"
+seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
 
 # Create TxBuilder
 Account.enable_unaudited_hdwallet_features()
@@ -44,7 +46,7 @@ def get_account_sequence():
     return account_info.sequence
 
 
-pair_id = "FX:USDT"
+# pair_id = "FX:USDT"
 
 from decimal import Decimal
 # # 1. Market order

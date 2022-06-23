@@ -137,7 +137,7 @@ class BaklavaClient(BaklavaObject):
         else:
             pass
         # return pair_id, direction, price, base_quantity
-    
+        print (pair_id, direction, price, base_quantity)
         acc_seq = grpcClient.get_account_sequence()
         tx_response = grpcClient.client.create_order(
             tx_builder=grpcClient.tx_builder,
@@ -146,9 +146,9 @@ class BaklavaClient(BaklavaObject):
             # ordertype
             direction=direction,
             # tokenprice
-            price=grpcClient.Decimal(price),
+            price=grpcClient.Decimal(price*10**-8),
             # synTokenAmount
-            base_quantity=grpcClient.Decimal(base_quantity),
+            base_quantity=grpcClient.Decimal(base_quantity*10**-3),
             leverage=5,
             acc_seq=acc_seq,
             mode=grpcClient.BROADCAST_MODE_BLOCK,
