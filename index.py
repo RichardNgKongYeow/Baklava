@@ -25,8 +25,8 @@ async def main():
 if __name__ == "__main__":
     try:
         loop = asyncio.get_event_loop()
-        d1,d2 = loop.run_until_complete(main())
-        print(d1.result())
+        f1,f2 = loop.run_until_complete(main())
+        print(f1.result())
     except Exception as e:
         pass
     finally:
