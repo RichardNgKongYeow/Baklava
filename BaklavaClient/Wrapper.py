@@ -164,7 +164,7 @@ class BaklavaClient(BaklavaObject):
                         order_id = attr['value']
                         break
                 break
-        return tx_response
+        return order_id
     
     
     def handle_event(self, event):
