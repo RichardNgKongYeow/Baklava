@@ -94,40 +94,36 @@ class BaklavaClient(BaklavaObject):
     #     # wait for transaction receipt
     #     self.conn.eth.waitForTransactionReceipt(tx, timeout=6000)  # TODO raise exception on timeout
 
-    # -----------------------------event listener--------------------------------
-    # define function to handle events and print to the console
-    def get_event_vars(self, events):
+
+
+
+
+# ------------------------------------Read-Only Functions-----------------------------------
+
+    def getSystemCoin(self):
+        """
+        get system coin address
+        """
+        return self.contract.functions.getSystemCoin().call()
+
+# -----------------------------------utils------------------------------------------
+    def divide_by_base_10(self,number,base):
+        """
+        takes in a number and divide it by the base 10 amount
+        """
+        return number*10**(-base)
+
+# -------------------------------event listener--------------------------------------
+    def get_event_vars_for_mxtx(self, events):
+        """
+        takes in an event and extracts the information required for building the tx
+        """
+
         pid = events["args"]["pid"]
         order_id = events["args"]["orderId"]
         order_type = events["args"]["orderType"]
         price = events["args"]["synTokenPrice"]
-        minSynTokenAmount = events["args"]["minSynTokenAmount"]
-        minSysCoinAmount = events["args"]["minSystemCoinAmount"]
         pair_id = self.pairs[pid]
-        # print(order_type, pid, order_id, 0, minSynTokenAmount, minSysCoinAmount)
-
-        nonce = self.conn.eth.get_transaction_count("0xF9d22FE4CfA4ab792DEa8775b74278346Ea01fDD") 
-        orderInfo = self.contract.functions.orderInfo(pid,order_id).call()
-        orderStatus = orderInfo[10]
-        
-
-
-
-
-
-        # if order_type == 0 and orderStatus == 0:
-        #     tx_hash = synContract.functions.closeOrder(pid, order_id, 0, minSynTokenAmount).buildTransaction({'gas': 8000000,'gasPrice': web3.toWei('35', 'gwei'),'from': '0xF9d22FE4CfA4ab792DEa8775b74278346Ea01fDD','nonce': nonce})
-        #     signed_tx = web3.eth.account.signTransaction(tx_hash, private_key=authorized_privateKey)
-        #     web3.eth.sendRawTransaction(signed_tx.rawTransaction)
-        #     print('owner done close openOrder')
-
-        # if order_type == 1 and orderStatus == 0:
-        #     tx_hash = synContract.functions.closeOrder(pid, order_id, minSysCoinAmount, 0).buildTransaction({'gas': 8000000,'gasPrice': web3.toWei('35', 'gwei'),'from': '0xF9d22FE4CfA4ab792DEa8775b74278346Ea01fDD','nonce': nonce})
-        #     signed_tx = web3.eth.account.signTransaction(tx_hash, private_key=authorized_privateKey)
-        #     web3.eth.sendRawTransaction(signed_tx.rawTransaction)
-        #     print('owner done close sellOrder')
-
-
         if order_type == 0:
             base_quantity = events["args"]["minSynTokenAmount"]
             direction = "BUY"
@@ -136,8 +132,59 @@ class BaklavaClient(BaklavaObject):
             direction = "SELL"
         else:
             pass
-        # return pair_id, direction, price, base_quantity
-        print (pair_id, direction, price, base_quantity)
+        return pair_id, direction, price, base_quantity, order_id
+
+
+    def handle_event(self, event):
+        """
+        return the necessary variables after taking in the event
+        """
+        events = json.loads(Web3.toJSON(event))
+        pair_id, direction, price, base_quantity, order_id = self.get_event_vars_for_mxtx(events)
+        return pair_id, direction, price, base_quantity, order_id
+
+
+    async def log_loop(self,event_filter, poll_interval):
+        # asynchronous defined function to loop
+        # this loop sets up an event filter and is looking for new entires for the "OpenOrder" event
+        # this loop runs on a poll interval
+
+        while True:
+            for entry in event_filter.get_new_entries():
+            # for entry in event_filter.get_all_entries():
+                pair_id, direction, price, base_quantity, order_id = self.handle_event(entry)
+                await asyncio.sleep(2)
+                return pair_id, direction, price, base_quantity, order_id
+            await asyncio.sleep(poll_interval)
+
+    def create_oo_event_filter(self):
+        """
+        create_open_order_event_filter        
+        """
+        return self.contract.events.OpenOrder.createFilter(fromBlock='latest')
+
+    def create_co_event_filter(self):
+        """
+        create_cancel_order_event_filter        
+        """
+        return self.contract.events.CancelOrder.createFilter(fromBlock='latest')
+
+
+    # async def run_all_event_listener(self):
+    #     oo_event_filter = self.contract.events.OpenOrder.createFilter(fromBlock='latest')
+    #     co_event_filter = self.contract.events.CancelOrder.createFilter(fromBlock='latest')
+    #     loop = asyncio.get_event_loop()
+    #     f1 = loop.create_task(self.log_loop(oo_event_filter, 2))
+    #     f2 = loop.create_task(self.log_loop(co_event_filter, 2))
+    #     await asyncio.wait([f1,f2])
+    #     print(f1,f2)
+
+
+    def build_mx_tx(self,pair_id,direction,price,base_quantity):
+        """
+        takes in the params and builds the tx on marginx
+        """
+
         acc_seq = grpcClient.get_account_sequence()
         tx_response = grpcClient.client.create_order(
             tx_builder=grpcClient.tx_builder,
@@ -146,53 +193,29 @@ class BaklavaClient(BaklavaObject):
             # ordertype
             direction=direction,
             # tokenprice
-            price=grpcClient.Decimal(price*10**-8),
+            price=grpcClient.Decimal(self.divide_by_base_10(price,8)),
             # synTokenAmount
-            base_quantity=grpcClient.Decimal(base_quantity*10**-3),
+            base_quantity=grpcClient.Decimal(self.divide_by_base_10(base_quantity,3)),
             leverage=5,
             acc_seq=acc_seq,
             mode=grpcClient.BROADCAST_MODE_BLOCK,
         )
 
-        order_id = None
-        print(tx_response)
+
+        # print(tx_response)
         events = json.loads(tx_response.raw_log)[0]['events']
         for event in events:
             if 'type' in event and event['type']=='fx.dex.Order':
                 for attr in event['attributes']:
                     if attr['key']=='order_id':
                         order_id = attr['value']
-                        break
-                break
-        return tx_response
+        return order_id
+
+
     
     
-    def handle_event(self, event):
-        events = json.loads(Web3.toJSON(event))
-        event_vars = self.get_event_vars(events)
-        print(event_vars)
 
 
-
-
-
-    # asynchronous defined function to loop
-    # this loop sets up an event filter and is looking for new entires for the "OpenOrder" event
-    # this loop runs on a poll interval
-    async def log_loop(self,event_filter, poll_interval):
-        while True:
-            for entry in event_filter.get_new_entries():
-            # for entry in event_filter.get_all_entries():
-                self.handle_event(entry)
-                await asyncio.sleep(2)
-            await asyncio.sleep(poll_interval)
-
-    async def all(self):
-        # oo_event_filter = synContract.events.OpenOrder.createFilter(fromBlock=10671435, toBlock='latest')
-        oo_event_filter = self.contract.events.OpenOrder.createFilter(fromBlock='latest')
-        co_event_filter = self.contract.events.CancelOrder.createFilter(fromBlock='latest')
-        loop = asyncio.get_event_loop()
-        f1 = loop.create_task(self.log_loop(oo_event_filter, 2))
-        f2 = loop.create_task(self.log_loop(co_event_filter, 2))
-        # await asyncio.wait([f1,f2])
-        await asyncio.wait([f1,f2])
+    async def query_order(self,order_id):
+        resp = grpcClient.query_order(order_id=order_id)
+        return resp

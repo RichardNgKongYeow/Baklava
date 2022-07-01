@@ -7,7 +7,7 @@ import asyncio
 
 
 
-def main():
+async def main():
 
     my_provider = constants.avax_url
     load_dotenv()
@@ -15,15 +15,19 @@ def main():
     address = constants.address
 
     client = BaklavaClient(address, private_key, provider=my_provider)
-
-    loop = asyncio.get_event_loop()
-    try:
-        loop.run_until_complete(client.all())
-
-    finally:
-        # close loop to free up system resources
-        loop.close()
+    f1 = loop.create_task(client.log_loop(client.create_oo_event_filter(), 2))
+    f2 = loop.create_task(client.log_loop(client.create_co_event_filter(), 2))
+    await asyncio.wait([f1,f2])
+    return f1,f2
+    
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        loop = asyncio.get_event_loop()
+        d1,d2 = loop.run_until_complete(main())
+        print(d1.result())
+    except Exception as e:
+        pass
+    finally:
+        loop.close()
