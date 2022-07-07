@@ -15,18 +15,29 @@ async def main():
     address = constants.address
 
     client = BaklavaClient(address, private_key, provider=my_provider)
-    f1 = loop.create_task(client.log_loop(client.create_oo_event_filter(), 2))
-    f2 = loop.create_task(client.log_loop(client.create_co_event_filter(), 2))
-    await asyncio.wait([f1,f2])
-    return f1,f2
-    
+    asyncio.ensure_future(process_oo_queue(client))
+    asyncio.ensure_future(process_co_queue(client))
+
+    asyncio.get_event_loop().run_forever(client.run_oo_co_listeners())
+    # f1,f2 = await client.run_oo_co_listeners()
+    # f1_result = f1.result()
+    # print(f1_result)
+
+async def process_oo_queue(client: BaklavaClient):
+    while True:
+        pair_id, direction, price, base_quantity, order_id  = await client._oo_queue.get()
+        print("got item from oo_queue")
+
+async def process_co_queue(client: BaklavaClient):
+    while True:
+        pair_id, direction, price, base_quantity, order_id  = await client._co_queue.get()
+        print("got item from co_queue")
 
 
 if __name__ == "__main__":
     try:
         loop = asyncio.get_event_loop()
-        f1,f2 = loop.run_until_complete(main())
-        print(f1.result())
+        loop.run_until_complete(main())
     except Exception as e:
         pass
     finally:

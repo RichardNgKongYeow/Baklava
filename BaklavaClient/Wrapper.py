@@ -48,7 +48,7 @@ class BaklavaObject(object):
 
 class BaklavaClient(BaklavaObject):
 
-    ADDRESS = "0xF3081f486340f034e15054c9C0522344E5be0142"
+    ADDRESS = "0x22ab1a6A6010b2EF7cf6Bf75C579A6E4de6bE7ef"
 
     full_path = os.getcwd()
     ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SyntheticPool.json'))["abi"]
@@ -118,7 +118,7 @@ class BaklavaClient(BaklavaObject):
         """
         takes in an event and extracts the information required for building the tx
         """
-
+    # syntokenamount TODO make this market order
         pid = events["args"]["pid"]
         order_id = events["args"]["orderId"]
         order_type = events["args"]["orderType"]
@@ -144,15 +144,17 @@ class BaklavaClient(BaklavaObject):
         return pair_id, direction, price, base_quantity, order_id
 
 
-    async def log_loop(self,event_filter, poll_interval):
+    async def log_loop(self,event_filter, poll_interval, queue: asyncio.Queue = None):
         # asynchronous defined function to loop
         # this loop sets up an event filter and is looking for new entires for the "OpenOrder" event
         # this loop runs on a poll interval
+        asyncio.ensure_future()
 
         while True:
             for entry in event_filter.get_new_entries():
             # for entry in event_filter.get_all_entries():
                 pair_id, direction, price, base_quantity, order_id = self.handle_event(entry)
+                queue.put_nowait((pair_id, direction, base_quantity, order_id))
                 await asyncio.sleep(2)
                 return pair_id, direction, price, base_quantity, order_id
             await asyncio.sleep(poll_interval)
@@ -169,6 +171,19 @@ class BaklavaClient(BaklavaObject):
         """
         return self.contract.events.CancelOrder.createFilter(fromBlock='latest')
 
+
+    def create_mst_event_filter(self):
+        """
+        create_MintSynTokn_event_filter        
+        """
+        return self.contract.events.MintSynToken.createFilter(fromBlock='latest')
+
+
+    def create_bst_event_filter(self):
+        """
+        create_BurnSynToken_event_filter        
+        """
+        return self.contract.events.BurnSynToken.createFilter(fromBlock='latest')
 
     # async def run_all_event_listener(self):
     #     oo_event_filter = self.contract.events.OpenOrder.createFilter(fromBlock='latest')
@@ -212,9 +227,15 @@ class BaklavaClient(BaklavaObject):
         return order_id
 
 
-    
-    
+    _oo_queue = asyncio.Queue()
+    _co_queue = asyncio.Queue()
 
+    async def run_oo_co_listeners(self):
+        loop = asyncio.get_event_loop()
+        asyncio.ensure_future(self.log_loop(self.create_oo_event_filter(), 2, self._oo_queue))
+        asyncio.ensure_future(self.log_loop(self.create_co_event_filter(), 2, self._co_queue))
+        # await asyncio.wait(f1, f2)
+        # return f1,f2
 
     async def query_order(self,order_id):
         resp = grpcClient.query_order(order_id=order_id)
