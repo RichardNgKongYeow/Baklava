@@ -192,7 +192,14 @@ class BaklavaClient(BaklavaObject):
         oo_event_filter = self.contract.events.OpenOrder.createFilter(fromBlock='latest')
         co_event_filter = self.contract.events.CancelOrder.createFilter(fromBlock='latest')
         loop = asyncio.get_event_loop()
+        f = asyncio.Future()
         f1 = loop.create_task(self.log_loop(oo_event_filter, 2))
         f2 = loop.create_task(self.log_loop(co_event_filter, 2))
-        # await asyncio.wait([f1,f2])
-        await asyncio.wait([f1,f2])
+        await asyncio.wait(
+            asyncio.gather(
+                f1.result(),
+                f2.result()
+            )
+        )
+        
+
