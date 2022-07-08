@@ -167,10 +167,22 @@ class BaklavaClient(BaklavaObject):
         return order_id
     
     
+    async def get_result(awaitable) -> str:
+        try:
+            result = await awaitable
+        except Exception as e:
+            print("oops!",e)
+            return "no result :("
+        else:
+            return result
+
+
+    # define function to handle events and print to the console    
     def handle_event(self, event):
-        events = json.loads(Web3.toJSON(event))
-        event_vars = self.get_event_vars(events)
-        print(event_vars)
+        # events = json.loads(Web3.toJSON(event))
+        # event_vars = self.get_event_vars(events)
+        print(event)
+        # and whatever
 
 
 
@@ -195,11 +207,12 @@ class BaklavaClient(BaklavaObject):
         f = asyncio.Future()
         f1 = loop.create_task(self.log_loop(oo_event_filter, 2))
         f2 = loop.create_task(self.log_loop(co_event_filter, 2))
-        await asyncio.wait(
-            asyncio.gather(
-                f1.result(),
-                f2.result()
-            )
-        )
-        
+        # await asyncio.wait(
+        #     asyncio.gather(
+        #         f1.result(),
+        #         f2.result()
+        #     )
+        # )
+
+
 

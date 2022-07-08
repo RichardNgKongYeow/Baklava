@@ -15,11 +15,13 @@ def main():
     address = constants.address
 
     client = BaklavaClient(address, private_key, provider=my_provider)
+    client
 
     loop = asyncio.get_event_loop()
     try:
-        f1,f2 = loop.run_until_complete(client.all())
-        print(f1)
+        loop.run_until_complete(client.all())
+        
+        
 
     finally:
         # close loop to free up system resources
