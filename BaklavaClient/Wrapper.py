@@ -51,12 +51,12 @@ class BaklavaClient(BaklavaObject):
     ADDRESS = "0x22ab1a6A6010b2EF7cf6Bf75C579A6E4de6bE7ef"
 
     full_path = os.getcwd()
-    ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SyntheticPool.json'))["abi"]
+    ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SyntheticPool.json'))
 
 
     MAX_APPROVAL_HEX = "0x" + "f" * 64
     MAX_APPROVAL_INT = int(MAX_APPROVAL_HEX, 16)
-    ERC20_ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SafeERC20Upgradeable.json'))["abi"]
+    ERC20_ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'ERC20.json'))["abi"]
 
     pairs={0:"TSLA:USDT", 1:"AAPL:USDT", 2: "BTC:USDT", 3: "NFLX:USDT", 4:"GOOG:USDT", 5: "FB:USDT", 6: "AMZN:USDT", 7: "SPY:USDT", 8: "IWM:USDT", 9: "TQQQ:USDT", 10: "FX:USDT"}
 
@@ -71,7 +71,7 @@ class BaklavaClient(BaklavaObject):
     # # TODO this part needs to confirm if taking in the right ERC20 contract and USB?
     # def _is_approved(self, token, amount=MAX_APPROVAL_INT):
     #     erc20_contract = self.conn.eth.contract(
-    #         address=Web3.toChecksumAddress(token), abi=BaklavaClient.PAIR_ABI)
+    #         address=Web3.toChecksumAddress(token), abi=BaklavaClient.ERC20_ABI)
     #     print(erc20_contract, token)
     #     approved_amount = erc20_contract.functions.allowance(self.address, self.router.address).call()
     #     return approved_amount >= amount
@@ -230,12 +230,12 @@ class BaklavaClient(BaklavaObject):
     _oo_queue = asyncio.Queue()
     _co_queue = asyncio.Queue()
 
-    async def run_oo_co_listeners(self):
-        loop = asyncio.get_event_loop()
-        asyncio.ensure_future(self.log_loop(self.create_oo_event_filter(), 2, self._oo_queue))
-        asyncio.ensure_future(self.log_loop(self.create_co_event_filter(), 2, self._co_queue))
-        # await asyncio.wait(f1, f2)
-        # return f1,f2
+    # async def run_oo_co_listeners(self):
+    #     loop = asyncio.get_event_loop()
+    #     f1 = asyncio.ensure_future(self.log_loop(self.create_oo_event_filter(), 2, self._oo_queue))
+    #     f2 = asyncio.ensure_future(self.log_loop(self.create_co_event_filter(), 2, self._co_queue))
+    #     await asyncio.wait(f1, f2)
+    #     return f1,f2
 
     async def query_order(self,order_id):
         resp = grpcClient.query_order(order_id=order_id)
