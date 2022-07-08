@@ -152,11 +152,14 @@ class BaklavaClient(BaklavaObject):
 
         while True:
             for entry in event_filter.get_new_entries():
-            # for entry in event_filter.get_all_entries():
-                pair_id, direction, price, base_quantity, order_id = self.handle_event(entry)
-                queue.put_nowait((pair_id, direction, base_quantity, order_id))
+
+
+
+            # # for entry in event_filter.get_all_entries():
+            #     pair_id, direction, price, base_quantity, order_id = self.handle_event(entry)
+            #     queue.put_nowait((pair_id, direction, base_quantity, order_id))
                 await asyncio.sleep(2)
-                return pair_id, direction, price, base_quantity, order_id
+                # return pair_id, direction, price, base_quantity, order_id
             await asyncio.sleep(poll_interval)
 
     def create_oo_event_filter(self):
@@ -229,6 +232,22 @@ class BaklavaClient(BaklavaObject):
 
     _oo_queue = asyncio.Queue()
     _co_queue = asyncio.Queue()
+
+
+    async def queue_smart_k_event(self,myQueue:object, pair_id, direction, price, base_quantity, order_id):
+        while True:
+            await asyncio.sleep(1)
+            print("Putting new item into queue")
+            await myQueue.put(pair_id, direction, price, base_quantity, order_id)
+
+    async def get_smart_k_event(self,id,myQueue):
+        while True:
+            print("Consumer: {} attempting to get from queue".format(id))
+            pair_id, direction, price, base_quantity, order_id = await myQueue.get()
+            if pair_id is None:
+                break
+            # print("Consumer: {} consumed article with id: {}".format(id,item))
+            return id, pair_id, direction, price, base_quantity, order_id
 
     # async def run_oo_co_listeners(self):
     #     loop = asyncio.get_event_loop()
