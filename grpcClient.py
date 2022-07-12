@@ -21,7 +21,8 @@ from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
 # TODO check for different chains?
 # client = GRPCClient("https://testnet-fx-grpc.marginx.io:9090")
 # client = GRPCClient("https://testnet-tsla-fxdex-grpc.functionx.io:9090")
-client = GRPCClient("https://testnet-tsla-grpc.marginx.io:9090")
+client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
+
 
 seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
 

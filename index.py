@@ -18,9 +18,14 @@ def main():
 
     loop = asyncio.get_event_loop()
     try:
-        f1,f2 = loop.run_until_complete(client.all())
-        print(f1)
-
+        loop.run_until_complete(
+            asyncio.gather(
+                client.log_loop(client.create_mst_event_filter(), 2),
+                client.log_loop(client.create_bst_event_filter(), 2)
+                
+                ))
+                # log_loop(block_filter, 2),
+                # log_loop(tx_filter, 2)))
     finally:
         # close loop to free up system resources
         loop.close()
