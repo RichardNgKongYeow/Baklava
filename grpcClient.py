@@ -18,6 +18,16 @@ from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
 
 
 
+def init_GRPCClient(chain_id:str)->object:
+    return GRPCClient(f"https://testnet-{chain_id}-grpc.marginx.io:9090")
+
+# client = init_GRPCClient("aapl")
+
+# client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
+
+def convert_to_lower_case(string:str)->str:
+    return string.lower()
+
 # TODO check for different chains?
 # client = GRPCClient("https://testnet-fx-grpc.marginx.io:9090")
 # client = GRPCClient("https://testnet-tsla-fxdex-grpc.functionx.io:9090")
