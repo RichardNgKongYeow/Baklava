@@ -24,6 +24,7 @@ def main():
                 client.log_loop(client.create_bst_event_filter(), 2)
                 
                 ))
+
                 # log_loop(block_filter, 2),
                 # log_loop(tx_filter, 2)))
     finally:
