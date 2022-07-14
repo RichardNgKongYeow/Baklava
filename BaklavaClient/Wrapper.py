@@ -169,16 +169,18 @@ class BaklavaClient(BaklavaObject):
 
 
     def build_mx_client(self,chain_id, grpc: grpcClient):
+        account = grpc.account
         client_list = grpc.client_list
         client = grpc.get_client(chain_id,client_list)
-        account_info = grpc.get_account_info(client)
-        acc_seq = grpc.get_account_sequence(client)
-        tx_builder = grpc.get_tx_builder(chain_id,account_info)
+        account_info = grpc.get_account_info(client,account)
+        acc_seq = grpc.get_account_sequence(account_info)
+        tx_builder = grpc.get_tx_builder(chain_id,account,account_info)
         return client, acc_seq, tx_builder
 
 
     async def build_mx_tx(self, pair_id, direction, amt, grpc: grpcClient):
         chain_id = grpc.convert_to_lower_case(pair_id.split(":")[0])
+        print
         client, acc_seq, tx_builder = self.build_mx_client(chain_id, grpc)
         print(f"Client: {client}, Acc_seq: {acc_seq}, Tx_builder: {tx_builder}")
         print(client.query_chain_id())

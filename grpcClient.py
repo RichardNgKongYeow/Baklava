@@ -49,37 +49,38 @@ def init_all_clients(chain_ids:list)->list:
         client_list.append(client)
     return client_list
 
-client_list = init_all_clients(chain_ids)
+
 
 def get_client(chain_id:str,client_list:list)->object:
     index = chain_ids.index(chain_id)
     return client_list[index]
 
+def init_wallet():
+    seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
 
-seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
+    # Create TxBuilder
+    Account.enable_unaudited_hdwallet_features()
+    account = Account.from_mnemonic(seed)
+    print(account.address)
+    return account
 
-# Create TxBuilder
-Account.enable_unaudited_hdwallet_features()
-account = Account.from_mnemonic(seed)
-print(account.address)
-
-def get_account_info(client:object):
+def get_account_info(client:object, account):
     account_info = client.query_account_info(account.address)
     print('account number:', account_info.account_number,
             'sequence:', account_info.sequence)
     return account_info
 
-def get_tx_builder(chain_id,account_info):
+def get_tx_builder(chain_id,account,account_info):
     tx_builder = TxBuilder(account, None, chain_id, account_info.account_number, Coin(
         amount='600', denom='USDT'))
     return tx_builder
 
-def get_account_sequence(client):
+def get_account_sequence(account_info):
     # TODO manually added a 100 to acct sequence to fix immediate error
-    account_info = client.query_account_info(account.address)
     return account_info.sequence
 
-
+client_list = init_all_clients(chain_ids)
+account = init_wallet()
 
 from decimal import Decimal
 # # 1. Market order
