@@ -1,3 +1,0 @@
-{'args': {'pid': 2, 'sender': '0x6Ec43b644cD769a1c7695069804E67b2B691e36d', 'account': '0x6Ec43b644cD769a1c7695069804E67b2B691e36d', 'systemCoinAmount': 2187735262307189100000, 'synTokenAmount': 103, 'synTokenPrice': 21454695129030000000000
-    }, 'event': 'BurnSynToken', 'logIndex': 7, 'transactionIndex': 0, 'transactionHash': '0x9571e4f05041b3def0728af22a2bd4f2e68e2fa21f069b30471bc1cc8e760052', 'address': '0x1f2A2A8eBF8Ec7102Bf15cb6eC5629A9E05b410a', 'blockHash': '0x863bc0237d0829f37b346189288de778454d870e4ff1f9e1f26b6aefdcff37be', 'blockNumber': 11392481
-}
