@@ -125,28 +125,11 @@ class BaklavaClient(BaklavaObject):
 
 
     # --------------------------------event listener handler--------------------------
-    # define function to handle events and print to the console
-    def handle_event(self, event):
-        events = json.loads(Web3.toJSON(event))
-        pair_id, direction, amt, order_id = self.get_event_vars(events)
-        mx_order_id = self.build_mx_tx(pair_id, direction, amt)
-        print("Pair: {}, Direction: {}, Amount: {}, OrderId: {}, MX_OrderId: ".format(pair_id, direction, amt, order_id, mx_order_id))
-
-
-
-    # asynchronous defined function to loop
-    # this loop sets up an event filter and is looking for new entires for the "OpenOrder" event
-    # this loop runs on a poll interval
-    async def log_loop(self,event_filter, poll_interval):
-        while True:
-            for entry in event_filter.get_new_entries():
-                self.handle_event(entry)
-                await asyncio.sleep(2)
-            await asyncio.sleep(poll_interval)
-
-
-
     def get_event_vars(self, events):
+        """
+        return the vars from the event needed to build the tx on marginx
+        """
+    
         pid = events["args"]["pid"]
         order_id = events["args"]["orderId"]
         order_type = events["event"]
@@ -161,14 +144,49 @@ class BaklavaClient(BaklavaObject):
         else:
             pass
         return pair_id, direction, amt, order_id
+    
+    
+    # define function to handle events and print to the console
+    async def handle_event(self, event):
+        events = json.loads(Web3.toJSON(event))
+        pair_id, direction, amt, order_id = self.get_event_vars(events)
+        mx_order_id = await self.build_mx_tx(pair_id, direction, amt, grpcClient)
+        print("Pair: {}, Direction: {}, Amount: {}, OrderId: {}, MX_OrderId: ".format(pair_id, direction, amt, order_id, mx_order_id))
+
+
+
+    # asynchronous defined function to loop
+    # this loop sets up an event filter and is looking for new entires for the "OpenOrder" event
+    # this loop runs on a poll interval
+    async def log_loop(self,event_filter, poll_interval):
+        while True:
+            for entry in event_filter.get_new_entries():
+                await self.handle_event(entry)
+                await asyncio.sleep(2)
+            await asyncio.sleep(poll_interval)
 
 
 
 
-    def build_mx_tx(self, pair_id, direction, amt):
-        acc_seq = grpcClient.get_account_sequence()
-        tx_response = grpcClient.client.create_order(
-            tx_builder=grpcClient.tx_builder,
+    def build_mx_client(self,chain_id, grpc: grpcClient):
+        account = grpc.account
+        client_list = grpc.client_list
+        client = grpc.get_client(chain_id,client_list)
+        account_info = grpc.get_account_info(client,account)
+        acc_seq = grpc.get_account_sequence(account_info)
+        tx_builder = grpc.get_tx_builder(chain_id,account,account_info)
+        return client, acc_seq, tx_builder
+
+
+    async def build_mx_tx(self, pair_id, direction, amt, grpc: grpcClient):
+        chain_id = grpc.convert_to_lower_case(pair_id.split(":")[0])
+        print
+        client, acc_seq, tx_builder = self.build_mx_client(chain_id, grpc)
+        print(f"Client: {client}, Acc_seq: {acc_seq}, Tx_builder: {tx_builder}")
+        print(client.query_chain_id())
+        print(client.query_account_info(grpc.account.address))
+        tx_response = client.create_order(
+            tx_builder=tx_builder,
             # need to convert pid into list of str
             pair_id=pair_id,
             # ordertype
@@ -177,10 +195,10 @@ class BaklavaClient(BaklavaObject):
             # price=grpcClient.Decimal(price*10**-8),
             price=0,
             # synTokenAmount
-            base_quantity=grpcClient.Decimal(amt*10**-3),
+            base_quantity=grpc.Decimal(amt*10**-3),
             leverage=5,
             acc_seq=acc_seq,
-            mode=grpcClient.BROADCAST_MODE_BLOCK,
+            mode=grpc.BROADCAST_MODE_BLOCK,
         )
 
         order_id = None

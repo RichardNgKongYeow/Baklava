@@ -1,3 +1,5 @@
+from itertools import chain
+from subprocess import list2cmdline
 from turtle import position
 import unittest
 
@@ -16,48 +18,69 @@ import json
 
 from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
 
+chain_ids = ["aapl",
+"amzn",
+"btc",
+"fb",
+"fx",
+"goog",
+"iwm",
+"nflx",
+"spy",
+"tqqq",
+"tsla"]
 
 
+
+# client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
 def init_GRPCClient(chain_id:str)->object:
     return GRPCClient(f"https://testnet-{chain_id}-grpc.marginx.io:9090")
 
-# client = init_GRPCClient("aapl")
-
-# client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
 
 def convert_to_lower_case(string:str)->str:
     return string.lower()
 
-# TODO check for different chains?
-# client = GRPCClient("https://testnet-fx-grpc.marginx.io:9090")
-# client = GRPCClient("https://testnet-tsla-fxdex-grpc.functionx.io:9090")
-client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
+def init_all_clients(chain_ids:list)->list:
+    client_list=[]
+    for chain_id in chain_ids:
+        client = init_GRPCClient(chain_id)
+        chain_id = client.query_chain_id()
+        print('chain_id:', chain_id)
+        client_list.append(client)
+    return client_list
 
 
-seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
 
-# Create TxBuilder
-Account.enable_unaudited_hdwallet_features()
-account = Account.from_mnemonic(seed)
-print(account.address)
+def get_client(chain_id:str,client_list:list)->object:
+    index = chain_ids.index(chain_id)
+    return client_list[index]
 
-chain_id = client.query_chain_id()
-print('chain_id:', chain_id)
+def init_wallet():
+    seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
 
-account_info = client.query_account_info(account.address)
-print('account number:', account_info.account_number,
-        'sequence:', account_info.sequence)
+    # Create TxBuilder
+    Account.enable_unaudited_hdwallet_features()
+    account = Account.from_mnemonic(seed)
+    print(account.address)
+    return account
 
-tx_builder = TxBuilder(account, None, chain_id, account_info.account_number, Coin(
-    amount='600', denom='USDT'))
-
-def get_account_sequence():
-    # TODO manually added a 100 to acct sequence to fix immediate error
+def get_account_info(client:object, account):
     account_info = client.query_account_info(account.address)
+    print('account number:', account_info.account_number,
+            'sequence:', account_info.sequence)
+    return account_info
+
+def get_tx_builder(chain_id,account,account_info):
+    tx_builder = TxBuilder(account, None, chain_id, account_info.account_number, Coin(
+        amount='600', denom='USDT'))
+    return tx_builder
+
+def get_account_sequence(account_info):
+    # TODO manually added a 100 to acct sequence to fix immediate error
     return account_info.sequence
 
-
-# pair_id = "FX:USDT"
+client_list = init_all_clients(chain_ids)
+account = init_wallet()
 
 from decimal import Decimal
 # # 1. Market order
