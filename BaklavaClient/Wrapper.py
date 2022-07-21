@@ -9,11 +9,13 @@ import grpcClient
 
 class BaklavaObject(object):
 
-    def __init__(self, address, private_key, provider=None):
+    def __init__(self, address, private_key, marginx_account, client_list, provider=None):
         self.address = Web3.toChecksumAddress(address)
         self.private_key = private_key
         self.provider = os.environ["PROVIDER"] if not provider else provider      
         self.provider = provider if not provider else provider
+        self.marginx_account = marginx_account
+        self.client_list = client_list
         
         if re.match(r'^https*:', self.provider):
             provider = Web3.HTTPProvider(self.provider, request_kwargs={"timeout": 60})
@@ -60,8 +62,8 @@ class BaklavaClient(BaklavaObject):
 
     pairs={0:"TSLA:USDT", 1:"AAPL:USDT", 2: "BTC:USDT", 3: "NFLX:USDT", 4:"GOOG:USDT", 5: "FB:USDT", 6: "AMZN:USDT", 7: "SPY:USDT", 8: "IWM:USDT", 9: "TQQQ:USDT", 10: "FX:USDT"}
 
-    def __init__(self, address, private_key, provider=None):
-        super().__init__(address, private_key, provider)
+    def __init__(self, address, private_key, marginx_account, client_list, provider=None):
+        super().__init__(address, private_key, marginx_account, client_list, provider)
         self.contract = self.conn.eth.contract(
             address=Web3.toChecksumAddress(BaklavaClient.ADDRESS), abi=BaklavaClient.ABI)
 
@@ -168,10 +170,11 @@ class BaklavaClient(BaklavaObject):
 
 
 
-    def build_mx_client(self,chain_id, grpc: grpcClient):
-        account = grpc.account
-        client_list = grpc.client_list
-        client = grpc.get_client(chain_id,client_list)
+    def build_mx_client(self,gchain_id, grpc: grpcClient):
+        account = self.marginx_account
+        client_list = self.client_list
+        client = grpc.get_client(gchain_id,client_list)
+        chain_id = client.query_chain_id()
         account_info = grpc.get_account_info(client,account)
         acc_seq = grpc.get_account_sequence(account_info)
         tx_builder = grpc.get_tx_builder(chain_id,account,account_info)
@@ -184,7 +187,7 @@ class BaklavaClient(BaklavaObject):
         client, acc_seq, tx_builder = self.build_mx_client(chain_id, grpc)
         print(f"Client: {client}, Acc_seq: {acc_seq}, Tx_builder: {tx_builder}")
         print(client.query_chain_id())
-        print(client.query_account_info(grpc.account.address))
+        print(client.query_account_info(self.marginx_account.address))
         tx_response = client.create_order(
             tx_builder=tx_builder,
             # need to convert pid into list of str
@@ -202,8 +205,21 @@ class BaklavaClient(BaklavaObject):
         )
 
         order_id = None
-        print(tx_response)
+        # print("tx_response: {}, type: {}".format(tx_response,type(tx_response)))
+
+
+
+
         events = json.loads(tx_response.raw_log)[0]['events']
+
+        # Serializing json
+        json_object = json.dumps(events, indent=4)
+        
+        # Writing to sample.json
+        with open("sample.json", "w") as outfile:
+            outfile.write(json_object)
+
+
         for event in events:
             if 'type' in event and event['type']=='fx.dex.Order':
                 for attr in event['attributes']:
@@ -215,7 +231,6 @@ class BaklavaClient(BaklavaObject):
     
     
     
-
 
     # async def all(self):
     #     # oo_event_filter = synContract.events.OpenOrder.createFilter(fromBlock=10671435, toBlock='latest')

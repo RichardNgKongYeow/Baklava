@@ -79,8 +79,7 @@ def get_account_sequence(account_info):
     # TODO manually added a 100 to acct sequence to fix immediate error
     return account_info.sequence
 
-client_list = init_all_clients(chain_ids)
-account = init_wallet()
+
 
 from decimal import Decimal
 # # 1. Market order

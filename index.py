@@ -4,17 +4,21 @@ from web3 import Web3
 from dotenv import load_dotenv
 import os
 import asyncio
-
+import grpcClient
 
 
 def main():
+
+    client_list = grpcClient.init_all_clients(grpcClient.chain_ids)
+    marginx_account = grpcClient.init_wallet()
+
 
     my_provider = constants.avax_url
     load_dotenv()
     private_key = os.getenv("PRIVATE_KEY")
     address = constants.address
 
-    client = BaklavaClient(address, private_key, provider=my_provider)
+    client = BaklavaClient(address, private_key, marginx_account, client_list, provider=my_provider)
 
     loop = asyncio.get_event_loop()
     try:
