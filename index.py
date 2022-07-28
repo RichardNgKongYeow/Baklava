@@ -22,11 +22,12 @@ def main():
     client = BaklavaClient(address, private_key, marginx_account, client_list, provider=my_provider)
 
     loop = asyncio.get_event_loop()
+    myQueue = asyncio.Queue(loop = loop, maxsize=10)
     try:
         loop.run_until_complete(
             asyncio.gather(
-                client.log_loop(client.create_mst_event_filter(), 2),
-                client.log_loop(client.create_bst_event_filter(), 2)
+                client.log_loop(client.create_mst_event_filter(), 2,myQueue),
+                client.log_loop(client.create_bst_event_filter(), 2,myQueue)
                 
                 ))
 

@@ -19,16 +19,17 @@ import json
 from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
 
 chain_ids = ["aapl",
-"amzn",
-"btc",
-"fb",
-"fx",
-"goog",
-"iwm",
-"nflx",
-"spy",
-"tqqq",
-"tsla"]
+# "amzn",
+# "btc",
+# "fb",
+# "fx",
+# "goog",
+# "iwm",
+# "nflx",
+# "spy",
+# "tqqq",
+"tsla"
+]
 
 
 

@@ -147,30 +147,41 @@ class BaklavaClient(BaklavaObject):
             pass
         return pair_id, direction, amt, order_id
     
-    
-    # define function to handle events and print to the console
-    async def handle_event(self, event):
+
+    # -----------------------------------queue system-------------------------------------
+    async def add_event_to_queue(self,event,myQueue):
+        """
+        get event vars from smart contract listener and put it in the queue
+        """
         events = json.loads(Web3.toJSON(event))
         pair_id, direction, amt, order_id = self.get_event_vars(events)
-        mx_order_id = await self.build_mx_tx(pair_id, direction, amt, grpcClient)
-        print("Pair: {}, Direction: {}, Amount: {}, OrderId: {}, MX_OrderId: ".format(pair_id, direction, amt, order_id, mx_order_id))
+        print("Putting new item into queue")
+        await myQueue.put((pair_id, direction, amt, order_id))
+        print("Put order of Pair: {}, Direction: {}, Amount: {}, OrderId: {}".format(pair_id, direction, amt, order_id))
 
-
-
-    # asynchronous defined function to loop
-    # this loop sets up an event filter and is looking for new entires for the "OpenOrder" event
-    # this loop runs on a poll interval
-    async def log_loop(self,event_filter, poll_interval):
-        while True:
-            for entry in event_filter.get_new_entries():
-                await self.handle_event(entry)
-                await asyncio.sleep(2)
-            await asyncio.sleep(poll_interval)
+    
 
 
 
 
-    def build_mx_client(self,gchain_id, grpc: grpcClient):
+
+    # # define function to handle events and print to the console
+    # async def handle_event(self, event):
+    #     events = json.loads(Web3.toJSON(event))
+    #     pair_id, direction, amt, order_id = self.get_event_vars(events)
+    #     mx_order_id = await self.build_mx_tx(pair_id, direction, amt, grpcClient)
+    #     print("Pair: {}, Direction: {}, Amount: {}, OrderId: {}, MX_OrderId: ".format(pair_id, direction, amt, order_id, mx_order_id))
+
+
+
+
+# ------------------------------------marginx part-------------------------------------
+
+
+    def build_mx_txbuilder(self,gchain_id, grpc: grpcClient):
+        """
+        return the necessary building blocks for building the Tx
+        """
         account = self.marginx_account
         client_list = self.client_list
         client = grpc.get_client(gchain_id,client_list)
@@ -181,10 +192,13 @@ class BaklavaClient(BaklavaObject):
         return client, acc_seq, tx_builder
 
 
-    async def build_mx_tx(self, pair_id, direction, amt, grpc: grpcClient):
+    async def execute_mx_tx(self, pair_id, direction, amt, grpc: grpcClient):
+        """
+        input trade info and execute order on marginX
+        """
         chain_id = grpc.convert_to_lower_case(pair_id.split(":")[0])
         print
-        client, acc_seq, tx_builder = self.build_mx_client(chain_id, grpc)
+        client, acc_seq, tx_builder = self.build_mx_txbuilder(chain_id, grpc)
         print(f"Client: {client}, Acc_seq: {acc_seq}, Tx_builder: {tx_builder}")
         print(client.query_chain_id())
         print(client.query_account_info(self.marginx_account.address))
@@ -205,20 +219,8 @@ class BaklavaClient(BaklavaObject):
         )
 
         order_id = None
-        # print("tx_response: {}, type: {}".format(tx_response,type(tx_response)))
-
-
-
 
         events = json.loads(tx_response.raw_log)[0]['events']
-
-        # # Serializing json
-        # json_object = json.dumps(events, indent=4)
-        
-        # # Writing to sample.json
-        # with open("sample.json", "w") as outfile:
-        #     outfile.write(json_object)
-
 
         for event in events:
             if 'type' in event and event['type']=='fx.dex.Order':
@@ -229,3 +231,25 @@ class BaklavaClient(BaklavaObject):
                 break
         return order_id
 
+    # -----------------------------------queue system-------------------------------------
+    async def get_item_from_queue(self,id,myQueue):
+        print("Consumer: {} attempting to get from queue".format(id))
+        pair_id, direction, amt, order_id = await myQueue.get()
+        mx_order_id = await self.execute_mx_tx(pair_id, direction, amt, grpcClient)
+        print("Pair: {}, Direction: {}, Amount: {}, OrderId: {}, MX_OrderId: ".format(pair_id, direction, amt, order_id, mx_order_id))
+        return order_id
+
+
+# ---------------------------------------overall architecture------------------------------
+    # asynchronous defined function to loop
+    # this loop sets up an event filter and is looking for new entires for the "OpenOrder" event
+    # this loop runs on a poll interval
+    async def log_loop(self,event_filter, poll_interval, myQueue):
+        while True:
+            for entry in event_filter.get_new_entries():
+                
+                await self.add_event_to_queue(entry,myQueue)
+                await self.get_item_from_queue(1,myQueue)
+                # await self.get_item_from_queue(2,myQueue)
+                await asyncio.sleep(2)
+            await asyncio.sleep(poll_interval)
