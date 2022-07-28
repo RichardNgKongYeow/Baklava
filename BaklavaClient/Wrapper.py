@@ -212,12 +212,12 @@ class BaklavaClient(BaklavaObject):
 
         events = json.loads(tx_response.raw_log)[0]['events']
 
-        # Serializing json
-        json_object = json.dumps(events, indent=4)
+        # # Serializing json
+        # json_object = json.dumps(events, indent=4)
         
-        # Writing to sample.json
-        with open("sample.json", "w") as outfile:
-            outfile.write(json_object)
+        # # Writing to sample.json
+        # with open("sample.json", "w") as outfile:
+        #     outfile.write(json_object)
 
 
         for event in events:
@@ -228,23 +228,4 @@ class BaklavaClient(BaklavaObject):
                         break
                 break
         return order_id
-    
-    
-    
-
-    # async def all(self):
-    #     # oo_event_filter = synContract.events.OpenOrder.createFilter(fromBlock=10671435, toBlock='latest')
-    #     oo_event_filter = self.contract.events.OpenOrder.createFilter(fromBlock='latest')
-    #     co_event_filter = self.contract.events.CancelOrder.createFilter(fromBlock='latest')
-    #     loop = asyncio.get_event_loop()
-    #     f = asyncio.Future()
-    #     f1 = loop.create_task(self.log_loop(oo_event_filter, 2))
-    #     f2 = loop.create_task(self.log_loop(co_event_filter, 2))
-    #     await asyncio.wait(
-    #         asyncio.gather(
-    #             f1.result(),
-    #             f2.result()
-    #         )
-    #     )
-        
 

@@ -9,6 +9,7 @@ import grpcClient
 
 def main():
 
+    # initialialise clients
     client_list = grpcClient.init_all_clients(grpcClient.chain_ids)
     marginx_account = grpcClient.init_wallet()
 
@@ -29,10 +30,8 @@ def main():
                 
                 ))
 
-                # log_loop(block_filter, 2),
-                # log_loop(tx_filter, 2)))
     finally:
-        # close loop to free up system resources
+
         loop.close()
 
 

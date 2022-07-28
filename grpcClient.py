@@ -34,6 +34,9 @@ chain_ids = ["aapl",
 
 # client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
 def init_GRPCClient(chain_id:str)->object:
+    """
+    initialiase a client
+    """
     return GRPCClient(f"https://testnet-{chain_id}-grpc.marginx.io:9090")
 
 
@@ -41,6 +44,10 @@ def convert_to_lower_case(string:str)->str:
     return string.lower()
 
 def init_all_clients(chain_ids:list)->list:
+    """
+    initialiase all clients objected to be executed later and return an array
+    of clients
+    """
     client_list=[]
     for chain_id in chain_ids:
         client = init_GRPCClient(chain_id)
@@ -52,31 +59,47 @@ def init_all_clients(chain_ids:list)->list:
 
 
 def get_client(chain_id:str,client_list:list)->object:
+    """
+    get clients based on the index from the chain_id array
+    """
     index = chain_ids.index(chain_id)
     return client_list[index]
 
-def init_wallet():
+def init_wallet()->object:
+    """
+    initialise wallet and return the account object which will later be used for
+    TxBuilder
+    """
     seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
 
     # Create TxBuilder
     Account.enable_unaudited_hdwallet_features()
     account = Account.from_mnemonic(seed)
-    print(account.address)
+    print('address: ', account.address)
     return account
 
-def get_account_info(client:object, account):
+def get_account_info(client:object, account:object)->object:
+    """
+    return account_info needed for TxBuilder
+    """
     account_info = client.query_account_info(account.address)
     print('account number:', account_info.account_number,
             'sequence:', account_info.sequence)
     return account_info
 
-def get_tx_builder(chain_id,account,account_info):
+def get_tx_builder(chain_id,account,account_info)->object:
+    """
+    return Txbuilder object
+    """
     tx_builder = TxBuilder(account, None, chain_id, account_info.account_number, Coin(
         amount='600', denom='USDT'))
     return tx_builder
 
-def get_account_sequence(account_info):
+def get_account_sequence(account_info:object)->int:
     # TODO manually added a 100 to acct sequence to fix immediate error
+    """
+    return an account sequence int
+    """
     return account_info.sequence
 
 
