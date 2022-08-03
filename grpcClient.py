@@ -18,9 +18,11 @@ import json
 
 from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
 
+import logging
+
 chain_ids = ["aapl",
 # "amzn",
-# "btc",
+"btc",
 # "fb",
 # "fx",
 # "goog",
@@ -38,7 +40,13 @@ def init_GRPCClient(chain_id:str)->object:
     """
     initialiase a client
     """
-    return GRPCClient(f"https://testnet-{chain_id}-grpc.marginx.io:9090")
+    try:
+        client = GRPCClient(f"https://testnet-{chain_id}-grpc.marginx.io:9090")
+        chain_id = client.query_chain_id()
+        logging.info('chain_id: {}'.format(chain_id))
+        return client
+    except Exception as e:
+        logging.critical("Unable to initialise client due to error: {} of type {}".format(e,type(e)))
 
 
 def convert_to_lower_case(string:str)->str:
@@ -52,19 +60,20 @@ def init_all_clients(chain_ids:list)->list:
     client_list=[]
     for chain_id in chain_ids:
         client = init_GRPCClient(chain_id)
-        chain_id = client.query_chain_id()
-        print('chain_id:', chain_id)
         client_list.append(client)
     return client_list
-
 
 
 def get_client(chain_id:str,client_list:list)->object:
     """
     get clients based on the index from the chain_id array
     """
-    index = chain_ids.index(chain_id)
-    return client_list[index]
+    try:
+        index = chain_ids.index(chain_id)
+        return client_list[index]
+    except Exception as e:
+        logging.error("failed to get client due to error: {} of type {}".format(e,type(e)))
+
 
 def init_wallet()->object:
     """
@@ -75,33 +84,44 @@ def init_wallet()->object:
 
     # Create TxBuilder
     Account.enable_unaudited_hdwallet_features()
-    account = Account.from_mnemonic(seed)
-    print('address: ', account.address)
-    return account
+    try:
+        account = Account.from_mnemonic(seed)
+        logging.info('address: {}'.format(account.address))
+        return account
+    except Exception as e:
+        logging.critical("Unable to initialise wallet due to error: {} of type {}".format(e,type(e)))
 
 def get_account_info(client:object, account:object)->object:
     """
     return account_info needed for TxBuilder
     """
-    account_info = client.query_account_info(account.address)
-    print('account number:', account_info.account_number,
-            'sequence:', account_info.sequence)
-    return account_info
+    try:
+        account_info = client.query_account_info(account.address)
+        # logging.info('account number: {}, sequence: {}'.format(account_info.account_number,account_info.sequence))
+        return account_info
+    except Exception as e:
+        logging.error("failed to get account info due to error: {} of type {}".format(e,type(e)))
 
 def get_tx_builder(chain_id,account,account_info)->object:
     """
     return Txbuilder object
     """
-    tx_builder = TxBuilder(account, None, chain_id, account_info.account_number, Coin(
+    try:
+        tx_builder = TxBuilder(account, None, chain_id, account_info.account_number, Coin(
         amount='600', denom='USDT'))
-    return tx_builder
+        return tx_builder
+    except Exception as e:
+        logging.error("failed to create tx_builder due to error: {} of type {}".format(e,type(e)))
 
 def get_account_sequence(account_info:object)->int:
     # TODO manually added a 100 to acct sequence to fix immediate error
     """
     return an account sequence int
     """
-    return account_info.sequence
+    try:
+        return account_info.sequence
+    except Exception as e:
+        logging.error("failed to get account sequence due to error: {} of type {}".format(e,type(e)))
 
 
 

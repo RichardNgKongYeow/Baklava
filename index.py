@@ -5,9 +5,19 @@ from dotenv import load_dotenv
 import os
 import asyncio
 import grpcClient
+import logging
+
+
+
+def initialize_logging():
+    logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s')
+    logging.root.setLevel(logging.INFO)
 
 
 def main():
+
+    # initialize logging
+    initialize_logging()
 
     # initialialise clients
     client_list = grpcClient.init_all_clients(grpcClient.chain_ids)
@@ -26,8 +36,9 @@ def main():
     try:
         loop.run_until_complete(
             asyncio.gather(
-                client.log_loop(client.create_mst_event_filter(), 2,myQueue),
-                client.log_loop(client.create_bst_event_filter(), 2,myQueue)
+                client.log_event_listener_loop(client.create_mst_event_filter(), 2,myQueue),
+                client.log_event_listener_loop(client.create_bst_event_filter(), 2,myQueue),
+                client.log_event_executer_loop(2,myQueue)
                 
                 ))
 

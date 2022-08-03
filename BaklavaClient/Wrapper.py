@@ -5,6 +5,7 @@ from web3.exceptions import BadFunctionCallOutput
 import re
 import asyncio
 import grpcClient
+import logging
 
 
 class BaklavaObject(object):
@@ -68,8 +69,15 @@ class BaklavaClient(BaklavaObject):
             address=Web3.toChecksumAddress(BaklavaClient.ADDRESS), abi=BaklavaClient.ABI)
 
 
-    # # Utilities
-    # # -----------------------------------------------------------
+    # Utilities
+    # -----------------------------------------------------------
+    def fromWei(self,value):
+        return self.conn.fromWei(value, 'ether')
+
+    def from3dp(self,value):
+        return value * 10**(-3)
+
+
     # # TODO this part needs to confirm if taking in the right ERC20 contract and USB?
     # def _is_approved(self, token, amount=MAX_APPROVAL_INT):
     #     erc20_contract = self.conn.eth.contract(
@@ -127,50 +135,52 @@ class BaklavaClient(BaklavaObject):
 
 
     # --------------------------------event listener handler--------------------------
-    def get_event_vars(self, events):
+    def get_event_vars(self, events:dict)->tuple:
         """
         return the vars from the event needed to build the tx on marginx
         """
-    
-        pid = events["args"]["pid"]
-        order_id = events["args"]["orderId"]
-        order_type = events["event"]
-        amt = events["args"]["synTokenAmount"]
-        pair_id = self.pairs[pid]
+        try:
+            pid = events["args"]["pid"]
+            order_id = events["args"]["orderId"]
+            order_type = events["event"]
+            amt = events["args"]["synTokenAmount"]
+            pair_id = self.pairs[pid]
+            price = events["args"]["synTokenPrice"]
 
 
-        if order_type == "MintSynToken":
-            direction = "MarketBuy"
-        elif order_type == "BurnSynToken":
-            direction = "MarketSell"
-        else:
-            pass
-        return pair_id, direction, amt, order_id
+            if order_type == "MintSynToken":
+                direction = "MarketBuy"
+            elif order_type == "BurnSynToken":
+                direction = "MarketSell"
+            else:
+                pass
+            return pair_id, direction, price, amt, order_id
+        except Exception as e:
+            logging.error("failed to listen to smart contract events due to error: {} of type {}".format(e,type(e)))
     
+    
+    def convert_web3_to_json(self,event):
+        try:
+            result = json.loads(Web3.toJSON(event))
+            return result
+        except Exception as e:
+            logging.error("failed to convert data to json due to error: {} of type {}".format(e,type(e)))
+
+
 
     # -----------------------------------queue system-------------------------------------
+    
     async def add_event_to_queue(self,event,myQueue):
         """
         get event vars from smart contract listener and put it in the queue
         """
-        events = json.loads(Web3.toJSON(event))
-        pair_id, direction, amt, order_id = self.get_event_vars(events)
-        print("Putting new item into queue")
+        events = self.convert_web3_to_json(event)
+        pair_id, direction, price, amt, order_id = self.get_event_vars(events)
+        # print("Putting new item into queue")
         await myQueue.put((pair_id, direction, amt, order_id))
-        print("Put order of Pair: {}, Direction: {}, Amount: {}, OrderId: {}".format(pair_id, direction, amt, order_id))
-
-    
-
-
-
-
-
-    # # define function to handle events and print to the console
-    # async def handle_event(self, event):
-    #     events = json.loads(Web3.toJSON(event))
-    #     pair_id, direction, amt, order_id = self.get_event_vars(events)
-    #     mx_order_id = await self.build_mx_tx(pair_id, direction, amt, grpcClient)
-    #     print("Pair: {}, Direction: {}, Amount: {}, OrderId: {}, MX_OrderId: ".format(pair_id, direction, amt, order_id, mx_order_id))
+        converted_price = self.fromWei(price)
+        converted_amount = self.from3dp(amt)
+        logging.info("Listening to order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id, direction, converted_price, converted_amount, order_id))
 
 
 
@@ -192,64 +202,122 @@ class BaklavaClient(BaklavaObject):
         return client, acc_seq, tx_builder
 
 
+
     async def execute_mx_tx(self, pair_id, direction, amt, grpc: grpcClient):
         """
         input trade info and execute order on marginX
         """
         chain_id = grpc.convert_to_lower_case(pair_id.split(":")[0])
-        print
         client, acc_seq, tx_builder = self.build_mx_txbuilder(chain_id, grpc)
-        print(f"Client: {client}, Acc_seq: {acc_seq}, Tx_builder: {tx_builder}")
-        print(client.query_chain_id())
-        print(client.query_account_info(self.marginx_account.address))
-        tx_response = client.create_order(
-            tx_builder=tx_builder,
-            # need to convert pid into list of str
-            pair_id=pair_id,
-            # ordertype
-            direction=direction,
-            # tokenprice
-            # price=grpcClient.Decimal(price*10**-8),
-            price=0,
-            # synTokenAmount
-            base_quantity=grpc.Decimal(amt*10**-3),
-            leverage=5,
-            acc_seq=acc_seq,
-            mode=grpc.BROADCAST_MODE_BLOCK,
-        )
+        
+        # print(f"Client: {client}, Acc_seq: {acc_seq}, Tx_builder: {tx_builder}")
+        # print(client.query_chain_id())
+        # print(client.query_account_info(self.marginx_account.address))
+        try:
+            tx_response = client.create_order(
+                tx_builder=tx_builder,
+                # need to convert pid into list of str
+                pair_id=pair_id,
+                # ordertype
+                direction=direction,
+                # tokenprice
+                # price=grpcClient.Decimal(price*10**-8),
+                price=0,
+                # synTokenAmount
+                base_quantity=grpc.Decimal(amt*10**-3),
+                leverage=5,
+                acc_seq=acc_seq,
+                mode=grpc.BROADCAST_MODE_BLOCK,
+            )
 
-        order_id = None
+            # order_id = None
+            events = json.loads(tx_response.raw_log)[0]['events']
+            return events
 
-        events = json.loads(tx_response.raw_log)[0]['events']
+        except Exception as e:
+            logging.error("marginx tx failed: {} of type {}".format(e,type(e)))
+        
 
+    # TODO stop here at logging errors
+
+    def get_mx_order_dict(self, events:list)->dict:
+        # fx.dex.order can get total filled qty & get orderid
+        # match this orderid with 
+        # price i have to loop through dex.order_fill ->agggregate the price
+        order_dict = {}
         for event in events:
-            if 'type' in event and event['type']=='fx.dex.Order':
+            if 'type' in event and event['type']=='dex.order_fill':
                 for attr in event['attributes']:
-                    if attr['key']=='order_id':
+                    if attr['key']=='deal_price':
+                        price = attr['value']
+                    elif attr['key']=='order_id':
                         order_id = attr['value']
-                        break
-                break
-        return order_id
+                        order_dict[order_id] = price
+
+        return order_dict
+
+    def get_mx_price(self, order_id:str, order_list:dict):
+        try:
+            return order_list[order_id]
+        except Exception as e:
+            logging.error("failed to get marginx price due to error: {} of type {}".format(e,type(e)))
+
+
+
+    def get_order_info(self,events:list)->tuple:
+        try:
+            for event in events:
+                if 'type' in event and event['type']=='fx.dex.Order':
+                    for attr in event['attributes']:
+                        if attr['key'] == 'order_id':
+                            order_id_mx = attr['value']
+                        elif attr['key'] == 'filled_quantity':
+                            filled_quantity_mx = attr['value']
+                        elif attr['key'] == 'pair_id':
+                            pair_id_mx = attr['value']
+                        elif attr['key'] == 'direction':
+                            direction_mx = attr['value']
+            return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
+        except Exception as e:
+            logging.error("failed to get marginx order info due to error: {} of type {}".format(e,type(e)))
+    
+
+    async def log_order_info(self,events):
+        # TODO check for other fees?
+        # TODO need to check if orderfilled?
+        pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx = self.get_order_info(events)
+        order_list = self.get_mx_order_dict(events)
+        price_mx = self.get_mx_price(order_id_mx, order_list)
+        # print(pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx,price_mx)
+        logging.info("Execution of order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id_mx, direction_mx, price_mx, filled_quantity_mx, order_id_mx))
+
 
     # -----------------------------------queue system-------------------------------------
     async def get_item_from_queue(self,id,myQueue):
-        print("Consumer: {} attempting to get from queue".format(id))
-        pair_id, direction, amt, order_id = await myQueue.get()
-        mx_order_id = await self.execute_mx_tx(pair_id, direction, amt, grpcClient)
-        print("Pair: {}, Direction: {}, Amount: {}, OrderId: {}, MX_OrderId: ".format(pair_id, direction, amt, order_id, mx_order_id))
-        return order_id
-
+        while True:
+            print("Consumer: {} attempting to get from queue".format(id))
+            pair_id, direction, amt, order_id = await myQueue.get()
+            # if order_id is None:
+            #     break
+            events = await self.execute_mx_tx(pair_id, direction, amt, grpcClient)
+            await self.log_order_info(events)
 
 # ---------------------------------------overall architecture------------------------------
     # asynchronous defined function to loop
     # this loop sets up an event filter and is looking for new entires for the "OpenOrder" event
     # this loop runs on a poll interval
-    async def log_loop(self,event_filter, poll_interval, myQueue):
+    async def log_event_listener_loop(self,event_filter, poll_interval, myQueue):
         while True:
             for entry in event_filter.get_new_entries():
-                
                 await self.add_event_to_queue(entry,myQueue)
-                await self.get_item_from_queue(1,myQueue)
-                # await self.get_item_from_queue(2,myQueue)
                 await asyncio.sleep(2)
             await asyncio.sleep(poll_interval)
+
+    async def log_event_executer_loop(self, poll_interval, myQueue):
+        await asyncio.wait([self.get_item_from_queue(1,myQueue),self.get_item_from_queue(2,myQueue)])
+        await asyncio.sleep(poll_interval)
+
+
+# Building a cross-chain bridge from Baklava, an AVAX Defi farm to MarginX, a decentralized exchange
+# Designed and programmed account analytics tools to track fund movements and account propagation patterns
+# Deployed on-chain validator analytics tools to track and extrapolate validator rewards and commission
