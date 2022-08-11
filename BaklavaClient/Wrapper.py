@@ -237,8 +237,13 @@ class BaklavaClient(BaklavaObject):
         except Exception as e:
             logging.error("marginx tx failed: {} of type {}".format(e,type(e)))
         
+    def close_mx_tx(self, pair_id, direction, amt, grpc: grpcClient):
+        chain_id = grpc.convert_to_lower_case(pair_id.split(":")[0])
+        client, acc_seq, tx_builder = self.build_mx_txbuilder(chain_id, grpc)
 
-    # TODO stop here at logging errors
+        client.close_position(tx_builder, pair_id, positions[0].Id, grpc.decimal.Decimal(amt), grpc.decimal.Decimal(
+            0.1), True, acc_seq, True, mode=grpc.BROADCAST_MODE_BLOCK)
+
 
     def get_mx_order_dict(self, events:list)->dict:
         # fx.dex.order can get total filled qty & get orderid
@@ -316,8 +321,3 @@ class BaklavaClient(BaklavaObject):
     async def log_event_executer_loop(self, poll_interval, myQueue):
         await asyncio.wait([self.get_item_from_queue(1,myQueue),self.get_item_from_queue(2,myQueue)])
         await asyncio.sleep(poll_interval)
-
-
-# Building a cross-chain bridge from Baklava, an AVAX Defi farm to MarginX, a decentralized exchange
-# Designed and programmed account analytics tools to track fund movements and account propagation patterns
-# Deployed on-chain validator analytics tools to track and extrapolate validator rewards and commission

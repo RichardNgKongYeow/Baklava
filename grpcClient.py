@@ -20,20 +20,20 @@ from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
 
 import logging
 
-chain_ids = ["aapl",
-# "amzn",
-"btc",
-# "fb",
-# "fx",
-# "goog",
-# "iwm",
-# "nflx",
-# "spy",
-# "tqqq",
-"tsla"
+chain_ids = ["tsla",
+    "aapl",
+    "btc",
+    "nflx",
+    "goog",
+    "fb",
+    "amzn",
+    "spy",
+    "iwm",
+    "tqqq",
+    "fx"
 ]
 
-
+pairs={0:"TSLA:USDT", 1:"AAPL:USDT", 2: "BTC:USDT", 3: "NFLX:USDT", 4:"GOOG:USDT", 5: "FB:USDT", 6: "AMZN:USDT", 7: "SPY:USDT", 8: "IWM:USDT", 9: "TQQQ:USDT", 10: "FX:USDT"}
 
 # client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
 def init_GRPCClient(chain_id:str)->object:
