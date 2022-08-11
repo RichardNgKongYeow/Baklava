@@ -160,6 +160,9 @@ class BaklavaClient(BaklavaObject):
     
     
     def convert_web3_to_json(self,event):
+        """
+        convert result into json
+        """
         try:
             result = json.loads(Web3.toJSON(event))
             return result
@@ -185,116 +188,6 @@ class BaklavaClient(BaklavaObject):
 
 
 
-# ------------------------------------marginx part-------------------------------------
-
-
-    def build_mx_txbuilder(self,gchain_id, grpc: grpcClient):
-        """
-        return the necessary building blocks for building the Tx
-        """
-        account = self.marginx_account
-        client_list = self.client_list
-        client = grpc.get_client(gchain_id,client_list)
-        chain_id = client.query_chain_id()
-        account_info = grpc.get_account_info(client,account)
-        acc_seq = grpc.get_account_sequence(account_info)
-        tx_builder = grpc.get_tx_builder(chain_id,account,account_info)
-        return client, acc_seq, tx_builder
-
-
-
-    async def execute_mx_tx(self, pair_id, direction, amt, grpc: grpcClient):
-        """
-        input trade info and execute order on marginX
-        """
-        chain_id = grpc.convert_to_lower_case(pair_id.split(":")[0])
-        client, acc_seq, tx_builder = self.build_mx_txbuilder(chain_id, grpc)
-        
-        # print(f"Client: {client}, Acc_seq: {acc_seq}, Tx_builder: {tx_builder}")
-        # print(client.query_chain_id())
-        # print(client.query_account_info(self.marginx_account.address))
-        try:
-            tx_response = client.create_order(
-                tx_builder=tx_builder,
-                # need to convert pid into list of str
-                pair_id=pair_id,
-                # ordertype
-                direction=direction,
-                # tokenprice
-                # price=grpcClient.Decimal(price*10**-8),
-                price=0,
-                # synTokenAmount
-                base_quantity=grpc.Decimal(amt*10**-3),
-                leverage=5,
-                acc_seq=acc_seq,
-                mode=grpc.BROADCAST_MODE_BLOCK,
-            )
-
-            # order_id = None
-            events = json.loads(tx_response.raw_log)[0]['events']
-            return events
-
-        except Exception as e:
-            logging.error("marginx tx failed: {} of type {}".format(e,type(e)))
-        
-    def close_mx_tx(self, pair_id, direction, amt, grpc: grpcClient):
-        chain_id = grpc.convert_to_lower_case(pair_id.split(":")[0])
-        client, acc_seq, tx_builder = self.build_mx_txbuilder(chain_id, grpc)
-
-        client.close_position(tx_builder, pair_id, positions[0].Id, grpc.decimal.Decimal(amt), grpc.decimal.Decimal(
-            0.1), True, acc_seq, True, mode=grpc.BROADCAST_MODE_BLOCK)
-
-
-    def get_mx_order_dict(self, events:list)->dict:
-        # fx.dex.order can get total filled qty & get orderid
-        # match this orderid with 
-        # price i have to loop through dex.order_fill ->agggregate the price
-        order_dict = {}
-        for event in events:
-            if 'type' in event and event['type']=='dex.order_fill':
-                for attr in event['attributes']:
-                    if attr['key']=='deal_price':
-                        price = attr['value']
-                    elif attr['key']=='order_id':
-                        order_id = attr['value']
-                        order_dict[order_id] = price
-
-        return order_dict
-
-    def get_mx_price(self, order_id:str, order_list:dict):
-        try:
-            return order_list[order_id]
-        except Exception as e:
-            logging.error("failed to get marginx price due to error: {} of type {}".format(e,type(e)))
-
-
-
-    def get_order_info(self,events:list)->tuple:
-        try:
-            for event in events:
-                if 'type' in event and event['type']=='fx.dex.Order':
-                    for attr in event['attributes']:
-                        if attr['key'] == 'order_id':
-                            order_id_mx = attr['value']
-                        elif attr['key'] == 'filled_quantity':
-                            filled_quantity_mx = attr['value']
-                        elif attr['key'] == 'pair_id':
-                            pair_id_mx = attr['value']
-                        elif attr['key'] == 'direction':
-                            direction_mx = attr['value']
-            return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
-        except Exception as e:
-            logging.error("failed to get marginx order info due to error: {} of type {}".format(e,type(e)))
-    
-
-    async def log_order_info(self,events):
-        # TODO check for other fees?
-        # TODO need to check if orderfilled?
-        pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx = self.get_order_info(events)
-        order_list = self.get_mx_order_dict(events)
-        price_mx = self.get_mx_price(order_id_mx, order_list)
-        # print(pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx,price_mx)
-        logging.info("Execution of order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id_mx, direction_mx, price_mx, filled_quantity_mx, order_id_mx))
 
 
     # -----------------------------------queue system-------------------------------------
