@@ -4,8 +4,8 @@ from web3 import Web3
 from dotenv import load_dotenv
 import os
 import asyncio
-import grpcClient
 import logging
+import MarginX
 
 
 
@@ -20,15 +20,15 @@ def main():
     initialize_logging()
 
     # initialialise clients
-    client_list = grpcClient.init_all_clients(grpcClient.chain_ids)
-    marginx_account = grpcClient.init_wallet()
+    marginx_account = MarginX.init_wallet(MarginX.seed)
+    client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account, MarginX.chain_ids)
+    
 
-
+    # initialise Baklava client
     my_provider = constants.avax_url
     load_dotenv()
     private_key = os.getenv("PRIVATE_KEY")
     address = constants.address
-
     client = BaklavaClient(address, private_key, marginx_account, client_list, provider=my_provider)
 
     loop = asyncio.get_event_loop()
@@ -38,7 +38,7 @@ def main():
             asyncio.gather(
                 client.log_event_listener_loop(client.create_mst_event_filter(), 2,myQueue),
                 client.log_event_listener_loop(client.create_bst_event_filter(), 2,myQueue),
-                client.log_event_executer_loop(2,myQueue)
+                MarginX.log_event_executer_loop(client_list,2,myQueue)
                 
                 ))
 

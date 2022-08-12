@@ -4,8 +4,8 @@ from web3 import Web3
 from web3.exceptions import BadFunctionCallOutput
 import re
 import asyncio
-import grpcClient
 import logging
+import utils
 
 
 class BaklavaObject(object):
@@ -69,13 +69,7 @@ class BaklavaClient(BaklavaObject):
             address=Web3.toChecksumAddress(BaklavaClient.ADDRESS), abi=BaklavaClient.ABI)
 
 
-    # Utilities
-    # -----------------------------------------------------------
-    def fromWei(self,value):
-        return self.conn.fromWei(value, 'ether')
 
-    def from3dp(self,value):
-        return value * 10**(-3)
 
 
     # # TODO this part needs to confirm if taking in the right ERC20 contract and USB?
@@ -178,27 +172,16 @@ class BaklavaClient(BaklavaObject):
         get event vars from smart contract listener and put it in the queue
         """
         events = self.convert_web3_to_json(event)
-        pair_id, direction, price, amt, order_id = self.get_event_vars(events)
+        pair_id, direction, price, amount, order_id = self.get_event_vars(events)
         # print("Putting new item into queue")
-        await myQueue.put((pair_id, direction, amt, order_id))
-        converted_price = self.fromWei(price)
-        converted_amount = self.from3dp(amt)
+        await myQueue.put((pair_id, direction, amount, order_id))
+        converted_price = utils.fromWei(price)
+        converted_amount = utils.from3dp(amount)
         logging.info("Listening to order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id, direction, converted_price, converted_amount, order_id))
 
 
 
 
-
-
-    # -----------------------------------queue system-------------------------------------
-    async def get_item_from_queue(self,id,myQueue):
-        while True:
-            print("Consumer: {} attempting to get from queue".format(id))
-            pair_id, direction, amt, order_id = await myQueue.get()
-            # if order_id is None:
-            #     break
-            events = await self.execute_mx_tx(pair_id, direction, amt, grpcClient)
-            await self.log_order_info(events)
 
 # ---------------------------------------overall architecture------------------------------
     # asynchronous defined function to loop
@@ -211,6 +194,3 @@ class BaklavaClient(BaklavaObject):
                 await asyncio.sleep(2)
             await asyncio.sleep(poll_interval)
 
-    async def log_event_executer_loop(self, poll_interval, myQueue):
-        await asyncio.wait([self.get_item_from_queue(1,myQueue),self.get_item_from_queue(2,myQueue)])
-        await asyncio.sleep(poll_interval)
