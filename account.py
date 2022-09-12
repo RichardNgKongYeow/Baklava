@@ -1,8 +1,10 @@
-import grpcClient
+import MarginX
 import logging
 from BaklavaClient.Wrapper import BaklavaClient
 import time
-
+from dotenv import load_dotenv
+import constants
+import os
 
 
 def initialize_logging():
@@ -13,14 +15,30 @@ def initialize_logging():
         
 
 def main():
+ # initialize logging
         initialize_logging()
-        grpc = grpcClient
-        account = grpc.init_wallet()
-        client_list = grpc.init_all_clients(grpc.chain_ids)
+
+        # initialialise clients
+        marginx_account = MarginX.init_wallet(MarginX.seed)
+        client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account,MarginX.chain_ids)
         
+        # initialise wrapper
+        my_provider = constants.avax_url
+        load_dotenv()
+        private_key = os.getenv("PRIVATE_KEY")
+        address = constants.address
+
+        bclient = BaklavaClient(address, private_key, provider=my_provider)
+
         while True:
-                all_open_positions = query_all_open_long_positions_amounts(account,client_list,grpc)
+                all_open_positions = MarginX.query_all_open_long_positions_amounts(client_list)
                 print(all_open_positions)
+
+                
+                total_supply = bclient.get_syntoken_total_supply()
+                print(total_supply)
+
+
                 time.sleep(5)
 
 if __name__ == "__main__":

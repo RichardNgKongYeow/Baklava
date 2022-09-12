@@ -113,7 +113,7 @@ class grpcClient():
         """
         open_position = self.get_open_long_position()
         try:
-            open_position_amount = grpcClient.Decimal(open_position[7])
+            open_position_amount = Decimal(open_position[7])
             return open_position_amount
         except Exception as e:
                 logging.error("Can't get open long position amount due to {} of type {}".format(e,type(e)))
@@ -134,9 +134,9 @@ class grpcClient():
             logging.error("failed to create tx_builder due to error: {} of type {}".format(e,type(e)))
 
 
-
+    # TODO run through grpcClient and MArginX.py and check all info and archi
     # --------------------------------execute marginx transactions---------------------------
-    async def open_mx_position(self, direction, amount):
+    async def open_long_mx_position(self, direction, amount):
         """
         input trade info and execute order on marginX
         """
@@ -156,25 +156,43 @@ class grpcClient():
                 # price=grpcClient.Decimal(price*10**-8),
                 price=0,
                 # synTokenAmount
-                base_quantity=Decimal(amount*10**-3),
-                leverage=5,
+                base_quantity=Decimal(utils.from3dp(amount)),
+                leverage=1,
                 acc_seq=acc_seq,
                 mode=BROADCAST_MODE_BLOCK,
             )
 
             # order_id = None
+            print(json.loads(tx_response.raw_log)[0])
             events = json.loads(tx_response.raw_log)[0]['events']
             return events
 
         except Exception as e:
             logging.error("marginx tx failed: {} of type {}".format(e,type(e)))
         
-    # async def close_mx_tx(self, pair_id, direction, amt, grpc: grpcClient):
-    #     chain_id = grpc.convert_to_lower_case(pair_id.split(":")[0])
-    #     client, acc_seq, tx_builder = self.build_mx_txbuilder(chain_id, grpc)
+    async def close_long_open_position(self, amount):
+        tx_builder = self.get_tx_builder()
+        pair_id = self.pair_id
+        open_position = self.get_open_long_position()
+        acc_seq = self.get_account_sequence()
 
-    #     client.close_position(tx_builder, pair_id, positions[0].Id, grpc.decimal.Decimal(amt), grpc.decimal.Decimal(
-    #         0.1), True, acc_seq, True, mode=grpc.BROADCAST_MODE_BLOCK)
+        try:
+            tx_response = self.client.close_position(
+                tx_builder = tx_builder, 
+                pair_id = pair_id, 
+                position_id = open_position.Id, 
+                price = decimal.Decimal(0), 
+                base_quantity = Decimal(utils.from3dp(amount)), 
+                full_close = False, 
+                acc_seq = acc_seq, 
+                market_close = True, 
+                mode=BROADCAST_MODE_BLOCK)
+            print(tx_response.raw_log)
+            events = json.loads(tx_response.raw_log)[0]['events']
+            print(events)
+            return events
+        except Exception as e:
+            logging.error("marginx close long open position failed: {} of type {}".format(e,type(e)))
 
 
     def get_mx_order_dict(self, events:list)->dict:

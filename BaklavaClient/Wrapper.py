@@ -10,13 +10,12 @@ import utils
 
 class BaklavaObject(object):
 
-    def __init__(self, address, private_key, marginx_account, client_list, provider=None):
+    def __init__(self, address, private_key, provider=None):
         self.address = Web3.toChecksumAddress(address)
         self.private_key = private_key
         self.provider = os.environ["PROVIDER"] if not provider else provider      
         self.provider = provider if not provider else provider
-        self.marginx_account = marginx_account
-        self.client_list = client_list
+
         
         if re.match(r'^https*:', self.provider):
             provider = Web3.HTTPProvider(self.provider, request_kwargs={"timeout": 60})
@@ -62,13 +61,22 @@ class BaklavaClient(BaklavaObject):
     ERC20_ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SafeERC20Upgradeable.json'))["abi"]
 
     pairs={0:"TSLA:USDT", 1:"AAPL:USDT", 2: "BTC:USDT", 3: "NFLX:USDT", 4:"GOOG:USDT", 5: "FB:USDT", 6: "AMZN:USDT", 7: "SPY:USDT", 8: "IWM:USDT", 9: "TQQQ:USDT", 10: "FX:USDT"}
+    
+    
+    # ------------------------------synthetic tokens---------------------------------------
+    syntetic_token_addresses = {
+    "bTSLA":"0x0D95b3f47606339FE7055938e1fACc457177aE21",
+    "bAAPL":"0x9BD0E966D7457810862E57c8F1e36a1c331fEca0",
+    "bBTC":"0xA2c2c0686FabEd8186E29CeBeB7cccBC416cb03D"}
 
-    def __init__(self, address, private_key, marginx_account, client_list, provider=None):
-        super().__init__(address, private_key, marginx_account, client_list, provider)
+
+    def __init__(self, address, private_key, provider=None):
+        super().__init__(address, private_key, provider)
         self.contract = self.conn.eth.contract(
             address=Web3.toChecksumAddress(BaklavaClient.ADDRESS), abi=BaklavaClient.ABI)
 
 
+        self.syntoken_object_dict = self.initialise_syntoken_object_dict()
 
 
 
@@ -129,6 +137,17 @@ class BaklavaClient(BaklavaObject):
 
 
     # --------------------------------event listener handler--------------------------
+    def convert_web3_to_json(self,event):
+        """
+        convert result into json
+        """
+        try:
+            result = json.loads(Web3.toJSON(event))
+            return result
+        except Exception as e:
+            logging.error("failed to convert data to json due to error: {} of type {}".format(e,type(e)))
+    
+    
     def get_event_vars(self, events:dict)->tuple:
         """
         return the vars from the event needed to build the tx on marginx
@@ -137,7 +156,7 @@ class BaklavaClient(BaklavaObject):
             pid = events["args"]["pid"]
             order_id = events["args"]["orderId"]
             order_type = events["event"]
-            amt = events["args"]["synTokenAmount"]
+            amount = events["args"]["synTokenAmount"]
             pair_id = self.pairs[pid]
             price = events["args"]["synTokenPrice"]
 
@@ -148,21 +167,11 @@ class BaklavaClient(BaklavaObject):
                 direction = "MarketSell"
             else:
                 pass
-            return pair_id, direction, price, amt, order_id
+            return pair_id, direction, price, amount, order_id
         except Exception as e:
             logging.error("failed to listen to smart contract events due to error: {} of type {}".format(e,type(e)))
     
     
-    def convert_web3_to_json(self,event):
-        """
-        convert result into json
-        """
-        try:
-            result = json.loads(Web3.toJSON(event))
-            return result
-        except Exception as e:
-            logging.error("failed to convert data to json due to error: {} of type {}".format(e,type(e)))
-
 
 
     # -----------------------------------queue system-------------------------------------
@@ -194,3 +203,47 @@ class BaklavaClient(BaklavaObject):
                 await asyncio.sleep(2)
             await asyncio.sleep(poll_interval)
 
+
+# ======================================synthetic token=====================================
+    def initialise_syntoken_object_dict(self)->dict:
+        try:
+            client_dict = {}
+            for syntoken in self.syntetic_token_addresses:
+                client = SynTClient(self.syntetic_token_addresses[syntoken],self.private_key, provider=self.provider)
+                client_dict[syntoken] = client
+            return client_dict
+        except Exception as e:
+            logging.error("failed to initialise syn token object dictionary due to: {} of type {}".format(e,type(e)))
+
+    def get_syntoken_total_supply(self):
+        try:
+            total_supply_dict = {}
+            for i in self.syntoken_object_dict:
+                syntoken_obj = self.syntoken_object_dict[i]
+                total_supply = syntoken_obj.get_total_supply()
+                total_supply_dict[i] = total_supply
+            return total_supply_dict
+        except Exception as e:
+            logging.error("failed to get token supply from token contract object due to: {} of type {}".format(e,type(e)))
+
+
+# --------------------------------------circulating supply---------------------------------
+class SynTClient(BaklavaObject):
+
+    full_path = os.getcwd()
+    ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SynT.json'))["abi"]
+    
+
+    def __init__(self, address, private_key, provider=None):
+        super().__init__(address, private_key, provider)
+        self.contract = self.conn.eth.contract(
+            address=Web3.toChecksumAddress(self.address), abi=SynTClient.ABI)
+
+
+    def get_total_supply(self):
+        """
+        get total supply of token
+        """
+
+        return self.contract.functions.totalSupply().call()
+    

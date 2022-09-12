@@ -83,7 +83,10 @@ async def get_item_from_queue_and_execute(client_list,id,myQueue):
         pair_id, direction, amount, order_id = await myQueue.get()
         chain_id = utils.convert_pair_id_to_chain_id(pair_id)
         client = get_client(chain_id, client_list)
-        events = await client.open_mx_position(direction, amount)
+        if direction == "MarketBuy":
+            events = await client.open_long_mx_position(direction, amount)
+        else:
+            events = await client.close_long_open_position(amount)
         await client.log_order_info(events)
 
 
