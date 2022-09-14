@@ -76,11 +76,12 @@ class grpcClient():
         return an account sequence int
         """
         try:
+            self.get_account_info()
             return self.account_info.sequence
         except Exception as e:
             logging.error("failed to get account sequence due to error: {} of type {}".format(e,type(e)))
 
-# ===================================querying postiions info==============================
+# ===================================querying positions info==============================
     def query_open_positions(self)->list:
             """
             query all open positions (list) of an account given a pair_id and corresponding client
@@ -116,7 +117,7 @@ class grpcClient():
             open_position_amount = Decimal(open_position[7])
             return open_position_amount
         except Exception as e:
-                logging.error("Can't get open long position amount due to {} of type {}".format(e,type(e)))
+            logging.error("Can't get open long position amount due to {} of type {}".format(e,type(e)))
 
 
 
@@ -161,14 +162,11 @@ class grpcClient():
                 acc_seq=acc_seq,
                 mode=BROADCAST_MODE_BLOCK,
             )
-
-            # order_id = None
-            print(json.loads(tx_response.raw_log)[0])
             events = json.loads(tx_response.raw_log)[0]['events']
             return events
+        except:
+            logging.error("marginx failed to open long position: {}".format(tx_response.raw_log))
 
-        except Exception as e:
-            logging.error("marginx tx failed: {} of type {}".format(e,type(e)))
         
     async def close_long_open_position(self, amount):
         tx_builder = self.get_tx_builder()
@@ -187,12 +185,10 @@ class grpcClient():
                 acc_seq = acc_seq, 
                 market_close = True, 
                 mode=BROADCAST_MODE_BLOCK)
-            print(tx_response.raw_log)
             events = json.loads(tx_response.raw_log)[0]['events']
-            print(events)
             return events
-        except Exception as e:
-            logging.error("marginx close long open position failed: {} of type {}".format(e,type(e)))
+        except:
+            logging.error("marginx failed to close long position: {}".format(tx_response.raw_log))
 
 
     def get_mx_order_dict(self, events:list)->dict:
@@ -210,8 +206,8 @@ class grpcClient():
                     elif attr['key']=='order_id':
                         order_id = attr['value']
                         order_dict[order_id] = price
-
         return order_dict
+
 
     def get_mx_price(self, order_id:str, order_dict:dict):
         """
@@ -241,19 +237,22 @@ class grpcClient():
                             pair_id_mx = attr['value']
                         elif attr['key'] == 'direction':
                             direction_mx = attr['value']
-            return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
+                return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
         except Exception as e:
             logging.error("failed to get marginx order info due to error: {} of type {}".format(e,type(e)))
     
 
     async def log_order_info(self,events):
         # TODO check for other fees?
-        pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx = self.get_order_info(events)
-        order_dict = self.get_mx_order_dict(events)
-        price_mx = self.get_mx_price(order_id_mx, order_dict)
-        # print(pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx,price_mx)
-        logging.info("Execution of order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id_mx, direction_mx, price_mx, filled_quantity_mx, order_id_mx))
-    
+        try:
+
+            pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx = self.get_order_info(events)
+            order_dict = self.get_mx_order_dict(events)
+            price_mx = self.get_mx_price(order_id_mx, order_dict)
+            # print(pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx,price_mx)
+            logging.info("Execution of order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id_mx, direction_mx, price_mx, filled_quantity_mx, order_id_mx))
+        except:
+            pass
     
 
 

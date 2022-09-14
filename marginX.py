@@ -7,7 +7,8 @@ import asyncio
 
 seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
 
-chain_ids = ["tsla",
+chain_ids = [
+    "tsla",
     "aapl",
     "btc",
     # "nflx",

@@ -6,6 +6,7 @@ import re
 import asyncio
 import logging
 import utils
+from decimal import Decimal
 
 
 class BaklavaObject(object):
@@ -65,9 +66,9 @@ class BaklavaClient(BaklavaObject):
     
     # ------------------------------synthetic tokens---------------------------------------
     syntetic_token_addresses = {
-    "bTSLA":"0x0D95b3f47606339FE7055938e1fACc457177aE21",
-    "bAAPL":"0x9BD0E966D7457810862E57c8F1e36a1c331fEca0",
-    "bBTC":"0xA2c2c0686FabEd8186E29CeBeB7cccBC416cb03D"}
+    "TSLA:USDT":"0x0D95b3f47606339FE7055938e1fACc457177aE21",
+    "AAPL:USDT":"0x9BD0E966D7457810862E57c8F1e36a1c331fEca0",
+    "BTC:USDT":"0xA2c2c0686FabEd8186E29CeBeB7cccBC416cb03D"}
 
 
     def __init__(self, address, private_key, provider=None):
@@ -79,36 +80,9 @@ class BaklavaClient(BaklavaObject):
         self.syntoken_object_dict = self.initialise_syntoken_object_dict()
 
 
-
-    # # TODO this part needs to confirm if taking in the right ERC20 contract and USB?
-    # def _is_approved(self, token, amount=MAX_APPROVAL_INT):
-    #     erc20_contract = self.conn.eth.contract(
-    #         address=Web3.toChecksumAddress(token), abi=BaklavaClient.PAIR_ABI)
-    #     print(erc20_contract, token)
-    #     approved_amount = erc20_contract.functions.allowance(self.address, self.router.address).call()
-    #     return approved_amount >= amount
-
-    # def is_approved(self, token, amount=MAX_APPROVAL_INT):
-    #     return self._is_approved(token, amount)
-
-    # def approve(self, token, max_approval=MAX_APPROVAL_INT):
-    #     if self._is_approved(token, max_approval):
-    #         return
-
-    #     print("Approving {} of {}".format(max_approval, token))
-    #     erc20_contract = self.conn.eth.contract(
-    #         address=Web3.toChecksumAddress(token), abi=BaklavaClient.ERC20_ABI)
-
-    #     func = erc20_contract.functions.approve(self.router.address, max_approval)
-    #     params = self._create_transaction_params()
-    #     tx = self._send_transaction(func, params)
-
-    #     # wait for transaction receipt
-    #     self.conn.eth.waitForTransactionReceipt(tx, timeout=6000)  # TODO raise exception on timeout
-
     # ==============================event listener==============================
 
-    # -----------------------------listener filters------------------------------
+    # --------------------------------listener filters-------------------------------------
     def create_oo_event_filter(self):
         """
         create_open_order_event_filter        
@@ -245,5 +219,4 @@ class SynTClient(BaklavaObject):
         get total supply of token
         """
 
-        return self.contract.functions.totalSupply().call()
-    
+        return Decimal(utils.from3dp(self.contract.functions.totalSupply().call()))

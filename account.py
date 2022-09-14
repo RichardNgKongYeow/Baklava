@@ -32,11 +32,11 @@ def main():
 
         while True:
                 all_open_positions = MarginX.query_all_open_long_positions_amounts(client_list)
-                print(all_open_positions)
+                print("MarginX: {}".format(all_open_positions))
 
                 
                 total_supply = bclient.get_syntoken_total_supply()
-                print(total_supply)
+                print("Baklava: {}".format(total_supply))
 
 
                 time.sleep(5)
