@@ -21,14 +21,14 @@ def main():
 
     # initialialise clients
     marginx_account = MarginX.init_wallet(MarginX.seed)
-    client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account,MarginX.chain_ids)
+    client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account,constants.pair_info)
     
 
     # initialise Baklava client
     my_provider = constants.avax_url
     load_dotenv()
     private_key = os.getenv("PRIVATE_KEY")
-    address = constants.address
+    address = constants.wallet_address
     client = BaklavaClient(address, private_key, provider=my_provider)
 
     loop = asyncio.get_event_loop()

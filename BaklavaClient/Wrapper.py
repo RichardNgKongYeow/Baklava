@@ -7,6 +7,7 @@ import asyncio
 import logging
 import utils
 from decimal import Decimal
+import constants
 
 
 class BaklavaObject(object):
@@ -51,21 +52,19 @@ class BaklavaObject(object):
 
 class BaklavaClient(BaklavaObject):
 
-    ADDRESS = "0x1f2A2A8eBF8Ec7102Bf15cb6eC5629A9E05b410a"
-
-    full_path = os.getcwd()
-    ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SyntheticPool.json'))["abi"]
+    ADDRESS = constants.synthetic_pool_address
+    ABI = constants.ABI_synthetic_pool
 
 
     MAX_APPROVAL_HEX = "0x" + "f" * 64
     MAX_APPROVAL_INT = int(MAX_APPROVAL_HEX, 16)
-    ERC20_ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SafeERC20Upgradeable.json'))["abi"]
+    # ERC20_ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SafeERC20Upgradeable.json'))["abi"]
 
     pairs={0:"TSLA:USDT", 1:"AAPL:USDT", 2: "BTC:USDT", 3: "NFLX:USDT", 4:"GOOG:USDT", 5: "FB:USDT", 6: "AMZN:USDT", 7: "SPY:USDT", 8: "IWM:USDT", 9: "TQQQ:USDT", 10: "FX:USDT"}
-    
+    pair_info = constants.pair_info
     
     # ------------------------------synthetic tokens---------------------------------------
-    syntetic_token_addresses = {
+    synthetic_token_addresses = {
     "TSLA:USDT":"0x0D95b3f47606339FE7055938e1fACc457177aE21",
     "AAPL:USDT":"0x9BD0E966D7457810862E57c8F1e36a1c331fEca0",
     "BTC:USDT":"0xA2c2c0686FabEd8186E29CeBeB7cccBC416cb03D"}
@@ -131,7 +130,7 @@ class BaklavaClient(BaklavaObject):
             order_id = events["args"]["orderId"]
             order_type = events["event"]
             amount = events["args"]["synTokenAmount"]
-            pair_id = self.pairs[pid]
+            pair_id = self.pair_info[pid]["pair"]
             price = events["args"]["synTokenPrice"]
 
 
@@ -164,8 +163,6 @@ class BaklavaClient(BaklavaObject):
 
 
 
-
-
 # ---------------------------------------overall architecture------------------------------
     # asynchronous defined function to loop
     # this loop sets up an event filter and is looking for new entires for the "OpenOrder" event
@@ -180,11 +177,13 @@ class BaklavaClient(BaklavaObject):
 
 # ======================================synthetic token=====================================
     def initialise_syntoken_object_dict(self)->dict:
+        # TODO have to change to constants.pair_info and get information
         try:
             client_dict = {}
-            for syntoken in self.syntetic_token_addresses:
-                client = SynTClient(self.syntetic_token_addresses[syntoken],self.private_key, provider=self.provider)
-                client_dict[syntoken] = client
+            for i in self.pair_info:
+                client = SynTClient(self.pair_info[i]['address'],self.private_key, provider=self.provider)
+                pair = self.pair_info[i]['pair']
+                client_dict[pair] = client
             return client_dict
         except Exception as e:
             logging.error("failed to initialise syn token object dictionary due to: {} of type {}".format(e,type(e)))
@@ -199,6 +198,10 @@ class BaklavaClient(BaklavaObject):
             return total_supply_dict
         except Exception as e:
             logging.error("failed to get token supply from token contract object due to: {} of type {}".format(e,type(e)))
+
+
+    def 
+
 
 
 # --------------------------------------circulating supply---------------------------------

@@ -17,20 +17,28 @@ from fx_py_sdk.codec.cosmos.tx.v1beta1.service_pb2 import BROADCAST_MODE_BLOCK, 
 from google.protobuf.json_format import MessageToJson
 import json
 import MarginX
+import constants
 
 from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
 
 import logging
 
 class grpcClient():
-    def __init__(self,account:object,chain_id:str):
-        self.chain_id = chain_id
+    pair_info = constants.pair_info
+    
+    def __init__(self,account:object,pair_index:int):
+        
+        self.pair_index = pair_index
+        self.pair_id = self.pair_info[pair_index]["pair"]
+        self.address = self.pair_info[pair_index]["address"]
+        self.chain_id = self.pair_info[pair_index]["chain_id"]
+        
+        
         self.account = account
-
         self.client = None
         self.marginx_chain_id = None
         self.account.info = None
-        self.pair_id = None
+
 
 
         
@@ -48,16 +56,7 @@ class grpcClient():
     def initialise_client_and_get_all_info(self):
         self.initialise_client()
         self.get_account_info()
-        self.get_pair_id()
 
-
-
-    def get_pair_id(self):
-        """
-        update pair_id of the client
-        """
-        index = MarginX.chain_ids.index(self.chain_id)
-        self.pair_id = MarginX.pairs[index]
 
 # --------------------------------------account info--------------------------------------
 
@@ -71,7 +70,6 @@ class grpcClient():
             logging.error("failed to get account info due to error: {} of type {}".format(e,type(e)))
 
     def get_account_sequence(self)->int:
-        # TODO manually added a 100 to acct sequence to fix immediate error
         """
         return an account sequence int
         """
@@ -91,7 +89,7 @@ class grpcClient():
                         owner=self.account.address, pair_id=self.pair_id)
                 return positions
             except Exception as e:
-                logging.error("unable to query positions due to error: {} of type {}".format(e,type(e)))
+                logging.error("unable to query open positions due to error: {} of type {}".format(e,type(e)))
 
     
     def get_open_long_position(self)->list:
@@ -113,8 +111,11 @@ class grpcClient():
         return the open long position amount in int in Decimal form 
         """
         open_position = self.get_open_long_position()
-        try:
-            open_position_amount = Decimal(open_position[7])
+        try:  
+            if open_position == None:
+                open_position_amount = 0
+            else:
+                open_position_amount = Decimal(open_position[7])
             return open_position_amount
         except Exception as e:
             logging.error("Can't get open long position amount due to {} of type {}".format(e,type(e)))
@@ -135,7 +136,6 @@ class grpcClient():
             logging.error("failed to create tx_builder due to error: {} of type {}".format(e,type(e)))
 
 
-    # TODO run through grpcClient and MArginX.py and check all info and archi
     # --------------------------------execute marginx transactions---------------------------
     async def open_long_mx_position(self, direction, amount):
         """
@@ -237,7 +237,7 @@ class grpcClient():
                             pair_id_mx = attr['value']
                         elif attr['key'] == 'direction':
                             direction_mx = attr['value']
-                return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
+            return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
         except Exception as e:
             logging.error("failed to get marginx order info due to error: {} of type {}".format(e,type(e)))
     
