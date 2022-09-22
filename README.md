@@ -10,7 +10,7 @@ Mac Users
 4. Activate virtual env `source env/bin/activate`
 5. Install dependencies `pip install -r requirements.txt`
 6. cd fx-py-sdk
-7.  python setup.py install
+7. python setup.py install
 8. Run `python3 index.py`
 
 Windows Users

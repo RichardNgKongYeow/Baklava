@@ -38,7 +38,8 @@ class grpcClient():
         self.client = None
         self.marginx_chain_id = None
         self.account.info = None
-
+        self.gas_price = None
+        self.tx_builder = None
 
 
         
@@ -49,13 +50,15 @@ class grpcClient():
             self.marginx_chain_id = self.client.query_chain_id()
             logging.info('chain_id: {}'.format(self.marginx_chain_id))
         except Exception as e:
-            logging.critical("Unable to initialise client due to error: {} of type {}".format(e,type(e)))
+            logging.critical("MARGINX--Unable to initialise {} client due to error: {} of type {}".format(self.chain_id, e,type(e)))
 
 
 
     def initialise_client_and_get_all_info(self):
         self.initialise_client()
         self.get_account_info()
+        self.query_gas_price()
+        self.build_tx_builder()
 
 
 # --------------------------------------account info--------------------------------------
@@ -67,7 +70,7 @@ class grpcClient():
         try:
             self.account_info = self.client.query_account_info(self.account.address)
         except Exception as e:
-            logging.error("failed to get account info due to error: {} of type {}".format(e,type(e)))
+            logging.error("MARGINX--failed to get account info due to error: {} of type {}".format(e,type(e)))
 
     def get_account_sequence(self)->int:
         """
@@ -77,7 +80,25 @@ class grpcClient():
             self.get_account_info()
             return self.account_info.sequence
         except Exception as e:
-            logging.error("failed to get account sequence due to error: {} of type {}".format(e,type(e)))
+            logging.error("MARGINX--failed to get account sequence due to error: {} of type {}".format(e,type(e)))
+
+
+    def query_gas_price(self):
+        # query gas price
+        gas_prices = self.client.query_gas_price()
+        gas_denom = "USDT"
+        self.gas_price = next((gas for gas in gas_prices if gas.denom == gas_denom), None)
+        if self.gas_price is None:
+            raise ValueError(f"Could not find on-chain gas pricing for denom: {gas_denom}")
+
+    def build_tx_builder(self):
+        # build tx_builder
+        try:
+            self.tx_builder = TxBuilder(account = self.account, 
+            private_key = None, chain_id = self.marginx_chain_id, 
+            account_number = self.account_info.account_number, gas_price = self.gas_price)
+        except Exception as e:
+            logging.error("MARGINX--failed to create tx_builder due to error: {} of type {}".format(e,type(e)))
 
 # ===================================querying positions info==============================
     def query_open_positions(self)->list:
@@ -89,7 +110,7 @@ class grpcClient():
                         owner=self.account.address, pair_id=self.pair_id)
                 return positions
             except Exception as e:
-                logging.error("unable to query open positions due to error: {} of type {}".format(e,type(e)))
+                logging.error("MARGINX--unable to query open positions due to error: {} of type {}".format(e,type(e)))
 
     
     def get_open_long_position(self)->list:
@@ -100,11 +121,30 @@ class grpcClient():
         try:
             if len(positions) > 0:
                 for position in positions:
-                    # 0: BOTH, 1: LONG, 2: SHORT
-                    if position[3] == 1:
+                    """
+                    [
+                        Position(
+                            Id="4",
+                            Owner="0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72",
+                            PairId="AAPL:USDT",
+                            Direction="long",
+                            EntryPrice=Decimal("157.930376"),
+                            MarkPrice=Decimal("156.888"),
+                            LiquidationPrice=Decimal("2.762266"),
+                            BaseQuantity=Decimal("38.433"),
+                            Margin=Decimal("5966.230016"),
+                            Leverage=1,
+                            UnrealizedPnl=Decimal("-40.061636"),
+                            MarginRate=Decimal("0.025437"),
+                            InitialMargin=Decimal("40574.393601"),
+                            PendingOrderQuantity=Decimal("0"),
+                        )
+                    ]
+                    """
+                    if position[3] == "long":
                         return position
         except Exception as e:
-            logging.error("unable to get long position due to error: {} of type {}".format(e,type(e)))
+            logging.error("MARGINX--unable to get long position due to error: {} of type {}".format(e,type(e)))
 
     def get_open_long_position_amount(self)->Decimal:
         """
@@ -118,22 +158,7 @@ class grpcClient():
                 open_position_amount = Decimal(open_position[7])
             return open_position_amount
         except Exception as e:
-            logging.error("Can't get open long position amount due to {} of type {}".format(e,type(e)))
-
-
-
-
-    # ----------------------------------build mx tx-------------------------------------------
-    def get_tx_builder(self)->object:
-        """
-        return Txbuilder object
-        """
-        try:
-            tx_builder = TxBuilder(self.account, None, self.marginx_chain_id, self.account_info.account_number, Coin(
-            amount='600', denom='USDT'))
-            return tx_builder
-        except Exception as e:
-            logging.error("failed to create tx_builder due to error: {} of type {}".format(e,type(e)))
+            logging.error("MARGINX--Can't get open long position amount due to {} of type {}".format(e,type(e)))
 
 
     # --------------------------------execute marginx transactions---------------------------
@@ -141,20 +166,18 @@ class grpcClient():
         """
         input trade info and execute order on marginX
         """
-        tx_builder = self.get_tx_builder()
         acc_seq = self.get_account_sequence()
         client = self.client
         pair_id = self.pair_id
         
         try:
             tx_response = client.create_order(
-                tx_builder=tx_builder,
+                tx_builder=self.tx_builder,
                 # need to convert pid into list of str
                 pair_id=pair_id,
                 # ordertype
                 direction=direction,
                 # tokenprice
-                # price=grpcClient.Decimal(price*10**-8),
                 price=0,
                 # synTokenAmount
                 base_quantity=Decimal(utils.from3dp(amount)),
@@ -165,18 +188,17 @@ class grpcClient():
             events = json.loads(tx_response.raw_log)[0]['events']
             return events
         except:
-            logging.error("marginx failed to open long position: {}".format(tx_response.raw_log))
+            logging.error("MARGINX--failed to open long position: {}".format(tx_response.raw_log))
 
         
     async def close_long_open_position(self, amount):
-        tx_builder = self.get_tx_builder()
         pair_id = self.pair_id
         open_position = self.get_open_long_position()
         acc_seq = self.get_account_sequence()
 
         try:
             tx_response = self.client.close_position(
-                tx_builder = tx_builder, 
+                tx_builder = self.tx_builder, 
                 pair_id = pair_id, 
                 position_id = open_position.Id, 
                 price = decimal.Decimal(0), 
@@ -188,7 +210,7 @@ class grpcClient():
             events = json.loads(tx_response.raw_log)[0]['events']
             return events
         except:
-            logging.error("marginx failed to close long position: {}".format(tx_response.raw_log))
+            logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
 
 
     def get_mx_order_dict(self, events:list)->dict:
@@ -216,7 +238,7 @@ class grpcClient():
         try:
             return order_dict[order_id]
         except Exception as e:
-            logging.error("failed to get marginx price due to error: {} of type {}".format(e,type(e)))
+            logging.error("MARGINX--failed to get marginx price due to error: {} of type {}".format(e,type(e)))
 
 
 
@@ -237,9 +259,22 @@ class grpcClient():
                             pair_id_mx = attr['value']
                         elif attr['key'] == 'direction':
                             direction_mx = attr['value']
+                
+                
+                # this is for closing open orders
+                elif 'type' in event and event['type']=='dex.close_position_order':
+                    for attr in event['attributes']:
+                        if attr['key'] == 'order_id':
+                            order_id_mx = attr['value']
+                        elif attr['key'] == 'filled_quantity':
+                            filled_quantity_mx = attr['value']
+                        elif attr['key'] == 'pair_id':
+                            pair_id_mx = attr['value']
+                        elif attr['key'] == 'direction':
+                            direction_mx = attr['value']
             return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
         except Exception as e:
-            logging.error("failed to get marginx order info due to error: {} of type {}".format(e,type(e)))
+            logging.error("MARGINX--failed to get marginx order info due to error: {} of type {}".format(e,type(e)))
     
 
     async def log_order_info(self,events):

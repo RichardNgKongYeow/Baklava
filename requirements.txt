@@ -11,7 +11,7 @@ backcall==0.2.0
 base58==2.1.1
 bech32==1.2.0
 bitarray==1.2.2
-black==22.1.0
+black==22.8.0
 bleach==4.1.0
 certifi==2021.10.8
 charset-normalizer==2.0.12
@@ -84,6 +84,7 @@ pycryptodome==3.14.1
 Pygments==2.11.2
 pyparsing==3.0.8
 pyrsistent==0.18.1
+pyTelegramBotAPI==4.7.0
 pytest==7.1.2
 python-dateutil==2.8.2
 python-dotenv==0.20.0
@@ -93,6 +94,7 @@ PyYAML==6.0
 pyzmq==22.3.0
 requests==2.27.1
 rlp==2.0.1
+schedule==1.1.0
 six==1.16.0
 SQLAlchemy==1.4.35
 stack-data==0.2.0

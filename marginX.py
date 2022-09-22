@@ -6,7 +6,6 @@ import asyncio
 import constants
 
 
-seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
 
 
 def initialise_all_clients_and_get_all_info(account:object,pair_info:dict)->list:
@@ -70,7 +69,7 @@ async def get_item_from_queue_and_execute(client_dict,id,myQueue):
         client = get_client(pair_id, client_dict)
         if direction == "MarketBuy":
             events = await client.open_long_mx_position(direction, amount)
-        else:
+        elif direction == "MarketSell":
             events = await client.close_long_open_position(amount)
         await client.log_order_info(events)
 

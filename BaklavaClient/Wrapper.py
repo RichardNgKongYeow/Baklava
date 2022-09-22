@@ -60,14 +60,8 @@ class BaklavaClient(BaklavaObject):
     MAX_APPROVAL_INT = int(MAX_APPROVAL_HEX, 16)
     # ERC20_ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SafeERC20Upgradeable.json'))["abi"]
 
-    pairs={0:"TSLA:USDT", 1:"AAPL:USDT", 2: "BTC:USDT", 3: "NFLX:USDT", 4:"GOOG:USDT", 5: "FB:USDT", 6: "AMZN:USDT", 7: "SPY:USDT", 8: "IWM:USDT", 9: "TQQQ:USDT", 10: "FX:USDT"}
     pair_info = constants.pair_info
     
-    # ------------------------------synthetic tokens---------------------------------------
-    synthetic_token_addresses = {
-    "TSLA:USDT":"0x0D95b3f47606339FE7055938e1fACc457177aE21",
-    "AAPL:USDT":"0x9BD0E966D7457810862E57c8F1e36a1c331fEca0",
-    "BTC:USDT":"0xA2c2c0686FabEd8186E29CeBeB7cccBC416cb03D"}
 
 
     def __init__(self, address, private_key, provider=None):
@@ -118,7 +112,7 @@ class BaklavaClient(BaklavaObject):
             result = json.loads(Web3.toJSON(event))
             return result
         except Exception as e:
-            logging.error("failed to convert data to json due to error: {} of type {}".format(e,type(e)))
+            logging.error("Baklava Client--failed to convert data to json due to error: {} of type {}".format(e,type(e)))
     
     
     def get_event_vars(self, events:dict)->tuple:
@@ -142,7 +136,7 @@ class BaklavaClient(BaklavaObject):
                 pass
             return pair_id, direction, price, amount, order_id
         except Exception as e:
-            logging.error("failed to listen to smart contract events due to error: {} of type {}".format(e,type(e)))
+            logging.error("Baklava Client--failed to listen to smart contract events due to error: {} of type {}".format(e,type(e)))
     
     
 
@@ -155,11 +149,12 @@ class BaklavaClient(BaklavaObject):
         """
         events = self.convert_web3_to_json(event)
         pair_id, direction, price, amount, order_id = self.get_event_vars(events)
-        # print("Putting new item into queue")
+
+        # print(pair_id, direction, amount, order_id)
         await myQueue.put((pair_id, direction, amount, order_id))
         converted_price = utils.fromWei(price)
         converted_amount = utils.from3dp(amount)
-        logging.info("Listening to order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id, direction, converted_price, converted_amount, order_id))
+        logging.info("Baklava Client--Listening to order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id, direction, converted_price, converted_amount, order_id))
 
 
 
@@ -186,7 +181,7 @@ class BaklavaClient(BaklavaObject):
                 client_dict[pair] = client
             return client_dict
         except Exception as e:
-            logging.error("failed to initialise syn token object dictionary due to: {} of type {}".format(e,type(e)))
+            logging.error("Baklava Client--failed to initialise syn token object dictionary due to: {} of type {}".format(e,type(e)))
 
     def get_syntoken_total_supply(self):
         try:
@@ -197,10 +192,7 @@ class BaklavaClient(BaklavaObject):
                 total_supply_dict[i] = total_supply
             return total_supply_dict
         except Exception as e:
-            logging.error("failed to get token supply from token contract object due to: {} of type {}".format(e,type(e)))
-
-
-    def 
+            logging.error("Baklava Client--failed to get token supply from token contract object due to: {} of type {}".format(e,type(e)))
 
 
 

@@ -13,3 +13,6 @@ def fromWei(value):
 
 def from3dp(value):
     return value * 10**(-3)
+
+def to3dp(value):
+    return value * 10**(3)
