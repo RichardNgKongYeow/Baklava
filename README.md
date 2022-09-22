@@ -8,6 +8,7 @@ Mac Users
 2. Install virtual env. `python3 -m pip install --user virtualenv`
 3. Create virtual env. `python3 -m venv env`
 4. Activate virtual env `source env/bin/activate`
+5. git clone https://github.com/RichardNgKongYeow/Baklava.git
 5. Install dependencies `pip install -r requirements.txt`
 6. cd fx-py-sdk
 7. python setup.py install
