@@ -6,3 +6,164 @@
 09/22/2022 10:39:41,INFO,chain_id: MarginX-Testnet-AAPL
 09/22/2022 10:39:41,INFO,Connected to database fxdex
 09/22/2022 10:39:41,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 11:01:07,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 11:01:07,INFO,Connected to database fxdex
+09/22/2022 11:01:07,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 11:01:07,INFO,Connected to database fxdex
+09/22/2022 11:01:07,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 11:01:07,INFO,Connected to database fxdex
+09/22/2022 11:01:07,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 11:02:16,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 11:02:16,INFO,Connected to database fxdex
+09/22/2022 11:02:16,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 11:02:16,INFO,Connected to database fxdex
+09/22/2022 11:02:16,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 11:02:16,INFO,Connected to database fxdex
+09/22/2022 11:02:16,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 11:13:57,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 11:13:57,INFO,Connected to database fxdex
+09/22/2022 11:13:57,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 11:13:57,INFO,Connected to database fxdex
+09/22/2022 11:13:57,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 11:13:57,INFO,Connected to database fxdex
+09/22/2022 11:13:57,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 11:14:45,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 0
+09/22/2022 11:14:48,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52120253: out of gas
+09/22/2022 11:14:48,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 11:22:14,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 11:22:14,INFO,Connected to database fxdex
+09/22/2022 11:22:14,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 11:22:14,INFO,Connected to database fxdex
+09/22/2022 11:22:14,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 11:22:14,INFO,Connected to database fxdex
+09/22/2022 11:22:14,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 11:24:06,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 1
+09/22/2022 11:24:07,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52113104: out of gas
+09/22/2022 11:24:07,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 11:24:10,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 2
+09/22/2022 11:24:13,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52113071: out of gas
+09/22/2022 11:24:13,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 11:24:15,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 3
+09/22/2022 11:24:16,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52113104: out of gas
+09/22/2022 11:24:16,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 11:24:17,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 4
+09/22/2022 11:24:20,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52113047: out of gas
+09/22/2022 11:24:20,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 11:24:20,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 5
+09/22/2022 11:24:23,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52113071: out of gas
+09/22/2022 11:24:23,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 11:24:23,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 6
+09/22/2022 11:24:23,ERROR,MARGINX--failed to open long position: account sequence mismatch, expected 6, got 5: incorrect account sequence
+09/22/2022 11:24:23,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 01:37:22,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 01:37:22,INFO,Connected to database fxdex
+09/22/2022 01:37:23,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 01:37:23,INFO,Connected to database fxdex
+09/22/2022 01:37:23,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 01:37:23,INFO,Connected to database fxdex
+09/22/2022 01:37:23,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 01:41:02,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 01:41:02,INFO,Connected to database fxdex
+09/22/2022 01:41:02,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 01:41:02,INFO,Connected to database fxdex
+09/22/2022 01:41:02,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 01:41:02,INFO,Connected to database fxdex
+09/22/2022 01:41:02,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 01:43:21,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 7
+09/22/2022 01:43:24,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52113044: out of gas
+09/22/2022 01:43:24,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 01:45:11,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.77497484, Amount: 58.96, OrderId: 8
+09/22/2022 01:52:54,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 01:52:54,INFO,Connected to database fxdex
+09/22/2022 01:52:54,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 01:52:54,INFO,Connected to database fxdex
+09/22/2022 01:52:54,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 01:52:54,INFO,Connected to database fxdex
+09/22/2022 01:52:54,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 01:53:54,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 9
+09/22/2022 01:53:54,ERROR,MARGINX--failed to get account sequence due to error: 'NoneType' object has no attribute 'sequence' of type <class 'AttributeError'>
+09/22/2022 01:53:54,ERROR,MARGINX--failed to open long position: account sequence mismatch, expected 7, got 0: incorrect account sequence
+09/22/2022 01:53:54,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 01:55:32,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 01:55:32,INFO,Connected to database fxdex
+09/22/2022 01:55:32,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 01:55:32,INFO,Connected to database fxdex
+09/22/2022 01:55:32,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 01:55:32,INFO,Connected to database fxdex
+09/22/2022 01:55:32,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 01:55:53,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 10
+09/22/2022 01:55:56,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52113047: out of gas
+09/22/2022 01:55:56,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 02:03:25,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 02:03:25,INFO,Connected to database fxdex
+09/22/2022 02:03:25,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 02:03:25,INFO,Connected to database fxdex
+09/22/2022 02:03:25,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 02:03:25,INFO,Connected to database fxdex
+09/22/2022 02:03:25,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 02:06:00,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 6.7, OrderId: 12
+09/22/2022 02:06:01,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52113104: out of gas
+09/22/2022 02:06:01,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 02:06:33,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 13
+09/22/2022 02:06:35,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52113104: out of gas
+09/22/2022 02:06:35,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 02:07:17,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 02:07:17,INFO,Connected to database fxdex
+09/22/2022 02:07:18,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 02:07:18,INFO,Connected to database fxdex
+09/22/2022 02:07:18,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 02:07:18,INFO,Connected to database fxdex
+09/22/2022 02:07:18,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 02:14:39,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 02:14:39,INFO,Connected to database fxdex
+09/22/2022 02:14:39,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 02:14:39,INFO,Connected to database fxdex
+09/22/2022 02:14:39,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 02:14:39,INFO,Connected to database fxdex
+09/22/2022 02:14:39,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 02:15:28,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 14
+09/22/2022 02:15:30,ERROR,MARGINX--failed to open long position: out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52087559: out of gas
+09/22/2022 02:15:30,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 02:17:18,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 02:17:18,INFO,Connected to database fxdex
+09/22/2022 02:17:18,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 02:17:18,INFO,Connected to database fxdex
+09/22/2022 02:17:18,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 02:17:18,INFO,Connected to database fxdex
+09/22/2022 02:17:18,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 02:17:29,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.77497484, Amount: 14.74, OrderId: 15
+09/22/2022 02:18:12,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 6.7, OrderId: 16
+09/22/2022 02:18:13,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.804926, Amount: 6.7, OrderId: ID-336204-11
+09/22/2022 02:18:16,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 7.37, OrderId: 17
+09/22/2022 02:18:20,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.809948, Amount: 7.37, OrderId: ID-336206-5
+09/22/2022 02:18:32,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.77497484, Amount: 13.4, OrderId: 18
+09/22/2022 02:18:38,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 156.79335, Amount: 13.4, OrderId: ID-336211-3
+09/22/2022 02:21:51,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 02:21:51,INFO,Connected to database fxdex
+09/22/2022 02:21:51,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 02:21:51,INFO,Connected to database fxdex
+09/22/2022 02:21:51,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 02:21:51,INFO,Connected to database fxdex
+09/22/2022 02:21:51,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 02:22:02,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.77497484, Amount: 7.37, OrderId: 19
+09/22/2022 02:22:02,ERROR,MARGINX--failed to close long position: your pending quantity is 0.000000, available close position quantity is 0.670000: wrong position size
+09/22/2022 02:22:02,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/22/2022 02:22:26,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 02:22:26,INFO,Connected to database fxdex
+09/22/2022 02:22:26,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 02:22:26,INFO,Connected to database fxdex
+09/22/2022 02:22:26,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 02:22:26,INFO,Connected to database fxdex
+09/22/2022 02:22:26,INFO,chain_id: MarginX-Testnet-BTC
+09/22/2022 02:23:57,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 8.039, OrderId: 20
+09/22/2022 02:23:59,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.818754, Amount: 8.039, OrderId: ID-336308-9
+09/22/2022 02:36:01,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 20.1, OrderId: 21
+09/22/2022 02:36:04,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.828364, Amount: 20.1, OrderId: ID-336526-5
+09/22/2022 02:37:51,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 20.1, OrderId: 22
+09/22/2022 02:37:54,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.839952, Amount: 20.1, OrderId: ID-336559-9
+09/22/2022 02:55:43,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 6.7, OrderId: 23
+09/22/2022 02:55:44,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.847382, Amount: 6.7, OrderId: ID-336881-9
+09/22/2022 02:55:55,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 6.7, OrderId: 24
+09/22/2022 02:55:58,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.851919, Amount: 6.7, OrderId: ID-336885-3
+09/22/2022 03:00:59,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 8.24, OrderId: 25
+09/22/2022 03:01:01,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.857116, Amount: 8.24, OrderId: ID-336976-9

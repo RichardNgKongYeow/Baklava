@@ -17,12 +17,12 @@ pair_info = {
         },
     1:{
         "pair":"AAPL:USDT",
-        "address":"0x01a98b5eF7D34b5e60dbF89cff73b6f6aE5162DD",
+        "address":"0x33a922c23Fe61b6D05AC2De88b7714809c0faD44",
         "chain_id":"aapl"
     },
     2:{
         "pair":"BTC:USDT",
-        "address":"0x33a922c23Fe61b6D05AC2De88b7714809c0faD44",
+        "address":"0x01a98b5eF7D34b5e60dbF89cff73b6f6aE5162DD",
         "chain_id":"btc"
     },
     # 3:{
