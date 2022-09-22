@@ -1,6 +1,5 @@
 from itertools import chain
 from subprocess import list2cmdline
-from turtle import position
 import unittest
 from decimal import Decimal
 import utils

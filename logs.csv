@@ -1,0 +1,8 @@
+09/22/2022 10:37:54,CRITICAL,Unable to initialise wallet due to error: String value expected of type <class 'eth_utils.exceptions.ValidationError'>
+09/22/2022 10:39:41,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/22/2022 10:39:41,INFO,Connected to database fxdex
+09/22/2022 10:39:41,INFO,chain_id: MarginX-Testnet-TSLA
+09/22/2022 10:39:41,INFO,Connected to database fxdex
+09/22/2022 10:39:41,INFO,chain_id: MarginX-Testnet-AAPL
+09/22/2022 10:39:41,INFO,Connected to database fxdex
+09/22/2022 10:39:41,INFO,chain_id: MarginX-Testnet-BTC
