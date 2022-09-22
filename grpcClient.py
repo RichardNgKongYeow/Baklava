@@ -2,8 +2,9 @@ from itertools import chain
 from subprocess import list2cmdline
 from turtle import position
 import unittest
+from decimal import Decimal
+import utils
 
-from eth_account import Account
 
 from fx_py_sdk import wallet
 from fx_py_sdk.grpc_client import GRPCClient
@@ -15,96 +16,282 @@ import decimal
 from fx_py_sdk.codec.cosmos.tx.v1beta1.service_pb2 import BROADCAST_MODE_BLOCK, BROADCAST_MODE_SYNC
 from google.protobuf.json_format import MessageToJson
 import json
+import MarginX
+import constants
 
 from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
 
-chain_ids = ["aapl",
-"amzn",
-"btc",
-"fb",
-"fx",
-"goog",
-"iwm",
-"nflx",
-"spy",
-"tqqq",
-"tsla"]
+import logging
+
+class grpcClient():
+    pair_info = constants.pair_info
+    
+    def __init__(self,account:object,pair_index:int):
+        
+        self.pair_index = pair_index
+        self.pair_id = self.pair_info[pair_index]["pair"]
+        self.address = self.pair_info[pair_index]["address"]
+        self.chain_id = self.pair_info[pair_index]["chain_id"]
+        
+        
+        self.account = account
+        self.client = None
+        self.marginx_chain_id = None
+        self.account.info = None
+        self.gas_price = None
+        self.tx_builder = None
+
+
+        
+    def initialise_client(self):
+        try:
+            # client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
+            self.client = GRPCClient(f"https://testnet-{self.chain_id}-grpc.marginx.io:9090")
+            self.marginx_chain_id = self.client.query_chain_id()
+            logging.info('chain_id: {}'.format(self.marginx_chain_id))
+        except Exception as e:
+            logging.critical("MARGINX--Unable to initialise {} client due to error: {} of type {}".format(self.chain_id, e,type(e)))
 
 
 
-# client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
-def init_GRPCClient(chain_id:str)->object:
-    """
-    initialiase a client
-    """
-    return GRPCClient(f"https://testnet-{chain_id}-grpc.marginx.io:9090")
+    def initialise_client_and_get_all_info(self):
+        self.initialise_client()
+        self.get_account_info()
+        self.query_gas_price()
+        self.build_tx_builder()
 
 
-def convert_to_lower_case(string:str)->str:
-    return string.lower()
+# --------------------------------------account info--------------------------------------
 
-def init_all_clients(chain_ids:list)->list:
-    """
-    initialiase all clients objected to be executed later and return an array
-    of clients
-    """
-    client_list=[]
-    for chain_id in chain_ids:
-        client = init_GRPCClient(chain_id)
-        chain_id = client.query_chain_id()
-        print('chain_id:', chain_id)
-        client_list.append(client)
-    return client_list
+    def get_account_info(self)->object:
+        """
+        return account_info needed for TxBuilder
+        """
+        try:
+            self.account_info = self.client.query_account_info(self.account.address)
+        except Exception as e:
+            logging.error("MARGINX--failed to get account info due to error: {} of type {}".format(e,type(e)))
 
-
-
-def get_client(chain_id:str,client_list:list)->object:
-    """
-    get clients based on the index from the chain_id array
-    """
-    index = chain_ids.index(chain_id)
-    return client_list[index]
-
-def init_wallet()->object:
-    """
-    initialise wallet and return the account object which will later be used for
-    TxBuilder
-    """
-    seed = "gesture surface wave update party conduct husband lab core zone visa body phrase brother water team very cheap suspect sword material page decrease kiwi"
-
-    # Create TxBuilder
-    Account.enable_unaudited_hdwallet_features()
-    account = Account.from_mnemonic(seed)
-    print('address: ', account.address)
-    return account
-
-def get_account_info(client:object, account:object)->object:
-    """
-    return account_info needed for TxBuilder
-    """
-    account_info = client.query_account_info(account.address)
-    print('account number:', account_info.account_number,
-            'sequence:', account_info.sequence)
-    return account_info
-
-def get_tx_builder(chain_id,account,account_info)->object:
-    """
-    return Txbuilder object
-    """
-    tx_builder = TxBuilder(account, None, chain_id, account_info.account_number, Coin(
-        amount='600', denom='USDT'))
-    return tx_builder
-
-def get_account_sequence(account_info:object)->int:
-    # TODO manually added a 100 to acct sequence to fix immediate error
-    """
-    return an account sequence int
-    """
-    return account_info.sequence
+    def get_account_sequence(self)->int:
+        """
+        return an account sequence int
+        """
+        try:
+            self.get_account_info()
+            return self.account_info.sequence
+        except Exception as e:
+            logging.error("MARGINX--failed to get account sequence due to error: {} of type {}".format(e,type(e)))
 
 
+    def query_gas_price(self):
+        # query gas price
+        gas_prices = self.client.query_gas_price()
+        gas_denom = "USDT"
+        self.gas_price = next((gas for gas in gas_prices if gas.denom == gas_denom), None)
+        if self.gas_price is None:
+            raise ValueError(f"Could not find on-chain gas pricing for denom: {gas_denom}")
 
-from decimal import Decimal
+    def build_tx_builder(self):
+        # build tx_builder
+        try:
+            self.tx_builder = TxBuilder(account = self.account, 
+            private_key = None, chain_id = self.marginx_chain_id, 
+            account_number = self.account_info.account_number, gas_price = self.gas_price)
+        except Exception as e:
+            logging.error("MARGINX--failed to create tx_builder due to error: {} of type {}".format(e,type(e)))
+
+# ===================================querying positions info==============================
+    def query_open_positions(self)->list:
+            """
+            query all open positions (list) of an account given a pair_id and corresponding client
+            """
+            try:
+                positions = self.client.query_positions(
+                        owner=self.account.address, pair_id=self.pair_id)
+                return positions
+            except Exception as e:
+                logging.error("MARGINX--unable to query open positions due to error: {} of type {}".format(e,type(e)))
+
+    
+    def get_open_long_position(self)->list:
+        """
+        get open long position info (list)
+        """
+        positions = self.query_open_positions()
+        try:
+            if len(positions) > 0:
+                for position in positions:
+                    """
+                    [
+                        Position(
+                            Id="4",
+                            Owner="0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72",
+                            PairId="AAPL:USDT",
+                            Direction="long",
+                            EntryPrice=Decimal("157.930376"),
+                            MarkPrice=Decimal("156.888"),
+                            LiquidationPrice=Decimal("2.762266"),
+                            BaseQuantity=Decimal("38.433"),
+                            Margin=Decimal("5966.230016"),
+                            Leverage=1,
+                            UnrealizedPnl=Decimal("-40.061636"),
+                            MarginRate=Decimal("0.025437"),
+                            InitialMargin=Decimal("40574.393601"),
+                            PendingOrderQuantity=Decimal("0"),
+                        )
+                    ]
+                    """
+                    if position[3] == "long":
+                        return position
+        except Exception as e:
+            logging.error("MARGINX--unable to get long position due to error: {} of type {}".format(e,type(e)))
+
+    def get_open_long_position_amount(self)->Decimal:
+        """
+        return the open long position amount in int in Decimal form 
+        """
+        open_position = self.get_open_long_position()
+        try:  
+            if open_position == None:
+                open_position_amount = 0
+            else:
+                open_position_amount = Decimal(open_position[7])
+            return open_position_amount
+        except Exception as e:
+            logging.error("MARGINX--Can't get open long position amount due to {} of type {}".format(e,type(e)))
+
+
+    # --------------------------------execute marginx transactions---------------------------
+    async def open_long_mx_position(self, direction, amount):
+        """
+        input trade info and execute order on marginX
+        """
+        acc_seq = self.get_account_sequence()
+        client = self.client
+        pair_id = self.pair_id
+        
+        try:
+            tx_response = client.create_order(
+                tx_builder=self.tx_builder,
+                # need to convert pid into list of str
+                pair_id=pair_id,
+                # ordertype
+                direction=direction,
+                # tokenprice
+                price=0,
+                # synTokenAmount
+                base_quantity=Decimal(utils.from3dp(amount)),
+                leverage=1,
+                acc_seq=acc_seq,
+                mode=BROADCAST_MODE_BLOCK,
+            )
+            events = json.loads(tx_response.raw_log)[0]['events']
+            return events
+        except:
+            logging.error("MARGINX--failed to open long position: {}".format(tx_response.raw_log))
+
+        
+    async def close_long_open_position(self, amount):
+        pair_id = self.pair_id
+        open_position = self.get_open_long_position()
+        acc_seq = self.get_account_sequence()
+
+        try:
+            tx_response = self.client.close_position(
+                tx_builder = self.tx_builder, 
+                pair_id = pair_id, 
+                position_id = open_position.Id, 
+                price = decimal.Decimal(0), 
+                base_quantity = Decimal(utils.from3dp(amount)), 
+                full_close = False, 
+                acc_seq = acc_seq, 
+                market_close = True, 
+                mode=BROADCAST_MODE_BLOCK)
+            events = json.loads(tx_response.raw_log)[0]['events']
+            return events
+        except:
+            logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+
+
+    def get_mx_order_dict(self, events:list)->dict:
+        """
+        match this orderid with 
+        price i have to loop through dex.order_fill ->agggregate the price
+        """
+
+        order_dict = {}
+        for event in events:
+            if 'type' in event and event['type']=='dex.order_fill':
+                for attr in event['attributes']:
+                    if attr['key']=='deal_price':
+                        price = attr['value']
+                    elif attr['key']=='order_id':
+                        order_id = attr['value']
+                        order_dict[order_id] = price
+        return order_dict
+
+
+    def get_mx_price(self, order_id:str, order_dict:dict):
+        """
+        get deal price from order_dict
+        """
+        try:
+            return order_dict[order_id]
+        except Exception as e:
+            logging.error("MARGINX--failed to get marginx price due to error: {} of type {}".format(e,type(e)))
+
+
+
+    def get_order_info(self,events:list)->tuple:
+        """
+        from events fx.dex.Order get total filled qty & get orderid
+        """
+
+        try:
+            for event in events:
+                if 'type' in event and event['type']=='fx.dex.Order':
+                    for attr in event['attributes']:
+                        if attr['key'] == 'order_id':
+                            order_id_mx = attr['value']
+                        elif attr['key'] == 'filled_quantity':
+                            filled_quantity_mx = attr['value']
+                        elif attr['key'] == 'pair_id':
+                            pair_id_mx = attr['value']
+                        elif attr['key'] == 'direction':
+                            direction_mx = attr['value']
+                
+                
+                # this is for closing open orders
+                elif 'type' in event and event['type']=='dex.close_position_order':
+                    for attr in event['attributes']:
+                        if attr['key'] == 'order_id':
+                            order_id_mx = attr['value']
+                        elif attr['key'] == 'filled_quantity':
+                            filled_quantity_mx = attr['value']
+                        elif attr['key'] == 'pair_id':
+                            pair_id_mx = attr['value']
+                        elif attr['key'] == 'direction':
+                            direction_mx = attr['value']
+            return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
+        except Exception as e:
+            logging.error("MARGINX--failed to get marginx order info due to error: {} of type {}".format(e,type(e)))
+    
+
+    async def log_order_info(self,events):
+        # TODO check for other fees?
+        try:
+
+            pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx = self.get_order_info(events)
+            order_dict = self.get_mx_order_dict(events)
+            price_mx = self.get_mx_price(order_id_mx, order_dict)
+            # print(pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx,price_mx)
+            logging.info("Execution of order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id_mx, direction_mx, price_mx, filled_quantity_mx, order_id_mx))
+        except:
+            pass
+    
+
+
+
 # # 1. Market order
 # acc_seq = get_account_sequence()
 # tx_response = client.create_order(

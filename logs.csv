@@ -1,0 +1,803 @@
+09/19/2022 02:52:57,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 02:52:57,INFO,Connected to database fxdex
+09/19/2022 02:52:59,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 02:52:59,INFO,Connected to database fxdex
+09/19/2022 02:53:01,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 02:53:01,INFO,Connected to database fxdex
+09/19/2022 02:53:02,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 02:53:26,INFO,Listening to order of Pair: TSLA:USDT, Direction: MarketBuy, Price: 1303.6580731346, Amount: 0.066, OrderId: 144
+09/19/2022 02:53:28,ERROR,marginx failed to open long position: failed to execute message; message index: 0: orderbook has not enough orders to match
+09/19/2022 02:53:28,ERROR,failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 02:53:49,INFO,Listening to order of Pair: TSLA:USDT, Direction: MarketBuy, Price: 1303.6580731346, Amount: 0.066, OrderId: 145
+09/19/2022 02:53:52,ERROR,marginx failed to open long position: failed to execute message; message index: 0: orderbook has not enough orders to match
+09/19/2022 02:53:52,ERROR,failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 03:13:08,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 03:13:08,INFO,Connected to database fxdex
+09/19/2022 03:13:10,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 03:13:10,INFO,Connected to database fxdex
+09/19/2022 03:13:12,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 03:13:12,INFO,Connected to database fxdex
+09/19/2022 03:13:14,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 03:13:39,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.4535740031, Amount: 8.802, OrderId: 61
+09/19/2022 03:13:44,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 158.299012, Amount: 8.802, OrderId: ID-262107-3
+09/19/2022 03:14:05,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.4535740031, Amount: 8.802, OrderId: 62
+09/19/2022 03:14:07,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 158.844843, Amount: 8.802, OrderId: ID-262114-18
+09/19/2022 03:14:37,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.31046931, Amount: 8.892, OrderId: 63
+09/19/2022 03:14:40,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 03:16:21,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.31046931, Amount: 8.892, OrderId: 64
+09/19/2022 03:16:25,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 03:18:47,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.4535740031, Amount: 16.004, OrderId: 65
+09/19/2022 03:18:53,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 158.080274, Amount: 16.004, OrderId: ID-262199-3
+09/19/2022 03:19:59,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.31046931, Amount: 16.167, OrderId: 66
+09/19/2022 03:20:03,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 03:28:05,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 03:28:05,INFO,Connected to database fxdex
+09/19/2022 03:28:07,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 03:28:07,INFO,Connected to database fxdex
+09/19/2022 03:28:08,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 03:28:09,INFO,Connected to database fxdex
+09/19/2022 03:28:10,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 03:28:24,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.4535740031, Amount: 8.802, OrderId: 67
+09/19/2022 03:28:27,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 158.114122, Amount: 8.802, OrderId: ID-262371-8
+09/19/2022 03:29:26,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.31046931, Amount: 8.892, OrderId: 68
+09/19/2022 03:30:28,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.31046931, Amount: 8.892, OrderId: 69
+09/19/2022 03:30:29,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 181, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 191, in close_long_open_position
+    logging.error("marginx failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/19/2022 03:30:29,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 181, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 191, in close_long_open_position
+    logging.error("marginx failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/19/2022 03:31:07,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.31046931, Amount: 8.892, OrderId: 70
+09/19/2022 03:34:29,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 03:34:29,INFO,Connected to database fxdex
+09/19/2022 03:34:31,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 03:34:31,INFO,Connected to database fxdex
+09/19/2022 03:34:32,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 03:34:32,INFO,Connected to database fxdex
+09/19/2022 03:34:33,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 03:34:49,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.4535740031, Amount: 8.402000000000001, OrderId: 71
+09/19/2022 03:34:51,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 157.374376, Amount: 8.402, OrderId: ID-262486-9
+09/19/2022 03:35:16,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.31046931, Amount: 8.488, OrderId: 72
+09/19/2022 03:35:21,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 03:35:33,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.31046931, Amount: 8.488, OrderId: 73
+09/19/2022 03:35:38,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 03:40:33,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 03:40:33,INFO,Connected to database fxdex
+09/19/2022 03:40:34,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 03:40:35,INFO,Connected to database fxdex
+09/19/2022 03:40:36,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 03:40:36,INFO,Connected to database fxdex
+09/19/2022 03:40:37,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 03:40:44,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.23757708, Amount: 8.488, OrderId: 74
+09/19/2022 03:40:49,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 03:40:52,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.23757708, Amount: 8.488, OrderId: 75
+09/19/2022 03:40:55,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 04:02:12,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 04:02:12,INFO,Connected to database fxdex
+09/19/2022 04:02:13,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 04:02:13,INFO,Connected to database fxdex
+09/19/2022 04:02:15,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 04:02:15,INFO,Connected to database fxdex
+09/19/2022 04:02:16,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 04:02:27,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.23757708, Amount: 8.488, OrderId: 76
+09/19/2022 04:02:27,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.23757708, Amount: 8.488, OrderId: 76
+09/19/2022 04:02:29,ERROR,marginx failed to close long position: 
+09/19/2022 04:02:29,ERROR,failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:02:32,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.488, OrderId: ID-262983-6
+09/19/2022 04:03:06,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.23757708, Amount: 8.488, OrderId: 77
+09/19/2022 04:03:06,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.23757708, Amount: 8.488, OrderId: 77
+09/19/2022 04:03:07,ERROR,marginx failed to close long position: 
+09/19/2022 04:03:07,ERROR,failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:03:08,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 04:05:56,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 04:05:56,INFO,Connected to database fxdex
+09/19/2022 04:05:58,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 04:05:58,INFO,Connected to database fxdex
+09/19/2022 04:05:59,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 04:06:00,INFO,Connected to database fxdex
+09/19/2022 04:06:01,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 04:06:21,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.23757708, Amount: 8.488, OrderId: 78
+09/19/2022 04:06:23,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.23757708, Amount: 8.488, OrderId: 78
+09/19/2022 04:06:25,ERROR,marginx failed to close long position: 
+09/19/2022 04:06:25,ERROR,failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:06:26,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.488, OrderId: ID-263053-6
+09/19/2022 04:06:51,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3799528508, Amount: 103.95, OrderId: 79
+09/19/2022 04:06:52,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3799528508, Amount: 103.95, OrderId: 79
+09/19/2022 04:06:56,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 159.0357, Amount: 103.95, OrderId: ID-263062-1
+09/19/2022 04:14:05,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 04:14:05,INFO,Connected to database fxdex
+09/19/2022 04:14:06,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 04:14:07,INFO,Connected to database fxdex
+09/19/2022 04:14:08,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 04:14:08,INFO,Connected to database fxdex
+09/19/2022 04:14:09,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 04:14:20,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 80
+09/19/2022 04:14:21,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 80
+09/19/2022 04:14:25,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 04:14:25,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.892, OrderId: ID-263196-1
+09/19/2022 04:14:40,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 81
+09/19/2022 04:14:42,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 81
+09/19/2022 04:14:42,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 04:14:45,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.892, OrderId: ID-263202-7
+09/19/2022 04:15:02,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 82
+09/19/2022 04:15:03,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 82
+09/19/2022 04:15:04,ERROR,marginx failed to close long position: 
+09/19/2022 04:15:04,ERROR,failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:15:06,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.892, OrderId: ID-263208-5
+09/19/2022 04:15:34,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 04:15:34,INFO,Connected to database fxdex
+09/19/2022 04:15:35,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 04:15:35,INFO,Connected to database fxdex
+09/19/2022 04:15:37,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 04:15:37,INFO,Connected to database fxdex
+09/19/2022 04:15:38,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 04:15:45,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 83
+09/19/2022 04:15:46,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 83
+09/19/2022 04:15:47,ERROR,marginx failed to close long position: 
+09/19/2022 04:15:47,ERROR,failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:15:49,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.892, OrderId: ID-263221-2
+09/19/2022 04:23:34,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 84
+09/19/2022 04:23:34,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 84
+09/19/2022 04:23:36,ERROR,MARGINX--failed to close long position: 
+09/19/2022 04:23:36,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:23:40,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 04:23:49,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 85
+09/19/2022 04:23:50,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 85
+09/19/2022 04:23:51,ERROR,MARGINX--failed to close long position: 
+09/19/2022 04:23:51,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:23:53,ERROR,failed to get marginx order info due to error: local variable 'pair_id_mx' referenced before assignment of type <class 'UnboundLocalError'>
+09/19/2022 04:23:55,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 86
+09/19/2022 04:23:56,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 86
+09/19/2022 04:23:57,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 178, in close_long_open_position
+    tx_response = self.client.close_position(
+  File "/Users/richardng/Desktop/Baklava/env/lib/python3.9/site-packages/fx_py_sdk-0.1-py3.9.egg/fx_py_sdk/grpc_client.py", line 748, in close_position
+    return self.broadcast_tx(tx, mode)
+  File "/Users/richardng/Desktop/Baklava/env/lib/python3.9/site-packages/fx_py_sdk-0.1-py3.9.egg/fx_py_sdk/grpc_client.py", line 845, in broadcast_tx
+    response = TxClient(self.channel).BroadcastTx(
+  File "/Users/richardng/Desktop/Baklava/env/lib/python3.9/site-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/Users/richardng/Desktop/Baklava/env/lib/python3.9/site-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNKNOWN
+	details = "failed to subscribe to tx: already subscribed"
+	debug_error_string = "{"created":"@1663575837.382856000","description":"Error received from peer ipv4:34.195.136.181:9090","file":"src/core/lib/surface/call.cc","file_line":1064,"grpc_message":"failed to subscribe to tx: already subscribed","grpc_status":2}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 192, in close_long_open_position
+    logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/19/2022 04:23:57,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 150, in open_long_mx_position
+    tx_response = client.create_order(
+  File "/Users/richardng/Desktop/Baklava/env/lib/python3.9/site-packages/fx_py_sdk-0.1-py3.9.egg/fx_py_sdk/grpc_client.py", line 718, in create_order
+    tx_response = self.broadcast_tx(tx, mode)
+  File "/Users/richardng/Desktop/Baklava/env/lib/python3.9/site-packages/fx_py_sdk-0.1-py3.9.egg/fx_py_sdk/grpc_client.py", line 845, in broadcast_tx
+    response = TxClient(self.channel).BroadcastTx(
+  File "/Users/richardng/Desktop/Baklava/env/lib/python3.9/site-packages/grpc/_channel.py", line 946, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/Users/richardng/Desktop/Baklava/env/lib/python3.9/site-packages/grpc/_channel.py", line 849, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNKNOWN
+	details = "failed to subscribe to tx: already subscribed"
+	debug_error_string = "{"created":"@1663574813.185473000","description":"Error received from peer ipv4:34.195.136.181:9090","file":"src/core/lib/surface/call.cc","file_line":1064,"grpc_message":"failed to subscribe to tx: already subscribed","grpc_status":2}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 71, in get_item_from_queue_and_execute
+    events = await client.open_long_mx_position(direction, amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 168, in open_long_mx_position
+    logging.error("MARGINX--failed to open long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/19/2022 04:24:00,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.892, OrderId: ID-263368-1
+09/19/2022 04:28:46,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 04:28:46,INFO,Connected to database fxdex
+09/19/2022 04:28:48,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 04:28:48,INFO,Connected to database fxdex
+09/19/2022 04:28:49,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 04:28:50,INFO,Connected to database fxdex
+09/19/2022 04:28:51,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 04:29:07,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 87
+09/19/2022 04:29:07,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 87
+09/19/2022 04:29:10,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.892, OrderId: ID-263461-9
+09/19/2022 04:29:11,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 88
+09/19/2022 04:29:13,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 88
+09/19/2022 04:29:16,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 89
+09/19/2022 04:29:17,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.892, OrderId: ID-263463-6
+09/19/2022 04:29:17,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 89
+09/19/2022 04:29:20,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.892, OrderId: ID-263464-4
+09/19/2022 04:29:51,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 90
+09/19/2022 04:29:53,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 90
+09/19/2022 04:29:57,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.623897, Amount: 8.892, OrderId: ID-263475-13
+09/19/2022 04:30:52,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 91
+09/19/2022 04:30:52,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 91
+09/19/2022 04:30:53,ERROR,MARGINX--failed to close long position: your pending quantity is 0.000000, available close position quantity is 3.001000: wrong position size
+09/19/2022 04:30:53,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:31:33,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 92
+09/19/2022 04:31:34,ERROR,MARGINX--failed to close long position: your pending quantity is 0.000000, available close position quantity is 3.001000: wrong position size
+09/19/2022 04:31:34,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:31:35,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 92
+09/19/2022 04:31:44,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 93
+09/19/2022 04:31:46,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 93
+09/19/2022 04:31:47,ERROR,MARGINX--failed to close long position: your pending quantity is 0.000000, available close position quantity is 3.001000: wrong position size
+09/19/2022 04:31:47,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:32:49,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3033198462038259, Amount: 8.802, OrderId: 94
+09/19/2022 04:32:49,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3033198462038259, Amount: 8.802, OrderId: 94
+09/19/2022 04:32:49,ERROR,MARGINX--failed to get account sequence due to error: 'NoneType' object has no attribute 'sequence' of type <class 'AttributeError'>
+09/19/2022 04:32:51,ERROR,MARGINX--failed to open long position: account sequence mismatch, expected 39, got 0: incorrect account sequence
+09/19/2022 04:32:51,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/19/2022 04:41:21,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 04:41:21,INFO,Connected to database fxdex
+09/19/2022 04:41:22,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 04:41:23,INFO,Connected to database fxdex
+09/19/2022 04:41:24,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 04:41:24,INFO,Connected to database fxdex
+09/19/2022 04:41:25,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 04:41:43,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3033198462038259, Amount: 8.802, OrderId: 95
+09/19/2022 04:41:43,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3033198462038259, Amount: 8.802, OrderId: 95
+09/19/2022 04:41:46,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 157.712032, Amount: 8.802, OrderId: ID-263687-14
+09/19/2022 04:42:31,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.488, OrderId: 96
+09/19/2022 04:42:31,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.488, OrderId: 96
+09/19/2022 04:42:35,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.806974, Amount: 8.488, OrderId: ID-263702-6
+09/19/2022 04:43:01,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3033198462038259, Amount: 8.802, OrderId: 97
+09/19/2022 04:43:02,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 158.203375, Amount: 8.802, OrderId: ID-263710-11
+09/19/2022 04:47:15,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.16170281802359, Amount: 8.892, OrderId: 98
+09/19/2022 04:47:19,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 154.8, Amount: 8.892, OrderId: ID-263786-9
+09/19/2022 04:47:40,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3033198462038259, Amount: 8.802, OrderId: 99
+09/19/2022 04:47:42,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 157.334754, Amount: 8.802, OrderId: ID-263793-9
+09/19/2022 05:19:22,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 05:19:22,INFO,Connected to database fxdex
+09/19/2022 05:19:24,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 05:19:24,INFO,Connected to database fxdex
+09/19/2022 05:19:25,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 05:19:25,INFO,Connected to database fxdex
+09/19/2022 05:19:26,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 05:19:38,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3751779106177017, Amount: 8.802, OrderId: 100
+09/19/2022 05:19:42,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 158.406158, Amount: 8.802, OrderId: ID-264368-1
+09/19/2022 05:20:45,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/19/2022 05:20:45,INFO,Connected to database fxdex
+09/19/2022 05:20:46,INFO,chain_id: MarginX-Testnet-TSLA
+09/19/2022 05:20:47,INFO,Connected to database fxdex
+09/19/2022 05:20:48,INFO,chain_id: MarginX-Testnet-AAPL
+09/19/2022 05:20:48,INFO,Connected to database fxdex
+09/19/2022 05:20:49,INFO,chain_id: MarginX-Testnet-BTC
+09/19/2022 05:20:56,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3751779106177017, Amount: 8.802, OrderId: 101
+09/19/2022 05:20:59,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 158.996035, Amount: 8.802, OrderId: ID-264391-8
+09/20/2022 01:52:46,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 01:52:46,INFO,Connected to database fxdex
+09/20/2022 01:52:47,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 01:52:47,INFO,Connected to database fxdex
+09/20/2022 01:52:49,CRITICAL,MARGINX--Unable to initialise client due to error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Received http2 header with status: 502"
+	debug_error_string = "{"created":"@1663653169.138958000","description":"Received http2 :status header with non-200 OK status","file":"src/core/ext/filters/http/client/http_client_filter.cc","file_line":132,"grpc_message":"Received http2 header with status: 502","grpc_status":14,"value":"502"}"
+> of type <class 'grpc._channel._InactiveRpcError'>
+09/20/2022 01:52:49,INFO,Connected to database fxdex
+09/20/2022 01:52:51,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 01:53:12,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.37407723855628536, Amount: 8.802, OrderId: 102
+09/20/2022 01:53:12,ERROR,MARGINX--failed to create tx_builder due to error: 'NoneType' object has no attribute 'account_number' of type <class 'AttributeError'>
+09/20/2022 01:53:12,ERROR,MARGINX--failed to get account sequence due to error: 'NoneType' object has no attribute 'sequence' of type <class 'AttributeError'>
+09/20/2022 01:53:56,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 01:53:56,INFO,Connected to database fxdex
+09/20/2022 01:53:57,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 01:53:57,INFO,Connected to database fxdex
+09/20/2022 01:53:59,CRITICAL,MARGINX--Unable to initialise client due to error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Received http2 header with status: 502"
+	debug_error_string = "{"created":"@1663653239.130138000","description":"Received http2 :status header with non-200 OK status","file":"src/core/ext/filters/http/client/http_client_filter.cc","file_line":132,"grpc_message":"Received http2 header with status: 502","grpc_status":14,"value":"502"}"
+> of type <class 'grpc._channel._InactiveRpcError'>
+09/20/2022 01:53:59,INFO,Connected to database fxdex
+09/20/2022 01:54:00,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 01:54:11,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.37407723855628536, Amount: 8.802, OrderId: 103
+09/20/2022 01:54:11,ERROR,MARGINX--failed to create tx_builder due to error: 'NoneType' object has no attribute 'account_number' of type <class 'AttributeError'>
+09/20/2022 01:54:12,ERROR,MARGINX--failed to get account sequence due to error: 'NoneType' object has no attribute 'sequence' of type <class 'AttributeError'>
+09/20/2022 01:55:43,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 01:55:43,INFO,Connected to database fxdex
+09/20/2022 01:55:44,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 01:55:45,INFO,Connected to database fxdex
+09/20/2022 01:55:46,CRITICAL,MARGINX--Unable to initialise aapl client due to error: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Received http2 header with status: 502"
+	debug_error_string = "{"created":"@1663653346.291045000","description":"Received http2 :status header with non-200 OK status","file":"src/core/ext/filters/http/client/http_client_filter.cc","file_line":132,"grpc_message":"Received http2 header with status: 502","grpc_status":14,"value":"502"}"
+> of type <class 'grpc._channel._InactiveRpcError'>
+09/20/2022 01:55:46,INFO,Connected to database fxdex
+09/20/2022 01:55:47,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 02:14:17,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 02:14:17,INFO,Connected to database fxdex
+09/20/2022 02:14:19,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 02:14:19,INFO,Connected to database fxdex
+09/20/2022 02:14:20,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 02:14:21,INFO,Connected to database fxdex
+09/20/2022 02:14:22,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 02:14:47,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.37407723855628536, Amount: 8.802, OrderId: 104
+09/20/2022 02:14:48,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/20/2022 02:14:48,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/20/2022 03:12:24,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 03:12:24,INFO,Connected to database fxdex
+09/20/2022 03:12:25,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 03:12:25,INFO,Connected to database fxdex
+09/20/2022 03:12:26,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 03:12:27,INFO,Connected to database fxdex
+09/20/2022 03:12:28,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 03:36:51,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.37407723855628536, Amount: 8.802, OrderId: 105
+09/20/2022 03:36:53,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/20/2022 03:36:53,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/20/2022 03:37:12,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.37407723855628536, Amount: 8.802, OrderId: 106
+09/20/2022 03:37:13,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/20/2022 03:37:13,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/20/2022 04:28:02,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 04:28:02,INFO,Connected to database fxdex
+09/20/2022 04:28:04,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 04:28:04,INFO,Connected to database fxdex
+09/20/2022 04:28:05,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 04:28:05,INFO,Connected to database fxdex
+09/20/2022 04:28:07,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 04:28:45,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.37407723855628536, Amount: 8.802, OrderId: 107
+09/20/2022 04:28:46,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/20/2022 04:28:46,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/20/2022 04:33:42,INFO,Baklava Client--Listening to order of Pair: BTC:USDT, Direction: MarketBuy, Price: 19500.4222373687, Amount: 0.004, OrderId: 193
+09/20/2022 04:33:44,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/20/2022 04:33:44,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/20/2022 04:33:49,INFO,Baklava Client--Listening to order of Pair: TSLA:USDT, Direction: MarketBuy, Price: 1370.3195118392, Amount: 0.066, OrderId: 146
+09/20/2022 04:33:51,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/20/2022 04:33:51,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/20/2022 04:41:54,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 04:41:54,INFO,Connected to database fxdex
+09/20/2022 04:41:55,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 04:41:55,INFO,Connected to database fxdex
+09/20/2022 04:41:57,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 04:41:57,INFO,Connected to database fxdex
+09/20/2022 04:41:58,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 04:44:06,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 04:44:06,INFO,Connected to database fxdex
+09/20/2022 04:44:08,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 04:44:08,INFO,Connected to database fxdex
+09/20/2022 04:44:09,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 04:44:09,INFO,Connected to database fxdex
+09/20/2022 04:44:11,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 04:47:22,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 04:47:22,INFO,Connected to database fxdex
+09/20/2022 04:47:24,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 04:47:24,INFO,Connected to database fxdex
+09/20/2022 04:47:26,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 04:47:26,INFO,Connected to database fxdex
+09/20/2022 04:47:27,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 04:47:30,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 04:47:30,INFO,Connected to database fxdex
+09/20/2022 04:47:32,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 04:47:32,INFO,Connected to database fxdex
+09/20/2022 04:47:33,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 04:47:34,INFO,Connected to database fxdex
+09/20/2022 04:47:35,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 04:58:14,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 04:58:14,INFO,Connected to database fxdex
+09/20/2022 04:58:16,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 04:58:16,INFO,Connected to database fxdex
+09/20/2022 04:58:19,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 04:58:19,INFO,Connected to database fxdex
+09/20/2022 04:58:20,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 05:00:19,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 05:00:19,INFO,Connected to database fxdex
+09/20/2022 05:00:20,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 05:00:20,INFO,Connected to database fxdex
+09/20/2022 05:00:22,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 05:00:22,INFO,Connected to database fxdex
+09/20/2022 05:00:23,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 05:00:26,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 05:00:26,INFO,Connected to database fxdex
+09/20/2022 05:00:28,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 05:00:28,INFO,Connected to database fxdex
+09/20/2022 05:00:29,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 05:00:29,INFO,Connected to database fxdex
+09/20/2022 05:00:30,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 05:02:58,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 05:02:58,INFO,Connected to database fxdex
+09/20/2022 05:02:59,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 05:02:59,INFO,Connected to database fxdex
+09/20/2022 05:03:01,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 05:03:01,INFO,Connected to database fxdex
+09/20/2022 05:03:02,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 05:03:05,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 05:03:05,INFO,Connected to database fxdex
+09/20/2022 05:03:07,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 05:03:07,INFO,Connected to database fxdex
+09/20/2022 05:03:08,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 05:03:08,INFO,Connected to database fxdex
+09/20/2022 05:03:09,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 05:09:31,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 05:09:31,INFO,Connected to database fxdex
+09/20/2022 05:09:32,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 05:09:32,INFO,Connected to database fxdex
+09/20/2022 05:09:34,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 05:09:35,INFO,Connected to database fxdex
+09/20/2022 05:09:36,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 05:09:39,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 05:09:39,INFO,Connected to database fxdex
+09/20/2022 05:09:41,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 05:09:41,INFO,Connected to database fxdex
+09/20/2022 05:09:42,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 05:09:42,INFO,Connected to database fxdex
+09/20/2022 05:09:43,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 05:12:24,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 05:12:24,INFO,Connected to database fxdex
+09/20/2022 05:12:25,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 05:12:26,INFO,Connected to database fxdex
+09/20/2022 05:12:27,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 05:12:27,INFO,Connected to database fxdex
+09/20/2022 05:12:29,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 05:15:01,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 05:15:01,INFO,Connected to database fxdex
+09/20/2022 05:15:02,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 05:15:02,INFO,Connected to database fxdex
+09/20/2022 05:15:04,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 05:15:04,INFO,Connected to database fxdex
+09/20/2022 05:15:06,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 05:15:10,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 05:15:10,INFO,Connected to database fxdex
+09/20/2022 05:15:11,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 05:15:11,INFO,Connected to database fxdex
+09/20/2022 05:15:13,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 05:15:13,INFO,Connected to database fxdex
+09/20/2022 05:15:14,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 06:30:07,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 06:30:08,INFO,Connected to database fxdex
+09/20/2022 06:30:09,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 06:30:10,INFO,Connected to database fxdex
+09/20/2022 06:30:11,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 06:30:12,INFO,Connected to database fxdex
+09/20/2022 06:30:13,INFO,chain_id: MarginX-Testnet-BTC
+09/20/2022 06:30:17,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/20/2022 06:30:17,INFO,Connected to database fxdex
+09/20/2022 06:30:18,INFO,chain_id: MarginX-Testnet-TSLA
+09/20/2022 06:30:18,INFO,Connected to database fxdex
+09/20/2022 06:30:19,INFO,chain_id: MarginX-Testnet-AAPL
+09/20/2022 06:30:19,INFO,Connected to database fxdex
+09/20/2022 06:30:20,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 09:56:12,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 09:56:12,INFO,Connected to database fxdex
+09/21/2022 09:56:14,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 09:56:14,INFO,Connected to database fxdex
+09/21/2022 09:56:16,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 09:56:16,INFO,Connected to database fxdex
+09/21/2022 09:56:17,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 09:56:51,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 09:56:51,INFO,Connected to database fxdex
+09/21/2022 09:56:52,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 09:56:52,INFO,Connected to database fxdex
+09/21/2022 09:56:53,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 09:56:53,INFO,Connected to database fxdex
+09/21/2022 09:56:55,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 09:57:20,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3482277206, Amount: 8.802, OrderId: 108
+09/21/2022 09:57:21,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/21/2022 09:57:21,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/21/2022 10:12:18,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 10:12:18,INFO,Connected to database fxdex
+09/21/2022 10:12:20,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 10:12:20,INFO,Connected to database fxdex
+09/21/2022 10:12:21,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 10:12:22,INFO,Connected to database fxdex
+09/21/2022 10:12:23,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 10:12:37,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3482277206, Amount: 8.802, OrderId: 109
+09/21/2022 10:12:38,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/21/2022 10:12:38,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/21/2022 10:12:53,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3482277206, Amount: 8.802, OrderId: 110
+09/21/2022 10:12:53,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/21/2022 10:12:53,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/21/2022 10:27:55,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 10:27:55,INFO,Connected to database fxdex
+09/21/2022 10:27:57,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 10:27:57,INFO,Connected to database fxdex
+09/21/2022 10:27:59,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 10:28:00,INFO,Connected to database fxdex
+09/21/2022 10:28:02,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 10:28:11,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 111
+09/21/2022 10:28:12,ERROR,MARGINX--failed to close long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/21/2022 10:28:12,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/21/2022 10:41:55,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 10:41:55,INFO,Connected to database fxdex
+09/21/2022 10:41:56,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 10:41:56,INFO,Connected to database fxdex
+09/21/2022 10:41:58,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 10:41:58,INFO,Connected to database fxdex
+09/21/2022 10:41:59,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 10:43:45,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 10:43:45,INFO,Connected to database fxdex
+09/21/2022 10:43:46,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 10:43:46,INFO,Connected to database fxdex
+09/21/2022 10:43:47,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 10:43:47,INFO,Connected to database fxdex
+09/21/2022 10:43:48,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 10:44:05,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 112
+09/21/2022 10:44:06,ERROR,MARGINX--failed to close long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/21/2022 10:44:06,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/21/2022 11:38:08,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 11:38:08,INFO,Connected to database fxdex
+09/21/2022 11:38:09,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 11:38:09,INFO,Connected to database fxdex
+09/21/2022 11:38:11,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 11:38:11,INFO,Connected to database fxdex
+09/21/2022 11:38:13,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 11:38:38,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 113
+09/21/2022 11:38:39,ERROR,MARGINX--failed to close long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/21/2022 11:38:39,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/21/2022 11:44:41,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 11:44:41,INFO,Connected to database fxdex
+09/21/2022 11:44:42,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 11:44:43,INFO,Connected to database fxdex
+09/21/2022 11:44:44,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 11:44:44,INFO,Connected to database fxdex
+09/21/2022 11:44:46,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 11:45:04,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3482277206, Amount: 8.802, OrderId: 114
+09/21/2022 11:45:05,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/21/2022 11:45:05,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/21/2022 12:03:52,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:03:52,INFO,Connected to database fxdex
+09/21/2022 12:03:53,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:03:53,INFO,Connected to database fxdex
+09/21/2022 12:03:55,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:03:55,INFO,Connected to database fxdex
+09/21/2022 12:03:56,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:04:08,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3482277206, Amount: 8.802, OrderId: 115
+09/21/2022 12:04:09,ERROR,MARGINX--failed to open long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/21/2022 12:04:09,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/21/2022 12:04:27,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 116
+09/21/2022 12:04:28,ERROR,MARGINX--failed to close long position: insufficient gas limit; got: 5000000.000000 required: 50000000.000000: insufficient fee
+09/21/2022 12:04:28,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+09/21/2022 12:06:16,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:06:16,INFO,Connected to database fxdex
+09/21/2022 12:06:17,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:06:18,INFO,Connected to database fxdex
+09/21/2022 12:06:19,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:06:19,INFO,Connected to database fxdex
+09/21/2022 12:06:21,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:06:30,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 117
+09/21/2022 12:06:59,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 118
+09/21/2022 12:07:00,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 184, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 194, in close_long_open_position
+    logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/21/2022 12:07:00,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 184, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 194, in close_long_open_position
+    logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/21/2022 12:07:20,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 119
+09/21/2022 12:08:36,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:08:37,INFO,Connected to database fxdex
+09/21/2022 12:08:38,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:08:39,INFO,Connected to database fxdex
+09/21/2022 12:08:40,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:08:40,INFO,Connected to database fxdex
+09/21/2022 12:08:42,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:08:51,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 120
+09/21/2022 12:09:46,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 121
+09/21/2022 12:09:46,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 184, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 194, in close_long_open_position
+    logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/21/2022 12:09:46,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 184, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 194, in close_long_open_position
+    logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/21/2022 12:11:29,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:11:29,INFO,Connected to database fxdex
+09/21/2022 12:11:31,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:11:31,INFO,Connected to database fxdex
+09/21/2022 12:11:33,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:11:33,INFO,Connected to database fxdex
+09/21/2022 12:11:34,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:11:41,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3482277206, Amount: 8.802, OrderId: 122
+09/21/2022 12:11:46,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.901002, Amount: 8.802, OrderId: ID-307983-4
+09/21/2022 12:12:09,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 123
+09/21/2022 12:13:10,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 124
+09/21/2022 12:13:11,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 184, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 194, in close_long_open_position
+    logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/21/2022 12:13:11,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 184, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 194, in close_long_open_position
+    logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/21/2022 12:14:07,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:14:07,INFO,Connected to database fxdex
+09/21/2022 12:14:09,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:14:10,INFO,Connected to database fxdex
+09/21/2022 12:14:11,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:14:11,INFO,Connected to database fxdex
+09/21/2022 12:14:12,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:14:17,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 125
+09/21/2022 12:15:07,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:15:07,INFO,Connected to database fxdex
+09/21/2022 12:15:08,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:15:08,INFO,Connected to database fxdex
+09/21/2022 12:15:10,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:15:10,INFO,Connected to database fxdex
+09/21/2022 12:15:12,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:15:26,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 126
+09/21/2022 12:28:12,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:28:12,INFO,Connected to database fxdex
+09/21/2022 12:28:14,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:28:14,INFO,Connected to database fxdex
+09/21/2022 12:28:16,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:28:16,INFO,Connected to database fxdex
+09/21/2022 12:28:18,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:28:25,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 127
+09/21/2022 12:28:25,ERROR,MARGINX--unable to get long position due to error: tuple indices must be integers or slices, not str of type <class 'TypeError'>
+09/21/2022 12:28:50,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 128
+09/21/2022 12:28:50,ERROR,MARGINX--unable to get long position due to error: tuple indices must be integers or slices, not str of type <class 'TypeError'>
+09/21/2022 12:28:51,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 185, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 195, in close_long_open_position
+    logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/21/2022 12:28:51,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/MarginX.py:65> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 185, in close_long_open_position
+    position_id = open_position.Id,
+AttributeError: 'NoneType' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/MarginX.py", line 73, in get_item_from_queue_and_execute
+    events = await client.close_long_open_position(amount)
+  File "/Users/richardng/Desktop/Baklava/grpcClient.py", line 195, in close_long_open_position
+    logging.error("MARGINX--failed to close long position: {}".format(tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+09/21/2022 12:29:09,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:29:09,INFO,Connected to database fxdex
+09/21/2022 12:29:10,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:29:10,INFO,Connected to database fxdex
+09/21/2022 12:29:11,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:29:12,INFO,Connected to database fxdex
+09/21/2022 12:29:13,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:29:22,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 129
+09/21/2022 12:29:23,ERROR,MARGINX--unable to get long position due to error: tuple indices must be integers or slices, not str of type <class 'TypeError'>
+09/21/2022 12:30:03,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:30:03,INFO,Connected to database fxdex
+09/21/2022 12:30:05,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:30:06,INFO,Connected to database fxdex
+09/21/2022 12:30:07,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:30:07,INFO,Connected to database fxdex
+09/21/2022 12:30:08,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:30:16,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 130
+09/21/2022 12:30:35,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:30:35,INFO,Connected to database fxdex
+09/21/2022 12:30:36,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:30:37,INFO,Connected to database fxdex
+09/21/2022 12:30:38,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:30:39,INFO,Connected to database fxdex
+09/21/2022 12:30:40,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:30:54,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 131
+09/21/2022 12:30:54,ERROR,MARGINX--unable to get long position due to error: tuple indices must be integers or slices, not str of type <class 'TypeError'>
+09/21/2022 12:32:32,INFO,address: 0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72
+09/21/2022 12:32:32,INFO,Connected to database fxdex
+09/21/2022 12:32:33,INFO,chain_id: MarginX-Testnet-TSLA
+09/21/2022 12:32:33,INFO,Connected to database fxdex
+09/21/2022 12:32:35,INFO,chain_id: MarginX-Testnet-AAPL
+09/21/2022 12:32:35,INFO,Connected to database fxdex
+09/21/2022 12:32:36,INFO,chain_id: MarginX-Testnet-BTC
+09/21/2022 12:32:44,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 132
+09/21/2022 12:32:46,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 156.886, Amount: 1, OrderId: ID-308362-11
+09/21/2022 12:33:03,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 133
+09/21/2022 12:33:06,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 156.8848, Amount: 1, OrderId: ID-308368-5
+09/21/2022 12:33:32,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketSell, Price: 14.20616606, Amount: 8.892, OrderId: 134
+09/21/2022 12:33:36,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketSell, Price: 156.884, Amount: 1, OrderId: ID-308377-5
+09/21/2022 12:33:54,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.3482277206, Amount: 8.802, OrderId: 135
+09/21/2022 12:33:56,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.892209, Amount: 4.8, OrderId: ID-308383-11
+09/21/2022 12:34:54,INFO,Baklava Client--Listening to order of Pair: BTC:USDT, Direction: MarketBuy, Price: 19176.7015228797, Amount: 0.004, OrderId: 194
+09/21/2022 12:34:56,ERROR,MARGINX--failed to open long position: failed to execute message; message index: 0: orderbook has not enough orders to match
+09/21/2022 12:34:56,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
