@@ -129,7 +129,7 @@ def check_TSLA():
         tsla_result = "Normal"
         tsla_description = "Both side Equal"
         tsla_diff_amount = abs(marginx_tsla - baklava_tsla)
-    return tsla_result, tsla_description, tsla_diff_amount, tsla_direction, tsla_pair
+    return tsla_result, tsla_description, tsla_diff_amount, tsla_pair, #tsla_direction
 
 
 def check_AAPL():
@@ -149,7 +149,7 @@ def check_AAPL():
         aapl_result = "Normal"
         aapl_description = "Both side Equal"
         aapl_diff_amount = abs(marginx_aapl-baklava_aapl)
-    return aapl_result, aapl_description, aapl_diff_amount, aapl_direction, aapl_pair
+    return aapl_result, aapl_description, aapl_diff_amount, aapl_pair, #aapl_direction
 
 def check_BTC():
     btc_pair = pair_info[2]['pair']
@@ -168,7 +168,7 @@ def check_BTC():
         btc_result = "Normal"
         btc_description = "Both side Equal"
         btc_diff_amount = abs(marginx_btc-baklava_btc)
-    return btc_result, btc_description, btc_diff_amount, btc_direction, btc_pair
+    return btc_result, btc_description, btc_diff_amount, btc_pair, #btc_direction
 
 
 
@@ -245,10 +245,12 @@ def sendTeleReport():
 def minCheck():
     try:
         queryData()
-        tsla_result, tsla_description, tsla_diff_amount, tsla_direction, tsla_pair = check_TSLA()
-        aapl_result, aapl_description, aapl_diff_amount, aapl_direction, aapl_pair = check_AAPL()
-        btc_result, btc_description, btc_diff_amount, btc_direction, btc_pair = check_BTC()
+        tsla_result, tsla_description, tsla_diff_amount, tsla_pair = check_TSLA()
+        aapl_result, aapl_description, aapl_diff_amount, aapl_pair = check_AAPL()
+        btc_result, btc_description, btc_diff_amount, btc_pair = check_BTC()
 
+
+        
 
         buildTelebotMsg(tsla_result, tsla_description, tsla_diff_amount,
         aapl_result, aapl_description, aapl_diff_amount, 
