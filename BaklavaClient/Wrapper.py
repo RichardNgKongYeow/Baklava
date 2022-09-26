@@ -7,13 +7,13 @@ import asyncio
 import logging
 import utils
 from decimal import Decimal
-import constants
 
 
 class BaklavaObject(object):
 
-    def __init__(self, address, private_key, provider=None):
-        self.address = Web3.toChecksumAddress(address)
+    def __init__(self, configs, private_key, provider=None):
+        self.configs = configs
+        self.address = Web3.toChecksumAddress(configs['wallet_address'])
         self.private_key = private_key
         self.provider = os.environ["PROVIDER"] if not provider else provider      
         self.provider = provider if not provider else provider
@@ -52,22 +52,22 @@ class BaklavaObject(object):
 
 class BaklavaClient(BaklavaObject):
 
-    ADDRESS = constants.synthetic_pool_address
-    ABI = constants.ABI_synthetic_pool
+    ABI = json.load(open(os.getcwd()+'/BaklavaClient/assets/'+'SyntheticPool.json'))["abi"]
 
 
     MAX_APPROVAL_HEX = "0x" + "f" * 64
     MAX_APPROVAL_INT = int(MAX_APPROVAL_HEX, 16)
     # ERC20_ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SafeERC20Upgradeable.json'))["abi"]
 
-    pair_info = constants.pair_info
     
 
 
-    def __init__(self, address, private_key, provider=None):
-        super().__init__(address, private_key, provider)
+    def __init__(self, configs, private_key, provider=None):
+        super().__init__(configs, private_key, provider)
+        
+        self.configs = configs
         self.contract = self.conn.eth.contract(
-            address=Web3.toChecksumAddress(BaklavaClient.ADDRESS), abi=BaklavaClient.ABI)
+            address=Web3.toChecksumAddress(self.configs['wallet_address']), abi=BaklavaClient.ABI)
 
 
         self.syntoken_object_dict = self.initialise_syntoken_object_dict()

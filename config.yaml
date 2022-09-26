@@ -1,0 +1,80 @@
+environment: test
+
+test:
+  web3_url:
+    1: https://rpc.ankr.com/avalanche_fuji
+    2: https://ava-testnet.public.blastapi.io/ext/bc/C/rpc
+    3: https://api.avax-test.network/ext/bc/C/rpc
+    4: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
+    5: https://rpc.ankr.com/avalanche_fuji-c
+
+ 
+
+  wallet_address: "0x6Ec43b644cD769a1c7695069804E67b2B691e36d"
+
+  synthetic_pool_address: "0xdCE353cf62250B94C80F8eD70FFe5fF95304226f"
+
+  chain_id:
+    tsla:
+      index: 0
+      pair_id: TSLA:USDT
+      address: "0xfA0d3DDbcfe67D66d8BAA7f963ccDd5551ee19Bf"
+
+    aapl:
+      index: 1
+      pair_id: AAPL:USDT
+      address: "0x33a922c23Fe61b6D05AC2De88b7714809c0faD44"
+
+    btc:
+      index: 2
+      pair_id: BTC:USDT
+      address: "0x01a98b5eF7D34b5e60dbF89cff73b6f6aE5162DD"
+
+    nflx:
+      index: 3
+      pair_id: NFLX:USDT
+      address: ""
+
+    goog:
+      index: 4
+      pair_id: GOOG:USDT
+      address: ""
+
+    fb:
+      index: 5
+      pair_id: FB:USDT
+      address: ""
+
+    amzn:
+      index: 6
+      pair_id: AMZN:USDT
+      address: ""
+
+    spy:
+      index: 7
+      pair_id: SPY:USDT
+      address: ""
+
+    iwm:
+      index: 8
+      pair_id: IWM:USDT
+      address: ""
+    
+    tqqq:
+      index: 9
+      pair_id: TQQQ:USDT
+      address: ""
+
+    fx:
+      index: 10
+      pair_id: FX:USDT
+      address: ""
+
+
+
+prod:
+  web3_url:
+    1: https://ava-mainnet.public.blastapi.io/ext/bc/C/rpc
+    2: https://rpc.ankr.com/avalanche
+    3: https://avalancheapi.terminet.io/ext/bc/C/rpc
+    4: https://api.avax.network/ext/bc/C/rpc

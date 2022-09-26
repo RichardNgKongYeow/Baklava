@@ -1,30 +1,22 @@
 from BaklavaClient.Wrapper import BaklavaClient
-import constants
-from web3 import Web3
 from dotenv import load_dotenv
 import os
 import asyncio
 import logging
 import MarginX
-import threading
-import Monitor
 
 
 
-def initialize_logging():
-    logging.basicConfig(filename='logs.csv',level=logging.INFO,format='%(asctime)s,%(levelname)s,%(message)s',datefmt='%m/%d/%Y %I:%M:%S')
-    logging.root.setLevel(logging.INFO)
+
 
 
 def main():
 
     # initialize logging
-    initialize_logging()
+    initialise_logging()
     load_dotenv()
 
-    # initialialise clients
-    marginx_account = MarginX.init_wallet(os.getenv("MARGINX_SEED"))
-    client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account,constants.pair_info)
+
     
 
     # initialise Baklava client

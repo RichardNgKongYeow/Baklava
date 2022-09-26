@@ -1,13 +1,8 @@
 from itertools import chain
 from subprocess import list2cmdline
-import unittest
 from decimal import Decimal
 import utils
-
-
-from fx_py_sdk import wallet
 from fx_py_sdk.grpc_client import GRPCClient
-# from fx_py_sdk.fx_rpc.rpc import HttpRpcClient
 from fx_py_sdk.builder import TxBuilder
 from fx_py_sdk.codec.cosmos.base.v1beta1.coin_pb2 import Coin
 from fx_py_sdk.codec.fx.dex.v1.order_pb2 import *
@@ -15,17 +10,12 @@ import decimal
 from fx_py_sdk.codec.cosmos.tx.v1beta1.service_pb2 import BROADCAST_MODE_BLOCK, BROADCAST_MODE_SYNC
 from google.protobuf.json_format import MessageToJson
 import json
-import MarginX
-import constants
-
-from fx_py_sdk.ibc_transfer import ConfigsKeys, Ibc_transfer
-
 import logging
+import Bots
 
 class grpcClient():
-    pair_info = constants.pair_info
     
-    def __init__(self,account:object,pair_index:int):
+    def __init__(self,account:object, chain_id:str, configs):
         
         self.pair_index = pair_index
         self.pair_id = self.pair_info[pair_index]["pair"]

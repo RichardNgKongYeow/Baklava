@@ -32,6 +32,8 @@ import utils
 # Load basic variable
 # ######################################################################################
 
+
+
 start_time = time.time()
 
 load_dotenv()
