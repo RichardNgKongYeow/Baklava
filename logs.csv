@@ -167,3 +167,27 @@
 09/22/2022 02:55:58,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.851919, Amount: 6.7, OrderId: ID-336885-3
 09/22/2022 03:00:59,INFO,Baklava Client--Listening to order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 14.9227245884, Amount: 8.24, OrderId: 25
 09/22/2022 03:01:01,INFO,Execution of order of Pair: AAPL:USDT, Direction: MarketBuy, Price: 156.857116, Amount: 8.24, OrderId: ID-336976-9
+09/26/2022 03:49:28,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/26/2022 03:52:29,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/26/2022 03:54:59,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/26/2022 04:33:00,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/26/2022 04:33:48,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/26/2022 04:53:59,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/26/2022 04:54:05,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/26/2022 04:54:36,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/26/2022 04:55:52,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/26/2022 04:57:21,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 02:34:30,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 02:35:03,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 02:36:59,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 03:24:40,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 03:26:03,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 03:32:37,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 03:33:33,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 03:35:33,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 03:36:00,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 03:40:41,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 03:42:40,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: 'BaklavaClient' object has no attribute 'pair_info' of type <class 'AttributeError'>
+09/27/2022 05:37:00,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: string indices must be integers of type <class 'TypeError'>
+09/27/2022 05:37:14,INFO,Baklava Client--Listening to order of Pair: TSLA:USDT, Direction: MarketBuy, Price: 1395.8544099223, Amount: 0.078, OrderId: 2
+09/27/2022 05:37:41,INFO,Baklava Client--Listening to order of Pair: TSLA:USDT, Direction: MarketBuy, Price: 1395.8544099223, Amount: 0.078, OrderId: 3

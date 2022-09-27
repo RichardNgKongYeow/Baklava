@@ -1,13 +1,19 @@
 environment: test
 
-test:
-  web3_url:
-    1: https://rpc.ankr.com/avalanche_fuji
-    2: https://ava-testnet.public.blastapi.io/ext/bc/C/rpc
-    3: https://api.avax-test.network/ext/bc/C/rpc
-    4: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
-    5: https://rpc.ankr.com/avalanche_fuji-c
 
+
+test:
+
+  baklava_client_logs_file: logs.csv
+  monitor_client_logs_file: monitor.csv
+  manual_client_logs_files: manual.csv
+
+  web3_url:
+    1: https://api.avax-test.network/ext/bc/C/rpc
+    2: https://ava-testnet.public.blastapi.io/ext/bc/C/rpc
+    3: https://rpc.ankr.com/avalanche_fuji
+    4: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
+    # 5: https://rpc.ankr.com/avalanche_fuji-c
  
 
   wallet_address: "0x6Ec43b644cD769a1c7695069804E67b2B691e36d"

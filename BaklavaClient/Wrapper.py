@@ -7,6 +7,7 @@ import asyncio
 import logging
 import utils
 from decimal import Decimal
+import Pairs
 
 
 class BaklavaObject(object):
@@ -57,19 +58,23 @@ class BaklavaClient(BaklavaObject):
 
     MAX_APPROVAL_HEX = "0x" + "f" * 64
     MAX_APPROVAL_INT = int(MAX_APPROVAL_HEX, 16)
-    # ERC20_ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SafeERC20Upgradeable.json'))["abi"]
 
-    
+    pairs = Pairs.pairs
+    chain_ids = Pairs.chain_ids
 
 
     def __init__(self, configs, private_key, provider=None):
         super().__init__(configs, private_key, provider)
         
+        # self.configs = configs
+        self.wallet_address = configs['wallet_address']
+        self.synthetic_pool_address = configs['synthetic_pool_address']
         self.configs = configs
+
         self.contract = self.conn.eth.contract(
-            address=Web3.toChecksumAddress(self.configs['wallet_address']), abi=BaklavaClient.ABI)
+            address=Web3.toChecksumAddress(self.synthetic_pool_address), abi=BaklavaClient.ABI)
 
-
+        # TODO this needs to change
         self.syntoken_object_dict = self.initialise_syntoken_object_dict()
 
 
@@ -124,10 +129,8 @@ class BaklavaClient(BaklavaObject):
             order_id = events["args"]["orderId"]
             order_type = events["event"]
             amount = events["args"]["synTokenAmount"]
-            pair_id = self.pair_info[pid]["pair"]
+            pair_id = self.pairs[pid]
             price = events["args"]["synTokenPrice"]
-
-
             if order_type == "MintSynToken":
                 direction = "MarketBuy"
             elif order_type == "BurnSynToken":
@@ -149,8 +152,6 @@ class BaklavaClient(BaklavaObject):
         """
         events = self.convert_web3_to_json(event)
         pair_id, direction, price, amount, order_id = self.get_event_vars(events)
-
-        # print(pair_id, direction, amount, order_id)
         await myQueue.put((pair_id, direction, amount, order_id))
         converted_price = utils.fromWei(price)
         converted_amount = utils.from3dp(amount)
@@ -175,9 +176,9 @@ class BaklavaClient(BaklavaObject):
         # TODO have to change to constants.pair_info and get information
         try:
             client_dict = {}
-            for i in self.pair_info:
-                client = SynTClient(self.pair_info[i]['address'],self.private_key, provider=self.provider)
-                pair = self.pair_info[i]['pair']
+            for chain_id in self.chain_ids:
+                client = SynTClient(self.configs['chain_id'][chain_id]['address'],self.private_key, provider=self.provider)
+                pair = self.configs['chain_id'][chain_id]['pair_id']
                 client_dict[pair] = client
             return client_dict
         except Exception as e:

@@ -2,7 +2,7 @@ from BaklavaClient.Wrapper import BaklavaClient
 from dotenv import load_dotenv
 import os
 import asyncio
-import logging
+import Clients
 import MarginX
 
 
@@ -12,18 +12,18 @@ import MarginX
 
 def main():
 
-    # initialize logging
-    initialise_logging()
+    # initialise configs and logging
+    configs = Clients.initialise_configs()
+    Clients.initialise_logging(configs['baklava_client_logs_file'])
     load_dotenv()
 
 
     
+    # initialise clients
+    baklava_client = Clients.initialise_baklava_client(configs)
 
-    # initialise Baklava client
-    my_provider = constants.avax_url
-    private_key = os.getenv("PRIVATE_KEY")
-    address = constants.wallet_address
-    client = BaklavaClient(address, private_key, provider=my_provider)
+
+
 
 
     loop = asyncio.get_event_loop()
@@ -31,9 +31,9 @@ def main():
     try:
         loop.run_until_complete(
             asyncio.gather(
-                client.log_event_listener_loop(client.create_mst_event_filter(), 2,myQueue),
-                client.log_event_listener_loop(client.create_bst_event_filter(), 2,myQueue),
-                MarginX.log_event_executer_loop(client_list,2,myQueue),
+                baklava_client.log_event_listener_loop(baklava_client.create_mst_event_filter(), 2,myQueue),
+                baklava_client.log_event_listener_loop(baklava_client.create_bst_event_filter(), 2,myQueue),
+                # MarginX.log_event_executer_loop(client_list,2,myQueue),
                 ))
         
         

@@ -1,8 +1,12 @@
 import yaml
+from web3 import Web3
+import Clients
 
-def initialize_configs():
-    with open("config.yaml", "r") as ymlfile:
-        cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
-        return cfg
+configs = Clients.initialise_configs()
 
-print(initialize_configs())
+for i in range(1,5):
+    if Web3(Web3.HTTPProvider(configs['web3_url'][i])).isConnected() == True:
+        print (configs['web3_url'][i])
+        break
+        
+

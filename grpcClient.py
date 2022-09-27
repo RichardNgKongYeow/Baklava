@@ -11,7 +11,7 @@ from fx_py_sdk.codec.cosmos.tx.v1beta1.service_pb2 import BROADCAST_MODE_BLOCK, 
 from google.protobuf.json_format import MessageToJson
 import json
 import logging
-import Bots
+import Clients
 
 class grpcClient():
     

@@ -4,19 +4,7 @@ import os
 from BaklavaClient.Wrapper import BaklavaClient
 
 
-pairs=[
-    "tsla",
-    "aapl",
-    "btc",
-    # "nflx",
-    # "goog",
-    # "fb",
-    # "amzn",
-    # "spy",
-    # "iwm",
-    # "tqqq",
-    # "fx"
-]
+
 
 
 def initialise_configs():
@@ -27,16 +15,35 @@ def initialise_configs():
 
 def initialise_logging(filename):
     logging.basicConfig(filename=filename,level=logging.INFO,format='%(asctime)s,%(levelname)s,%(message)s',datefmt='%m/%d/%Y %I:%M:%S')
-    logging.root.setLevel(logging.INFO)
 
-print(initialise_configs()['web3_url'])
 
-def initialise_baklava_client(configs):-
-    pai
-    my_provider = configs['web3_url']
+
+def initialise_baklava_client(configs):
     private_key = os.getenv("PRIVATE_KEY")
-    client = BaklavaClient(configs, private_key, provider=my_provider)
+    # loop through range of no of web3 urls and initialise BaklavaClient
+    for i in range(1,5):
+        client = BaklavaClient(configs, private_key, provider=configs['web3_url'][i])
+        if client.conn.isConnected() == True:
+            break
     return client
+
+        # if client.conn.isConnected() == True:
+
+        #     break
+        # return client
+# client = initialise_baklava_client(initialise_configs())
+# print(client.conn.isConnected())
+
+
+# def initialise_baklava_client(configs):
+#     client_list = initialise_all_baklava_clients(configs)
+#     for client in client_list:
+#         if client.conn.isConnected() == True:
+#             return client
+#             break
+#         else:
+
+
 
 
 # def initialise_marginx_clients():
