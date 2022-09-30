@@ -191,3 +191,161 @@
 09/27/2022 05:37:00,ERROR,Baklava Client--failed to initialise syn token object dictionary due to: string indices must be integers of type <class 'TypeError'>
 09/27/2022 05:37:14,INFO,Baklava Client--Listening to order of Pair: TSLA:USDT, Direction: MarketBuy, Price: 1395.8544099223, Amount: 0.078, OrderId: 2
 09/27/2022 05:37:41,INFO,Baklava Client--Listening to order of Pair: TSLA:USDT, Direction: MarketBuy, Price: 1395.8544099223, Amount: 0.078, OrderId: 3
+09/28/2022 05:14:12,ERROR,BaklavaClient, initialise_syntoken_object_dict,string indices must be integers,<class 'TypeError'>
+09/28/2022 05:14:12,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/28/2022 05:14:30,ERROR,BaklavaClient, initialise_syntoken_object_dict,string indices must be integers,<class 'TypeError'>
+09/28/2022 05:14:31,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/28/2022 05:14:31,INFO,Connected to database fxdex
+09/28/2022 05:14:32,INFO,chain_id:,MarginX-Testnet-TSLA
+09/28/2022 05:14:33,INFO,Connected to database fxdex
+09/28/2022 05:14:35,INFO,chain_id:,MarginX-Testnet-AAPL
+09/28/2022 05:14:36,INFO,Connected to database fxdex
+09/28/2022 05:14:38,INFO,chain_id:,MarginX-Testnet-BTC
+09/28/2022 05:19:53,ERROR,BaklavaClient,initialise_syntoken_object_dict,string indices must be integers,<class 'TypeError'>
+09/28/2022 05:19:53,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/28/2022 05:19:53,INFO,Connected to database fxdex
+09/28/2022 05:19:55,INFO,MarginX-Testnet-TSLA
+09/28/2022 05:19:56,INFO,Connected to database fxdex
+09/28/2022 05:19:57,INFO,MarginX-Testnet-AAPL
+09/28/2022 05:19:58,INFO,Connected to database fxdex
+09/28/2022 05:19:59,INFO,MarginX-Testnet-BTC
+09/28/2022 05:50:49,ERROR,BaklavaClient,initialise_syntoken_object_dict,string indices must be integers,<class 'TypeError'>
+09/28/2022 05:50:49,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/28/2022 05:50:49,INFO,Connected to database fxdex
+09/28/2022 05:50:51,INFO,MarginX-Testnet-TSLA
+09/28/2022 05:50:51,INFO,Connected to database fxdex
+09/28/2022 05:50:53,INFO,MarginX-Testnet-AAPL
+09/28/2022 05:50:54,INFO,Connected to database fxdex
+09/28/2022 05:50:56,INFO,MarginX-Testnet-BTC
+09/28/2022 05:54:34,ERROR,BaklavaClient,initialise_syntoken_object_dict,string indices must be integers,<class 'TypeError'>
+09/28/2022 05:54:34,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/28/2022 05:54:34,INFO,Connected to database fxdex
+09/28/2022 05:54:36,INFO,MarginX-Testnet-TSLA
+09/28/2022 05:54:37,INFO,Connected to database fxdex
+09/28/2022 05:54:38,INFO,MarginX-Testnet-AAPL
+09/28/2022 05:54:39,INFO,Connected to database fxdex
+09/28/2022 05:54:40,INFO,MarginX-Testnet-BTC
+09/28/2022 06:15:08,ERROR,BaklavaClient,initialise_syntoken_object_dict,string indices must be integers,<class 'TypeError'>
+09/28/2022 06:15:08,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/28/2022 06:15:08,INFO,Connected to database fxdex
+09/28/2022 06:15:09,INFO,MarginX-Testnet-TSLA
+09/28/2022 06:15:10,INFO,Connected to database fxdex
+09/28/2022 06:15:12,INFO,MarginX-Testnet-AAPL
+09/28/2022 06:15:12,INFO,Connected to database fxdex
+09/28/2022 06:15:14,INFO,MarginX-Testnet-BTC
+09/29/2022 10:39:49,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/29/2022 10:39:49,INFO,Connected to database fxdex
+09/29/2022 10:39:51,INFO,MarginX-Testnet-TSLA
+09/29/2022 10:39:52,INFO,Connected to database fxdex
+09/29/2022 10:39:53,INFO,MarginX-Testnet-AAPL
+09/29/2022 10:39:54,INFO,Connected to database fxdex
+09/29/2022 10:39:55,INFO,MarginX-Testnet-BTC
+09/29/2022 10:40:15,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1352.9120671113,0.078,4
+09/29/2022 10:40:18,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketBuy,304.641,0.078,ID-489762-1
+09/29/2022 10:41:31,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.7070708660393728,7.390000000000001,29
+09/29/2022 10:41:36,ERROR,MarginXClient,aapl,open long position,out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52136321: out of gas
+09/29/2022 10:41:36,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+09/29/2022 10:46:29,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/29/2022 10:46:29,INFO,Connected to database fxdex
+09/29/2022 10:46:30,INFO,MarginX-Testnet-TSLA
+09/29/2022 10:46:31,INFO,Connected to database fxdex
+09/29/2022 10:46:32,INFO,MarginX-Testnet-AAPL
+09/29/2022 10:46:33,INFO,Connected to database fxdex
+09/29/2022 10:46:34,INFO,MarginX-Testnet-BTC
+09/29/2022 10:46:42,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1352.9120671113,0.078,5
+09/29/2022 10:46:45,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketBuy,304.641,0.078,ID-489877-1
+09/29/2022 10:46:52,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.7070708660393728,7.390000000000001,30
+09/29/2022 10:46:54,ERROR,MarginXClient,aapl,open_long_position,out of gas in location: WritePerByte; gasWanted: 50000000, gasUsed: 52136321: out of gas
+09/29/2022 10:46:54,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+09/29/2022 10:49:03,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/29/2022 10:49:03,INFO,Connected to database fxdex
+09/29/2022 10:49:04,INFO,MarginX-Testnet-TSLA
+09/29/2022 10:49:05,INFO,Connected to database fxdex
+09/29/2022 10:49:06,INFO,MarginX-Testnet-AAPL
+09/29/2022 10:49:07,INFO,Connected to database fxdex
+09/29/2022 10:49:08,INFO,MarginX-Testnet-BTC
+09/29/2022 10:49:14,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.7070708660393728,7.390000000000001,31
+09/29/2022 10:50:08,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.7070708660393728,7.390000000000001,32
+09/29/2022 10:50:16,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,153.799397,5.3,ID-488290-1
+09/30/2022 10:53:50,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/30/2022 10:53:50,INFO,Connected to database fxdex
+09/30/2022 10:53:52,INFO,MarginX-Testnet-TSLA
+09/30/2022 10:53:52,INFO,Connected to database fxdex
+09/30/2022 10:53:54,INFO,MarginX-Testnet-AAPL
+09/30/2022 10:53:54,INFO,Connected to database fxdex
+09/30/2022 10:53:56,INFO,MarginX-Testnet-BTC
+09/30/2022 10:54:25,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/30/2022 10:54:25,INFO,Connected to database fxdex
+09/30/2022 10:54:26,INFO,MarginX-Testnet-TSLA
+09/30/2022 10:54:27,INFO,Connected to database fxdex
+09/30/2022 10:54:28,INFO,MarginX-Testnet-AAPL
+09/30/2022 10:54:28,INFO,Connected to database fxdex
+09/30/2022 10:54:29,INFO,MarginX-Testnet-BTC
+09/30/2022 10:56:39,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/30/2022 10:56:39,INFO,Connected to database fxdex
+09/30/2022 10:56:41,INFO,MarginX-Testnet-TSLA
+09/30/2022 10:56:41,INFO,Connected to database fxdex
+09/30/2022 10:56:43,INFO,MarginX-Testnet-AAPL
+09/30/2022 10:56:43,INFO,Connected to database fxdex
+09/30/2022 10:56:45,INFO,MarginX-Testnet-BTC
+09/30/2022 10:57:18,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1347.2176276829,0.078,6
+09/30/2022 10:57:20,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketBuy,302.696398,0.078,ID-515802-1
+09/30/2022 10:57:53,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,33
+09/30/2022 10:58:03,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,153.806567,5.3,ID-514161-1
+09/30/2022 10:59:03,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,34
+09/30/2022 10:59:03,ERROR,MarginXClient,aapl, get_account_sequence,'NoneType' object has no attribute 'sequence',<class 'AttributeError'>
+09/30/2022 10:59:05,ERROR,MarginXClient,aapl,open_long_position,account sequence mismatch, expected 29, got 0: incorrect account sequence
+09/30/2022 10:59:05,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+09/30/2022 11:00:12,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1347.2176276829,0.078,7
+09/30/2022 11:00:14,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketBuy,302.783,0.078,ID-515854-1
+09/30/2022 11:16:49,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/30/2022 11:16:49,INFO,Connected to database fxdex
+09/30/2022 11:16:51,INFO,MarginX-Testnet-TSLA
+09/30/2022 11:16:51,INFO,Connected to database fxdex
+09/30/2022 11:16:53,INFO,MarginX-Testnet-AAPL
+09/30/2022 11:16:53,INFO,Connected to database fxdex
+09/30/2022 11:16:55,INFO,MarginX-Testnet-BTC
+09/30/2022 11:17:16,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1339.5014201283,0.078,8
+09/30/2022 11:17:20,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketBuy,302.783,0.078,ID-516159-1
+09/30/2022 11:17:30,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,35
+09/30/2022 11:17:38,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,153.813661,5.3,ID-514511-1
+09/30/2022 11:17:56,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,36
+09/30/2022 11:17:57,ERROR,MarginXClient,aapl,open_long_position,
+09/30/2022 11:17:57,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+09/30/2022 12:03:41,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/30/2022 12:03:41,INFO,Connected to database fxdex
+09/30/2022 12:03:42,INFO,MarginX-Testnet-TSLA
+09/30/2022 12:03:42,INFO,Connected to database fxdex
+09/30/2022 12:03:44,INFO,MarginX-Testnet-AAPL
+09/30/2022 12:03:44,INFO,Connected to database fxdex
+09/30/2022 12:03:46,INFO,MarginX-Testnet-BTC
+09/30/2022 12:04:10,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,37
+09/30/2022 12:04:18,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,153.82151,5.3,ID-515345-1
+09/30/2022 12:04:42,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,38
+09/30/2022 12:05:30,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,39
+09/30/2022 12:05:31,ERROR,MarginXClient,aapl,open_long_position,
+09/30/2022 12:05:31,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+09/30/2022 12:07:09,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/30/2022 12:07:09,INFO,Connected to database fxdex
+09/30/2022 12:07:10,INFO,MarginX-Testnet-TSLA
+09/30/2022 12:07:10,INFO,Connected to database fxdex
+09/30/2022 12:07:12,INFO,MarginX-Testnet-AAPL
+09/30/2022 12:07:12,INFO,Connected to database fxdex
+09/30/2022 12:07:13,INFO,MarginX-Testnet-BTC
+09/30/2022 12:07:19,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,40
+09/30/2022 12:07:29,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,153.828774,5.3,ID-515401-1
+09/30/2022 12:07:32,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,41
+09/30/2022 12:07:32,ERROR,MarginXClient,aapl,open_long_position,
+09/30/2022 12:07:32,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+09/30/2022 12:08:47,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+09/30/2022 12:08:47,INFO,Connected to database fxdex
+09/30/2022 12:08:48,INFO,MarginX-Testnet-TSLA
+09/30/2022 12:08:49,INFO,Connected to database fxdex
+09/30/2022 12:08:50,INFO,MarginX-Testnet-AAPL
+09/30/2022 12:08:50,INFO,Connected to database fxdex
+09/30/2022 12:08:52,INFO,MarginX-Testnet-BTC
+09/30/2022 12:09:06,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,42
+09/30/2022 12:09:13,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,153.837019,5.3,ID-515432-1
+09/30/2022 12:09:30,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,43
+09/30/2022 12:09:30,ERROR,
+09/30/2022 12:09:30,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>

@@ -2,13 +2,15 @@ import logging
 import yaml
 import os
 from BaklavaClient.Wrapper import BaklavaClient
-
+from Marginx import MarginX
+import asyncio
 
 
 
 
 def initialise_configs():
-    with open("config.yaml", "r") as ymlfile:
+    full_path = os.getcwd()
+    with open(full_path+"/Configs/config.yaml", "r") as ymlfile:
         cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
         return cfg[cfg['environment']]
 
@@ -27,26 +29,14 @@ def initialise_baklava_client(configs):
             break
     return client
 
-        # if client.conn.isConnected() == True:
-
-        #     break
-        # return client
-# client = initialise_baklava_client(initialise_configs())
-# print(client.conn.isConnected())
 
 
-# def initialise_baklava_client(configs):
-#     client_list = initialise_all_baklava_clients(configs)
-#     for client in client_list:
-#         if client.conn.isConnected() == True:
-#             return client
-#             break
-#         else:
+def initialise_marginx_client(configs):
+    marginx_account = MarginX.init_wallet(os.getenv("MARGINX_SEED"))
+    client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account,configs)
+    return client_list
 
 
-
-
-# def initialise_marginx_clients():
-#     # initialialise clients
-#     marginx_account = MarginX.init_wallet(os.getenv("MARGINX_SEED"))
-#     client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account,constants.pair_info)
+async def marginx_log_event_executer_loop(client_list, poll_interval, myQueue):
+    await asyncio.wait([MarginX.get_item_from_queue_and_execute(client_list,1,myQueue),MarginX.get_item_from_queue_and_execute(client_list,2,myQueue)])
+    await asyncio.sleep(poll_interval)
