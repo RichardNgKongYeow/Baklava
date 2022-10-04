@@ -1,0 +1,156 @@
+10/03/2022 10:44:23,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 10:44:23,INFO,Connected to database fxdex
+10/03/2022 10:44:24,INFO,MarginX-Testnet-TSLA
+10/03/2022 10:44:25,INFO,Connected to database fxdex
+10/03/2022 10:44:26,INFO,MarginX-Testnet-AAPL
+10/03/2022 10:44:27,INFO,Connected to database fxdex
+10/03/2022 10:44:28,INFO,MarginX-Testnet-BTC
+10/03/2022 10:44:46,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 10:44:46,INFO,Connected to database fxdex
+10/03/2022 10:44:47,INFO,MarginX-Testnet-TSLA
+10/03/2022 10:44:48,INFO,Connected to database fxdex
+10/03/2022 10:44:49,INFO,MarginX-Testnet-AAPL
+10/03/2022 10:44:49,INFO,Connected to database fxdex
+10/03/2022 10:44:50,INFO,MarginX-Testnet-BTC
+10/03/2022 10:45:51,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:47:10,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 10:47:10,INFO,Connected to database fxdex
+10/03/2022 10:47:12,INFO,MarginX-Testnet-TSLA
+10/03/2022 10:47:12,INFO,Connected to database fxdex
+10/03/2022 10:47:13,INFO,MarginX-Testnet-AAPL
+10/03/2022 10:47:14,INFO,Connected to database fxdex
+10/03/2022 10:47:15,INFO,MarginX-Testnet-BTC
+10/03/2022 10:48:00,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 10:48:00,INFO,Connected to database fxdex
+10/03/2022 10:48:01,INFO,MarginX-Testnet-TSLA
+10/03/2022 10:48:02,INFO,Connected to database fxdex
+10/03/2022 10:48:03,INFO,MarginX-Testnet-AAPL
+10/03/2022 10:48:04,INFO,Connected to database fxdex
+10/03/2022 10:48:05,INFO,MarginX-Testnet-BTC
+10/03/2022 10:49:06,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:50:06,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:51:07,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:52:07,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:53:08,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:54:08,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:55:08,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:56:09,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:57:09,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:58:10,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:59:10,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:00:11,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:01:11,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:02:12,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:03:12,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:04:13,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:05:13,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:06:13,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:07:13,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:08:14,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:09:14,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:16:32,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 11:16:32,INFO,Connected to database fxdex
+10/03/2022 11:16:33,INFO,MarginX-Testnet-TSLA
+10/03/2022 11:16:34,INFO,Connected to database fxdex
+10/03/2022 11:16:35,INFO,MarginX-Testnet-AAPL
+10/03/2022 11:16:36,INFO,Connected to database fxdex
+10/03/2022 11:16:37,INFO,MarginX-Testnet-BTC
+10/03/2022 11:17:41,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: check_pair() takes 4 positional arguments but 5 were given of type <class 'TypeError'>
+10/03/2022 11:45:56,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 11:45:56,INFO,Connected to database fxdex
+10/03/2022 11:45:58,INFO,MarginX-Testnet-TSLA
+10/03/2022 11:45:58,INFO,Connected to database fxdex
+10/03/2022 11:46:00,INFO,MarginX-Testnet-AAPL
+10/03/2022 11:46:00,INFO,Connected to database fxdex
+10/03/2022 11:46:02,INFO,MarginX-Testnet-BTC
+10/03/2022 11:47:05,ERROR,MonitorBot,min_check,check_pair() takes 4 positional arguments but 5 were given,<class 'TypeError'>
+10/03/2022 11:48:07,ERROR,MonitorBot,min_check,check_pair() takes 4 positional arguments but 5 were given,<class 'TypeError'>
+10/03/2022 11:48:30,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 11:48:30,INFO,Connected to database fxdex
+10/03/2022 11:48:31,INFO,MarginX-Testnet-TSLA
+10/03/2022 11:48:31,INFO,Connected to database fxdex
+10/03/2022 11:48:32,INFO,MarginX-Testnet-AAPL
+10/03/2022 11:48:33,INFO,Connected to database fxdex
+10/03/2022 11:48:34,INFO,MarginX-Testnet-BTC
+10/03/2022 12:03:25,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:03:25,INFO,Connected to database fxdex
+10/03/2022 12:03:27,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:03:27,INFO,Connected to database fxdex
+10/03/2022 12:03:28,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:03:29,INFO,Connected to database fxdex
+10/03/2022 12:03:30,INFO,MarginX-Testnet-BTC
+10/03/2022 12:06:44,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:06:44,INFO,Connected to database fxdex
+10/03/2022 12:06:45,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:06:46,INFO,Connected to database fxdex
+10/03/2022 12:06:47,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:06:47,INFO,Connected to database fxdex
+10/03/2022 12:06:49,INFO,MarginX-Testnet-BTC
+10/03/2022 12:16:37,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:16:37,INFO,Connected to database fxdex
+10/03/2022 12:16:39,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:16:39,INFO,Connected to database fxdex
+10/03/2022 12:16:41,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:16:41,INFO,Connected to database fxdex
+10/03/2022 12:16:43,INFO,MarginX-Testnet-BTC
+10/03/2022 12:17:59,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:17:59,INFO,Connected to database fxdex
+10/03/2022 12:18:00,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:18:01,INFO,Connected to database fxdex
+10/03/2022 12:18:02,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:18:03,INFO,Connected to database fxdex
+10/03/2022 12:18:04,INFO,MarginX-Testnet-BTC
+10/03/2022 12:22:26,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:22:26,INFO,Connected to database fxdex
+10/03/2022 12:22:27,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:22:27,INFO,Connected to database fxdex
+10/03/2022 12:22:29,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:22:29,INFO,Connected to database fxdex
+10/03/2022 12:22:30,INFO,MarginX-Testnet-BTC
+10/03/2022 12:29:45,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:29:45,INFO,Connected to database fxdex
+10/03/2022 12:29:47,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:29:47,INFO,Connected to database fxdex
+10/03/2022 12:29:48,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:29:49,INFO,Connected to database fxdex
+10/03/2022 12:29:50,INFO,MarginX-Testnet-BTC
+10/04/2022 11:01:51,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 11:01:51,INFO,Connected to database fxdex
+10/04/2022 11:01:52,INFO,MarginX-Testnet-TSLA
+10/04/2022 11:01:53,INFO,Connected to database fxdex
+10/04/2022 11:01:54,INFO,MarginX-Testnet-AAPL
+10/04/2022 11:01:55,INFO,Connected to database fxdex
+10/04/2022 11:01:56,INFO,MarginX-Testnet-BTC
+10/04/2022 02:23:15,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:23:15,INFO,Connected to database fxdex
+10/04/2022 02:23:16,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:23:16,INFO,Connected to database fxdex
+10/04/2022 02:23:17,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:23:18,INFO,Connected to database fxdex
+10/04/2022 02:23:20,INFO,MarginX-Testnet-BTC
+10/04/2022 02:45:49,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 02:45:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:45:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:45:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:45:49,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:58:02,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 02:58:02,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:58:02,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:58:02,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:58:02,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:03:22,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 03:03:22,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:03:22,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:03:22,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:03:22,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:04:24,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 03:25:53,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 03:25:53,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:25:53,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:25:53,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:25:53,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:31:43,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 03:31:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:31:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:31:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:31:43,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>

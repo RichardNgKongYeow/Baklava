@@ -68,7 +68,7 @@ async def get_item_from_queue_and_execute(client_dict,id,myQueue):
         if direction == "MarketBuy":
             events = await client.open_long_position(direction, amount)
         elif direction == "MarketSell":
-            events = await client.close_long_open_position(amount)
+            events = await client.close_open_long_position(amount)
         await client.log_order_info(events)
 
 

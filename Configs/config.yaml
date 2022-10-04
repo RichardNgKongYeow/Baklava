@@ -25,16 +25,24 @@ test:
       index: 0
       pair_id: TSLA:USDT
       address: "0xfA0d3DDbcfe67D66d8BAA7f963ccDd5551ee19Bf"
+      MarginX: MarginX_TSLA
+      Baklava: Baklava_TSLA
+
 
     aapl:
       index: 1
       pair_id: AAPL:USDT
       address: "0x33a922c23Fe61b6D05AC2De88b7714809c0faD44"
+      MarginX: MarginX_AAPL
+      Baklava: Baklava_AAPL
+
 
     btc:
       index: 2
       pair_id: BTC:USDT
       address: "0x01a98b5eF7D34b5e60dbF89cff73b6f6aE5162DD"
+      MarginX: MarginX_BTC
+      Baklava: MarginX_BTC
 
     nflx:
       index: 3

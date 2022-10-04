@@ -136,6 +136,7 @@ class grpcClient():
                         return position
         except Exception as e:
             logging.error("{},{},get_open_long_position,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+    
 
     def get_open_long_position_amount(self)->Decimal:
         """
@@ -151,6 +152,38 @@ class grpcClient():
         except Exception as e:
             logging.error("{},{}, get_open_long_position_amount,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
 
+    def get_open_short_position(self)->list:
+        """
+        get open short position info (list)
+        """
+        positions = self.query_open_positions()
+        try:
+            if len(positions) > 0:
+                for position in positions:
+                    """
+                    [
+                        Position(
+                            Id="4",
+                            Owner="0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72",
+                            PairId="AAPL:USDT",
+                            Direction="long",
+                            EntryPrice=Decimal("157.930376"),
+                            MarkPrice=Decimal("156.888"),
+                            LiquidationPrice=Decimal("2.762266"),
+                            BaseQuantity=Decimal("38.433"),
+                            Margin=Decimal("5966.230016"),
+                            Leverage=1,
+                            UnrealizedPnl=Decimal("-40.061636"),
+                            MarginRate=Decimal("0.025437"),
+                            InitialMargin=Decimal("40574.393601"),
+                            PendingOrderQuantity=Decimal("0"),
+                        )
+                    ]
+                    """
+                    if position[3] == "short":
+                        return position
+        except Exception as e:
+            logging.error("{},{},get_open_short_position,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
 
     # --------------------------------execute marginx transactions---------------------------
     async def open_long_position(self, direction, amount):
@@ -182,16 +215,16 @@ class grpcClient():
             logging.error("{},{},open_long_position".format(self.CLIENT_NAME, self.chain_id))
 
         
-    async def close_long_open_position(self, amount):
+    async def close_open_long_position(self, amount):
         pair_id = self.pair_id
-        open_position = self.get_open_long_position()
+        open_long_position = self.get_open_long_position()
         # acc_seq = self.get_account_sequence()
 
         try:
             tx_response = self.client.close_position(
                 tx_builder = self.tx_builder, 
                 pair_id = pair_id, 
-                position_id = open_position.Id, 
+                position_id = open_long_position.Id, 
                 price = decimal.Decimal(0), 
                 base_quantity = Decimal(utils.from3dp(amount)), 
                 full_close = False, 
@@ -201,8 +234,29 @@ class grpcClient():
             events = json.loads(tx_response.raw_log)[0]['events']
             return events
         except:
-            logging.error()
             logging.error("{},{},close long position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+    
+    
+    async def close_open_short_position(self, amount):
+        pair_id = self.pair_id
+        open_short_position = self.get_open_short_position()
+        # acc_seq = self.get_account_sequence()
+
+        try:
+            tx_response = self.client.close_position(
+                tx_builder = self.tx_builder, 
+                pair_id = pair_id, 
+                position_id = open_short_position.Id, 
+                price = decimal.Decimal(0), 
+                base_quantity = Decimal(utils.from3dp(amount)), 
+                full_close = False, 
+                acc_seq = self.account_info.sequence, 
+                market_close = True, 
+                mode=BROADCAST_MODE_BLOCK)
+            events = json.loads(tx_response.raw_log)[0]['events']
+            return events
+        except:
+            logging.error("{},{},close short position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
 
 
     def get_mx_order_dict(self, events:list)->dict:

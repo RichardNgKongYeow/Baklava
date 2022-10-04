@@ -177,7 +177,7 @@ class BaklavaClient(BaklavaObject):
 
 # ======================================synthetic token=====================================
     def initialise_syntoken_object_dict(self)->dict:
-        # TODO have to change to constants.pair_info and get information
+        
         try:
             client_dict = {}
             for chain_id in self.chain_ids:
@@ -190,6 +190,9 @@ class BaklavaClient(BaklavaObject):
 
 
     def get_syntoken_total_supply(self):
+        """
+        {'TSLA:USDT': Decimal('1.6140000000000001012523398458142764866352081298828125')}
+        """
         try:
             total_supply_dict = {}
             for i in self.syntoken_object_dict:

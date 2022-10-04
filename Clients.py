@@ -40,3 +40,31 @@ def initialise_marginx_client(configs):
 async def marginx_log_event_executer_loop(client_list, poll_interval, myQueue):
     await asyncio.wait([MarginX.get_item_from_queue_and_execute(client_list,1,myQueue),MarginX.get_item_from_queue_and_execute(client_list,2,myQueue)])
     await asyncio.sleep(poll_interval)
+
+
+
+async def manual_executor(pair_id, direction, amount, position, client_dict):
+    
+    CLIENT_NAME = "ManualExecutor"
+
+    client = MarginX.get_client(pair_id, client_dict)
+    try:
+        if position == "short":
+            if direction == "MarketSell":
+                events = await client.close_open_short_position(amount)
+            elif direction == "MarketBuy":
+                events = await client.open_long_position(direction,amount)
+        elif position == "long":
+            if direction == "MarketSell":
+                events = await client.close_open_long_position(amount)
+            elif direction == "MarketBuy":
+                events = await client.open_long_position(direction,amount)
+    
+    except:
+        logging.error("{},{},manual_executor".format(CLIENT_NAME, pair_id))
+
+
+async def run_and_log_manual_executor(pair_id, direction, amount, position, client_dict):
+    client = MarginX.get_client(pair_id, client_dict)
+    events = await manual_executor(pair_id, direction, amount, position, client_dict)
+    await client.log_order_info(events)

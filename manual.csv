@@ -21,3 +21,183 @@
 09/22/2022 02:46:42,INFO,chain_id: MarginX-Testnet-BTC
 09/22/2022 02:46:45,ERROR,MARGINX--failed to open long position: failed to execute message; message index: 0: position size lower-limit is 8.000000, your size is 0.156551: position too small
 09/22/2022 02:46:45,ERROR,MARGINX--failed to get marginx order info due to error: 'NoneType' object is not iterable of type <class 'TypeError'>
+10/04/2022 02:25:17,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:25:17,INFO,Connected to database fxdex
+10/04/2022 02:25:18,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:25:19,INFO,Connected to database fxdex
+10/04/2022 02:25:20,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:25:21,INFO,Connected to database fxdex
+10/04/2022 02:25:22,INFO,MarginX-Testnet-BTC
+10/04/2022 02:25:24,ERROR,MarginXClient,tsla,open_long_position
+10/04/2022 02:26:52,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:26:52,INFO,Connected to database fxdex
+10/04/2022 02:26:53,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:26:54,INFO,Connected to database fxdex
+10/04/2022 02:26:55,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:26:56,INFO,Connected to database fxdex
+10/04/2022 02:26:57,INFO,MarginX-Testnet-BTC
+10/04/2022 02:27:01,ERROR,MarginXClient,tsla,open_long_position
+10/04/2022 02:27:32,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:27:32,INFO,Connected to database fxdex
+10/04/2022 02:27:33,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:27:34,INFO,Connected to database fxdex
+10/04/2022 02:27:34,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:27:35,INFO,Connected to database fxdex
+10/04/2022 02:27:36,INFO,MarginX-Testnet-BTC
+10/04/2022 02:38:32,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:38:32,INFO,Connected to database fxdex
+10/04/2022 02:38:34,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:38:34,INFO,Connected to database fxdex
+10/04/2022 02:38:35,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:38:36,INFO,Connected to database fxdex
+10/04/2022 02:38:37,INFO,MarginX-Testnet-BTC
+10/04/2022 02:38:39,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:40:06,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:40:06,INFO,Connected to database fxdex
+10/04/2022 02:40:07,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:40:07,INFO,Connected to database fxdex
+10/04/2022 02:40:09,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:40:09,INFO,Connected to database fxdex
+10/04/2022 02:40:10,INFO,MarginX-Testnet-BTC
+10/04/2022 02:40:13,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:40:57,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:40:57,INFO,Connected to database fxdex
+10/04/2022 02:40:58,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:40:58,INFO,Connected to database fxdex
+10/04/2022 02:41:00,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:41:00,INFO,Connected to database fxdex
+10/04/2022 02:41:01,INFO,MarginX-Testnet-BTC
+10/04/2022 02:41:03,ERROR,MarginXClient,tsla,open_long_position
+10/04/2022 02:41:03,ERROR,MarginXClient,tsla,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:42:41,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:42:41,INFO,Connected to database fxdex
+10/04/2022 02:42:42,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:42:43,INFO,Connected to database fxdex
+10/04/2022 02:42:44,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:42:45,INFO,Connected to database fxdex
+10/04/2022 02:42:46,INFO,MarginX-Testnet-BTC
+10/04/2022 02:42:48,ERROR,MarginXClient,aapl,open_long_position
+10/04/2022 02:42:48,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:43:59,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:43:59,INFO,Connected to database fxdex
+10/04/2022 02:44:01,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:44:01,INFO,Connected to database fxdex
+10/04/2022 02:44:02,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:44:03,INFO,Connected to database fxdex
+10/04/2022 02:44:04,INFO,MarginX-Testnet-BTC
+10/04/2022 02:44:08,ERROR,MarginXClient,aapl,open_long_position
+10/04/2022 02:44:08,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:44:12,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:44:12,INFO,Connected to database fxdex
+10/04/2022 02:44:13,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:44:14,INFO,Connected to database fxdex
+10/04/2022 02:44:15,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:44:15,INFO,Connected to database fxdex
+10/04/2022 02:44:17,INFO,MarginX-Testnet-BTC
+10/04/2022 02:44:18,ERROR,MarginXClient,aapl,open_long_position
+10/04/2022 02:44:18,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:44:19,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:44:19,INFO,Connected to database fxdex
+10/04/2022 02:44:20,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:44:21,INFO,Connected to database fxdex
+10/04/2022 02:44:22,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:44:23,INFO,Connected to database fxdex
+10/04/2022 02:44:24,INFO,MarginX-Testnet-BTC
+10/04/2022 02:44:28,ERROR,MarginXClient,aapl,open_long_position
+10/04/2022 02:44:28,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:44:29,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:44:29,INFO,Connected to database fxdex
+10/04/2022 02:44:30,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:44:31,INFO,Connected to database fxdex
+10/04/2022 02:44:32,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:44:32,INFO,Connected to database fxdex
+10/04/2022 02:44:34,INFO,MarginX-Testnet-BTC
+10/04/2022 02:44:38,ERROR,MarginXClient,aapl,open_long_position
+10/04/2022 02:44:38,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:44:39,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:44:39,INFO,Connected to database fxdex
+10/04/2022 02:44:41,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:44:41,INFO,Connected to database fxdex
+10/04/2022 02:44:42,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:44:43,INFO,Connected to database fxdex
+10/04/2022 02:44:44,INFO,MarginX-Testnet-BTC
+10/04/2022 02:44:48,ERROR,MarginXClient,aapl,open_long_position
+10/04/2022 02:44:48,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:44:49,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:44:49,INFO,Connected to database fxdex
+10/04/2022 02:44:50,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:44:51,INFO,Connected to database fxdex
+10/04/2022 02:44:52,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:44:53,INFO,Connected to database fxdex
+10/04/2022 02:44:54,INFO,MarginX-Testnet-BTC
+10/04/2022 02:44:58,ERROR,MarginXClient,aapl,open_long_position
+10/04/2022 02:44:58,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:45:21,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:45:21,INFO,Connected to database fxdex
+10/04/2022 02:45:22,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:45:23,INFO,Connected to database fxdex
+10/04/2022 02:45:24,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:45:25,INFO,Connected to database fxdex
+10/04/2022 02:45:26,INFO,MarginX-Testnet-BTC
+10/04/2022 02:45:28,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:45:31,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:45:31,INFO,Connected to database fxdex
+10/04/2022 02:45:32,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:45:33,INFO,Connected to database fxdex
+10/04/2022 02:45:34,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:45:34,INFO,Connected to database fxdex
+10/04/2022 02:45:35,INFO,MarginX-Testnet-BTC
+10/04/2022 02:45:38,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:58:14,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:58:14,INFO,Connected to database fxdex
+10/04/2022 02:58:15,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:58:16,INFO,Connected to database fxdex
+10/04/2022 02:58:17,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:58:17,INFO,Connected to database fxdex
+10/04/2022 02:58:19,INFO,MarginX-Testnet-BTC
+10/04/2022 02:58:21,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 02:59:43,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:59:43,INFO,Connected to database fxdex
+10/04/2022 02:59:44,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:59:45,INFO,Connected to database fxdex
+10/04/2022 02:59:46,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:59:46,INFO,Connected to database fxdex
+10/04/2022 02:59:48,INFO,MarginX-Testnet-BTC
+10/04/2022 03:00:45,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 03:00:45,INFO,Connected to database fxdex
+10/04/2022 03:00:46,INFO,MarginX-Testnet-TSLA
+10/04/2022 03:00:46,INFO,Connected to database fxdex
+10/04/2022 03:00:48,INFO,MarginX-Testnet-AAPL
+10/04/2022 03:00:48,INFO,Connected to database fxdex
+10/04/2022 03:00:50,INFO,MarginX-Testnet-BTC
+10/04/2022 03:01:40,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 03:01:40,INFO,Connected to database fxdex
+10/04/2022 03:01:41,INFO,MarginX-Testnet-TSLA
+10/04/2022 03:01:42,INFO,Connected to database fxdex
+10/04/2022 03:01:43,INFO,MarginX-Testnet-AAPL
+10/04/2022 03:01:44,INFO,Connected to database fxdex
+10/04/2022 03:01:45,INFO,MarginX-Testnet-BTC
+10/04/2022 03:04:02,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 03:04:02,INFO,Connected to database fxdex
+10/04/2022 03:04:03,INFO,MarginX-Testnet-TSLA
+10/04/2022 03:04:03,INFO,Connected to database fxdex
+10/04/2022 03:04:05,INFO,MarginX-Testnet-AAPL
+10/04/2022 03:04:05,INFO,Connected to database fxdex
+10/04/2022 03:04:07,INFO,MarginX-Testnet-BTC
+10/04/2022 03:04:35,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 03:04:35,INFO,Connected to database fxdex
+10/04/2022 03:04:36,INFO,MarginX-Testnet-TSLA
+10/04/2022 03:04:37,INFO,Connected to database fxdex
+10/04/2022 03:04:38,INFO,MarginX-Testnet-AAPL
+10/04/2022 03:04:39,INFO,Connected to database fxdex
+10/04/2022 03:04:40,INFO,MarginX-Testnet-BTC
+10/04/2022 03:04:41,ERROR,ManualExecutor,TSLA:USDT,manual_executor
+10/04/2022 03:04:41,ERROR,MarginXClient,tsla,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/04/2022 03:42:41,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 03:42:41,INFO,Connected to database fxdex
+10/04/2022 03:42:42,INFO,MarginX-Testnet-TSLA
+10/04/2022 03:42:42,INFO,Connected to database fxdex
+10/04/2022 03:42:43,INFO,MarginX-Testnet-AAPL
+10/04/2022 03:42:44,INFO,Connected to database fxdex
+10/04/2022 03:42:45,INFO,MarginX-Testnet-BTC
+10/04/2022 03:42:50,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
