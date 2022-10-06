@@ -43,10 +43,10 @@ class MonitorBot():
         self.bot = telebot.TeleBot(API_KEY)
         self.TELE_CHAT_ID = TELE_CHAT_ID
         
-    def query_all_data(self):
+    async def query_all_data(self):
         try:
 
-            marginx_positions = MarginX.query_all_open_long_positions_amounts(self.marginx_client_dict)
+            marginx_positions = await MarginX.query_all_open_long_positions_amounts(self.marginx_client_dict)
             print(marginx_positions)
             baklava_positions = self.baklava_client.get_syntoken_total_supply()
 
@@ -111,9 +111,9 @@ class MonitorBot():
         except Exception as e:
             logging.error("{},check_pair,{},{}".format(self.CLIENT_NAME, e,type(e)))
 
-    def min_check(self):
+    async def min_check(self):
         try:
-            marginx_positions, baklava_positions, date, _time = self.query_all_data()
+            marginx_positions, baklava_positions, date, _time = await self.query_all_data()
             
             all_data = {}
             for chain_id in Pairs.chain_ids:
@@ -141,10 +141,10 @@ class MonitorBot():
 # ######################################################################################
 
 
-    def buildTelebotMsg(self):
+    async def buildTelebotMsg(self):
         
         try:
-            all_data, date, _time = self.min_check()
+            all_data, date, _time = await self.min_check()
 
             tsla_result = all_data['tsla']['result']
             marginx_tsla = all_data['tsla']['marginx_amount']
@@ -241,20 +241,28 @@ class MonitorBot():
 # Build schedule function
 # ######################################################################################
 
-def scheduleDailyReport(monitor_bot):
-    schedule.every(1).minutes.do(monitor_bot.buildTelebotMsg)
+async def scheduleDailyReport(monitor_bot):
+    try:
+        while True:
+            await monitor_bot.buildTelebotMsg()
+            time.sleep(30)
+    except Exception as e:
+        logging.error("{},scheduleDailyReport,{},{}".format(monitor_bot.CLIENT_NAME, e,type(e)))
 
-    # schedule.every().day.at("07:00").do(dailyReport)
-    while True:
-        schedule.run_pending()
 
-        time.sleep(1)
+    # schedule.every(1).minutes.do(monitor_bot.buildTelebotMsg)
+
+    # # schedule.every().day.at("07:00").do(dailyReport)
+    # while True:
+    #     schedule.run_pending()
+
+    #     time.sleep(1)
 
 # ********************
 # Main function
 # ********************
 
-def main():
+async def main():
 
     # start_time = time.time()
     # initialise configs and logging
@@ -274,11 +282,11 @@ def main():
     monitor_bot  = MonitorBot(API_KEY, TELE_CHAT_ID, baklava_client, client_dict)
 
     # queryData()
-    scheduleDailyReport(monitor_bot)
+    await scheduleDailyReport(monitor_bot)
     # sendTeleReport()
 
     # print("--- %s seconds ---" % (time.time() - start_time))
 
 
 if __name__ == "__main__":     # __name__ is a built-in variable in Python which evaluates to the name of the current module.
-    main()
+    asyncio.run(main())

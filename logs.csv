@@ -349,3 +349,12 @@
 09/30/2022 12:09:30,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,14.77946988265408108,7.390000000000001,43
 09/30/2022 12:09:30,ERROR,
 09/30/2022 12:09:30,ERROR,MarginXClient,aapl,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/05/2022 04:52:40,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/05/2022 04:52:40,INFO,Connected to database fxdex
+10/05/2022 04:52:41,INFO,MarginX-Testnet-TSLA
+10/05/2022 04:52:42,INFO,Connected to database fxdex
+10/05/2022 04:52:43,INFO,MarginX-Testnet-AAPL
+10/05/2022 04:52:44,INFO,Connected to database fxdex
+10/05/2022 04:52:45,INFO,MarginX-Testnet-BTC
+10/05/2022 04:55:34,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,15.12030970348302981,6.612,44
+10/05/2022 04:55:38,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,153.843969,5.289,ID-649235-1

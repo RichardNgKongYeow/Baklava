@@ -28,7 +28,7 @@ class grpcClient():
         self.account = account
         self.client = None
         self.marginx_chain_id = None
-        self.account.info = None
+        self.account_info = None
         self.gas_price = None
         self.tx_builder = None
 
@@ -92,7 +92,7 @@ class grpcClient():
             logging.error("{},{}, build_tx_builder,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
 
 # ===================================querying positions info==============================
-    def query_open_positions(self)->list:
+    async def query_open_positions(self)->list:
             """
             query all open positions (list) of an account given a pair_id and corresponding client
             """
@@ -104,11 +104,11 @@ class grpcClient():
                 logging.error("{},{},query_open_positions,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
 
     
-    def get_open_long_position(self)->list:
+    async def get_open_long_position(self)->list:
         """
         get open long position info (list)
         """
-        positions = self.query_open_positions()
+        positions = await self.query_open_positions()
         try:
             if len(positions) > 0:
                 for position in positions:
@@ -138,11 +138,11 @@ class grpcClient():
             logging.error("{},{},get_open_long_position,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
     
 
-    def get_open_long_position_amount(self)->Decimal:
+    async def get_open_long_position_amount(self)->Decimal:
         """
         return the open long position amount in int in Decimal form 
         """
-        open_position = self.get_open_long_position()
+        open_position = await self.get_open_long_position()
         try:  
             if open_position == None:
                 open_position_amount = 0
