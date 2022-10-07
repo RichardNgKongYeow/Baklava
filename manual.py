@@ -6,7 +6,7 @@ import asyncio
 
 pair_id = "AAPL:USDT"
 direction = "MarketBuy"
-amount = 72.74
+amount = 73.70
 order_id = 0
 position = "long"
 
@@ -32,6 +32,6 @@ async def main():
 
 
 
-# if __name__ == "__main__":
-#     main()
-asyncio.run(main())
+if __name__ == "__main__":
+    while True:
+        asyncio.run(main())

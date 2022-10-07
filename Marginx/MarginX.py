@@ -43,7 +43,7 @@ def init_wallet(seed)->object:
         logging.critical("Unable to initialise wallet due to error: {} of type {}".format(e,type(e)))
 
 
-def query_all_open_long_positions_amounts(client_dict:dict)->dict:
+async def query_all_open_long_positions_amounts(client_dict:dict)->dict:
     """
     query and return a dict of open position amount eg.
 
@@ -54,7 +54,7 @@ def query_all_open_long_positions_amounts(client_dict:dict)->dict:
     for i in client_dict.values():
         client = i
         pair_id = client.pair_id
-        open_position_amount = client.get_open_long_position_amount()
+        open_position_amount = await client.get_open_long_position_amount()
         all_open_positions[pair_id] = open_position_amount
     return all_open_positions
 
