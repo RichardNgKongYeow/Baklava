@@ -42,7 +42,7 @@ test:
       pair_id: BTC:USDT
       address: "0x01a98b5eF7D34b5e60dbF89cff73b6f6aE5162DD"
       MarginX: MarginX_BTC
-      Baklava: MarginX_BTC
+      Baklava: Baklava_BTC
 
     nflx:
       index: 3
