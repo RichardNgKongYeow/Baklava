@@ -12,9 +12,9 @@ position = "long"
 
 
 def initialize_logging():
-    logging.basicConfig(filename='manual.csv',level=logging.INFO,format='%(asctime)s,%(levelname)s,%(message)s',datefmt='%m/%d/%Y %I:%M:%S')
+    logging.basicConfig(filename='manual.csv', level=logging.INFO,
+                        format='%(asctime)s,%(levelname)s,%(message)s', datefmt='%m/%d/%Y %I:%M:%S')
     logging.root.setLevel(logging.INFO)
-
 
 
 async def main():
@@ -26,10 +26,8 @@ async def main():
 
     # initialialise clients
     client_dict = Clients.initialise_marginx_client(configs)
-    
+
     await Clients.run_and_log_manual_executor(pair_id, direction, amount, position, client_dict)
-
-
 
 
 if __name__ == "__main__":
