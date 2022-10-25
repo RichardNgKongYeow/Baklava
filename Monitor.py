@@ -169,8 +169,14 @@ class MonitorBot():
             wfx_description = all_data['fx']['description']
             wfx_diff_amount = all_data['fx']['diff_amount']
 
+            eth_result = all_data['eth']['result']
+            marginx_eth = all_data['eth']['marginx_amount']
+            baklava_eth = all_data['eth']['baklava_amount']
+            eth_description = all_data['eth']['description']
+            eth_diff_amount = all_data['eth']['diff_amount']
+
             #### Build result msg ####
-            if tsla_result == 'Normal' and aapl_result == 'Normal' and btc_result == 'Normal' and wfx_result == 'Normal':
+            if tsla_result == 'Normal' and aapl_result == 'Normal' and btc_result == 'Normal' and wfx_result == 'Normal' and eth_result == 'Normal':
                 overallResult = "All Normal"
             else:
                 overallResult = "Warning"
@@ -208,7 +214,14 @@ class MonitorBot():
             msgResponse += f"{'Description:'.ljust(17)} {wfx_description}\n"
             msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % wfx_diff_amount}\n\n"
 
-            if aapl_result != 'Normal' or tsla_result != 'Normal' or btc_result != 'Normal' or wfx_result != 'Normal':
+            msgResponse += "~~~~~~~~~~~~ ETH ~~~~~~~~~~~~\n"
+            msgResponse += f"{'MarginX:'.ljust(20)} {'%.2f' % marginx_eth}\n"
+            msgResponse += f"{'Baklava:'.ljust(17)} {'%.2f' % baklava_eth}\n"
+            msgResponse += f"{'Status:'.ljust(21)} {wfx_result}\n"
+            msgResponse += f"{'Description:'.ljust(17)} {eth_description}\n"
+            msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % eth_diff_amount}\n\n"
+
+            if aapl_result != 'Normal' or tsla_result != 'Normal' or btc_result != 'Normal' or wfx_result != 'Normal' or eth_result != 'Normal':
                 self.bot.send_message(self.TELE_CHAT_ID, msgResponse)
 
         except Exception as e:

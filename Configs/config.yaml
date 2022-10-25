@@ -92,9 +92,9 @@ prod:
     4: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
     # 5: https://rpc.ankr.com/avalanche_fuji-c
 
-  wallet_address: "0x6Ec43b644cD769a1c7695069804E67b2B691e36d"
+  wallet_address: "0x7E6287aff409DAA79f9C3795E235ec2F6A892760"
 
-  synthetic_pool_address: "0xdCE353cf62250B94C80F8eD70FFe5fF95304226f"
+  synthetic_pool_address: "0xFDef82DE050354fF94Aea86B427ee4fC82897aF2"
 
   chain_id:
     tsla:
@@ -114,7 +114,7 @@ prod:
     btc:
       index: 2
       pair_id: BTC:USDT
-      address: "0x01a98b5eF7D34b5e60dbF89cff73b6f6aE5162DD"
+      address: "0x3C5dE8d32d9047649215e33808f6901d27d2DEe8"
       MarginX: MarginX_BTC
       Baklava: Baklava_BTC
 
@@ -157,3 +157,12 @@ prod:
       index: 10
       pair_id: FX:USDT
       address: ""
+      MarginX: MarginX_BTC
+      Baklava: Baklava_BTC
+
+    eth:
+      index: 11
+      pair_id: ETH:USDT
+      address: "0xf784e45AEc811dA24E67Ac46B8E214D09375650c"
+      MarginX: MarginX_ETH
+      Baklava: Baklava_ETH
