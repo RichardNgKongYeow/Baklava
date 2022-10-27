@@ -86,10 +86,10 @@ prod:
   manual_client_logs_files: manual.csv
 
   web3_url:
-    1: https://api.avax-test.network/ext/bc/C/rpc
-    2: https://ava-testnet.public.blastapi.io/ext/bc/C/rpc
-    3: https://rpc.ankr.com/avalanche_fuji
-    4: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
+    1: https://api.avax.network/ext/bc/C/rpc
+    2: https://ava-mainnet.public.blastapi.io/ext/bc/C/rpc
+    3: https://rpc.ankr.com/avalanche
+    # 4: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
     # 5: https://rpc.ankr.com/avalanche_fuji-c
 
   wallet_address: "0x7E6287aff409DAA79f9C3795E235ec2F6A892760"
@@ -100,16 +100,12 @@ prod:
     tsla:
       index: 0
       pair_id: TSLA:USDT
-      address: "0xfA0d3DDbcfe67D66d8BAA7f963ccDd5551ee19Bf"
-      MarginX: MarginX_TSLA
-      Baklava: Baklava_TSLA
+      address: ""
 
     aapl:
       index: 1
       pair_id: AAPL:USDT
-      address: "0x33a922c23Fe61b6D05AC2De88b7714809c0faD44"
-      MarginX: MarginX_AAPL
-      Baklava: Baklava_AAPL
+      address: ""
 
     btc:
       index: 2
@@ -157,8 +153,6 @@ prod:
       index: 10
       pair_id: FX:USDT
       address: ""
-      MarginX: MarginX_BTC
-      Baklava: Baklava_BTC
 
     eth:
       index: 11
