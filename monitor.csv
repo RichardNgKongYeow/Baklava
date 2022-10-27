@@ -595,3 +595,10 @@
 10/07/2022 03:20:34,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
 10/07/2022 03:20:34,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
 10/07/2022 03:21:08,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/27/2022 10:15:20,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/27/2022 10:15:20,INFO,Connected to database fxdex
+10/27/2022 10:15:22,INFO,MarginX-Testnet-TSLA
+10/27/2022 10:15:22,INFO,Connected to database fxdex
+10/27/2022 10:15:23,INFO,MarginX-Testnet-AAPL
+10/27/2022 10:15:24,INFO,Connected to database fxdex
+10/27/2022 10:15:26,INFO,MarginX-Testnet-BTC

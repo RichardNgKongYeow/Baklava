@@ -358,3 +358,10 @@
 10/05/2022 04:52:45,INFO,MarginX-Testnet-BTC
 10/05/2022 04:55:34,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,15.12030970348302981,6.612,44
 10/05/2022 04:55:38,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,153.843969,5.289,ID-649235-1
+10/27/2022 10:24:30,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/27/2022 10:24:30,INFO,Connected to database fxdex
+10/27/2022 10:24:32,INFO,MarginX-Testnet-TSLA
+10/27/2022 10:24:32,INFO,Connected to database fxdex
+10/27/2022 10:24:34,INFO,MarginX-Testnet-AAPL
+10/27/2022 10:24:34,INFO,Connected to database fxdex
+10/27/2022 10:24:36,INFO,MarginX-Testnet-BTC
