@@ -19444,3 +19444,26 @@
 10/07/2022 03:26:12,INFO,Connected to database fxdex
 10/07/2022 03:26:13,INFO,MarginX-Testnet-TSLA
 10/07/2022 03:26:14,INFO,Connected to database fxdex
+10/28/2022 06:44:25,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:44:25,INFO,Connected to database fxdex
+10/28/2022 06:44:27,INFO,MarginX-BTC
+10/28/2022 06:44:28,ERROR,MarginXClient,btc, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+10/28/2022 06:44:28,INFO,Connected to database fxdex
+10/28/2022 06:44:29,INFO,MarginX-ETH
+10/28/2022 06:44:29,ERROR,MarginXClient,eth, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+10/28/2022 06:44:29,ERROR,MarginXClient,eth,open_long_position
+10/28/2022 06:44:29,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:46:23,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/28/2022 06:46:23,INFO,Connected to database fxdex
+10/28/2022 06:46:25,INFO,MarginX-BTC
+10/28/2022 06:46:25,INFO,Connected to database fxdex
+10/28/2022 06:46:27,INFO,MarginX-ETH
+10/28/2022 06:46:32,ERROR,MarginXClient,eth,open_long_position
+10/28/2022 06:46:32,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:47:52,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/28/2022 06:47:52,INFO,Connected to database fxdex
+10/28/2022 06:47:53,INFO,MarginX-BTC
+10/28/2022 06:47:54,INFO,Connected to database fxdex
+10/28/2022 06:47:55,INFO,MarginX-ETH
+10/28/2022 06:47:58,ERROR,MarginXClient,eth,open_long_position
+10/28/2022 06:47:58,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>

@@ -15,7 +15,7 @@ class BaklavaObject(object):
     
     def __init__(self, configs, private_key, provider=None):
         self.configs = configs
-        self.address = Web3.toChecksumAddress(configs['wallet_address'])
+        # self.address = Web3.toChecksumAddress(configs['wallet_address'])
         self.private_key = private_key
         self.provider = os.environ["PROVIDER"] if not provider else provider      
         self.provider = provider if not provider else provider
@@ -70,7 +70,7 @@ class BaklavaClient(BaklavaObject):
         super().__init__(configs, private_key, provider)
         
         # self.configs = configs
-        self.wallet_address = configs['wallet_address']
+        # self.wallet_address = configs['wallet_address']
         self.synthetic_pool_address = configs['synthetic_pool_address']
         self.configs = configs
 

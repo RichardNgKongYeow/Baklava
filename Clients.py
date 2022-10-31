@@ -59,6 +59,7 @@ async def manual_executor(pair_id, direction, amount, position, client_dict):
                 events = await client.close_open_long_position(amount)
             elif direction == "MarketBuy":
                 events = await client.open_long_position(direction,amount)
+
     
     except:
         logging.error("{},{},manual_executor".format(CLIENT_NAME, pair_id))

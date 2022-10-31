@@ -1,4 +1,4 @@
-environment: test
+environment: prod
 
 
 
@@ -15,10 +15,10 @@ test:
     4: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
     # 5: https://rpc.ankr.com/avalanche_fuji-c
  
+  grpc_prefix: https://testnet-
+  grpc_suffix: -grpc.marginx.io:9090
 
-  wallet_address: "0x6Ec43b644cD769a1c7695069804E67b2B691e36d"
-
-  synthetic_pool_address: "0xdCE353cf62250B94C80F8eD70FFe5fF95304226f"
+  synthetic_pool_address: "0x70Fc185bf1257eC873bB9713F786dDfAb256f82d"
 
   chain_id:
     tsla:
@@ -44,51 +44,140 @@ test:
       MarginX: MarginX_BTC
       Baklava: Baklava_BTC
 
-    nflx:
-      index: 3
-      pair_id: NFLX:USDT
-      address: ""
+    # nflx:
+    #   index: 3
+    #   pair_id: NFLX:USDT
+    #   address: ""
 
-    goog:
-      index: 4
-      pair_id: GOOG:USDT
-      address: ""
+    # goog:
+    #   index: 4
+    #   pair_id: GOOG:USDT
+    #   address: ""
 
-    fb:
-      index: 5
-      pair_id: FB:USDT
-      address: ""
+    # fb:
+    #   index: 5
+    #   pair_id: FB:USDT
+    #   address: ""
 
-    amzn:
-      index: 6
-      pair_id: AMZN:USDT
-      address: ""
+    # amzn:
+    #   index: 6
+    #   pair_id: AMZN:USDT
+    #   address: ""
 
-    spy:
-      index: 7
-      pair_id: SPY:USDT
-      address: ""
+    # spy:
+    #   index: 7
+    #   pair_id: SPY:USDT
+    #   address: ""
 
-    iwm:
-      index: 8
-      pair_id: IWM:USDT
-      address: ""
+    # iwm:
+    #   index: 8
+    #   pair_id: IWM:USDT
+    #   address: ""
     
-    tqqq:
-      index: 9
-      pair_id: TQQQ:USDT
-      address: ""
+    # tqqq:
+    #   index: 9
+    #   pair_id: TQQQ:USDT
+    #   address: ""
 
     fx:
-      index: 10
+      index: 3
       pair_id: FX:USDT
-      address: ""
+      address: "0x912bFf923ADC8b7BaB83030b5D3af646D13E1533"
+      MarginX: MarginX_FX
+      Baklava: Baklava_FX
 
 
 
 prod:
+
+
+  baklava_client_logs_file: logs(p).csv
+  monitor_client_logs_file: monitor(p).csv
+  manual_client_logs_files: manual(p).csv
+
   web3_url:
-    1: https://ava-mainnet.public.blastapi.io/ext/bc/C/rpc
+    1: https://api.avax.network/ext/bc/C/rpc
     2: https://rpc.ankr.com/avalanche
-    3: https://avalancheapi.terminet.io/ext/bc/C/rpc
-    4: https://api.avax.network/ext/bc/C/rpc
+    3: https://ava-mainnet.public.blastapi.io/ext/bc/C/rpc
+    4: https://1rpc.io/avax/c
+    5: https://avalanche-evm.publicnode.com
+    6: https://avalancheapi.terminet.io/ext/bc/C/rpc
+
+  grpc_prefix: https://
+  grpc_suffix: -grpc.marginx.io
+ 
+
+  # wallet_address: "0x6Ec43b644cD769a1c7695069804E67b2B691e36d"
+
+  synthetic_pool_address: "0xFDef82DE050354fF94Aea86B427ee4fC82897aF2"
+
+  chain_id:
+    # tsla:
+    #   index: 0
+    #   pair_id: TSLA:USDT
+    #   address: ""
+    #   MarginX: MarginX_TSLA
+    #   Baklava: Baklava_TSLA
+
+
+    # aapl:
+    #   index: 1
+    #   pair_id: AAPL:USDT
+    #   address: ""
+    #   MarginX: MarginX_AAPL
+    #   Baklava: Baklava_AAPL
+
+
+    btc:
+      index: 0
+      pair_id: BTC:USDT
+      address: "0x3C5dE8d32d9047649215e33808f6901d27d2DEe8"
+      MarginX: MarginX_BTC
+      Baklava: Baklava_BTC
+
+    # nflx:
+    #   index: 3
+    #   pair_id: NFLX:USDT
+    #   address: ""
+
+    # goog:
+    #   index: 4
+    #   pair_id: GOOG:USDT
+    #   address: ""
+
+    # fb:
+    #   index: 5
+    #   pair_id: FB:USDT
+    #   address: ""
+
+    # amzn:
+    #   index: 6
+    #   pair_id: AMZN:USDT
+    #   address: ""
+
+    # spy:
+    #   index: 7
+    #   pair_id: SPY:USDT
+    #   address: ""
+
+    # iwm:
+    #   index: 8
+    #   pair_id: IWM:USDT
+    #   address: ""
+    
+    # tqqq:
+    #   index: 9
+    #   pair_id: TQQQ:USDT
+    #   address: ""
+
+    # fx:
+    #   index: 10
+    #   pair_id: FX:USDT
+    #   address: ""
+    
+    eth:
+      index: 1
+      pair_id: ETH:USDT
+      address: "0xf784e45AEc811dA24E67Ac46B8E214D09375650c"
+      MarginX: MarginX_ETH
+      Baklava: Baklava_ETH

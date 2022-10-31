@@ -365,3 +365,212 @@
 10/27/2022 10:24:34,INFO,MarginX-Testnet-AAPL
 10/27/2022 10:24:34,INFO,Connected to database fxdex
 10/27/2022 10:24:36,INFO,MarginX-Testnet-BTC
+10/28/2022 11:14:51,ERROR,BaklavaClient,initialise_syntoken_object_dict,Unknown format , attempted to normalize to 0x,<class 'ValueError'>
+10/28/2022 11:14:51,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 11:14:52,INFO,Connected to database fxdex
+10/28/2022 11:14:53,INFO,MarginX-Testnet-TSLA
+10/28/2022 11:14:54,INFO,Connected to database fxdex
+10/28/2022 11:14:55,INFO,MarginX-Testnet-AAPL
+10/28/2022 11:14:56,INFO,Connected to database fxdex
+10/28/2022 11:14:57,INFO,MarginX-Testnet-BTC
+10/28/2022 11:14:58,INFO,Connected to database fxdex
+10/28/2022 11:14:59,INFO,MarginX-Testnet-FX
+10/28/2022 11:25:01,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 11:25:01,INFO,Connected to database fxdex
+10/28/2022 11:25:03,INFO,MarginX-Testnet-TSLA
+10/28/2022 11:25:03,INFO,Connected to database fxdex
+10/28/2022 11:25:04,INFO,MarginX-Testnet-AAPL
+10/28/2022 11:25:05,INFO,Connected to database fxdex
+10/28/2022 11:25:07,INFO,MarginX-Testnet-BTC
+10/28/2022 11:25:08,INFO,Connected to database fxdex
+10/28/2022 11:25:09,INFO,MarginX-Testnet-FX
+10/28/2022 05:25:20,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 05:25:20,INFO,Connected to database fxdex
+10/28/2022 05:25:21,INFO,MarginX-Testnet-TSLA
+10/28/2022 05:25:22,INFO,Connected to database fxdex
+10/28/2022 05:25:23,INFO,MarginX-Testnet-AAPL
+10/28/2022 05:25:23,INFO,Connected to database fxdex
+10/28/2022 05:25:25,INFO,MarginX-Testnet-BTC
+10/28/2022 05:25:25,INFO,Connected to database fxdex
+10/28/2022 05:25:27,INFO,MarginX-Testnet-FX
+10/28/2022 05:26:29,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 05:26:29,INFO,Connected to database fxdex
+10/28/2022 05:26:30,INFO,MarginX-Testnet-TSLA
+10/28/2022 05:26:30,INFO,Connected to database fxdex
+10/28/2022 05:26:31,INFO,MarginX-Testnet-AAPL
+10/28/2022 05:26:32,INFO,Connected to database fxdex
+10/28/2022 05:26:33,INFO,MarginX-Testnet-BTC
+10/28/2022 05:26:34,INFO,Connected to database fxdex
+10/28/2022 05:26:35,INFO,MarginX-Testnet-FX
+10/28/2022 05:28:20,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 05:28:20,INFO,Connected to database fxdex
+10/28/2022 05:28:21,INFO,MarginX-Testnet-TSLA
+10/28/2022 05:28:22,INFO,Connected to database fxdex
+10/28/2022 05:28:23,INFO,MarginX-Testnet-AAPL
+10/28/2022 05:28:23,INFO,Connected to database fxdex
+10/28/2022 05:28:24,INFO,MarginX-Testnet-BTC
+10/28/2022 05:28:25,INFO,Connected to database fxdex
+10/28/2022 05:28:26,INFO,MarginX-Testnet-FX
+10/28/2022 05:28:32,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,13.485723127336377198,0.735,4
+10/28/2022 05:28:34,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,151.694,0.735,ID-1240534-1
+10/28/2022 05:28:49,INFO,BaklavaClient,Listening to order of,NFLX:USDT,MarketBuy,0.62482146783,15.867,2
+10/28/2022 05:28:49,ERROR,failed to get client due to error: 'NFLX:USDT' of type <class 'KeyError'>
+10/28/2022 05:40:31,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 05:40:31,INFO,Connected to database fxdex
+10/28/2022 05:40:33,INFO,MarginX-Testnet-TSLA
+10/28/2022 05:40:34,INFO,Connected to database fxdex
+10/28/2022 05:40:35,INFO,MarginX-Testnet-AAPL
+10/28/2022 05:40:36,INFO,Connected to database fxdex
+10/28/2022 05:40:37,INFO,MarginX-Testnet-BTC
+10/28/2022 05:40:37,INFO,Connected to database fxdex
+10/28/2022 05:40:40,INFO,MarginX-Testnet-FX
+10/28/2022 05:40:44,INFO,BaklavaClient,Listening to order of,NFLX:USDT,MarketBuy,0.62482146783,15.867,3
+10/28/2022 05:40:44,ERROR,failed to get client due to error: 'NFLX:USDT' of type <class 'KeyError'>
+10/28/2022 05:51:36,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 05:51:36,INFO,Connected to database fxdex
+10/28/2022 05:51:38,INFO,MarginX-Testnet-TSLA
+10/28/2022 05:51:39,INFO,Connected to database fxdex
+10/28/2022 05:51:41,INFO,MarginX-Testnet-AAPL
+10/28/2022 05:51:42,INFO,Connected to database fxdex
+10/28/2022 05:51:45,INFO,MarginX-Testnet-BTC
+10/28/2022 05:51:45,INFO,Connected to database fxdex
+10/28/2022 05:51:47,INFO,MarginX-Testnet-FX
+10/28/2022 06:04:40,INFO,BaklavaClient,Listening to order of,FX:USDT,MarketBuy,0.62482146783,15.891,4
+10/28/2022 06:04:43,ERROR,MarginXClient,fx,open_long_position
+10/28/2022 06:04:43,ERROR,MarginXClient,fx,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:05:52,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1512.31260215335,0.005,0
+10/28/2022 06:05:55,ERROR,MarginXClient,tsla,open_long_position
+10/28/2022 06:05:55,ERROR,MarginXClient,tsla,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:06:23,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:06:23,INFO,Connected to database fxdex
+10/28/2022 06:06:24,INFO,MarginX-Testnet-TSLA
+10/28/2022 06:06:25,INFO,Connected to database fxdex
+10/28/2022 06:06:26,INFO,MarginX-Testnet-AAPL
+10/28/2022 06:06:27,INFO,Connected to database fxdex
+10/28/2022 06:06:28,INFO,MarginX-Testnet-BTC
+10/28/2022 06:06:29,INFO,Connected to database fxdex
+10/28/2022 06:06:30,INFO,MarginX-Testnet-FX
+10/28/2022 06:06:36,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1512.31260215335,0.005,1
+10/28/2022 06:06:40,ERROR,MarginXClient,tsla,open_long_position
+10/28/2022 06:06:40,ERROR,MarginXClient,tsla,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:08:07,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:08:07,INFO,Connected to database fxdex
+10/28/2022 06:08:08,INFO,MarginX-Testnet-TSLA
+10/28/2022 06:08:08,INFO,Connected to database fxdex
+10/28/2022 06:08:10,INFO,MarginX-Testnet-AAPL
+10/28/2022 06:08:11,INFO,Connected to database fxdex
+10/28/2022 06:08:12,INFO,MarginX-Testnet-BTC
+10/28/2022 06:08:13,INFO,Connected to database fxdex
+10/28/2022 06:08:14,INFO,MarginX-Testnet-FX
+10/28/2022 06:08:20,INFO,BaklavaClient,Listening to order of,AAPL:USDT,MarketBuy,13.485723127336377198,0.735,5
+10/28/2022 06:08:21,INFO,MarginXClient,Execution of order of,AAPL:USDT,MarketBuy,151.694,0.735,ID-1241244-1
+10/28/2022 06:09:43,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1512.31260215335,0.005,2
+10/28/2022 06:09:46,ERROR,MarginXClient,tsla,open_long_position
+10/28/2022 06:09:46,ERROR,MarginXClient,tsla,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:10:23,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,20281.89516095968,0.003,1
+10/28/2022 06:10:27,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketBuy,20266.666667,0.003,ID-1241058-4
+10/28/2022 06:10:32,INFO,BaklavaClient,Listening to order of,FX:USDT,MarketBuy,0.62482146783,15.891,5
+10/28/2022 06:10:36,ERROR,MarginXClient,fx,open_long_position
+10/28/2022 06:10:36,ERROR,MarginXClient,fx,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:14:21,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketSell,20221.23146656,0.004,2
+10/28/2022 06:16:04,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketSell,20221.23146656,0.004,3
+10/28/2022 06:16:04,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/Marginx/MarginX.py:63> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 227, in close_open_long_position
+    position_id = open_long_position.Id,
+AttributeError: 'coroutine' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/Marginx/MarginX.py", line 71, in get_item_from_queue_and_execute
+    events = await client.close_open_long_position(amount)
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 237, in close_open_long_position
+    logging.error("{},{},close long position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+10/28/2022 06:16:04,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/Marginx/MarginX.py:63> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 227, in close_open_long_position
+    position_id = open_long_position.Id,
+AttributeError: 'coroutine' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/Marginx/MarginX.py", line 71, in get_item_from_queue_and_execute
+    events = await client.close_open_long_position(amount)
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 237, in close_open_long_position
+    logging.error("{},{},close long position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+10/28/2022 06:18:50,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:18:50,INFO,Connected to database fxdex
+10/28/2022 06:18:51,INFO,MarginX-Testnet-TSLA
+10/28/2022 06:18:52,INFO,Connected to database fxdex
+10/28/2022 06:18:53,INFO,MarginX-Testnet-AAPL
+10/28/2022 06:18:54,INFO,Connected to database fxdex
+10/28/2022 06:18:55,INFO,MarginX-Testnet-BTC
+10/28/2022 06:18:55,INFO,Connected to database fxdex
+10/28/2022 06:18:57,INFO,MarginX-Testnet-FX
+10/28/2022 06:19:03,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,20281.89516095968,0.003,4
+10/28/2022 06:19:06,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketBuy,20215.752,0.003,ID-1241209-4
+10/28/2022 06:19:11,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,20281.89516095968,0.003,5
+10/28/2022 06:19:12,ERROR,MarginXClient,btc,open_long_position
+10/28/2022 06:19:12,ERROR,MarginXClient,btc,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:19:30,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketSell,20221.23146656,0.002,6
+10/28/2022 06:20:55,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketSell,20221.23146656,0.002,7
+10/28/2022 06:20:55,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/Marginx/MarginX.py:63> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 227, in close_open_long_position
+    position_id = open_long_position.Id,
+AttributeError: 'coroutine' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/Marginx/MarginX.py", line 71, in get_item_from_queue_and_execute
+    events = await client.close_open_long_position(amount)
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 237, in close_open_long_position
+    logging.error("{},{},close long position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+10/28/2022 06:20:55,ERROR,Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<get_item_from_queue_and_execute() done, defined at /Users/richardng/Desktop/Baklava/Marginx/MarginX.py:63> exception=UnboundLocalError("local variable 'tx_response' referenced before assignment")>
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 227, in close_open_long_position
+    position_id = open_long_position.Id,
+AttributeError: 'coroutine' object has no attribute 'Id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/Marginx/MarginX.py", line 71, in get_item_from_queue_and_execute
+    events = await client.close_open_long_position(amount)
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 237, in close_open_long_position
+    logging.error("{},{},close long position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+UnboundLocalError: local variable 'tx_response' referenced before assignment
+10/28/2022 06:24:14,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:24:14,INFO,Connected to database fxdex
+10/28/2022 06:24:15,INFO,MarginX-Testnet-TSLA
+10/28/2022 06:24:16,INFO,Connected to database fxdex
+10/28/2022 06:24:17,INFO,MarginX-Testnet-AAPL
+10/28/2022 06:24:18,INFO,Connected to database fxdex
+10/28/2022 06:24:19,INFO,MarginX-Testnet-BTC
+10/28/2022 06:24:20,INFO,Connected to database fxdex
+10/28/2022 06:24:21,INFO,MarginX-Testnet-FX
+10/28/2022 06:24:29,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,20281.89516095968,0.003,8
+10/28/2022 06:24:33,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketBuy,20283.333334,0.003,ID-1241305-1
+10/28/2022 06:24:36,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,20281.89516095968,0.003,9
+10/28/2022 06:24:37,ERROR,MarginXClient,btc,open_long_position
+10/28/2022 06:24:37,ERROR,MarginXClient,btc,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:24:57,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:24:57,INFO,Connected to database fxdex
+10/28/2022 06:24:58,INFO,MarginX-Testnet-TSLA
+10/28/2022 06:24:58,INFO,Connected to database fxdex
+10/28/2022 06:25:00,INFO,MarginX-Testnet-AAPL
+10/28/2022 06:25:01,INFO,Connected to database fxdex
+10/28/2022 06:25:02,INFO,MarginX-Testnet-BTC
+10/28/2022 06:25:02,INFO,Connected to database fxdex
+10/28/2022 06:25:03,INFO,MarginX-Testnet-FX
+10/28/2022 06:25:14,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketSell,20221.23146656,0.005,10

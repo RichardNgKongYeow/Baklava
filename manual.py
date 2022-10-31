@@ -4,15 +4,15 @@ from dotenv import load_dotenv
 import asyncio
 
 
-pair_id = "AAPL:USDT"
-direction = "MarketBuy"
-amount = 99
+pair_id = "ETH:USDT"
+direction = "MarketSell"
+amount = 10
 order_id = 0
 position = "long"
 
 
-def initialize_logging():
-    logging.basicConfig(filename='manual.csv',level=logging.INFO,format='%(asctime)s,%(levelname)s,%(message)s',datefmt='%m/%d/%Y %I:%M:%S')
+def initialize_logging(filename):
+    logging.basicConfig(filename=filename,level=logging.INFO,format='%(asctime)s,%(levelname)s,%(message)s',datefmt='%m/%d/%Y %I:%M:%S')
     logging.root.setLevel(logging.INFO)
 
 
@@ -20,9 +20,10 @@ def initialize_logging():
 async def main():
 
     # initialize logging
-    initialize_logging()
+
     load_dotenv()
     configs = Clients.initialise_configs()
+    initialize_logging(configs['manual_client_logs_files'])
 
     # initialialise clients
     client_dict = Clients.initialise_marginx_client(configs)

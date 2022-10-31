@@ -21,6 +21,7 @@ class grpcClient():
         
         
         self.chain_id = chain_id
+        self.configs = configs
         self.pair_id = configs['chain_id'][chain_id]['pair_id']
         self.address = configs['chain_id'][chain_id]['address']
         
@@ -36,8 +37,7 @@ class grpcClient():
         
     def initialise_client(self):
         try:
-            # client = GRPCClient("https://testnet-btc-grpc.marginx.io:9090")
-            self.client = GRPCClient(f"https://testnet-{self.chain_id}-grpc.marginx.io:9090")
+            self.client = GRPCClient(f"{self.configs['grpc_prefix']}{self.chain_id}{self.configs['grpc_suffix']}")
             self.marginx_chain_id = self.client.query_chain_id()
             logging.info('{}'.format(self.marginx_chain_id))
         except Exception as e:
@@ -152,11 +152,11 @@ class grpcClient():
         except Exception as e:
             logging.error("{},{}, get_open_long_position_amount,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
 
-    def get_open_short_position(self)->list:
+    async def get_open_short_position(self)->list:
         """
         get open short position info (list)
         """
-        positions = self.query_open_positions()
+        positions = await self.query_open_positions()
         try:
             if len(positions) > 0:
                 for position in positions:
@@ -217,7 +217,8 @@ class grpcClient():
         
     async def close_open_long_position(self, amount):
         pair_id = self.pair_id
-        open_long_position = self.get_open_long_position()
+        open_long_position = await self.get_open_long_position()
+        # print(open_long_position)
         # acc_seq = self.get_account_sequence()
 
         try:
@@ -232,7 +233,9 @@ class grpcClient():
                 market_close = True, 
                 mode=BROADCAST_MODE_BLOCK)
             events = json.loads(tx_response.raw_log)[0]['events']
+            # print(tx_response.raw_log)
             return events
+            
         except:
             logging.error("{},{},close long position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
     

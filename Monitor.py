@@ -13,7 +13,6 @@ import schedule
 import urllib.parse 
 import telebot
 import logging
-import logging
 import Clients
 from dotenv import load_dotenv
 import os
@@ -146,17 +145,17 @@ class MonitorBot():
         try:
             all_data, date, _time = await self.min_check()
 
-            tsla_result = all_data['tsla']['result']
-            marginx_tsla = all_data['tsla']['marginx_amount']
-            baklava_tsla = all_data['tsla']['baklava_amount']
-            tsla_description = all_data['tsla']['description']
-            tsla_diff_amount = all_data['tsla']['diff_amount']
+            # tsla_result = all_data['tsla']['result']
+            # marginx_tsla = all_data['tsla']['marginx_amount']
+            # baklava_tsla = all_data['tsla']['baklava_amount']
+            # tsla_description = all_data['tsla']['description']
+            # tsla_diff_amount = all_data['tsla']['diff_amount']
             
-            aapl_result = all_data['aapl']['result']
-            marginx_aapl = all_data['aapl']['marginx_amount']
-            baklava_aapl = all_data['aapl']['baklava_amount']
-            aapl_description = all_data['aapl']['description']
-            aapl_diff_amount = all_data['aapl']['diff_amount']
+            # aapl_result = all_data['aapl']['result']
+            # marginx_aapl = all_data['aapl']['marginx_amount']
+            # baklava_aapl = all_data['aapl']['baklava_amount']
+            # aapl_description = all_data['aapl']['description']
+            # aapl_diff_amount = all_data['aapl']['diff_amount']
 
             btc_result = all_data['btc']['result']
             marginx_btc = all_data['btc']['marginx_amount']
@@ -164,8 +163,15 @@ class MonitorBot():
             btc_description = all_data['btc']['description']
             btc_diff_amount = all_data['btc']['diff_amount']
 
+            eth_result = all_data['eth']['result']
+            marginx_eth = all_data['eth']['marginx_amount']
+            baklava_eth = all_data['eth']['baklava_amount']
+            eth_description = all_data['eth']['description']
+            eth_diff_amount = all_data['eth']['diff_amount']
+
             #### Build result msg ####
-            if tsla_result == 'Normal' and aapl_result == 'Normal' and btc_result == 'Normal':
+            # if tsla_result == 'Normal' and aapl_result == 'Normal' and btc_result == 'Normal':
+            if eth_result == 'Normal' and btc_result == 'Normal':
                 overallResult = "All Normal"
             else:
                 overallResult = "Warning"
@@ -176,19 +182,19 @@ class MonitorBot():
             msgResponse += f"Baklava Bridge health: {overallResult}\n\n"
             msgResponse += f"Date: {date} Time: {_time}\n\n"
 
-            msgResponse += "~~~~~~~~~~~~ TSLA ~~~~~~~~~~~~\n"
-            msgResponse += f"{'MarginX:'.ljust(20)} {'%.2f' % marginx_tsla}\n"
-            msgResponse += f"{'Baklava:'.ljust(17)} {'%.2f' % baklava_tsla}\n"
-            msgResponse += f"{'Status:'.ljust(21)} {tsla_result}\n"
-            msgResponse += f"{'Description:'.ljust(17)} {tsla_description}\n"
-            msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % tsla_diff_amount}\n\n"
+            # msgResponse += "~~~~~~~~~~~~ TSLA ~~~~~~~~~~~~\n"
+            # msgResponse += f"{'MarginX:'.ljust(20)} {'%.2f' % marginx_tsla}\n"
+            # msgResponse += f"{'Baklava:'.ljust(17)} {'%.2f' % baklava_tsla}\n"
+            # msgResponse += f"{'Status:'.ljust(21)} {tsla_result}\n"
+            # msgResponse += f"{'Description:'.ljust(17)} {tsla_description}\n"
+            # msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % tsla_diff_amount}\n\n"
 
-            msgResponse += "~~~~~~~~~~~~ AAPL ~~~~~~~~~~~~\n"
-            msgResponse += f"{'MarginX:'.ljust(20)} {'%.2f' % marginx_aapl}\n"
-            msgResponse += f"{'Baklava:'.ljust(17)} {'%.2f' % baklava_aapl}\n"
-            msgResponse += f"{'Status:'.ljust(21)} {aapl_result}\n"
-            msgResponse += f"{'Description:'.ljust(17)} {aapl_description}\n"
-            msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % aapl_diff_amount}\n\n"
+            msgResponse += "~~~~~~~~~~~~ ETH ~~~~~~~~~~~~\n"
+            msgResponse += f"{'MarginX:'.ljust(20)} {'%.2f' % marginx_eth}\n"
+            msgResponse += f"{'Baklava:'.ljust(17)} {'%.2f' % baklava_eth}\n"
+            msgResponse += f"{'Status:'.ljust(21)} {eth_result}\n"
+            msgResponse += f"{'Description:'.ljust(17)} {eth_description}\n"
+            msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % eth_diff_amount}\n\n"
             
             msgResponse += "~~~~~~~~~~~~ BTC ~~~~~~~~~~~~\n"
             msgResponse += f"{'MarginX:'.ljust(20)} {'%.2f' % marginx_btc}\n"
@@ -197,8 +203,8 @@ class MonitorBot():
             msgResponse += f"{'Description:'.ljust(17)} {btc_description}\n"
             msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % btc_diff_amount}\n\n"
 
-
-            if aapl_result != 'Normal' or tsla_result != 'Normal' or btc_result != 'Normal':
+            # if eth_result != 'Normal' or tsla_result != 'Normal' or btc_result != 'Normal':
+            if eth_result != 'Normal' or btc_result != 'Normal':
                 self.bot.send_message(self.TELE_CHAT_ID, msgResponse)
         
         except Exception as e:

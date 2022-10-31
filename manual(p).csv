@@ -1,0 +1,190 @@
+10/28/2022 06:54:27,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/28/2022 06:54:27,INFO,Connected to database fxdex
+10/28/2022 06:54:28,INFO,MarginX-BTC
+10/28/2022 06:54:29,INFO,Connected to database fxdex
+10/28/2022 06:54:30,INFO,MarginX-ETH
+10/28/2022 06:54:35,ERROR,MarginXClient,eth,open_long_position
+10/28/2022 06:54:35,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/28/2022 06:57:04,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/28/2022 06:57:04,INFO,Connected to database fxdex
+10/28/2022 06:57:06,INFO,MarginX-BTC
+10/28/2022 06:57:07,INFO,Connected to database fxdex
+10/28/2022 06:57:08,INFO,MarginX-ETH
+10/28/2022 06:57:12,ERROR,MarginXClient,eth,open_long_position
+10/28/2022 06:57:12,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 02:16:27,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 02:16:27,INFO,Connected to database fxdex
+10/31/2022 02:16:29,INFO,MarginX-BTC
+10/31/2022 02:16:29,INFO,Connected to database fxdex
+10/31/2022 02:16:31,INFO,MarginX-ETH
+10/31/2022 02:16:36,ERROR,MarginXClient,eth,open_long_position
+10/31/2022 02:16:36,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 02:22:59,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 02:22:59,INFO,Connected to database fxdex
+10/31/2022 02:23:00,INFO,MarginX-BTC
+10/31/2022 02:23:01,INFO,Connected to database fxdex
+10/31/2022 02:23:02,INFO,MarginX-ETH
+10/31/2022 02:23:06,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 02:24:06,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 02:24:06,INFO,Connected to database fxdex
+10/31/2022 02:24:08,INFO,MarginX-BTC
+10/31/2022 02:24:08,INFO,Connected to database fxdex
+10/31/2022 02:24:10,INFO,MarginX-ETH
+10/31/2022 02:24:10,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 02:24:10,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 02:27:03,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 02:27:03,INFO,Connected to database fxdex
+10/31/2022 02:27:04,INFO,MarginX-BTC
+10/31/2022 02:27:05,INFO,Connected to database fxdex
+10/31/2022 02:27:06,INFO,MarginX-ETH
+10/31/2022 02:27:07,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 02:27:07,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:20:50,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:20:50,INFO,Connected to database fxdex
+10/31/2022 03:20:52,INFO,MarginX-BTC
+10/31/2022 03:20:53,INFO,Connected to database fxdex
+10/31/2022 03:20:54,INFO,MarginX-ETH
+10/31/2022 03:20:55,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:20:55,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:22:49,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:22:49,INFO,Connected to database fxdex
+10/31/2022 03:22:50,INFO,MarginX-BTC
+10/31/2022 03:22:51,INFO,Connected to database fxdex
+10/31/2022 03:22:52,INFO,MarginX-ETH
+10/31/2022 03:22:53,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:22:53,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:24:33,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:24:33,INFO,Connected to database fxdex
+10/31/2022 03:24:34,INFO,MarginX-BTC
+10/31/2022 03:24:34,INFO,Connected to database fxdex
+10/31/2022 03:24:36,INFO,MarginX-ETH
+10/31/2022 03:24:36,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:24:36,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:29:55,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:29:55,INFO,Connected to database fxdex
+10/31/2022 03:29:57,INFO,MarginX-BTC
+10/31/2022 03:29:57,INFO,Connected to database fxdex
+10/31/2022 03:29:59,INFO,MarginX-ETH
+10/31/2022 03:30:00,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:30:00,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:30:37,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:30:38,INFO,Connected to database fxdex
+10/31/2022 03:30:39,INFO,MarginX-BTC
+10/31/2022 03:30:39,INFO,Connected to database fxdex
+10/31/2022 03:30:41,INFO,MarginX-ETH
+10/31/2022 03:30:41,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:30:41,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:30:56,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:30:56,INFO,Connected to database fxdex
+10/31/2022 03:30:58,INFO,MarginX-BTC
+10/31/2022 03:30:58,INFO,Connected to database fxdex
+10/31/2022 03:31:00,INFO,MarginX-ETH
+10/31/2022 03:31:00,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:31:00,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:35:37,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:35:37,INFO,Connected to database fxdex
+10/31/2022 03:35:39,INFO,MarginX-BTC
+10/31/2022 03:35:39,INFO,Connected to database fxdex
+10/31/2022 03:35:41,INFO,MarginX-ETH
+10/31/2022 03:35:41,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:35:41,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:37:04,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:37:04,INFO,Connected to database fxdex
+10/31/2022 03:37:05,INFO,MarginX-BTC
+10/31/2022 03:37:06,INFO,Connected to database fxdex
+10/31/2022 03:37:07,INFO,MarginX-ETH
+10/31/2022 03:37:08,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:37:08,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:38:29,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:38:29,INFO,Connected to database fxdex
+10/31/2022 03:38:30,INFO,MarginX-BTC
+10/31/2022 03:38:31,INFO,Connected to database fxdex
+10/31/2022 03:38:32,INFO,MarginX-ETH
+10/31/2022 03:38:33,ERROR,MarginXClient,eth,query_open_positions,object list can't be used in 'await' expression,<class 'TypeError'>
+10/31/2022 03:38:33,ERROR,MarginXClient,eth,get_open_long_position,object of type 'NoneType' has no len(),<class 'TypeError'>
+10/31/2022 03:38:33,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:38:33,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:39:31,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:39:31,INFO,Connected to database fxdex
+10/31/2022 03:39:33,INFO,MarginX-BTC
+10/31/2022 03:39:33,INFO,Connected to database fxdex
+10/31/2022 03:39:35,INFO,MarginX-ETH
+10/31/2022 03:39:35,ERROR,MarginXClient,eth,query_open_positions,object list can't be used in 'await' expression,<class 'TypeError'>
+10/31/2022 03:39:35,ERROR,MarginXClient,eth,get_open_long_position,object of type 'NoneType' has no len(),<class 'TypeError'>
+10/31/2022 03:39:35,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:39:35,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:40:26,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:40:26,INFO,Connected to database fxdex
+10/31/2022 03:40:28,INFO,MarginX-BTC
+10/31/2022 03:40:28,INFO,Connected to database fxdex
+10/31/2022 03:40:29,INFO,MarginX-ETH
+10/31/2022 03:40:30,ERROR,MarginXClient,eth,query_open_positions,object list can't be used in 'await' expression,<class 'TypeError'>
+10/31/2022 03:40:30,ERROR,MarginXClient,eth,get_open_long_position,object of type 'NoneType' has no len(),<class 'TypeError'>
+10/31/2022 03:40:30,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:40:30,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 03:47:25,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 03:47:25,INFO,Connected to database fxdex
+10/31/2022 03:47:26,INFO,MarginX-BTC
+10/31/2022 03:47:27,INFO,Connected to database fxdex
+10/31/2022 03:47:28,INFO,MarginX-ETH
+10/31/2022 03:47:29,ERROR,MarginXClient,eth,query_open_positions,object list can't be used in 'await' expression,<class 'TypeError'>
+10/31/2022 03:47:29,ERROR,MarginXClient,eth,get_open_long_position,object of type 'NoneType' has no len(),<class 'TypeError'>
+10/31/2022 03:47:29,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 03:47:29,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 05:15:13,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 05:15:13,INFO,Connected to database fxdex
+10/31/2022 05:15:14,INFO,MarginX-BTC
+10/31/2022 05:15:15,INFO,Connected to database fxdex
+10/31/2022 05:15:16,INFO,MarginX-ETH
+10/31/2022 05:15:20,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 05:20:20,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 05:20:20,INFO,Connected to database fxdex
+10/31/2022 05:20:22,INFO,MarginX-BTC
+10/31/2022 05:20:22,INFO,Connected to database fxdex
+10/31/2022 05:20:23,INFO,MarginX-ETH
+10/31/2022 05:20:24,ERROR,MarginXClient,eth,close long position,your pending quantity is 0.000000, available close position quantity is 0.001000: wrong position size
+10/31/2022 05:20:24,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 05:21:43,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 05:21:43,INFO,Connected to database fxdex
+10/31/2022 05:21:44,INFO,MarginX-BTC
+10/31/2022 05:21:45,INFO,Connected to database fxdex
+10/31/2022 05:21:46,INFO,MarginX-ETH
+10/31/2022 05:21:48,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 05:22:34,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 05:22:34,INFO,Connected to database fxdex
+10/31/2022 05:22:36,INFO,MarginX-BTC
+10/31/2022 05:22:37,INFO,Connected to database fxdex
+10/31/2022 05:22:38,INFO,MarginX-ETH
+10/31/2022 05:22:41,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 05:35:42,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 05:35:42,INFO,Connected to database fxdex
+10/31/2022 05:35:44,INFO,MarginX-BTC
+10/31/2022 05:35:44,INFO,Connected to database fxdex
+10/31/2022 05:35:46,INFO,MarginX-ETH
+10/31/2022 05:35:49,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 06:21:48,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 06:21:48,INFO,Connected to database fxdex
+10/31/2022 06:21:50,INFO,MarginX-BTC
+10/31/2022 06:21:50,INFO,Connected to database fxdex
+10/31/2022 06:21:52,INFO,MarginX-ETH
+10/31/2022 06:21:53,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 06:21:53,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 06:27:20,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 06:27:20,INFO,Connected to database fxdex
+10/31/2022 06:27:21,INFO,MarginX-BTC
+10/31/2022 06:27:21,INFO,Connected to database fxdex
+10/31/2022 06:27:23,INFO,MarginX-ETH
+10/31/2022 06:27:23,ERROR,ManualExecutor,ETH:USDT,manual_executor
+10/31/2022 06:27:23,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 06:28:14,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 06:28:14,INFO,Connected to database fxdex
+10/31/2022 06:28:15,INFO,MarginX-BTC
+10/31/2022 06:28:15,INFO,Connected to database fxdex
+10/31/2022 06:28:16,INFO,MarginX-ETH
+10/31/2022 06:28:21,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 06:28:59,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 06:28:59,INFO,Connected to database fxdex
+10/31/2022 06:29:00,INFO,MarginX-BTC
+10/31/2022 06:29:01,INFO,Connected to database fxdex
+10/31/2022 06:29:02,INFO,MarginX-ETH
+10/31/2022 06:29:05,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>

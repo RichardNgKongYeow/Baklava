@@ -1,0 +1,30 @@
+10/28/2022 06:45:00,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:45:00,INFO,Connected to database fxdex
+10/28/2022 06:45:01,INFO,MarginX-BTC
+10/28/2022 06:45:02,ERROR,MarginXClient,btc, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+10/28/2022 06:45:02,INFO,Connected to database fxdex
+10/28/2022 06:45:03,INFO,MarginX-ETH
+10/28/2022 06:45:04,ERROR,MarginXClient,eth, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+10/28/2022 06:45:05,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/28/2022 06:45:36,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/28/2022 06:46:08,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/28/2022 06:46:39,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/28/2022 06:47:10,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/28/2022 06:47:41,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/28/2022 06:48:13,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/28/2022 06:48:44,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/28/2022 06:49:16,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/31/2022 05:27:36,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 05:27:36,INFO,Connected to database fxdex
+10/31/2022 05:27:38,INFO,MarginX-BTC
+10/31/2022 05:27:38,INFO,Connected to database fxdex
+10/31/2022 05:27:39,INFO,MarginX-ETH
+10/31/2022 05:27:41,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/31/2022 05:28:13,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/31/2022 05:28:44,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/31/2022 05:29:15,ERROR,MonitorBot,buildTelebotMsg,'tsla',<class 'KeyError'>
+10/31/2022 06:25:11,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 06:25:11,INFO,Connected to database fxdex
+10/31/2022 06:25:13,INFO,MarginX-BTC
+10/31/2022 06:25:13,INFO,Connected to database fxdex
+10/31/2022 06:25:15,INFO,MarginX-ETH

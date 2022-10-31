@@ -1,0 +1,54 @@
+10/28/2022 06:26:49,ERROR,BaklavaClient,initialise_syntoken_object_dict,'tsla',<class 'KeyError'>
+10/28/2022 06:26:49,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:27:14,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:27:14,INFO,Connected to database fxdex
+10/28/2022 06:27:15,INFO,MarginX-Testnet-BTC
+10/28/2022 06:27:16,INFO,Connected to database fxdex
+10/28/2022 06:27:16,ERROR,MarginXClient, initialise eth client,<_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "DNS resolution failed for service: testnet-eth-grpc.marginx.io:9090"
+	debug_error_string = "{"created":"@1666952836.712813000","description":"Resolver transient failure","file":"src/core/ext/filters/client_channel/client_channel.cc","file_line":1325,"referenced_errors":[{"created":"@1666952836.712809000","description":"DNS resolution failed for service: testnet-eth-grpc.marginx.io:9090","file":"src/core/ext/filters/client_channel/resolver/dns/c_ares/dns_resolver_ares.cc","file_line":360,"grpc_status":14,"referenced_errors":[{"created":"@1666952836.712617000","description":"C-ares status is not ARES_SUCCESS qtype=AAAA name=testnet-eth-grpc.marginx.io is_balancer=0: Domain name not found","file":"src/core/ext/filters/client_channel/resolver/dns/c_ares/grpc_ares_wrapper.cc","file_line":698,"referenced_errors":[{"created":"@1666952836.525130000","description":"C-ares status is not ARES_SUCCESS qtype=A name=testnet-eth-grpc.marginx.io is_balancer=0: Domain name not found","file":"src/core/ext/filters/client_channel/resolver/dns/c_ares/grpc_ares_wrapper.cc","file_line":698}]}]}]}"
+>,<class 'grpc._channel._InactiveRpcError'>
+10/28/2022 06:38:18,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:38:18,INFO,Connected to database fxdex
+10/28/2022 06:38:18,ERROR,MarginXClient, initialise btc client,<_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "DNS resolution failed for service: btc-grpc-intranet.marginx.io"
+	debug_error_string = "{"created":"@1666953498.713155000","description":"Resolver transient failure","file":"src/core/ext/filters/client_channel/client_channel.cc","file_line":1325,"referenced_errors":[{"created":"@1666953498.713154000","description":"DNS resolution failed for service: btc-grpc-intranet.marginx.io","file":"src/core/ext/filters/client_channel/resolver/dns/c_ares/dns_resolver_ares.cc","file_line":360,"grpc_status":14,"referenced_errors":[{"created":"@1666953498.713073000","description":"C-ares status is not ARES_SUCCESS qtype=AAAA name=btc-grpc-intranet.marginx.io is_balancer=0: DNS server returned answer with no data","file":"src/core/ext/filters/client_channel/resolver/dns/c_ares/grpc_ares_wrapper.cc","file_line":698,"referenced_errors":[{"created":"@1666953498.454094000","description":"C-ares status is not ARES_SUCCESS qtype=A name=btc-grpc-intranet.marginx.io is_balancer=0: DNS server returned answer with no data","file":"src/core/ext/filters/client_channel/resolver/dns/c_ares/grpc_ares_wrapper.cc","file_line":698}]}]}]}"
+>,<class 'grpc._channel._InactiveRpcError'>
+10/28/2022 06:38:43,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:38:43,INFO,Connected to database fxdex
+10/28/2022 06:38:45,INFO,MarginX-BTC
+10/28/2022 06:38:45,ERROR,MarginXClient,btc, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+10/28/2022 06:38:45,INFO,Connected to database fxdex
+10/28/2022 06:38:47,INFO,MarginX-ETH
+10/28/2022 06:38:48,ERROR,MarginXClient,eth, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+10/28/2022 06:42:12,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/28/2022 06:42:12,INFO,Connected to database fxdex
+10/28/2022 06:42:13,INFO,MarginX-BTC
+10/28/2022 06:42:14,ERROR,MarginXClient,btc, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+10/28/2022 06:42:14,INFO,Connected to database fxdex
+10/28/2022 06:42:15,INFO,MarginX-ETH
+10/28/2022 06:42:16,ERROR,MarginXClient,eth, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+10/31/2022 05:29:11,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 05:29:11,INFO,Connected to database fxdex
+10/31/2022 05:29:12,INFO,MarginX-BTC
+10/31/2022 05:29:13,INFO,Connected to database fxdex
+10/31/2022 05:29:15,INFO,MarginX-ETH
+10/31/2022 05:31:25,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1591.02707727738,0.024,2
+10/31/2022 05:31:27,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketBuy,1590.817,0.024,ID-1346093-30
+10/31/2022 05:32:36,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketSell,1586.26827246,0.02,3
+10/31/2022 05:32:37,ERROR,MarginXClient,eth,close long position,account sequence mismatch, expected 10, got 9: incorrect account sequence
+10/31/2022 05:32:37,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+10/31/2022 05:33:43,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 05:33:43,INFO,Connected to database fxdex
+10/31/2022 05:33:44,INFO,MarginX-BTC
+10/31/2022 05:33:45,INFO,Connected to database fxdex
+10/31/2022 05:33:46,INFO,MarginX-ETH
+10/31/2022 05:36:45,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+10/31/2022 05:36:45,INFO,Connected to database fxdex
+10/31/2022 05:36:46,INFO,MarginX-BTC
+10/31/2022 05:36:47,INFO,Connected to database fxdex
+10/31/2022 05:36:48,INFO,MarginX-ETH
+10/31/2022 06:07:05,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketSell,1626.1174592,0.007,4
+10/31/2022 06:07:10,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketSell,1626.18,0.007,ID-1346733-8
