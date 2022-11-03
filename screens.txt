@@ -1,0 +1,11 @@
+        2369.pts-0.iZ0xiakn64xqr1gsp0wy4qZ      (10/27/2022 06:18:48 PM)        (Detached)
+        2169.pts-0.iZ0xiakn64xqr1gsp0wy4qZ      (10/27/2022 06:18:12 PM)        (Detached)
+        1983.pts-0.iZ0xiakn64xqr1gsp0wy4qZ      (10/27/2022 06:17:16 PM)        (Detached)
+        1727.pts-0.iZ0xiakn64xqr1gsp0wy4qZ      (10/27/2022 06:03:40 PM)        (Detached)
+        1533.pts-0.iZ0xiakn64xqr1gsp0wy4qZ      (10/27/2022 05:59:50 PM)        (Detached)
+
+
+
+        mine:
+        70514.pts-8.iZ0xiakn64xqr1gsp0wy4qZ] index.py
+        67707.pts-9.iZ0xiakn64xqr1gsp0wy4qZ] Monitorbot

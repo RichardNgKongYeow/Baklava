@@ -1,22 +1,20 @@
-from grpcClient import grpcClient
+from Marginx.grpcClient import grpcClient
 import logging
 from eth_account import Account
-import utils
-import asyncio
-import constants
+from Configs import Pairs
 
 
 
 
-def initialise_all_clients_and_get_all_info(account:object,pair_info:dict)->list:
+def initialise_all_clients_and_get_all_info(account:object,configs:dict)->list:
     """
     initialiase all clients objected to be executed later and return an array
     of clients
     """
     client_dict={}
-    for i in pair_info:
-        pair = pair_info[i]['pair']
-        client = grpcClient(account,i)
+    for chain_id in Pairs.chain_ids:
+        pair = configs['chain_id'][chain_id]['pair_id']
+        client = grpcClient(account,chain_id, configs)
         client.initialise_client_and_get_all_info()
         client_dict[pair] = client
     return client_dict
@@ -45,7 +43,7 @@ def init_wallet(seed)->object:
         logging.critical("Unable to initialise wallet due to error: {} of type {}".format(e,type(e)))
 
 
-def query_all_open_long_positions_amounts(client_dict:dict)->dict:
+async def query_all_open_long_positions_amounts(client_dict:dict)->dict:
     """
     query and return a dict of open position amount eg.
 
@@ -56,7 +54,7 @@ def query_all_open_long_positions_amounts(client_dict:dict)->dict:
     for i in client_dict.values():
         client = i
         pair_id = client.pair_id
-        open_position_amount = client.get_open_long_position_amount()
+        open_position_amount = await client.get_open_long_position_amount()
         all_open_positions[pair_id] = open_position_amount
     return all_open_positions
 
@@ -68,12 +66,9 @@ async def get_item_from_queue_and_execute(client_dict,id,myQueue):
         pair_id, direction, amount, order_id = await myQueue.get()
         client = get_client(pair_id, client_dict)
         if direction == "MarketBuy":
-            events = await client.open_long_mx_position(direction, amount)
+            events = await client.open_long_position(direction, amount)
         elif direction == "MarketSell":
-            events = await client.close_long_open_position(amount)
+            events = await client.close_open_long_position(amount)
         await client.log_order_info(events)
 
 
-async def log_event_executer_loop(client_list, poll_interval, myQueue):
-    await asyncio.wait([get_item_from_queue_and_execute(client_list,1,myQueue),get_item_from_queue_and_execute(client_list,2,myQueue)])
-    await asyncio.sleep(poll_interval)

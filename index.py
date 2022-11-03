@@ -1,37 +1,25 @@
-from BaklavaClient.Wrapper import BaklavaClient
-import constants
-from web3 import Web3
 from dotenv import load_dotenv
-import os
 import asyncio
-import logging
-import MarginX
-import threading
-import Monitor
+import Clients
 
 
 
-def initialize_logging():
-    logging.basicConfig(filename='logs.csv',level=logging.INFO,format='%(asctime)s,%(levelname)s,%(message)s',datefmt='%m/%d/%Y %I:%M:%S')
-    logging.root.setLevel(logging.INFO)
+
+
 
 
 def main():
 
-    # initialize logging
-    initialize_logging()
+    # initialise configs and logging
+    configs = Clients.initialise_configs()
+    Clients.initialise_logging(configs['baklava_client_logs_file'])
     load_dotenv()
 
-    # initialialise clients
-    marginx_account = MarginX.init_wallet(os.getenv("MARGINX_SEED"))
-    client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account,constants.pair_info)
-    
 
-    # initialise Baklava client
-    my_provider = constants.avax_url
-    private_key = os.getenv("PRIVATE_KEY")
-    address = constants.wallet_address
-    client = BaklavaClient(address, private_key, provider=my_provider)
+    
+    # initialise clients
+    baklava_client = Clients.initialise_baklava_client(configs)
+    client_list = Clients.initialise_marginx_client(configs)
 
 
     loop = asyncio.get_event_loop()
@@ -39,9 +27,9 @@ def main():
     try:
         loop.run_until_complete(
             asyncio.gather(
-                client.log_event_listener_loop(client.create_mst_event_filter(), 2,myQueue),
-                client.log_event_listener_loop(client.create_bst_event_filter(), 2,myQueue),
-                MarginX.log_event_executer_loop(client_list,2,myQueue),
+                baklava_client.log_event_listener_loop(baklava_client.create_mst_event_filter(), 2,myQueue),
+                baklava_client.log_event_listener_loop(baklava_client.create_bst_event_filter(), 2,myQueue),
+                Clients.marginx_log_event_executer_loop(client_list,2,myQueue),
                 ))
         
         

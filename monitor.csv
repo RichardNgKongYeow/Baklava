@@ -1,0 +1,604 @@
+10/03/2022 10:44:23,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 10:44:23,INFO,Connected to database fxdex
+10/03/2022 10:44:24,INFO,MarginX-Testnet-TSLA
+10/03/2022 10:44:25,INFO,Connected to database fxdex
+10/03/2022 10:44:26,INFO,MarginX-Testnet-AAPL
+10/03/2022 10:44:27,INFO,Connected to database fxdex
+10/03/2022 10:44:28,INFO,MarginX-Testnet-BTC
+10/03/2022 10:44:46,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 10:44:46,INFO,Connected to database fxdex
+10/03/2022 10:44:47,INFO,MarginX-Testnet-TSLA
+10/03/2022 10:44:48,INFO,Connected to database fxdex
+10/03/2022 10:44:49,INFO,MarginX-Testnet-AAPL
+10/03/2022 10:44:49,INFO,Connected to database fxdex
+10/03/2022 10:44:50,INFO,MarginX-Testnet-BTC
+10/03/2022 10:45:51,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:47:10,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 10:47:10,INFO,Connected to database fxdex
+10/03/2022 10:47:12,INFO,MarginX-Testnet-TSLA
+10/03/2022 10:47:12,INFO,Connected to database fxdex
+10/03/2022 10:47:13,INFO,MarginX-Testnet-AAPL
+10/03/2022 10:47:14,INFO,Connected to database fxdex
+10/03/2022 10:47:15,INFO,MarginX-Testnet-BTC
+10/03/2022 10:48:00,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 10:48:00,INFO,Connected to database fxdex
+10/03/2022 10:48:01,INFO,MarginX-Testnet-TSLA
+10/03/2022 10:48:02,INFO,Connected to database fxdex
+10/03/2022 10:48:03,INFO,MarginX-Testnet-AAPL
+10/03/2022 10:48:04,INFO,Connected to database fxdex
+10/03/2022 10:48:05,INFO,MarginX-Testnet-BTC
+10/03/2022 10:49:06,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:50:06,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:51:07,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:52:07,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:53:08,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:54:08,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:55:08,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:56:09,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:57:09,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:58:10,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 10:59:10,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:00:11,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:01:11,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:02:12,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:03:12,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:04:13,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:05:13,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:06:13,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:07:13,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:08:14,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:09:14,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: 'MonitorBot' object has no attribute 'client_dict' of type <class 'AttributeError'>
+10/03/2022 11:16:32,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 11:16:32,INFO,Connected to database fxdex
+10/03/2022 11:16:33,INFO,MarginX-Testnet-TSLA
+10/03/2022 11:16:34,INFO,Connected to database fxdex
+10/03/2022 11:16:35,INFO,MarginX-Testnet-AAPL
+10/03/2022 11:16:36,INFO,Connected to database fxdex
+10/03/2022 11:16:37,INFO,MarginX-Testnet-BTC
+10/03/2022 11:17:41,ERROR,Monitoring bot--failed to run min check and rectify discrepancies due to: check_pair() takes 4 positional arguments but 5 were given of type <class 'TypeError'>
+10/03/2022 11:45:56,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 11:45:56,INFO,Connected to database fxdex
+10/03/2022 11:45:58,INFO,MarginX-Testnet-TSLA
+10/03/2022 11:45:58,INFO,Connected to database fxdex
+10/03/2022 11:46:00,INFO,MarginX-Testnet-AAPL
+10/03/2022 11:46:00,INFO,Connected to database fxdex
+10/03/2022 11:46:02,INFO,MarginX-Testnet-BTC
+10/03/2022 11:47:05,ERROR,MonitorBot,min_check,check_pair() takes 4 positional arguments but 5 were given,<class 'TypeError'>
+10/03/2022 11:48:07,ERROR,MonitorBot,min_check,check_pair() takes 4 positional arguments but 5 were given,<class 'TypeError'>
+10/03/2022 11:48:30,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 11:48:30,INFO,Connected to database fxdex
+10/03/2022 11:48:31,INFO,MarginX-Testnet-TSLA
+10/03/2022 11:48:31,INFO,Connected to database fxdex
+10/03/2022 11:48:32,INFO,MarginX-Testnet-AAPL
+10/03/2022 11:48:33,INFO,Connected to database fxdex
+10/03/2022 11:48:34,INFO,MarginX-Testnet-BTC
+10/03/2022 12:03:25,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:03:25,INFO,Connected to database fxdex
+10/03/2022 12:03:27,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:03:27,INFO,Connected to database fxdex
+10/03/2022 12:03:28,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:03:29,INFO,Connected to database fxdex
+10/03/2022 12:03:30,INFO,MarginX-Testnet-BTC
+10/03/2022 12:06:44,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:06:44,INFO,Connected to database fxdex
+10/03/2022 12:06:45,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:06:46,INFO,Connected to database fxdex
+10/03/2022 12:06:47,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:06:47,INFO,Connected to database fxdex
+10/03/2022 12:06:49,INFO,MarginX-Testnet-BTC
+10/03/2022 12:16:37,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:16:37,INFO,Connected to database fxdex
+10/03/2022 12:16:39,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:16:39,INFO,Connected to database fxdex
+10/03/2022 12:16:41,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:16:41,INFO,Connected to database fxdex
+10/03/2022 12:16:43,INFO,MarginX-Testnet-BTC
+10/03/2022 12:17:59,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:17:59,INFO,Connected to database fxdex
+10/03/2022 12:18:00,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:18:01,INFO,Connected to database fxdex
+10/03/2022 12:18:02,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:18:03,INFO,Connected to database fxdex
+10/03/2022 12:18:04,INFO,MarginX-Testnet-BTC
+10/03/2022 12:22:26,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:22:26,INFO,Connected to database fxdex
+10/03/2022 12:22:27,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:22:27,INFO,Connected to database fxdex
+10/03/2022 12:22:29,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:22:29,INFO,Connected to database fxdex
+10/03/2022 12:22:30,INFO,MarginX-Testnet-BTC
+10/03/2022 12:29:45,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/03/2022 12:29:45,INFO,Connected to database fxdex
+10/03/2022 12:29:47,INFO,MarginX-Testnet-TSLA
+10/03/2022 12:29:47,INFO,Connected to database fxdex
+10/03/2022 12:29:48,INFO,MarginX-Testnet-AAPL
+10/03/2022 12:29:49,INFO,Connected to database fxdex
+10/03/2022 12:29:50,INFO,MarginX-Testnet-BTC
+10/04/2022 11:01:51,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 11:01:51,INFO,Connected to database fxdex
+10/04/2022 11:01:52,INFO,MarginX-Testnet-TSLA
+10/04/2022 11:01:53,INFO,Connected to database fxdex
+10/04/2022 11:01:54,INFO,MarginX-Testnet-AAPL
+10/04/2022 11:01:55,INFO,Connected to database fxdex
+10/04/2022 11:01:56,INFO,MarginX-Testnet-BTC
+10/04/2022 02:23:15,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/04/2022 02:23:15,INFO,Connected to database fxdex
+10/04/2022 02:23:16,INFO,MarginX-Testnet-TSLA
+10/04/2022 02:23:16,INFO,Connected to database fxdex
+10/04/2022 02:23:17,INFO,MarginX-Testnet-AAPL
+10/04/2022 02:23:18,INFO,Connected to database fxdex
+10/04/2022 02:23:20,INFO,MarginX-Testnet-BTC
+10/04/2022 02:45:49,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 02:45:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:45:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:45:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:45:49,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:58:02,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 02:58:02,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:58:02,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:58:02,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 02:58:02,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:03:22,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 03:03:22,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:03:22,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:03:22,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:03:22,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:04:24,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 03:25:53,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 03:25:53,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:25:53,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:25:53,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:25:53,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:31:43,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/04/2022 03:31:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:31:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:31:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/04/2022 03:31:43,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 04:53:17,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/05/2022 04:53:17,INFO,Connected to database fxdex
+10/05/2022 04:53:18,INFO,MarginX-Testnet-TSLA
+10/05/2022 04:53:19,INFO,Connected to database fxdex
+10/05/2022 04:53:20,INFO,MarginX-Testnet-AAPL
+10/05/2022 04:53:20,INFO,Connected to database fxdex
+10/05/2022 04:53:21,INFO,MarginX-Testnet-BTC
+10/05/2022 08:49:56,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/05/2022 08:49:56,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 08:49:56,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 08:49:56,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 08:49:56,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 09:21:10,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/05/2022 09:21:10,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 09:21:10,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 09:21:10,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 09:21:10,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 09:52:21,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/05/2022 09:52:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 09:52:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 09:52:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 09:52:21,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 10:43:10,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/05/2022 10:43:10,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 10:43:10,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 10:43:10,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 10:43:10,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 11:14:27,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/05/2022 11:14:27,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 11:14:27,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 11:14:27,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 11:14:27,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 11:45:45,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/05/2022 11:45:45,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 11:45:45,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 11:45:45,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/05/2022 11:45:45,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:36:43,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 12:36:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:36:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:36:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:36:43,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:07:57,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 01:07:57,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:07:57,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:07:57,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:07:57,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:58:25,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 01:58:25,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:58:25,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:58:25,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:58:25,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 02:29:37,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 02:29:37,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 02:29:37,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 02:29:37,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 02:29:37,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 03:00:55,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 03:00:55,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 03:00:55,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 03:00:55,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 03:00:55,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 03:32:13,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 03:32:13,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 03:32:13,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 03:32:13,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 03:32:13,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:03:19,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 04:03:19,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:03:19,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:03:19,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:03:19,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:34:27,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 04:34:27,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:34:27,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:34:27,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:34:27,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 05:05:35,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 05:05:35,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 05:05:35,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 05:05:35,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 05:05:35,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 05:56:30,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 05:56:30,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 05:56:30,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 05:56:30,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 05:56:30,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 06:27:47,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 06:27:47,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 06:27:47,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 06:27:47,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 06:27:47,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 06:59:07,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 06:59:08,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 06:59:08,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 06:59:08,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 06:59:08,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 07:30:25,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 07:30:25,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 07:30:25,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 07:30:25,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 07:30:25,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 08:21:10,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 08:21:10,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 08:21:10,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 08:21:10,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 08:21:10,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 08:52:26,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 08:52:26,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 08:52:26,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 08:52:26,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 08:52:26,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:21:28,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 09:21:28,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:21:28,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:21:28,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:21:28,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:42:25,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 09:42:25,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:42:25,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:42:25,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:42:25,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:54:49,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 09:54:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:54:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:54:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 09:54:49,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 10:07:22,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 10:07:22,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 10:07:22,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 10:07:22,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 10:07:22,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 11:36:26,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 11:36:26,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 11:36:26,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 11:36:26,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 11:36:26,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 11:37:29,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 11:48:46,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 11:48:46,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 11:48:46,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 11:48:46,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 11:48:46,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:07:33,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 12:07:33,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:07:33,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:07:33,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:07:33,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:34:48,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 12:34:48,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:34:48,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:34:48,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 12:34:48,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:10:31,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 01:10:31,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:10:31,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:10:31,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:10:31,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:42:04,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 01:42:04,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:42:04,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:42:04,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 01:42:04,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 02:14:06,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 02:14:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 02:14:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 02:14:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 02:14:06,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 03:04:02,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/06/2022 03:04:02,INFO,Connected to database fxdex
+10/06/2022 03:04:03,INFO,MarginX-Testnet-TSLA
+10/06/2022 03:04:04,INFO,Connected to database fxdex
+10/06/2022 03:04:05,INFO,MarginX-Testnet-AAPL
+10/06/2022 03:04:06,INFO,Connected to database fxdex
+10/06/2022 03:04:07,INFO,MarginX-Testnet-BTC
+10/06/2022 03:27:01,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/06/2022 03:27:01,INFO,Connected to database fxdex
+10/06/2022 03:27:04,INFO,MarginX-Testnet-TSLA
+10/06/2022 03:27:04,INFO,Connected to database fxdex
+10/06/2022 03:27:06,INFO,MarginX-Testnet-AAPL
+10/06/2022 03:27:06,INFO,Connected to database fxdex
+10/06/2022 03:27:08,INFO,MarginX-Testnet-BTC
+10/06/2022 04:04:19,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/06/2022 04:04:19,INFO,Connected to database fxdex
+10/06/2022 04:04:21,INFO,MarginX-Testnet-TSLA
+10/06/2022 04:04:21,INFO,Connected to database fxdex
+10/06/2022 04:04:22,INFO,MarginX-Testnet-AAPL
+10/06/2022 04:04:23,INFO,Connected to database fxdex
+10/06/2022 04:04:24,INFO,MarginX-Testnet-BTC
+10/06/2022 04:05:22,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/06/2022 04:05:23,INFO,Connected to database fxdex
+10/06/2022 04:05:24,INFO,MarginX-Testnet-TSLA
+10/06/2022 04:05:24,INFO,Connected to database fxdex
+10/06/2022 04:05:26,INFO,MarginX-Testnet-AAPL
+10/06/2022 04:05:26,INFO,Connected to database fxdex
+10/06/2022 04:05:28,INFO,MarginX-Testnet-BTC
+10/06/2022 04:06:29,ERROR,MonitorBot,check_pair,'>' not supported between instances of 'coroutine' and 'decimal.Decimal',<class 'TypeError'>
+10/06/2022 04:06:29,ERROR,MonitorBot,check_pair,'>' not supported between instances of 'coroutine' and 'decimal.Decimal',<class 'TypeError'>
+10/06/2022 04:06:29,ERROR,MonitorBot,check_pair,'>' not supported between instances of 'coroutine' and 'decimal.Decimal',<class 'TypeError'>
+10/06/2022 04:06:29,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:08:39,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/06/2022 04:08:39,INFO,Connected to database fxdex
+10/06/2022 04:08:41,INFO,MarginX-Testnet-TSLA
+10/06/2022 04:08:41,INFO,Connected to database fxdex
+10/06/2022 04:08:42,INFO,MarginX-Testnet-AAPL
+10/06/2022 04:08:43,INFO,Connected to database fxdex
+10/06/2022 04:08:44,INFO,MarginX-Testnet-BTC
+10/06/2022 04:15:28,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/06/2022 04:15:28,INFO,Connected to database fxdex
+10/06/2022 04:15:30,INFO,MarginX-Testnet-TSLA
+10/06/2022 04:15:30,INFO,Connected to database fxdex
+10/06/2022 04:15:32,INFO,MarginX-Testnet-AAPL
+10/06/2022 04:15:32,INFO,Connected to database fxdex
+10/06/2022 04:15:34,INFO,MarginX-Testnet-BTC
+10/06/2022 04:16:41,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/06/2022 04:16:41,INFO,Connected to database fxdex
+10/06/2022 04:16:42,INFO,MarginX-Testnet-TSLA
+10/06/2022 04:16:43,INFO,Connected to database fxdex
+10/06/2022 04:16:45,INFO,MarginX-Testnet-AAPL
+10/06/2022 04:16:45,INFO,Connected to database fxdex
+10/06/2022 04:16:46,INFO,MarginX-Testnet-BTC
+10/06/2022 04:29:08,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/06/2022 04:29:08,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:29:08,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:29:08,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/06/2022 04:29:08,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:09:24,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/07/2022 11:09:24,INFO,Connected to database fxdex
+10/07/2022 11:09:26,INFO,MarginX-Testnet-TSLA
+10/07/2022 11:09:26,INFO,Connected to database fxdex
+10/07/2022 11:09:27,INFO,MarginX-Testnet-AAPL
+10/07/2022 11:09:28,INFO,Connected to database fxdex
+10/07/2022 11:09:29,INFO,MarginX-Testnet-BTC
+10/07/2022 11:11:09,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/07/2022 11:11:09,INFO,Connected to database fxdex
+10/07/2022 11:11:11,INFO,MarginX-Testnet-TSLA
+10/07/2022 11:11:11,INFO,Connected to database fxdex
+10/07/2022 11:11:12,INFO,MarginX-Testnet-AAPL
+10/07/2022 11:11:13,INFO,Connected to database fxdex
+10/07/2022 11:11:14,INFO,MarginX-Testnet-BTC
+10/07/2022 11:18:13,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 11:18:13,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:18:13,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:18:13,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:18:13,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:18:47,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 11:30:44,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 11:43:02,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 11:43:02,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:43:02,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:43:02,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:43:02,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:54:38,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 11:54:38,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:54:38,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:54:38,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:54:38,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 11:56:16,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 12:34:33,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 12:34:33,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 12:34:33,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 12:34:33,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 12:34:33,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:48:28,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 01:48:28,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:48:28,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:48:28,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:48:28,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:49:02,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 01:51:42,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 01:51:42,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:51:42,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:51:42,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:51:42,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:52:15,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 01:53:50,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 01:53:50,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:53:50,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:53:50,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:53:50,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:54:24,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 01:56:31,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 01:56:31,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:56:31,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:56:31,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:56:31,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:57:05,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 01:59:43,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 01:59:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:59:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:59:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 01:59:43,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:00:17,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:02:24,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:02:24,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:02:24,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:02:24,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:02:24,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:03:03,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:04:37,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:04:37,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:04:37,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:04:37,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:04:37,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:06:46,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:06:46,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:06:46,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:06:46,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:06:46,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:07:20,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:08:55,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:08:55,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:08:55,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:08:55,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:08:55,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:09:29,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:11:36,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:11:36,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:11:36,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:11:36,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:11:36,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:12:10,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:14:49,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:14:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:14:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:14:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:14:49,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:15:23,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:17:30,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:17:30,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:17:30,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:17:30,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:17:30,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:18:04,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:20:45,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:20:45,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:20:45,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:20:45,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:20:45,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:21:16,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:23:57,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:23:57,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:23:57,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:23:57,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:23:57,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:24:28,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:26:06,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:26:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:26:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:26:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:26:06,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:28:15,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:28:15,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:28:15,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:28:15,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:28:15,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:28:49,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:30:55,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:30:55,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:30:55,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:30:55,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:30:55,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:31:29,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:34:54,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/07/2022 02:34:54,INFO,Connected to database fxdex
+10/07/2022 02:34:56,INFO,MarginX-Testnet-TSLA
+10/07/2022 02:34:56,INFO,Connected to database fxdex
+10/07/2022 02:34:57,INFO,MarginX-Testnet-AAPL
+10/07/2022 02:34:58,INFO,Connected to database fxdex
+10/07/2022 02:34:59,INFO,MarginX-Testnet-BTC
+10/07/2022 02:37:08,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:37:08,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:37:08,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:37:08,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:37:08,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:37:42,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:40:21,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:40:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:40:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:40:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:40:21,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:40:55,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:44:06,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:44:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:44:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:44:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:44:06,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:44:37,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:46:46,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:46:46,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:46:46,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:46:46,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:46:46,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:47:20,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:52:06,ERROR,BaklavaClient,get_syntoken_total_supply,HTTPSConnectionPool(host='api.avax-test.network', port=443): Max retries exceeded with url: /ext/bc/C/rpc (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x14d67b1c0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 02:52:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:52:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:52:06,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 02:52:06,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:02:04,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:02:04,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:02:04,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:02:04,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:02:04,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:02:38,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:05:16,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:05:16,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:05:16,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:05:16,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:05:16,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:05:50,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:08:03,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:08:03,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:08:03,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:08:03,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:08:03,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:08:37,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:11:15,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:11:15,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:11:15,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:11:15,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:11:15,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:11:49,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:13:24,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:13:24,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:13:24,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:13:24,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:13:24,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:14:30,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:17:21,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:17:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:17:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:17:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:17:21,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:17:52,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:20:34,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/07/2022 03:20:34,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:20:34,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:20:34,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:20:34,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+10/07/2022 03:21:08,ERROR,MonitorBot,buildTelebotMsg,('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+10/27/2022 10:15:20,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+10/27/2022 10:15:20,INFO,Connected to database fxdex
+10/27/2022 10:15:22,INFO,MarginX-Testnet-TSLA
+10/27/2022 10:15:22,INFO,Connected to database fxdex
+10/27/2022 10:15:23,INFO,MarginX-Testnet-AAPL
+10/27/2022 10:15:24,INFO,Connected to database fxdex
+10/27/2022 10:15:26,INFO,MarginX-Testnet-BTC

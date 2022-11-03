@@ -7,13 +7,15 @@ import asyncio
 import logging
 import utils
 from decimal import Decimal
-import constants
+from Configs import Pairs
 
 
 class BaklavaObject(object):
-
-    def __init__(self, address, private_key, provider=None):
-        self.address = Web3.toChecksumAddress(address)
+    
+    
+    def __init__(self, configs, private_key, provider=None):
+        self.configs = configs
+        # self.address = Web3.toChecksumAddress(configs['wallet_address'])
         self.private_key = private_key
         self.provider = os.environ["PROVIDER"] if not provider else provider      
         self.provider = provider if not provider else provider
@@ -52,24 +54,30 @@ class BaklavaObject(object):
 
 class BaklavaClient(BaklavaObject):
 
-    ADDRESS = constants.synthetic_pool_address
-    ABI = constants.ABI_synthetic_pool
+    CLIENT_NAME = "BaklavaClient"
+
+    ABI = json.load(open(os.getcwd()+'/BaklavaClient/assets/'+'SyntheticPool.json'))["abi"]
 
 
     MAX_APPROVAL_HEX = "0x" + "f" * 64
     MAX_APPROVAL_INT = int(MAX_APPROVAL_HEX, 16)
-    # ERC20_ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SafeERC20Upgradeable.json'))["abi"]
 
-    pair_info = constants.pair_info
-    
+    pairs = Pairs.pairs
+    chain_ids = Pairs.chain_ids
 
 
-    def __init__(self, address, private_key, provider=None):
-        super().__init__(address, private_key, provider)
+    def __init__(self, configs, private_key, provider=None):
+        super().__init__(configs, private_key, provider)
+        
+        # self.configs = configs
+        # self.wallet_address = configs['wallet_address']
+        self.synthetic_pool_address = configs['synthetic_pool_address']
+        self.configs = configs
+
         self.contract = self.conn.eth.contract(
-            address=Web3.toChecksumAddress(BaklavaClient.ADDRESS), abi=BaklavaClient.ABI)
+            address=Web3.toChecksumAddress(self.synthetic_pool_address), abi=BaklavaClient.ABI)
 
-
+        # TODO this needs to change
         self.syntoken_object_dict = self.initialise_syntoken_object_dict()
 
 
@@ -112,7 +120,7 @@ class BaklavaClient(BaklavaObject):
             result = json.loads(Web3.toJSON(event))
             return result
         except Exception as e:
-            logging.error("Baklava Client--failed to convert data to json due to error: {} of type {}".format(e,type(e)))
+            logging.error("{},convert_web3_to_json,{},{}".format(self.CLIENT_NAME, e,type(e)))
     
     
     def get_event_vars(self, events:dict)->tuple:
@@ -124,10 +132,8 @@ class BaklavaClient(BaklavaObject):
             order_id = events["args"]["orderId"]
             order_type = events["event"]
             amount = events["args"]["synTokenAmount"]
-            pair_id = self.pair_info[pid]["pair"]
+            pair_id = self.pairs[pid]
             price = events["args"]["synTokenPrice"]
-
-
             if order_type == "MintSynToken":
                 direction = "MarketBuy"
             elif order_type == "BurnSynToken":
@@ -136,7 +142,7 @@ class BaklavaClient(BaklavaObject):
                 pass
             return pair_id, direction, price, amount, order_id
         except Exception as e:
-            logging.error("Baklava Client--failed to listen to smart contract events due to error: {} of type {}".format(e,type(e)))
+            logging.error("{},get_event_vars,{},{}".format(self.CLIENT_NAME, e,type(e)))
     
     
 
@@ -149,12 +155,11 @@ class BaklavaClient(BaklavaObject):
         """
         events = self.convert_web3_to_json(event)
         pair_id, direction, price, amount, order_id = self.get_event_vars(events)
-
-        # print(pair_id, direction, amount, order_id)
         await myQueue.put((pair_id, direction, amount, order_id))
         converted_price = utils.fromWei(price)
         converted_amount = utils.from3dp(amount)
-        logging.info("Baklava Client--Listening to order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id, direction, converted_price, converted_amount, order_id))
+        logging.info("{},Listening to order of,{},{},{},{},{}".format(self.CLIENT_NAME,pair_id, direction, converted_price, converted_amount, order_id))
+    
 
 
 
@@ -172,18 +177,22 @@ class BaklavaClient(BaklavaObject):
 
 # ======================================synthetic token=====================================
     def initialise_syntoken_object_dict(self)->dict:
-        # TODO have to change to constants.pair_info and get information
+        
         try:
             client_dict = {}
-            for i in self.pair_info:
-                client = SynTClient(self.pair_info[i]['address'],self.private_key, provider=self.provider)
-                pair = self.pair_info[i]['pair']
+            for chain_id in self.chain_ids:
+                client = SynTClient(chain_id, self.configs, self.private_key, provider=self.provider)
+                pair = self.configs['chain_id'][chain_id]['pair_id']
                 client_dict[pair] = client
             return client_dict
         except Exception as e:
-            logging.error("Baklava Client--failed to initialise syn token object dictionary due to: {} of type {}".format(e,type(e)))
+            logging.error("{},initialise_syntoken_object_dict,{},{}".format(self.CLIENT_NAME, e,type(e)))
+
 
     def get_syntoken_total_supply(self):
+        """
+        {'TSLA:USDT': Decimal('1.6140000000000001012523398458142764866352081298828125')}
+        """
         try:
             total_supply_dict = {}
             for i in self.syntoken_object_dict:
@@ -192,7 +201,7 @@ class BaklavaClient(BaklavaObject):
                 total_supply_dict[i] = total_supply
             return total_supply_dict
         except Exception as e:
-            logging.error("Baklava Client--failed to get token supply from token contract object due to: {} of type {}".format(e,type(e)))
+            logging.error("{},get_syntoken_total_supply,{},{}".format(self.CLIENT_NAME, e,type(e)))
 
 
 
@@ -203,8 +212,14 @@ class SynTClient(BaklavaObject):
     ABI = json.load(open(full_path+'/BaklavaClient/assets/'+'SynT.json'))["abi"]
     
 
-    def __init__(self, address, private_key, provider=None):
-        super().__init__(address, private_key, provider)
+    def __init__(self, chain_id, configs, private_key, provider=None):
+        super().__init__(configs, private_key, provider)
+        
+        self.chain_id = chain_id
+        self.address = configs['chain_id'][chain_id]['address']
+        self.pair_id = configs['chain_id'][chain_id]['pair_id']
+        self.index = configs['chain_id'][chain_id]['index']
+
         self.contract = self.conn.eth.contract(
             address=Web3.toChecksumAddress(self.address), abi=SynTClient.ABI)
 
