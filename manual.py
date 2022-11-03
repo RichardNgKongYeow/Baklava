@@ -6,7 +6,7 @@ import asyncio
 
 pair_id = "ETH:USDT"
 direction = "MarketSell"
-amount = 10
+amount = 5
 order_id = 0
 position = "long"
 

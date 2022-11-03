@@ -63,15 +63,15 @@ class grpcClient():
             logging.error("{},{}, get_account_info,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
 
 
-    # def get_account_sequence(self)->int:
-    #     """
-    #     return an account sequence int
-    #     """
-    #     try:
-    #         self.get_account_info()
-    #         return self.account_info.sequence
-    #     except Exception as e:
-    #         logging.error("{},{}, get_account_sequence,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+    def get_account_sequence(self)->int:
+        """
+        return an account sequence int
+        """
+        try:
+            self.get_account_info()
+            return self.account_info.sequence
+        except Exception as e:
+            logging.error("{},{}, get_account_sequence,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
 
 
     def query_gas_price(self):
@@ -190,7 +190,7 @@ class grpcClient():
         """
         input trade info and execute order on marginX
         """
-        # acc_seq = self.get_account_sequence()
+        acc_seq = self.get_account_sequence()
         client = self.client
         pair_id = self.pair_id
         
@@ -206,7 +206,7 @@ class grpcClient():
                 # synTokenAmount
                 base_quantity=Decimal(utils.from3dp(amount)),
                 leverage=1,
-                acc_seq=self.account_info.sequence,
+                acc_seq=acc_seq,
                 mode=BROADCAST_MODE_BLOCK,
             )
             events = json.loads(tx_response.raw_log)[0]['events']
@@ -219,7 +219,7 @@ class grpcClient():
         pair_id = self.pair_id
         open_long_position = await self.get_open_long_position()
         # print(open_long_position)
-        # acc_seq = self.get_account_sequence()
+        acc_seq = self.get_account_sequence()
 
         try:
             tx_response = self.client.close_position(
@@ -229,7 +229,7 @@ class grpcClient():
                 price = decimal.Decimal(0), 
                 base_quantity = Decimal(utils.from3dp(amount)), 
                 full_close = False, 
-                acc_seq = self.account_info.sequence, 
+                acc_seq = acc_seq, 
                 market_close = True, 
                 mode=BROADCAST_MODE_BLOCK)
             events = json.loads(tx_response.raw_log)[0]['events']
@@ -243,7 +243,7 @@ class grpcClient():
     async def close_open_short_position(self, amount):
         pair_id = self.pair_id
         open_short_position = self.get_open_short_position()
-        # acc_seq = self.get_account_sequence()
+        acc_seq = self.get_account_sequence()
 
         try:
             tx_response = self.client.close_position(
@@ -253,7 +253,7 @@ class grpcClient():
                 price = decimal.Decimal(0), 
                 base_quantity = Decimal(utils.from3dp(amount)), 
                 full_close = False, 
-                acc_seq = self.account_info.sequence, 
+                acc_seq = acc_seq, 
                 market_close = True, 
                 mode=BROADCAST_MODE_BLOCK)
             events = json.loads(tx_response.raw_log)[0]['events']

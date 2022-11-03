@@ -52,3 +52,51 @@
 10/31/2022 05:36:48,INFO,MarginX-ETH
 10/31/2022 06:07:05,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketSell,1626.1174592,0.007,4
 10/31/2022 06:07:10,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketSell,1626.18,0.007,ID-1346733-8
+11/01/2022 11:57:26,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/01/2022 11:57:26,INFO,Connected to database fxdex
+11/01/2022 11:57:26,INFO,MarginX-BTC
+11/01/2022 11:57:26,INFO,Connected to database fxdex
+11/01/2022 11:57:26,INFO,MarginX-ETH
+11/01/2022 12:00:57,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1592.46954212858,0.003,5
+11/01/2022 12:01:00,ERROR,MarginXClient,eth,open_long_position
+11/01/2022 12:01:00,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+11/01/2022 12:05:00,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/01/2022 12:05:00,INFO,Connected to database fxdex
+11/01/2022 12:05:00,INFO,MarginX-BTC
+11/01/2022 12:05:00,INFO,Connected to database fxdex
+11/01/2022 12:05:00,INFO,MarginX-ETH
+11/01/2022 12:05:40,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1592.46954212858,0.005,7
+11/01/2022 12:05:42,ERROR,MarginXClient,eth,open_long_position
+11/01/2022 12:05:42,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+11/03/2022 10:19:39,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 10:19:39,INFO,Connected to database fxdex
+11/03/2022 10:19:39,INFO,MarginX-BTC
+11/03/2022 10:19:39,INFO,Connected to database fxdex
+11/03/2022 10:19:39,INFO,MarginX-ETH
+11/03/2022 10:20:46,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1548.34612677549,0.005,28
+11/03/2022 10:20:49,ERROR,MarginXClient,eth,open_long_position
+11/03/2022 10:20:49,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+11/03/2022 10:24:08,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 10:24:08,INFO,Connected to database fxdex
+11/03/2022 10:24:08,INFO,MarginX-BTC
+11/03/2022 10:24:08,INFO,Connected to database fxdex
+11/03/2022 10:24:08,INFO,MarginX-ETH
+11/03/2022 10:24:21,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1548.34612677549,0.011,30
+11/03/2022 10:24:24,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketBuy,1546.999,0.011,ID-1415789-15
+11/03/2022 10:24:49,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketSell,1543.71498183,0.011,31
+11/03/2022 10:24:51,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketSell,1542.032,0.011,ID-1415797-11
+11/03/2022 10:25:10,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1548.34612677549,0.011,32
+11/03/2022 10:25:11,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketBuy,1552.93,0.011,ID-1415803-14
+11/03/2022 10:25:22,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1548.34612677549,0.011,33
+11/03/2022 10:25:25,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketBuy,1552.93,0.011,ID-1415807-1
+11/03/2022 10:27:13,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketSell,1543.71498183,0.022,34
+11/03/2022 10:27:16,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketSell,1545.451454,0.022,ID-1415840-1
+11/03/2022 10:33:24,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,20383.4807943638,0.001,0
+11/03/2022 10:33:27,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketBuy,20294.521,0.001,ID-1414980-13
+11/03/2022 10:34:07,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketSell,20322.5132546,0.001,1
+11/03/2022 10:34:10,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketSell,20277.454,0.001,ID-1414993-1
+11/03/2022 11:00:05,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 11:00:05,INFO,Connected to database fxdex
+11/03/2022 11:00:05,INFO,MarginX-BTC
+11/03/2022 11:00:05,INFO,Connected to database fxdex
+11/03/2022 11:00:05,INFO,MarginX-ETH
