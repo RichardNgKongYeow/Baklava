@@ -296,3 +296,6 @@
 11/03/2022 04:37:27,INFO,MarginX-BTC
 11/03/2022 04:37:27,INFO,Connected to database fxdex
 11/03/2022 04:37:27,INFO,MarginX-ETH
+11/08/2022 04:07:27,ERROR,MonitorBot,buildTelebotMsg,HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=30),<class 'requests.exceptions.ReadTimeout'>
+11/08/2022 04:43:27,ERROR,MonitorBot,buildTelebotMsg,HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=30),<class 'requests.exceptions.ReadTimeout'>
+11/08/2022 04:44:27,ERROR,MonitorBot,buildTelebotMsg,HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=30),<class 'requests.exceptions.ReadTimeout'>

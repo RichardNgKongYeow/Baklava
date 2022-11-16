@@ -210,7 +210,7 @@ class grpcClient():
                 mode=BROADCAST_MODE_BLOCK,
             )
             # print(tx_response)
-            print(tx_response.raw_log)
+            # print(tx_response.raw_log)
             events = json.loads(tx_response.raw_log)[0]['events']
             return events
         except:
