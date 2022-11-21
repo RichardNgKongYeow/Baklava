@@ -101,3 +101,206 @@
 11/01/2022 01:51:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
 11/01/2022 01:51:43,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
 11/01/2022 01:51:43,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 02:06:29,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 02:06:29,INFO,Connected to database fxdex
+11/03/2022 02:06:29,INFO,MarginX-BTC
+11/03/2022 02:06:29,INFO,Connected to database fxdex
+11/03/2022 02:06:29,INFO,MarginX-ETH
+11/03/2022 02:48:09,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 02:48:09,INFO,Connected to database fxdex
+11/03/2022 02:48:09,INFO,MarginX-BTC
+11/03/2022 02:48:09,INFO,Connected to database fxdex
+11/03/2022 02:48:09,INFO,MarginX-ETH
+11/03/2022 03:27:50,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:27:50,INFO,Connected to database fxdex
+11/03/2022 03:27:50,INFO,MarginX-BTC
+11/03/2022 03:27:50,INFO,Connected to database fxdex
+11/03/2022 03:27:50,INFO,MarginX-ETH
+11/03/2022 03:29:33,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:29:33,INFO,Connected to database fxdex
+11/03/2022 03:29:33,INFO,MarginX-BTC
+11/03/2022 03:29:33,INFO,Connected to database fxdex
+11/03/2022 03:29:33,INFO,MarginX-ETH
+11/03/2022 03:30:25,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:30:25,INFO,Connected to database fxdex
+11/03/2022 03:30:25,INFO,MarginX-BTC
+11/03/2022 03:30:25,INFO,Connected to database fxdex
+11/03/2022 03:30:25,INFO,MarginX-ETH
+11/03/2022 03:31:20,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:31:20,INFO,Connected to database fxdex
+11/03/2022 03:31:20,INFO,MarginX-BTC
+11/03/2022 03:31:20,INFO,Connected to database fxdex
+11/03/2022 03:31:20,INFO,MarginX-ETH
+11/03/2022 03:36:06,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:36:06,INFO,Connected to database fxdex
+11/03/2022 03:36:06,INFO,MarginX-BTC
+11/03/2022 03:36:06,INFO,Connected to database fxdex
+11/03/2022 03:36:06,INFO,MarginX-ETH
+11/03/2022 03:37:07,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:37:07,INFO,Connected to database fxdex
+11/03/2022 03:37:07,INFO,MarginX-BTC
+11/03/2022 03:37:07,INFO,Connected to database fxdex
+11/03/2022 03:37:07,INFO,MarginX-ETH
+11/03/2022 03:39:40,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:39:40,INFO,Connected to database fxdex
+11/03/2022 03:39:40,INFO,MarginX-BTC
+11/03/2022 03:39:40,INFO,Connected to database fxdex
+11/03/2022 03:39:40,INFO,MarginX-ETH
+11/03/2022 03:39:40,ERROR,MonitorBot,check_pair,unsupported operand type(s) for -: 'decimal.Decimal' and 'float',<class 'TypeError'>
+11/03/2022 03:39:40,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 03:40:10,ERROR,MonitorBot,check_pair,unsupported operand type(s) for -: 'decimal.Decimal' and 'float',<class 'TypeError'>
+11/03/2022 03:40:10,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 03:40:40,ERROR,MonitorBot,check_pair,unsupported operand type(s) for -: 'decimal.Decimal' and 'float',<class 'TypeError'>
+11/03/2022 03:40:40,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 03:43:36,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:43:36,INFO,Connected to database fxdex
+11/03/2022 03:43:36,INFO,MarginX-BTC
+11/03/2022 03:43:36,INFO,Connected to database fxdex
+11/03/2022 03:43:36,INFO,MarginX-ETH
+11/03/2022 03:48:13,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:48:13,INFO,Connected to database fxdex
+11/03/2022 03:48:13,INFO,MarginX-BTC
+11/03/2022 03:48:13,INFO,Connected to database fxdex
+11/03/2022 03:48:13,INFO,MarginX-ETH
+11/03/2022 03:58:30,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 03:58:30,INFO,Connected to database fxdex
+11/03/2022 03:58:30,INFO,MarginX-BTC
+11/03/2022 03:58:30,INFO,Connected to database fxdex
+11/03/2022 03:58:30,INFO,MarginX-ETH
+11/03/2022 03:58:31,ERROR,MonitorBot,check_pair,unsupported operand type(s) for -: 'decimal.Decimal' and 'float',<class 'TypeError'>
+11/03/2022 03:58:31,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 03:59:01,ERROR,MonitorBot,check_pair,unsupported operand type(s) for -: 'decimal.Decimal' and 'float',<class 'TypeError'>
+11/03/2022 03:59:01,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 03:59:31,ERROR,MonitorBot,check_pair,unsupported operand type(s) for -: 'decimal.Decimal' and 'float',<class 'TypeError'>
+11/03/2022 03:59:31,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:00:53,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:00:53,INFO,Connected to database fxdex
+11/03/2022 04:00:53,INFO,MarginX-BTC
+11/03/2022 04:00:53,INFO,Connected to database fxdex
+11/03/2022 04:00:53,INFO,MarginX-ETH
+11/03/2022 04:00:53,ERROR,MonitorBot,check_pair,unsupported operand type(s) for -: 'decimal.Decimal' and 'float',<class 'TypeError'>
+11/03/2022 04:00:53,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:01:23,ERROR,MonitorBot,check_pair,unsupported operand type(s) for -: 'decimal.Decimal' and 'float',<class 'TypeError'>
+11/03/2022 04:01:23,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:04:04,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:04:04,INFO,Connected to database fxdex
+11/03/2022 04:04:04,INFO,MarginX-BTC
+11/03/2022 04:04:04,INFO,Connected to database fxdex
+11/03/2022 04:04:04,INFO,MarginX-ETH
+11/03/2022 04:06:04,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:06:04,INFO,Connected to database fxdex
+11/03/2022 04:06:04,INFO,MarginX-BTC
+11/03/2022 04:06:04,INFO,Connected to database fxdex
+11/03/2022 04:06:04,INFO,MarginX-ETH
+11/03/2022 04:06:05,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:06:05,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:06:05,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:06:05,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:06:35,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:06:35,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:06:35,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:06:35,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:07:05,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:07:05,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:07:05,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:07:05,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:07:35,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:07:35,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:07:35,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:07:35,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:08:05,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:08:05,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:08:05,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:08:05,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:08:35,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:08:35,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:08:35,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:08:35,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:09:00,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:09:00,INFO,Connected to database fxdex
+11/03/2022 04:09:00,INFO,MarginX-BTC
+11/03/2022 04:09:00,INFO,Connected to database fxdex
+11/03/2022 04:09:00,INFO,MarginX-ETH
+11/03/2022 04:09:00,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:09:00,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:09:00,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:09:00,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:10:49,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:10:49,INFO,Connected to database fxdex
+11/03/2022 04:10:49,INFO,MarginX-BTC
+11/03/2022 04:10:49,INFO,Connected to database fxdex
+11/03/2022 04:10:49,INFO,MarginX-ETH
+11/03/2022 04:10:49,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:10:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:10:49,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:10:49,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:11:19,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:11:19,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:11:19,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:11:19,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:19:42,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:19:42,INFO,Connected to database fxdex
+11/03/2022 04:19:42,INFO,MarginX-BTC
+11/03/2022 04:19:42,INFO,Connected to database fxdex
+11/03/2022 04:19:42,INFO,MarginX-ETH
+11/03/2022 04:19:42,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:19:42,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:19:42,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:19:42,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:20:41,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:20:42,INFO,Connected to database fxdex
+11/03/2022 04:20:42,INFO,MarginX-BTC
+11/03/2022 04:20:42,INFO,Connected to database fxdex
+11/03/2022 04:20:42,INFO,MarginX-ETH
+11/03/2022 04:21:35,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:21:35,INFO,Connected to database fxdex
+11/03/2022 04:21:35,INFO,MarginX-BTC
+11/03/2022 04:21:35,INFO,Connected to database fxdex
+11/03/2022 04:21:35,INFO,MarginX-ETH
+11/03/2022 04:25:26,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:25:26,INFO,Connected to database fxdex
+11/03/2022 04:25:26,INFO,MarginX-BTC
+11/03/2022 04:25:26,INFO,Connected to database fxdex
+11/03/2022 04:25:26,INFO,MarginX-ETH
+11/03/2022 04:25:44,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:25:44,INFO,Connected to database fxdex
+11/03/2022 04:25:45,INFO,MarginX-BTC
+11/03/2022 04:25:45,INFO,Connected to database fxdex
+11/03/2022 04:25:45,INFO,MarginX-ETH
+11/03/2022 04:32:33,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:32:33,INFO,Connected to database fxdex
+11/03/2022 04:32:33,INFO,MarginX-BTC
+11/03/2022 04:32:33,INFO,Connected to database fxdex
+11/03/2022 04:32:33,INFO,MarginX-ETH
+11/03/2022 04:34:53,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:34:53,INFO,Connected to database fxdex
+11/03/2022 04:34:53,INFO,MarginX-BTC
+11/03/2022 04:34:53,INFO,Connected to database fxdex
+11/03/2022 04:34:53,INFO,MarginX-ETH
+11/03/2022 04:34:53,ERROR,BaklavaClient,get_syntoken_total_supply,optional argument must be a context,<class 'TypeError'>
+11/03/2022 04:34:53,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:34:53,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:34:53,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/03/2022 04:35:31,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:35:31,INFO,Connected to database fxdex
+11/03/2022 04:35:31,INFO,MarginX-BTC
+11/03/2022 04:35:31,INFO,Connected to database fxdex
+11/03/2022 04:35:31,INFO,MarginX-ETH
+11/03/2022 04:36:03,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:36:04,INFO,Connected to database fxdex
+11/03/2022 04:36:04,INFO,MarginX-BTC
+11/03/2022 04:36:04,INFO,Connected to database fxdex
+11/03/2022 04:36:04,INFO,MarginX-ETH
+11/03/2022 04:37:27,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/03/2022 04:37:27,INFO,Connected to database fxdex
+11/03/2022 04:37:27,INFO,MarginX-BTC
+11/03/2022 04:37:27,INFO,Connected to database fxdex
+11/03/2022 04:37:27,INFO,MarginX-ETH
+11/08/2022 04:07:27,ERROR,MonitorBot,buildTelebotMsg,HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=30),<class 'requests.exceptions.ReadTimeout'>
+11/08/2022 04:43:27,ERROR,MonitorBot,buildTelebotMsg,HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=30),<class 'requests.exceptions.ReadTimeout'>
+11/08/2022 04:44:27,ERROR,MonitorBot,buildTelebotMsg,HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=30),<class 'requests.exceptions.ReadTimeout'>
+11/18/2022 06:21:21,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/18/2022 06:21:21,INFO,Connected to database fxdex
+11/18/2022 06:21:21,INFO,MarginX-BTC
+11/18/2022 06:21:21,INFO,Connected to database fxdex
+11/18/2022 06:21:21,INFO,MarginX-ETH

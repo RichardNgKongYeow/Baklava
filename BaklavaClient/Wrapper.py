@@ -231,5 +231,8 @@ class SynTClient(BaklavaObject):
         """
         get total supply of token
         """
+        # print(utils.from3dp(self.contract.functions.totalSupply().call()))
+        total_supply = round(Decimal(utils.from3dp(self.contract.functions.totalSupply().call())),7)
 
-        return Decimal(utils.from3dp(self.contract.functions.totalSupply().call()))
+        return total_supply
+        # return Decimal(utils.from3dp(self.contract.functions.totalSupply().call()))

@@ -35,7 +35,7 @@ class MonitorBot():
     CLIENT_NAME = "MonitorBot"
     
     def __init__(self,API_KEY,TELE_CHAT_ID,baklava_client,client_dict):
-
+        
         self.API_KEY = API_KEY
         self.baklava_client = baklava_client
         self.marginx_client_dict = client_dict
@@ -104,7 +104,6 @@ class MonitorBot():
                 "direction":direction
 
                 }
-
 
             return pair_info
         except Exception as e:
@@ -190,23 +189,24 @@ class MonitorBot():
             # msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % tsla_diff_amount}\n\n"
 
             msgResponse += "~~~~~~~~~~~~ ETH ~~~~~~~~~~~~\n"
-            msgResponse += f"{'MarginX:'.ljust(20)} {'%.2f' % marginx_eth}\n"
-            msgResponse += f"{'Baklava:'.ljust(17)} {'%.2f' % baklava_eth}\n"
+            msgResponse += f"{'MarginX:'.ljust(20)} {'%.3f' % marginx_eth}\n"
+            msgResponse += f"{'Baklava:'.ljust(17)} {'%.3f' % baklava_eth}\n"
             msgResponse += f"{'Status:'.ljust(21)} {eth_result}\n"
             msgResponse += f"{'Description:'.ljust(17)} {eth_description}\n"
-            msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % eth_diff_amount}\n\n"
+            msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.3f' % eth_diff_amount}\n\n"
             
             msgResponse += "~~~~~~~~~~~~ BTC ~~~~~~~~~~~~\n"
-            msgResponse += f"{'MarginX:'.ljust(20)} {'%.2f' % marginx_btc}\n"
-            msgResponse += f"{'Baklava:'.ljust(17)} {'%.2f' % baklava_btc}\n"
+            msgResponse += f"{'MarginX:'.ljust(20)} {'%.3f' % marginx_btc}\n"
+            msgResponse += f"{'Baklava:'.ljust(17)} {'%.3f' % baklava_btc}\n"
             msgResponse += f"{'Status:'.ljust(21)} {btc_result}\n"
             msgResponse += f"{'Description:'.ljust(17)} {btc_description}\n"
-            msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.2f' % btc_diff_amount}\n\n"
+            msgResponse += f"{'Diff_Amount:'.ljust(15)} {'%.3f' % btc_diff_amount}\n\n"
 
             # if eth_result != 'Normal' or tsla_result != 'Normal' or btc_result != 'Normal':
             if eth_result != 'Normal' or btc_result != 'Normal':
                 self.bot.send_message(self.TELE_CHAT_ID, msgResponse)
-        
+            # print(marginx_btc,baklava_btc, btc_diff_amount)
+            # print(marginx_eth,baklava_eth, eth_diff_amount)
         except Exception as e:
             logging.error("{},buildTelebotMsg,{},{}".format(self.CLIENT_NAME, e,type(e)))
 
