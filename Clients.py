@@ -4,6 +4,8 @@ import os
 from BaklavaClient.Wrapper import BaklavaClient
 from Marginx import MarginX
 import asyncio
+from Configs import Pairs
+import ruamel.yaml
 
 
 
@@ -69,3 +71,32 @@ async def run_and_log_manual_executor(pair_id, direction, amount, position, clie
     client = MarginX.get_client(pair_id, client_dict)
     events = await manual_executor(pair_id, direction, amount, position, client_dict)
     await client.log_order_info(events)
+
+
+def get_pairs_mapping():
+    pairs = {}
+    configs = initialise_configs()
+    for chain_id in Pairs.chain_ids:
+        pairs[configs["chain_id"][chain_id]["index"]] = configs["chain_id"][chain_id]["pair_id"]
+
+    return pairs
+
+# TODO stopped here 
+def update_pairs_configs():
+    full_path = os.getcwd()
+    file_name = '/Configs/config.yaml'
+    # with open(full_path+"/Configs/config.yaml", "r") as ymlfile:
+    #     configs = yaml.load(ymlfile, Loader=yaml.FullLoader)
+
+    config, ind, bsi = ruamel.yaml.util.load_yaml_guess_indent(open(full_path+file_name))
+    config[config["environment"]]["pairs"] = get_pairs_mapping()
+
+
+    # # print(configs)
+
+    yaml = ruamel.yaml.YAML()
+    yaml.indent(mapping=ind, sequence=ind, offset=bsi) 
+
+    with open(full_path+"/Configs/config.yaml", "w") as fp:
+        yaml.dump(config,fp)
+        

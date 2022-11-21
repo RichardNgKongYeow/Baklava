@@ -210,12 +210,12 @@ class grpcClient():
                 mode=BROADCAST_MODE_BLOCK,
             )
             # print(tx_response)
-            print(tx_response.raw_log)
+            # print(tx_response.raw_log)
             events = json.loads(tx_response.raw_log)[0]['events']
             return events
         except:
             # events = json.loads(tx_response.raw_log)[0]['events']
-            logging.error("{},{},open_long_position".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+            logging.error("{},{},open_long_position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
 
         
     async def close_open_long_position(self, amount):
@@ -264,6 +264,24 @@ class grpcClient():
         except:
             logging.error("{},{},close short position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
 
+    
+    async def _send_tx(self, tx_func, retry_times: int = 3):
+        """
+        Provides `acc_seq` parameter and broadcasts Tx in threadsafe manner, and increments account sequence after success.
+        In the event of an error it self-rectifies the cached account sequence.
+
+        :param tx_func: `partial` function with all parameters supplied except `acc_seq`
+        :retry_times: Number of times to retry sending transaction before giving up
+        :return: tx_response
+        """
+        tx_response = None
+
+        for retry in range(retry_times):
+            try:
+
+
+
+    # --------------------------------manipulate data from transactions---------------------------
 
     def get_mx_order_dict(self, events:list)->dict:
         """

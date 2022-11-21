@@ -1,4 +1,4 @@
-environment: prod
+environment: test
 
 
 
@@ -14,17 +14,17 @@ test:
     3: https://rpc.ankr.com/avalanche_fuji
     4: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
     # 5: https://rpc.ankr.com/avalanche_fuji-c
- 
   grpc_prefix: https://testnet-
   grpc_suffix: -grpc.marginx.io:9090
 
-  synthetic_pool_address: "0x70Fc185bf1257eC873bB9713F786dDfAb256f82d"
+  synthetic_pool_address: '0x70Fc185bf1257eC873bB9713F786dDfAb256f82d'
+
 
   chain_id:
     tsla:
       index: 0
       pair_id: TSLA:USDT
-      address: "0xfA0d3DDbcfe67D66d8BAA7f963ccDd5551ee19Bf"
+      address: '0xfA0d3DDbcfe67D66d8BAA7f963ccDd5551ee19Bf'
       MarginX: MarginX_TSLA
       Baklava: Baklava_TSLA
 
@@ -32,7 +32,7 @@ test:
     aapl:
       index: 1
       pair_id: AAPL:USDT
-      address: "0x33a922c23Fe61b6D05AC2De88b7714809c0faD44"
+      address: '0x33a922c23Fe61b6D05AC2De88b7714809c0faD44'
       MarginX: MarginX_AAPL
       Baklava: Baklava_AAPL
 
@@ -40,7 +40,7 @@ test:
     btc:
       index: 2
       pair_id: BTC:USDT
-      address: "0x01a98b5eF7D34b5e60dbF89cff73b6f6aE5162DD"
+      address: '0x01a98b5eF7D34b5e60dbF89cff73b6f6aE5162DD'
       MarginX: MarginX_BTC
       Baklava: Baklava_BTC
 
@@ -69,25 +69,29 @@ test:
     #   pair_id: SPY:USDT
     #   address: ""
 
-    # iwm:
-    #   index: 8
-    #   pair_id: IWM:USDT
-    #   address: ""
-    
-    # tqqq:
-    #   index: 9
-    #   pair_id: TQQQ:USDT
-    #   address: ""
+    iwm:
+      index: 8
+      pair_id: IWM:USDT
+      address: ''
+    tqqq:
+      index: 9
+      pair_id: TQQQ:USDT
+      address: ''
 
     fx:
       index: 3
       pair_id: FX:USDT
-      address: "0x912bFf923ADC8b7BaB83030b5D3af646D13E1533"
+      address: '0x912bFf923ADC8b7BaB83030b5D3af646D13E1533'
       MarginX: MarginX_FX
       Baklava: Baklava_FX
 
 
 
+  pairs:
+    0: TSLA:USDT
+    1: AAPL:USDT
+    2: BTC:USDT
+    
 prod:
 
 
@@ -105,11 +109,11 @@ prod:
 
   grpc_prefix: https://
   grpc_suffix: -grpc.marginx.io
- 
+
 
   # wallet_address: "0x6Ec43b644cD769a1c7695069804E67b2B691e36d"
 
-  synthetic_pool_address: "0xFDef82DE050354fF94Aea86B427ee4fC82897aF2"
+  synthetic_pool_address: '0xFDef82DE050354fF94Aea86B427ee4fC82897aF2'
 
   chain_id:
     # tsla:
@@ -131,7 +135,7 @@ prod:
     btc:
       index: 0
       pair_id: BTC:USDT
-      address: "0x3C5dE8d32d9047649215e33808f6901d27d2DEe8"
+      address: '0x3C5dE8d32d9047649215e33808f6901d27d2DEe8'
       MarginX: MarginX_BTC
       Baklava: Baklava_BTC
 
@@ -164,7 +168,6 @@ prod:
     #   index: 8
     #   pair_id: IWM:USDT
     #   address: ""
-    
     # tqqq:
     #   index: 9
     #   pair_id: TQQQ:USDT
@@ -174,10 +177,9 @@ prod:
     #   index: 10
     #   pair_id: FX:USDT
     #   address: ""
-    
     eth:
       index: 1
       pair_id: ETH:USDT
-      address: "0xf784e45AEc811dA24E67Ac46B8E214D09375650c"
+      address: '0xf784e45AEc811dA24E67Ac46B8E214D09375650c'
       MarginX: MarginX_ETH
       Baklava: Baklava_ETH

@@ -62,8 +62,9 @@ class BaklavaClient(BaklavaObject):
     MAX_APPROVAL_HEX = "0x" + "f" * 64
     MAX_APPROVAL_INT = int(MAX_APPROVAL_HEX, 16)
 
-    pairs = Pairs.pairs
+    
     chain_ids = Pairs.chain_ids
+
 
 
     def __init__(self, configs, private_key, provider=None):
@@ -73,6 +74,8 @@ class BaklavaClient(BaklavaObject):
         # self.wallet_address = configs['wallet_address']
         self.synthetic_pool_address = configs['synthetic_pool_address']
         self.configs = configs
+        self.pairs = configs["pairs"]
+        
 
         self.contract = self.conn.eth.contract(
             address=Web3.toChecksumAddress(self.synthetic_pool_address), abi=BaklavaClient.ABI)

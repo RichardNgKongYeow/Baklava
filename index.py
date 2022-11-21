@@ -1,14 +1,38 @@
 from dotenv import load_dotenv
 import asyncio
 import Clients
+import time
 
 
+def run_forever(program):
+    try:
+        # Create infinite loop to simulate whatever is running
+        # in your program
+        while True:
+            print("Program Running!")
+            time.sleep(5)
+
+            # Simulate an exception which would crash your program
+            # if you don't handle it!
+            # raise Exception("Error simulated!")
+    except Exception as e:
+        print(e, "Something crashed your program. Let's restart it")
+        
+        run_forever(program) # Careful.. recursive behavior
+        # Recommended to do this instead
+        handle_exception()
+
+def handle_exception():
+    # code here
+    pass
 
 
 
 
 
 def main():
+
+
 
     # initialise configs and logging
     configs = Clients.initialise_configs()
@@ -40,4 +64,17 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        # Create infinite loop to simulate whatever is running
+        # in your program
+        while True:
+            main()
+            print("Program Running!")
+            time.sleep(5)
+
+            # Simulate an exception which would crash your program
+            # if you don't handle it!
+            # raise Exception("Error simulated!")
+    except Exception as e:
+        print(e, "Something crashed your program. Let's restart it")
+        main()
