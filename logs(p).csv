@@ -266,3 +266,40 @@
 11/16/2022 02:36:42,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketBuy,1244.250637,0.011,ID-1754946-2
 11/16/2022 02:38:56,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketSell,1245.21,0.011,45
 11/16/2022 02:38:58,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketSell,1244.213,0.011,ID-1754986-3
+11/18/2022 06:20:29,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/18/2022 06:20:29,INFO,Connected to database fxdex
+11/18/2022 06:20:29,INFO,MarginX-BTC
+11/18/2022 06:20:29,INFO,Connected to database fxdex
+11/18/2022 06:20:29,INFO,MarginX-ETH
+11/18/2022 06:20:59,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/18/2022 06:20:59,INFO,Connected to database fxdex
+11/18/2022 06:20:59,INFO,MarginX-BTC
+11/18/2022 06:20:59,INFO,Connected to database fxdex
+11/18/2022 06:20:59,INFO,MarginX-ETH
+11/21/2022 11:06:45,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,16054.90064,0.001,13
+11/21/2022 11:07:25,ERROR,MarginXClient,btc, get_account_sequence,'NoneType' object has no attribute 'sequence',<class 'AttributeError'>
+11/21/2022 11:07:25,ERROR,MarginXClient,btc,open_long_position
+11/21/2022 11:07:25,ERROR,MarginXClient,btc,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+11/21/2022 11:08:02,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketSell,16006.88,0.001,14
+11/21/2022 11:08:04,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketSell,15992.741,0.001,ID-1874452-11
+11/21/2022 11:47:11,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/21/2022 11:47:12,INFO,Connected to database fxdex
+11/21/2022 11:47:12,INFO,MarginX-BTC
+11/21/2022 11:47:12,INFO,Connected to database fxdex
+11/21/2022 11:47:12,INFO,MarginX-ETH
+11/21/2022 04:29:21,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,16041.0807063063,0.1,15
+11/21/2022 04:29:24,ERROR,MarginXClient,btc,open_long_position
+11/21/2022 04:29:24,ERROR,MarginXClient,btc,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+11/21/2022 04:52:26,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1123.02901,0.017,46
+11/21/2022 04:52:28,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketBuy,1118.748059,0.017,ID-1884223-28
+11/21/2022 04:53:01,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketSell,1119.67,0.017,47
+11/21/2022 04:53:03,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketSell,1118.478941,0.017,ID-1884233-11
+11/21/2022 04:53:28,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,16082.21432228899,0.001,16
+11/21/2022 04:53:32,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketBuy,15982.641,0.001,ID-1880363-1
+11/21/2022 04:59:40,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketSell,16014.24,0.001,17
+11/21/2022 04:59:42,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketSell,15991.399,0.001,ID-1880469-11
+11/21/2022 05:24:57,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/21/2022 05:24:58,INFO,Connected to database fxdex
+11/21/2022 05:24:58,INFO,MarginX-BTC
+11/21/2022 05:24:58,INFO,Connected to database fxdex
+11/21/2022 05:24:58,INFO,MarginX-ETH

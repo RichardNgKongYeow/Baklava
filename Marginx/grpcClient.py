@@ -215,7 +215,7 @@ class grpcClient():
             return events
         except:
             # events = json.loads(tx_response.raw_log)[0]['events']
-            logging.error("{},{},open_long_position".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+            logging.error("{},{},open_long_position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
 
         
     async def close_open_long_position(self, amount):
