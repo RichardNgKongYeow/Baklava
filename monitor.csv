@@ -602,6 +602,102 @@
 10/27/2022 10:15:23,INFO,MarginX-Testnet-AAPL
 10/27/2022 10:15:24,INFO,Connected to database fxdex
 10/27/2022 10:15:26,INFO,MarginX-Testnet-BTC
+12/06/2022 04:43:49,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+12/06/2022 04:43:49,INFO,Connected to database fxdex
+12/06/2022 04:43:49,ERROR,MarginXClient,tsla, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+12/06/2022 04:43:49,INFO,Connected to database fxdex
+12/06/2022 04:43:49,ERROR,MarginXClient,aapl, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+12/06/2022 04:43:49,INFO,Connected to database fxdex
+12/06/2022 04:43:49,ERROR,MarginXClient,btc, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+12/06/2022 04:43:49,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:44:19,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:44:50,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:45:20,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:45:50,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:46:20,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:46:51,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:47:21,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:47:51,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:48:21,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:48:52,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:49:22,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:49:52,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:50:22,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:50:53,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:51:23,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:51:53,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:52:23,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:52:54,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:53:24,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:53:54,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:54:24,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:54:54,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:55:25,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:55:55,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:56:25,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:56:55,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:57:26,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:57:56,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:58:26,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:58:56,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:59:27,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 04:59:57,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:00:27,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:00:57,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:01:28,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:01:58,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:02:28,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:02:58,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:03:28,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:03:59,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:04:29,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:04:59,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:05:29,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:06:00,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:06:30,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:07:00,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:07:30,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:08:01,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:08:31,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:09:01,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:09:31,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:10:02,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:10:32,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:11:02,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:11:32,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:12:03,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:12:33,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:13:03,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:13:33,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:14:04,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:14:34,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:15:04,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:15:34,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:16:05,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:16:35,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:17:05,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:17:35,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:18:05,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:18:36,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:19:06,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:19:36,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:20:06,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:20:37,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:21:07,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:21:37,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:22:07,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:22:38,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:23:08,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:23:38,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:24:08,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:24:39,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:25:09,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:25:39,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:26:09,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:26:40,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:27:10,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:27:40,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 05:28:10,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
 12/06/2022 11:47:14,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
 12/06/2022 11:47:14,INFO,Connected to database fxdex
 12/06/2022 11:47:14,ERROR,MarginXClient,tsla, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
