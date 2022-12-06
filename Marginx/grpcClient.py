@@ -11,6 +11,9 @@ from fx_py_sdk.codec.cosmos.tx.v1beta1.service_pb2 import BROADCAST_MODE_BLOCK, 
 from google.protobuf.json_format import MessageToJson
 import json
 import logging
+import asyncio
+from Configs import CONSTANTS
+import traceback
 
 
 class grpcClient():
@@ -37,9 +40,11 @@ class grpcClient():
         
     def initialise_client(self):
         try:
+            # print(f"{self.configs['grpc_prefix']}{self.chain_id}{self.configs['grpc_suffix']}")
             self.client = GRPCClient(f"{self.configs['grpc_prefix']}{self.chain_id}{self.configs['grpc_suffix']}")
             self.marginx_chain_id = self.client.query_chain_id()
-            logging.info('{}'.format(self.marginx_chain_id))
+            print(f"Running {self.marginx_chain_id} client")
+            # logging.info('{}'.format(self.marginx_chain_id))
         except Exception as e:
             logging.error("{}, initialise {} client,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
 
@@ -190,12 +195,11 @@ class grpcClient():
         """
         input trade info and execute order on marginX
         """
-        acc_seq = self.get_account_sequence()
+
         client = self.client
         pair_id = self.pair_id
         
-        try:
-            tx_response = client.create_order(
+        return lambda acc_seq: client.create_order(
                 tx_builder=self.tx_builder,
                 # need to convert pid into list of str
                 pair_id=pair_id,
@@ -211,45 +215,40 @@ class grpcClient():
             )
             # print(tx_response)
             # print(tx_response.raw_log)
-            events = json.loads(tx_response.raw_log)[0]['events']
-            return events
-        except:
             # events = json.loads(tx_response.raw_log)[0]['events']
-            logging.error("{},{},open_long_position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+            # return tx_response
+        # except:
+        #     # events = json.loads(tx_response.raw_log)[0]['events']
+        #     logging.error("{},{},open_long_position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
 
         
     async def close_open_long_position(self, amount):
         pair_id = self.pair_id
         open_long_position = await self.get_open_long_position()
         # print(open_long_position)
-        acc_seq = self.get_account_sequence()
+        # acc_seq = self.get_account_sequence()
 
-        try:
-            tx_response = self.client.close_position(
-                tx_builder = self.tx_builder, 
-                pair_id = pair_id, 
-                position_id = open_long_position.Id, 
-                price = decimal.Decimal(0), 
-                base_quantity = Decimal(utils.from3dp(amount)), 
-                full_close = False, 
-                acc_seq = acc_seq, 
-                market_close = True, 
-                mode=BROADCAST_MODE_BLOCK)
-            events = json.loads(tx_response.raw_log)[0]['events']
-            # print(tx_response.raw_log)
-            return events
+        return lambda acc_seq: self.client.close_position(
+            tx_builder = self.tx_builder, 
+            pair_id = pair_id, 
+            position_id = open_long_position.Id, 
+            price = decimal.Decimal(0), 
+            base_quantity = Decimal(utils.from3dp(amount)), 
+            full_close = False, 
+            acc_seq = acc_seq,
+            market_close = True, 
+            mode=BROADCAST_MODE_BLOCK)
             
-        except:
-            logging.error("{},{},close long position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+        # except:
+        #     logging.error("{},{},close long position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
     
     
     async def close_open_short_position(self, amount):
         pair_id = self.pair_id
-        open_short_position = self.get_open_short_position()
-        acc_seq = self.get_account_sequence()
+        open_short_position = await self.get_open_short_position()
+        # acc_seq = self.get_account_sequence()
 
-        try:
-            tx_response = self.client.close_position(
+        return lambda acc_seq: self.client.close_position(
                 tx_builder = self.tx_builder, 
                 pair_id = pair_id, 
                 position_id = open_short_position.Id, 
@@ -259,10 +258,10 @@ class grpcClient():
                 acc_seq = acc_seq, 
                 market_close = True, 
                 mode=BROADCAST_MODE_BLOCK)
-            events = json.loads(tx_response.raw_log)[0]['events']
-            return events
-        except:
-            logging.error("{},{},close short position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
+            # events = json.loads(tx_response.raw_log)[0]['events']
+        #     return tx_response
+        # except:
+        #     logging.error("{},{},close short position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
 
     
     async def _send_tx(self, tx_func, retry_times: int = 3):
@@ -275,19 +274,62 @@ class grpcClient():
         :return: tx_response
         """
         tx_response = None
+        
+        # # test TODO toggle this off
+        # self.account_info.sequence = 2
 
         for retry in range(retry_times):
             try:
+                # tx_response = await asyncio.gather(tx_func)
+                tx_response = tx_func(acc_seq=self.account_info.sequence)
+                # print(type(tx_response))
+                # code == 0 indicates success
+                if not tx_response:
+                    # Something strange happened, potentially network issue
+                    self.account_info.sequence = self.get_account_sequence()
+                elif tx_response.code == 0:
+                    # Increment by one for use in next transaction
+                    self.account_info.sequence += 1
+                    break
+                elif tx_response.code == 20:
+                    # Mempool is full, not ideal to continue sending txs
+                    # TO-DO: Notify FxDexDerivative so trading logic can be paused
+                    logging.error(f"Error sending transaction (code: {tx_response.code}, mempool is full)")
+                    await asyncio.sleep(CONSTANTS.MEMPOOL_WAIT_INTERVAL)
+                else:
+                    # Report error
+                    error_message = f'Error sending transaction (raw_log: {tx_response.raw_log}) (code: {tx_response.code})'
+                    logging.error(error_message)
 
+                    # No point retrying if error code is fatal
+                    if tx_response.code in CONSTANTS.FATAL_ERROR_CODES:
+                        break
 
+                    # For incorrect account sequence, set sequence to expected number
+                    # In other cases, set it to the on-chain sequence
+                    if 'incorrect account sequence' in tx_response.raw_log:
+                        self.account_info.sequence = int(tx_response.raw_log.split(',')[1].split(' ')[-1])
+                    else:
+                        self.account_info.sequence = self.get_account_sequence()
+
+                    if retry == retry_times - 1:
+                        raise Exception(error_message)
+                
+            except Exception as e:
+                logging.error(f'Error sending transaction {traceback.format_exc()}')
+                self.account_info.sequence = self.get_account_sequence()
+                # ex = e
+
+        return tx_response
 
     # --------------------------------manipulate data from transactions---------------------------
 
-    def get_mx_order_dict(self, events:list)->dict:
+    def get_mx_order_dict(self, tx_response:list)->dict:
         """
         match this orderid with 
         price i have to loop through dex.order_fill ->agggregate the price
         """
+        events = json.loads(tx_response.raw_log)[0]['events']
         try:
             order_dict = {}
             for event in events:
@@ -314,11 +356,11 @@ class grpcClient():
 
 
 
-    def get_order_info(self,events:list)->tuple:
+    def get_order_info(self,tx_response:list)->tuple:
         """
         from events fx.dex.Order get total filled qty & get orderid
         """
-
+        events = json.loads(tx_response.raw_log)[0]['events']
         try:
             for event in events:
                 if 'type' in event and event['type']=='fx.dex.Order':
@@ -349,11 +391,11 @@ class grpcClient():
             logging.error("{},{},get_order_info,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
     
 
-    async def log_order_info(self,events):
+    async def log_order_info(self,tx_response):
         # TODO check for other fees?
         try:
-            pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx = self.get_order_info(events)
-            order_dict = self.get_mx_order_dict(events)
+            pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx = self.get_order_info(tx_response)
+            order_dict = self.get_mx_order_dict(tx_response)
             price_mx = self.get_mx_price(order_id_mx, order_dict)
             logging.info("{},Execution of order of,{},{},{},{},{}".format(self.CLIENT_NAME, pair_id_mx, direction_mx, price_mx, filled_quantity_mx, order_id_mx))
         except:

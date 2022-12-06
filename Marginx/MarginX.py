@@ -47,7 +47,7 @@ async def query_all_open_long_positions_amounts(client_dict:dict)->dict:
     """
     query and return a dict of open position amount eg.
 
-    {"BTC:USDT":50}
+    {"BTC:USDT":50}Connected to database fxdex
     """
     
     all_open_positions = {}
@@ -64,9 +64,11 @@ async def get_item_from_queue_and_execute(client_dict,id,myQueue):
     while True:
         print("Consumer: {} attempting to get from queue".format(id))
         pair_id, direction, amount, order_id = await myQueue.get()
-        client = get_client(pair_id, client_dict)
+        client: grpcClient = get_client(pair_id, client_dict)
         if direction == "MarketBuy":
-            events = await client.open_long_position(direction, amount)
+            tx_func = await client.open_long_position(direction, amount)
+            tx_response = await client._send_tx(tx_func)
         elif direction == "MarketSell":
-            events = await client.close_open_long_position(amount)
-        await client.log_order_info(events)
+            tx_func = await client.close_open_long_position(amount)
+            tx_response = await client._send_tx(tx_func)
+        await client.log_order_info(tx_response)

@@ -1,3 +1,5 @@
+MEMPOOL_WAIT_INTERVAL = 5.0
+
 FATAL_ERROR_CODES = {
     5,      # insufficient funds
     7,      # invalid wallet address
