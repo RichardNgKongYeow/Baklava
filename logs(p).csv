@@ -303,3 +303,32 @@
 11/21/2022 05:24:58,INFO,MarginX-BTC
 11/21/2022 05:24:58,INFO,Connected to database fxdex
 11/21/2022 05:24:58,INFO,MarginX-ETH
+11/24/2022 03:51:45,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/24/2022 03:51:45,INFO,Connected to database fxdex
+11/24/2022 03:51:45,INFO,MarginX-BTC
+11/24/2022 03:51:45,INFO,Connected to database fxdex
+11/24/2022 03:51:45,INFO,MarginX-ETH
+11/24/2022 03:53:37,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,16743.08885399356,0.001,20
+11/24/2022 03:53:39,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketBuy,16652.897,0.001,ID-1953494-11
+11/25/2022 06:24:12,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketSell,16431.71641828,0.001,21
+11/25/2022 06:24:12,ERROR,MarginXClient,btc, get_account_sequence,'NoneType' object has no attribute 'sequence',<class 'AttributeError'>
+11/25/2022 06:24:12,ERROR,MarginXClient,btc,close long position,account sequence mismatch, expected 19, got 0: incorrect account sequence
+11/25/2022 06:24:12,ERROR,MarginXClient,btc,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+11/25/2022 06:30:36,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/25/2022 06:30:36,INFO,Connected to database fxdex
+11/25/2022 06:30:36,INFO,MarginX-BTC
+11/25/2022 06:30:36,INFO,Connected to database fxdex
+11/25/2022 06:30:36,INFO,MarginX-ETH
+11/27/2022 08:43:07,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1219.66806,0.039,48
+11/27/2022 08:43:09,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketBuy,1217.926,0.039,ID-2043115-19
+11/28/2022 02:53:33,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,16241.71831833489,0.001,22
+11/28/2022 02:55:21,INFO,BaklavaClient,Listening to order of,ETH:USDT,MarketBuy,1176.32843,0.017,49
+11/28/2022 02:55:25,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketBuy,1178.213,0.017,ID-2062727-1
+11/28/2022 02:56:37,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,16241.71831833489,0.001,23
+11/28/2022 02:56:39,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketBuy,16196.201,0.001,ID-2051545-32
+12/06/2022 05:29:17,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+12/06/2022 05:29:17,INFO,Connected to database fxdex
+12/06/2022 05:29:17,INFO,Connected to database fxdex
+12/06/2022 05:32:55,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+12/06/2022 05:32:55,INFO,Connected to database fxdex
+12/06/2022 05:32:56,INFO,Connected to database fxdex

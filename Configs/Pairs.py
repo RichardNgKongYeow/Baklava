@@ -1,8 +1,8 @@
 # chain_ids is the entry point for running the pairs and chains, the rest are just mappings
 
 chain_ids=[
-    "tsla",
-    "aapl",
+    # "tsla",
+    # "aapl",
     "btc",
     # "nflx",
     # "goog",
@@ -12,5 +12,5 @@ chain_ids=[
     # "iwm",
     # "tqqq",
     # "fx",
-    # "eth"
+    "eth"
 ]

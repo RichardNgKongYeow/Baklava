@@ -1,4 +1,4 @@
-environment: test
+environment: prod
 
 
 
@@ -91,7 +91,7 @@ test:
     0: TSLA:USDT
     1: AAPL:USDT
     2: BTC:USDT
-    
+
 prod:
 
 
@@ -100,12 +100,13 @@ prod:
   manual_client_logs_files: manual(p).csv
 
   web3_url:
-    1: https://api.avax.network/ext/bc/C/rpc
-    2: https://rpc.ankr.com/avalanche
-    3: https://ava-mainnet.public.blastapi.io/ext/bc/C/rpc
-    4: https://1rpc.io/avax/c
-    5: https://avalanche-evm.publicnode.com
-    6: https://avalancheapi.terminet.io/ext/bc/C/rpc
+    1: http://mainnet-useast1-avax-dataseed1.functionx.io:9650/ext/bc/C/rpc
+    2: https://api.avax.network/ext/bc/C/rpc
+    3: https://rpc.ankr.com/avalanche
+    4: https://ava-mainnet.public.blastapi.io/ext/bc/C/rpc
+    5: https://1rpc.io/avax/c
+    6: https://avalanche-evm.publicnode.com
+    7: https://avalancheapi.terminet.io/ext/bc/C/rpc
 
   grpc_prefix: https://
   grpc_suffix: -grpc.marginx.io
@@ -183,3 +184,6 @@ prod:
       address: '0xf784e45AEc811dA24E67Ac46B8E214D09375650c'
       MarginX: MarginX_ETH
       Baklava: Baklava_ETH
+  pairs:
+    0: BTC:USDT
+    1: ETH:USDT

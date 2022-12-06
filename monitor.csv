@@ -698,3 +698,11 @@
 12/06/2022 05:27:10,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
 12/06/2022 05:27:40,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
 12/06/2022 05:28:10,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
+12/06/2022 11:47:14,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+12/06/2022 11:47:14,INFO,Connected to database fxdex
+12/06/2022 11:47:14,ERROR,MarginXClient,tsla, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+12/06/2022 11:47:14,INFO,Connected to database fxdex
+12/06/2022 11:47:14,ERROR,MarginXClient,aapl, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+12/06/2022 11:47:14,INFO,Connected to database fxdex
+12/06/2022 11:47:14,ERROR,MarginXClient,btc, build_tx_builder,'NoneType' object has no attribute 'account_number',<class 'AttributeError'>
+12/06/2022 11:47:15,ERROR,MonitorBot,buildTelebotMsg,'eth',<class 'KeyError'>
