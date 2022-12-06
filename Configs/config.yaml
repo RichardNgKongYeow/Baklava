@@ -1,4 +1,4 @@
-environment: test
+environment: prod
 
 
 
@@ -91,7 +91,7 @@ test:
     0: TSLA:USDT
     1: AAPL:USDT
     2: BTC:USDT
-    
+
 prod:
 
 
@@ -184,3 +184,6 @@ prod:
       address: '0xf784e45AEc811dA24E67Ac46B8E214D09375650c'
       MarginX: MarginX_ETH
       Baklava: Baklava_ETH
+  pairs:
+    0: BTC:USDT
+    1: ETH:USDT

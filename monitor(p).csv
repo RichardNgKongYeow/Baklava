@@ -321,3 +321,12 @@
 11/29/2022 06:16:00,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
 11/29/2022 06:16:00,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
 11/29/2022 06:16:00,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+12/06/2022 05:24:09,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+12/06/2022 05:24:09,INFO,Connected to database fxdex
+12/06/2022 05:24:09,INFO,Connected to database fxdex
+12/06/2022 05:27:34,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+12/06/2022 05:27:34,INFO,Connected to database fxdex
+12/06/2022 05:27:34,INFO,Connected to database fxdex
+12/06/2022 05:33:11,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+12/06/2022 05:33:11,INFO,Connected to database fxdex
+12/06/2022 05:33:11,INFO,Connected to database fxdex

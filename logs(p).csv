@@ -326,3 +326,9 @@
 11/28/2022 02:55:25,INFO,MarginXClient,Execution of order of,ETH:USDT,MarketBuy,1178.213,0.017,ID-2062727-1
 11/28/2022 02:56:37,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,16241.71831833489,0.001,23
 11/28/2022 02:56:39,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketBuy,16196.201,0.001,ID-2051545-32
+12/06/2022 05:29:17,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+12/06/2022 05:29:17,INFO,Connected to database fxdex
+12/06/2022 05:29:17,INFO,Connected to database fxdex
+12/06/2022 05:32:55,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+12/06/2022 05:32:55,INFO,Connected to database fxdex
+12/06/2022 05:32:56,INFO,Connected to database fxdex

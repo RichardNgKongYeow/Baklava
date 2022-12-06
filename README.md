@@ -27,3 +27,4 @@ To add tokens
 1. ensure tokens exist in both marginx and baklava
 2. add info to Pairs.py in chain_ids & pairs if not already added (uncomment them)
 3. update info in Configs.config.yaml
+4. run test.py first 
