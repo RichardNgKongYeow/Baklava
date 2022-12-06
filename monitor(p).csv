@@ -304,3 +304,20 @@
 11/18/2022 06:21:21,INFO,MarginX-BTC
 11/18/2022 06:21:21,INFO,Connected to database fxdex
 11/18/2022 06:21:21,INFO,MarginX-ETH
+11/21/2022 06:18:45,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+11/21/2022 06:18:45,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/21/2022 06:18:45,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/21/2022 06:18:45,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/23/2022 08:02:21,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+11/23/2022 08:02:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/23/2022 08:02:21,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/23/2022 08:02:21,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/24/2022 03:24:23,INFO,address: 0x39cD3F55114FAD1C7C8A29F4ed0C8CE71032bd34
+11/24/2022 03:24:23,INFO,Connected to database fxdex
+11/24/2022 03:24:23,INFO,MarginX-BTC
+11/24/2022 03:24:23,INFO,Connected to database fxdex
+11/24/2022 03:24:23,INFO,MarginX-ETH
+11/29/2022 06:16:00,ERROR,BaklavaClient,get_syntoken_total_supply,('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')),<class 'requests.exceptions.ConnectionError'>
+11/29/2022 06:16:00,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/29/2022 06:16:00,ERROR,MonitorBot,check_pair,'NoneType' object is not subscriptable,<class 'TypeError'>
+11/29/2022 06:16:00,ERROR,MonitorBot,buildTelebotMsg,'NoneType' object is not subscriptable,<class 'TypeError'>

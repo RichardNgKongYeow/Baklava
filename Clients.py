@@ -23,7 +23,7 @@ def initialise_logging(filename):
 def initialise_baklava_client(configs):
     private_key = os.getenv("PRIVATE_KEY")
     # loop through range of no of web3 urls and initialise BaklavaClient
-    for i in range(1,5):
+    for i in range(1,6):
         client = BaklavaClient(configs, private_key, provider=configs['web3_url'][i])
         if client.conn.isConnected() == True:
             break
