@@ -19467,3 +19467,72 @@
 10/28/2022 06:47:55,INFO,MarginX-ETH
 10/28/2022 06:47:58,ERROR,MarginXClient,eth,open_long_position
 10/28/2022 06:47:58,ERROR,MarginXClient,eth,get_order_info,'NoneType' object is not iterable,<class 'TypeError'>
+12/09/2022 03:22:43,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/09/2022 03:22:43,INFO,Connected to database fxdex
+12/09/2022 03:22:44,INFO,MarginX-Testnet-TSLA
+12/09/2022 03:22:45,INFO,Connected to database fxdex
+12/09/2022 03:22:46,INFO,MarginX-Testnet-AAPL
+12/09/2022 03:22:47,INFO,Connected to database fxdex
+12/09/2022 03:22:48,INFO,MarginX-Testnet-BTC
+12/09/2022 03:22:49,ERROR,grpcClient.get_order_info | 'NoneType' object has no attribute 'raw_log' | <class 'AttributeError'> 
+ Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/utils.py", line 34, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 352, in get_order_info
+    events = json.loads(tx_response.raw_log)[0]['events']
+AttributeError: 'NoneType' object has no attribute 'raw_log'
+
+12/09/2022 03:44:32,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/09/2022 03:44:32,INFO,Connected to database fxdex
+12/09/2022 03:44:33,INFO,MarginX-Testnet-TSLA
+12/09/2022 03:44:33,INFO,Connected to database fxdex
+12/09/2022 03:44:35,INFO,MarginX-Testnet-AAPL
+12/09/2022 03:44:35,INFO,Connected to database fxdex
+12/09/2022 03:44:37,INFO,MarginX-Testnet-BTC
+12/09/2022 03:44:40,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketSell,178.171,0.001,ID-2314678-1
+12/09/2022 03:47:07,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/09/2022 03:47:07,INFO,Connected to database fxdex
+12/09/2022 03:47:08,INFO,MarginX-Testnet-TSLA
+12/09/2022 03:47:09,INFO,Connected to database fxdex
+12/09/2022 03:47:10,INFO,MarginX-Testnet-AAPL
+12/09/2022 03:47:10,INFO,Connected to database fxdex
+12/09/2022 03:47:11,INFO,MarginX-Testnet-BTC
+12/09/2022 03:47:13,ERROR,Error sending transaction (raw_log: your pending quantity is 0.000000, available close position quantity is 1.354000: wrong position size) (code: 110)
+12/09/2022 03:47:13,ERROR,grpcClient.get_order_info | Expecting value: line 1 column 1 (char 0) | <class 'json.decoder.JSONDecodeError'> 
+ Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/utils.py", line 34, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 352, in get_order_info
+    events = json.loads(tx_response.raw_log)[0]['events']
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+12/09/2022 03:47:53,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/09/2022 03:47:53,INFO,Connected to database fxdex
+12/09/2022 03:47:55,INFO,MarginX-Testnet-TSLA
+12/09/2022 03:47:55,INFO,Connected to database fxdex
+12/09/2022 03:47:56,INFO,MarginX-Testnet-AAPL
+12/09/2022 03:47:57,INFO,Connected to database fxdex
+12/09/2022 03:47:58,INFO,MarginX-Testnet-BTC
+12/09/2022 03:48:01,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketSell,178.024,1.354,ID-2314738-1
+12/09/2022 04:28:17,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/09/2022 04:28:17,INFO,Connected to database fxdex
+12/09/2022 04:28:19,INFO,MarginX-Testnet-TSLA
+12/09/2022 04:28:19,INFO,Connected to database fxdex
+12/09/2022 04:28:21,INFO,MarginX-Testnet-AAPL
+12/09/2022 04:28:21,INFO,Connected to database fxdex
+12/09/2022 04:28:23,INFO,MarginX-Testnet-BTC
+12/09/2022 04:28:26,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketBuy,179.183,1,ID-2315459-11
+12/09/2022 04:38:07,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/09/2022 04:38:07,INFO,Connected to database fxdex
+12/09/2022 04:38:09,INFO,MarginX-Testnet-TSLA
+12/09/2022 04:38:10,INFO,Connected to database fxdex
+12/09/2022 04:38:11,INFO,MarginX-Testnet-AAPL
+12/09/2022 04:38:11,INFO,Connected to database fxdex
+12/09/2022 04:38:13,INFO,MarginX-Testnet-BTC
+12/09/2022 04:38:15,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketSell,178.365,1,ID-2315634-6

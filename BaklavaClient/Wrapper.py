@@ -5,9 +5,11 @@ from web3.exceptions import BadFunctionCallOutput
 import re
 import asyncio
 import logging
-import utils
+import Helpers.Utils as Utils
 from decimal import Decimal
 from Configs import Pairs
+from Helpers.Loggers import Logger
+from Helpers.Utils import exception_logger
 
 
 class BaklavaObject(object):
@@ -33,6 +35,9 @@ class BaklavaObject(object):
         self.conn = Web3(Web3.HTTPProvider(self.provider))
         if not self.conn.isConnected():
             raise RuntimeError("Unable to connect to provider at " + self.provider)
+        
+        
+
         
         
         self.gasPrice = self.conn.toWei('50','gwei'),
@@ -67,7 +72,7 @@ class BaklavaClient(BaklavaObject):
 
 
 
-    def __init__(self, configs, private_key, provider=None):
+    def __init__(self, configs, private_key, system_logger, tx_logger, provider=None):
         super().__init__(configs, private_key, provider)
         
         # self.configs = configs
@@ -76,6 +81,10 @@ class BaklavaClient(BaklavaObject):
         self.configs = configs
         self.pairs = configs["pairs"]
         
+        self.system_logger = system_logger
+        self.tx_logger = tx_logger
+        
+
 
         self.contract = self.conn.eth.contract(
             address=Web3.toChecksumAddress(self.synthetic_pool_address), abi=BaklavaClient.ABI)
@@ -87,26 +96,28 @@ class BaklavaClient(BaklavaObject):
     # ==============================event listener==============================
 
     # --------------------------------listener filters-------------------------------------
+    @exception_logger
     def create_oo_event_filter(self):
         """
         create_open_order_event_filter        
         """
         return self.contract.events.OpenOrder.createFilter(fromBlock='latest')
 
+    @exception_logger
     def create_co_event_filter(self):
         """
         create_cancel_order_event_filter        
         """
         return self.contract.events.CancelOrder.createFilter(fromBlock='latest')
 
-
+    @exception_logger
     def create_mst_event_filter(self):
         """
         create_MintSynTokn_event_filter        
         """
         return self.contract.events.MintSynToken.createFilter(fromBlock='latest')
 
-
+    @exception_logger
     def create_bst_event_filter(self):
         """
         create_BurnSynToken_event_filter        
@@ -115,37 +126,36 @@ class BaklavaClient(BaklavaObject):
 
 
     # --------------------------------event listener handler--------------------------
+    @exception_logger
     def convert_web3_to_json(self,event):
         """
         convert result into json
         """
-        try:
-            result = json.loads(Web3.toJSON(event))
-            return result
-        except Exception as e:
-            logging.error("{},convert_web3_to_json,{},{}".format(self.CLIENT_NAME, e,type(e)))
+        result = json.loads(Web3.toJSON(event))
+        return result
+        # except Exception as e:
+        #     logging.error("{},convert_web3_to_json,{},{}".format(self.CLIENT_NAME, e,type(e)))
     
-    
+    @exception_logger 
     def get_event_vars(self, events:dict)->tuple:
         """
         return the vars from the event needed to build the tx on marginx
         """
-        try:
-            pid = events["args"]["pid"]
-            order_id = events["args"]["orderId"]
-            order_type = events["event"]
-            amount = events["args"]["synTokenAmount"]
-            pair_id = self.pairs[pid]
-            price = events["args"]["synTokenPrice"]
-            if order_type == "MintSynToken":
-                direction = "MarketBuy"
-            elif order_type == "BurnSynToken":
-                direction = "MarketSell"
-            else:
-                pass
-            return pair_id, direction, price, amount, order_id
-        except Exception as e:
-            logging.error("{},get_event_vars,{},{}".format(self.CLIENT_NAME, e,type(e)))
+        pid = events["args"]["pid"]
+        order_id = events["args"]["orderId"]
+        order_type = events["event"]
+        amount = events["args"]["synTokenAmount"]
+        pair_id = self.pairs[pid]
+        price = events["args"]["synTokenPrice"]
+        if order_type == "MintSynToken":
+            direction = "MarketBuy"
+        elif order_type == "BurnSynToken":
+            direction = "MarketSell"
+        else:
+            pass
+        return pair_id, direction, price, amount, order_id
+        # except Exception as e:
+        #     logging.error("{},get_event_vars,{},{}".format(self.CLIENT_NAME, e,type(e)))
     
     
 
@@ -159,9 +169,9 @@ class BaklavaClient(BaklavaObject):
         events = self.convert_web3_to_json(event)
         pair_id, direction, price, amount, order_id = self.get_event_vars(events)
         await myQueue.put((pair_id, direction, amount, order_id))
-        converted_price = utils.fromWei(price)
-        converted_amount = utils.from3dp(amount)
-        logging.info("{},Listening to order of,{},{},{},{},{}".format(self.CLIENT_NAME,pair_id, direction, converted_price, converted_amount, order_id))
+        converted_price = Utils.fromWei(price)
+        converted_amount = Utils.divby10power3(amount)
+        self.tx_logger.info("{},Listening to order of,{},{},{},{},{}".format(self.CLIENT_NAME,pair_id, direction, converted_price, converted_amount, order_id))
     
 
 
@@ -179,32 +189,31 @@ class BaklavaClient(BaklavaObject):
 
 
 # ======================================synthetic token=====================================
+    @exception_logger
     def initialise_syntoken_object_dict(self)->dict:
-        
-        try:
-            client_dict = {}
-            for chain_id in self.chain_ids:
-                client = SynTClient(chain_id, self.configs, self.private_key, provider=self.provider)
-                pair = self.configs['chain_id'][chain_id]['pair_id']
-                client_dict[pair] = client
-            return client_dict
-        except Exception as e:
-            logging.error("{},initialise_syntoken_object_dict,{},{}".format(self.CLIENT_NAME, e,type(e)))
+        client_dict = {}
+        for chain_id in self.chain_ids:
+            client = SynTClient(chain_id, self.configs, self.private_key, provider=self.provider)
+            pair = self.configs['chain_id'][chain_id]['pair_id']
+            client_dict[pair] = client
+        return client_dict
+        # except Exception as e:
+        #     logging.error("{},initialise_syntoken_object_dict,{},{}".format(self.CLIENT_NAME, e,type(e)))
 
-
+    @exception_logger    
     def get_syntoken_total_supply(self):
         """
         {'TSLA:USDT': Decimal('1.6140000000000001012523398458142764866352081298828125')}
         """
-        try:
-            total_supply_dict = {}
-            for i in self.syntoken_object_dict:
-                syntoken_obj = self.syntoken_object_dict[i]
-                total_supply = syntoken_obj.get_total_supply()
-                total_supply_dict[i] = total_supply
-            return total_supply_dict
-        except Exception as e:
-            logging.error("{},get_syntoken_total_supply,{},{}".format(self.CLIENT_NAME, e,type(e)))
+
+        total_supply_dict = {}
+        for i in self.syntoken_object_dict:
+            syntoken_obj = self.syntoken_object_dict[i]
+            total_supply = syntoken_obj.get_total_supply()
+            total_supply_dict[i] = total_supply
+        return total_supply_dict
+        # except Exception as e:
+        #     logging.error("{},get_syntoken_total_supply,{},{}".format(self.CLIENT_NAME, e,type(e)))
 
 
 
@@ -226,13 +235,13 @@ class SynTClient(BaklavaObject):
         self.contract = self.conn.eth.contract(
             address=Web3.toChecksumAddress(self.address), abi=SynTClient.ABI)
 
-
+    @exception_logger
     def get_total_supply(self):
         """
         get total supply of token
         """
-        # print(utils.from3dp(self.contract.functions.totalSupply().call()))
-        total_supply = round(Decimal(utils.from3dp(self.contract.functions.totalSupply().call())),7)
+        # print(utils.divby10power3(self.contract.functions.totalSupply().call()))
+        total_supply = round(Decimal(Utils.divby10power3(self.contract.functions.totalSupply().call())),7)
 
         return total_supply
-        # return Decimal(utils.from3dp(self.contract.functions.totalSupply().call()))
+        # return Decimal(utils.divby10power3(self.contract.functions.totalSupply().call()))

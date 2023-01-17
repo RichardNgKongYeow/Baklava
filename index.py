@@ -4,6 +4,7 @@ import Clients
 import time
 import logging
 import traceback
+from Helpers.Loggers import Logger
 
 
 def run_forever(program):
@@ -40,14 +41,18 @@ def main():
 
     # initialise configs and logging
     configs = Clients.initialise_configs()
-    Clients.initialise_logging(configs['baklava_client_logs_file'])
+    # Clients.initialise_logging(configs['baklava_client_logs_file'])
     load_dotenv()
 
-
+    # initialise loggers
+    system_logger = Logger(configs["logs"]["logger_name"]["system"],configs["logs"]["logs_file_name"]["system"]).create_logger()
+    tx_logger = Logger(configs["logs"]["logger_name"]["tx"],configs["logs"]["logs_file_name"]["tx"]).create_logger()
     
     # initialise clients
-    baklava_client = Clients.initialise_baklava_client(configs)
-    client_list = Clients.initialise_marginx_client(configs)
+    baklava_client = Clients.initialise_baklava_client(configs,system_logger, tx_logger)
+    client_list = Clients.initialise_marginx_client(configs,system_logger, tx_logger)
+
+
 
     # # test TODO toggle off
     # x=1/0

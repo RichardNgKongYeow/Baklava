@@ -3,17 +3,26 @@ environment: test
 
 
 test:
+  logs:
+    logger_name:
+      system: system
+      monitor_client: monitor
+      manual_client: manual
+      tx: tx
 
-  baklava_client_logs_file: logs.csv
-  monitor_client_logs_file: monitor.csv
-  manual_client_logs_files: manual.csv
+    logs_file_name:
+      system: logs/test/system.log
+      monitor_client: logs/test/monitor.log
+      manual_client: logs/test/manual.log
+      tx: logs/test/tx.csv
 
   web3_url:
     1: https://api.avax-test.network/ext/bc/C/rpc
-    2: https://ava-testnet.public.blastapi.io/ext/bc/C/rpc
-    3: https://rpc.ankr.com/avalanche_fuji
-    4: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
+    2: https://avalanchetestapi.terminet.io/ext/bc/C/rpc
+    3: https://ava-testnet.public.blastapi.io/ext/bc/C/rpc
+    4: https://rpc.ankr.com/avalanche_fuji
     # 5: https://rpc.ankr.com/avalanche_fuji-c
+  
   grpc_prefix: https://testnet-
   grpc_suffix: -grpc.marginx.io:9090
 
@@ -44,30 +53,30 @@ test:
       MarginX: MarginX_BTC
       Baklava: Baklava_BTC
 
-    # nflx:
-    #   index: 3
-    #   pair_id: NFLX:USDT
-    #   address: ""
+    nflx:
+      index: 3
+      pair_id: NFLX:USDT
+      address: ''
 
-    # goog:
-    #   index: 4
-    #   pair_id: GOOG:USDT
-    #   address: ""
+    goog:
+      index: 4
+      pair_id: GOOG:USDT
+      address: ''
 
-    # fb:
-    #   index: 5
-    #   pair_id: FB:USDT
-    #   address: ""
+    fb:
+      index: 5
+      pair_id: FB:USDT
+      address: ''
 
-    # amzn:
-    #   index: 6
-    #   pair_id: AMZN:USDT
-    #   address: ""
+    amzn:
+      index: 6
+      pair_id: AMZN:USDT
+      address: ''
 
-    # spy:
-    #   index: 7
-    #   pair_id: SPY:USDT
-    #   address: ""
+    spy:
+      index: 7
+      pair_id: SPY:USDT
+      address: ''
 
     iwm:
       index: 8
@@ -91,13 +100,20 @@ test:
     0: TSLA:USDT
     1: AAPL:USDT
     2: BTC:USDT
-    
 prod:
 
+  logger_name:
+    loggers:
+      system: system
+      monitor_client: monitor
+      manual_client: manual
+      tx: tx
 
-  baklava_client_logs_file: logs(p).csv
-  monitor_client_logs_file: monitor(p).csv
-  manual_client_logs_files: manual(p).csv
+    logs_file_name:
+      system: logs/prod/system.log
+      monitor_client: logs/prod/monitor.log
+      manual_client: logs/prod/manual.log
+      tx: logs/prod/tx.csv
 
   web3_url:
     1: http://mainnet-useast1-avax-dataseed1.functionx.io:9650/ext/bc/C/rpc

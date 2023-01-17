@@ -6,7 +6,7 @@ from Configs import Pairs
 
 
 
-def initialise_all_clients_and_get_all_info(account:object,configs:dict)->list:
+def initialise_all_clients_and_get_all_info(account:object,configs:dict,system_logger, tx_logger)->list:
     """
     initialiase all clients objected to be executed later and return an array
     of clients
@@ -14,7 +14,7 @@ def initialise_all_clients_and_get_all_info(account:object,configs:dict)->list:
     client_dict={}
     for chain_id in Pairs.chain_ids:
         pair = configs['chain_id'][chain_id]['pair_id']
-        client = grpcClient(account,chain_id, configs)
+        client = grpcClient(account,chain_id, configs,system_logger, tx_logger)
         client.initialise_client_and_get_all_info()
         client_dict[pair] = client
     return client_dict

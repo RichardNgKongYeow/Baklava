@@ -1,0 +1,6 @@
+01/17/2023 04:32:12,tx,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1572.60383043012,0.062,92
+01/17/2023 04:34:38,tx,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1572.60383043012,0.069,93
+01/17/2023 04:35:36,tx,INFO,BaklavaClient,Listening to order of,BTC:USDT,MarketBuy,21203.07898,0.004,15
+01/17/2023 04:35:37,tx,INFO,MarginXClient,Execution of order of,BTC:USDT,MarketBuy,21465,0.004,ID-3308577-1
+01/17/2023 04:35:56,tx,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1572.60383043012,0.069,95
+01/17/2023 04:35:59,tx,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketBuy,138.791,0.069,ID-3318821-1

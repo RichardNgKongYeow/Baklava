@@ -1382,3 +1382,51 @@ ZeroDivisionError: division by zero
 12/05/2022 11:51:28,INFO,Connected to database fxdex
 12/05/2022 11:51:29,INFO,Connected to database fxdex
 12/05/2022 11:51:31,INFO,Connected to database fxdex
+12/08/2022 05:36:11,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/08/2022 05:36:11,INFO,Connected to database fxdex
+12/08/2022 05:36:12,INFO,MarginX-Testnet-TSLA
+12/08/2022 05:36:13,INFO,Connected to database fxdex
+12/08/2022 05:36:14,INFO,MarginX-Testnet-AAPL
+12/08/2022 05:36:15,INFO,Connected to database fxdex
+12/08/2022 05:36:16,INFO,MarginX-Testnet-BTC
+12/08/2022 05:37:51,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1233.49888224164,0.088,85
+12/08/2022 05:37:54,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketBuy,179.163,0.088,ID-2291018-7
+12/09/2022 02:56:39,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/09/2022 02:56:39,INFO,Connected to database fxdex
+12/09/2022 02:56:40,INFO,MarginX-Testnet-TSLA
+12/09/2022 02:56:40,INFO,Connected to database fxdex
+12/09/2022 02:56:41,INFO,MarginX-Testnet-AAPL
+12/09/2022 02:56:42,INFO,Connected to database fxdex
+12/09/2022 02:56:43,INFO,MarginX-Testnet-BTC
+12/09/2022 02:58:38,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/09/2022 02:58:38,INFO,Connected to database fxdex
+12/09/2022 02:58:40,INFO,MarginX-Testnet-TSLA
+12/09/2022 02:58:41,INFO,Connected to database fxdex
+12/09/2022 02:58:43,INFO,MarginX-Testnet-AAPL
+12/09/2022 02:58:44,INFO,Connected to database fxdex
+12/09/2022 02:58:46,INFO,MarginX-Testnet-BTC
+12/09/2022 02:59:00,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1283.37662805203,0.773,86
+12/09/2022 02:59:03,INFO,MarginXClient,Execution of order of,TSLA:USDT,MarketBuy,179.183,0.773,ID-2313865-5
+12/09/2022 03:00:19,INFO,address: 0xb7F836669c0ac2968a53078b84a6627a7609aC60
+12/09/2022 03:00:19,INFO,Connected to database fxdex
+12/09/2022 03:00:21,INFO,MarginX-Testnet-TSLA
+12/09/2022 03:00:22,INFO,Connected to database fxdex
+12/09/2022 03:00:24,INFO,MarginX-Testnet-AAPL
+12/09/2022 03:00:25,INFO,Connected to database fxdex
+12/09/2022 03:00:26,INFO,MarginX-Testnet-BTC
+12/09/2022 03:00:48,INFO,BaklavaClient,Listening to order of,TSLA:USDT,MarketBuy,1283.37662805203,0.773,88
+12/09/2022 03:00:50,ERROR,Error sending transaction (raw_log: failed to execute message; message index: 0: decreasing leverage not supported in isolated mode) (code: 109)
+12/09/2022 03:00:50,ERROR,grpcClient.get_order_info | Expecting value: line 1 column 1 (char 0) | <class 'json.decoder.JSONDecodeError'> 
+ Traceback (most recent call last):
+  File "/Users/richardng/Desktop/Baklava/utils.py", line 34, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/richardng/Desktop/Baklava/Marginx/grpcClient.py", line 352, in get_order_info
+    events = json.loads(tx_response.raw_log)[0]['events']
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+

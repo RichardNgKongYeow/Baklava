@@ -6,6 +6,9 @@ from Marginx import MarginX
 import asyncio
 from Configs import Pairs
 import ruamel.yaml
+# from Helpers.Utils import exception_logger
+import Helpers.Utils as Utils
+from Helpers.Loggers import Logger
 
 
 
@@ -17,25 +20,32 @@ def initialise_configs():
         return cfg[cfg['environment']]
 
 
-def initialise_logging(filename):
-    logging.basicConfig(filename=filename,level=logging.INFO,format='%(asctime)s,%(levelname)s,%(message)s',datefmt='%m/%d/%Y %I:%M:%S')
+# # TODO remove?
+def initialise_system_logger(configs):
+    system_logger = Logger(configs["logs"]["logger_name"]["system"],configs["logs"]["logs_file_name"]["system"])
+    return system_logger
+
+def initialise_tx_logger(configs):
+    tx_logger = Logger(configs["logs"]["logger_name"]["tx"],configs["logs"]["logs_file_name"]["tx"])
+    return tx_logger
 
 
 
-def initialise_baklava_client(configs):
+
+def initialise_baklava_client(configs,system_logger, tx_logger):
     private_key = os.getenv("PRIVATE_KEY")
     # loop through range of no of web3 urls and initialise BaklavaClient
     for i in range(1,6):
-        client = BaklavaClient(configs, private_key, provider=configs['web3_url'][i])
+        client = BaklavaClient(configs, private_key, system_logger, tx_logger, provider=configs['web3_url'][i])
         if client.conn.isConnected() == True:
             break
     return client
 
 
 
-def initialise_marginx_client(configs):
+def initialise_marginx_client(configs,system_logger, tx_logger):
     marginx_account = MarginX.init_wallet(os.getenv("MARGINX_SEED"))
-    client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account,configs)
+    client_list = MarginX.initialise_all_clients_and_get_all_info(marginx_account,configs,system_logger, tx_logger)
     return client_list
 
 
@@ -50,27 +60,33 @@ async def manual_executor(pair_id, direction, amount, position, client_dict):
     CLIENT_NAME = "ManualExecutor"
 
     client = MarginX.get_client(pair_id, client_dict)
-    try:
-        if position == "short":
-            if direction == "MarketSell":
-                events = await client.close_open_short_position(amount)
-            elif direction == "MarketBuy":
-                events = await client.open_long_position(direction,amount)
-        elif position == "long":
-            if direction == "MarketSell":
-                events = await client.close_open_long_position(amount)
-            elif direction == "MarketBuy":
-                events = await client.open_long_position(direction,amount)
 
+    # manipulate amount
+    amount = Utils.mulby10power3(amount)
+
+    if position == "short":
+        if direction == "MarketBuy":
+            tx_func = await client.open_long_position(direction, amount)
+            tx_response = await client._send_tx(tx_func)
+        elif direction == "MarketSell":
+            tx_func = await client.close_open_long_position(amount)
+            tx_response = await client._send_tx(tx_func)
+    elif position == "long":
+        if direction == "MarketBuy":
+            tx_func = await client.open_long_position(direction, amount)
+            tx_response = await client._send_tx(tx_func)
+        elif direction == "MarketSell":
+            tx_func = await client.close_open_long_position(amount)
+            tx_response = await client._send_tx(tx_func)
+    await client.log_order_info(tx_response)
     
-    except:
-        logging.error("{},{},manual_executor".format(CLIENT_NAME, pair_id))
+
 
 
 async def run_and_log_manual_executor(pair_id, direction, amount, position, client_dict):
     client = MarginX.get_client(pair_id, client_dict)
     events = await manual_executor(pair_id, direction, amount, position, client_dict)
-    await client.log_order_info(events)
+    # await client.log_order_info(events)
 
 
 def get_pairs_mapping():

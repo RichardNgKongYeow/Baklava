@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 import os
 import datetime
 import asyncio
-import utils
+import Helpers.Utils as Utils
 from Marginx import MarginX
 from Configs import Pairs
 
@@ -236,10 +236,10 @@ class MonitorBot():
         # await myQueue.put((pair_id, direction, amount, order_id))
         order_id = 0
         converted_price = 0
-        amount = utils.to3dp(converted_amount)
+        amount = Utils.mulby10power3(converted_amount)
         await myQueue.put((pair_id, direction, amount, order_id))
         # converted_price = utils.fromWei(price)
-        # converted_amount = utils.from3dp(amount)
+        # converted_amount = utils.divby10power3(amount)
         logging.info("Monitoring Bot--Listening to order of Pair: {}, Direction: {}, Price: {}, Amount: {}, OrderId: {}".format(pair_id, direction, converted_price, converted_amount, order_id))
 
 

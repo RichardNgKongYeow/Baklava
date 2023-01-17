@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 import asyncio
 
 
-pair_id = "ETH:USDT"
+pair_id = "TSLA:USDT"
 direction = "MarketSell"
-amount = 5
+amount = 1
 order_id = 0
 position = "long"
 

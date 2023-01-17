@@ -1,7 +1,7 @@
 from itertools import chain
 from subprocess import list2cmdline
 from decimal import Decimal
-import utils
+import Helpers.Utils as Utils
 from fx_py_sdk.grpc_client import GRPCClient
 from fx_py_sdk.builder import TxBuilder
 from fx_py_sdk.codec.cosmos.base.v1beta1.coin_pb2 import Coin
@@ -10,17 +10,18 @@ import decimal
 from fx_py_sdk.codec.cosmos.tx.v1beta1.service_pb2 import BROADCAST_MODE_BLOCK, BROADCAST_MODE_SYNC
 from google.protobuf.json_format import MessageToJson
 import json
-import logging
 import asyncio
 from Configs import CONSTANTS
 import traceback
+from Helpers.Loggers import Logger
+from Helpers.Utils import exception_logger
 
 
 class grpcClient():
     
     CLIENT_NAME = "MarginXClient"
 
-    def __init__(self,account:object, chain_id:str, configs):
+    def __init__(self,account:object, chain_id:str, configs, system_logger, tx_logger):
         
         
         self.chain_id = chain_id
@@ -36,18 +37,17 @@ class grpcClient():
         self.gas_price = None
         self.tx_builder = None
 
+        self.system_logger = system_logger
+        self.tx_logger = tx_logger
 
-        
+
+    @exception_logger
     def initialise_client(self):
-        try:
-            # print(f"{self.configs['grpc_prefix']}{self.chain_id}{self.configs['grpc_suffix']}")
-            self.client = GRPCClient(f"{self.configs['grpc_prefix']}{self.chain_id}{self.configs['grpc_suffix']}")
-            self.marginx_chain_id = self.client.query_chain_id()
-            print(f"Running {self.marginx_chain_id} client")
-            # logging.info('{}'.format(self.marginx_chain_id))
-        except Exception as e:
-            logging.error("{}, initialise {} client,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
-
+        self.client = GRPCClient(f"{self.configs['grpc_prefix']}{self.chain_id}{self.configs['grpc_suffix']}")
+        self.marginx_chain_id = self.client.query_chain_id()
+        print(f"-------------Running {self.marginx_chain_id} client-------------")
+        self.system_logger.info('{}'.format(self.marginx_chain_id))
+   
 
     def initialise_client_and_get_all_info(self):
         self.initialise_client()
@@ -58,139 +58,145 @@ class grpcClient():
 
 # --------------------------------------account info--------------------------------------
 
+    @exception_logger
     def get_account_info(self)->object:
         """
         return account_info needed for TxBuilder
         """
-        try:
-            self.account_info = self.client.query_account_info(self.account.address)
-        except Exception as e:
-            logging.error("{},{}, get_account_info,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+        self.account_info = self.client.query_account_info(self.account.address)
 
 
+    @exception_logger
     def get_account_sequence(self)->int:
         """
         return an account sequence int
         """
-        try:
-            self.get_account_info()
-            return self.account_info.sequence
-        except Exception as e:
-            logging.error("{},{}, get_account_sequence,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+        return self.client.query_account_info(self.account.address).sequence
 
 
+    @exception_logger
     def query_gas_price(self):
-        # query gas price
+        """
+        querying gas price of client       
+        """
         gas_prices = self.client.query_gas_price()
         gas_denom = "USDT"
         self.gas_price = next((gas for gas in gas_prices if gas.denom == gas_denom), None)
         if self.gas_price is None:
             raise ValueError(f"Could not find on-chain gas pricing for denom: {gas_denom}")
 
+    
+    @exception_logger
     def build_tx_builder(self):
-        # build tx_builder
-        try:
-            self.tx_builder = TxBuilder(account = self.account, 
-            private_key = None, chain_id = self.marginx_chain_id, 
-            account_number = self.account_info.account_number, gas_price = self.gas_price)
-        except Exception as e:
-            logging.error("{},{}, build_tx_builder,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+        """
+        build tx_builder
+        """
+        self.tx_builder = TxBuilder(account = self.account, 
+        private_key = None, chain_id = self.marginx_chain_id, 
+        account_number = self.account_info.account_number, gas_price = self.gas_price)
+
 
 # ===================================querying positions info==============================
+    @exception_logger
     async def query_open_positions(self)->list:
-            """
-            query all open positions (list) of an account given a pair_id and corresponding client
-            """
-            try:
-                positions = self.client.query_positions(
-                        owner=self.account.address, pair_id=self.pair_id)
-                return positions
-            except Exception as e:
-                logging.error("{},{},query_open_positions,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+        """
+        query all open positions (list) of an 
+        account given a pair_id and corresponding client
 
-    
+        [Position(Id='53', Owner='0xb7F836669c0ac2968a53078b84a6627a7609aC60', 
+        PairId='TSLA:USDT', Direction='long', EntryPrice=Decimal('186.696814'), 
+        MarkPrice=Decimal('178.135'), LiquidationPrice=Decimal('12.814527'), 
+        BaseQuantity=Decimal('0.494'), Margin=Decimal('86.056109'), 
+        Leverage=1, UnrealizedPnl=Decimal('-4.229536'), 
+        MarginRate=Decimal('0.026886'), InitialMargin=Decimal('572.944761'), 
+        PendingOrderQuantity=Decimal('0'))]
+        """
+        positions = self.client.query_positions(
+                owner=self.account.address, pair_id=self.pair_id)
+        return positions
+
+    # TODO consider combining this to take direction as an argument
+    @exception_logger
     async def get_open_long_position(self)->list:
         """
         get open long position info (list)
         """
         positions = await self.query_open_positions()
-        try:
-            if len(positions) > 0:
-                for position in positions:
-                    """
-                    [
-                        Position(
-                            Id="4",
-                            Owner="0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72",
-                            PairId="AAPL:USDT",
-                            Direction="long",
-                            EntryPrice=Decimal("157.930376"),
-                            MarkPrice=Decimal("156.888"),
-                            LiquidationPrice=Decimal("2.762266"),
-                            BaseQuantity=Decimal("38.433"),
-                            Margin=Decimal("5966.230016"),
-                            Leverage=1,
-                            UnrealizedPnl=Decimal("-40.061636"),
-                            MarginRate=Decimal("0.025437"),
-                            InitialMargin=Decimal("40574.393601"),
-                            PendingOrderQuantity=Decimal("0"),
-                        )
-                    ]
-                    """
-                    if position[3] == "long":
-                        return position
-        except Exception as e:
-            logging.error("{},{},get_open_long_position,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
-    
+        if len(positions) > 0:
+            for position in positions:
+                """
+                [
+                    Position(
+                        Id="4",
+                        Owner="0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72",
+                        PairId="AAPL:USDT",
+                        Direction="long",
+                        EntryPrice=Decimal("157.930376"),
+                        MarkPrice=Decimal("156.888"),
+                        LiquidationPrice=Decimal("2.762266"),
+                        BaseQuantity=Decimal("38.433"),
+                        Margin=Decimal("5966.230016"),
+                        Leverage=1,
+                        UnrealizedPnl=Decimal("-40.061636"),
+                        MarginRate=Decimal("0.025437"),
+                        InitialMargin=Decimal("40574.393601"),
+                        PendingOrderQuantity=Decimal("0"),
+                    )
+                ]
+                """
+                if position[3] == "long":
+                    return position
 
+    
+    @exception_logger
     async def get_open_long_position_amount(self)->Decimal:
         """
         return the open long position amount in int in Decimal form 
         """
         open_position = await self.get_open_long_position()
-        try:  
-            if open_position == None:
-                open_position_amount = 0
-            else:
-                open_position_amount = Decimal(open_position[7])
-            return open_position_amount
-        except Exception as e:
-            logging.error("{},{}, get_open_long_position_amount,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+        if open_position == None:
+            open_position_amount = 0
+        else:
+            open_position_amount = Decimal(open_position[7])
+        return open_position_amount
 
+
+    @exception_logger
     async def get_open_short_position(self)->list:
         """
         get open short position info (list)
         """
         positions = await self.query_open_positions()
-        try:
-            if len(positions) > 0:
-                for position in positions:
-                    """
-                    [
-                        Position(
-                            Id="4",
-                            Owner="0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72",
-                            PairId="AAPL:USDT",
-                            Direction="long",
-                            EntryPrice=Decimal("157.930376"),
-                            MarkPrice=Decimal("156.888"),
-                            LiquidationPrice=Decimal("2.762266"),
-                            BaseQuantity=Decimal("38.433"),
-                            Margin=Decimal("5966.230016"),
-                            Leverage=1,
-                            UnrealizedPnl=Decimal("-40.061636"),
-                            MarginRate=Decimal("0.025437"),
-                            InitialMargin=Decimal("40574.393601"),
-                            PendingOrderQuantity=Decimal("0"),
-                        )
-                    ]
-                    """
-                    if position[3] == "short":
-                        return position
-        except Exception as e:
-            logging.error("{},{},get_open_short_position,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+
+        if len(positions) > 0:
+            for position in positions:
+                """
+                [
+                    Position(
+                        Id="4",
+                        Owner="0x1056C9e553587AC23d3d54C8b1C2299Dd4093C72",
+                        PairId="AAPL:USDT",
+                        Direction="long",
+                        EntryPrice=Decimal("157.930376"),
+                        MarkPrice=Decimal("156.888"),
+                        LiquidationPrice=Decimal("2.762266"),
+                        BaseQuantity=Decimal("38.433"),
+                        Margin=Decimal("5966.230016"),
+                        Leverage=1,
+                        UnrealizedPnl=Decimal("-40.061636"),
+                        MarginRate=Decimal("0.025437"),
+                        InitialMargin=Decimal("40574.393601"),
+                        PendingOrderQuantity=Decimal("0"),
+                    )
+                ]
+                """
+                if position[3] == "short":
+                    return position
+
 
     # --------------------------------execute marginx transactions---------------------------
+    
+
     async def open_long_position(self, direction, amount):
         """
         input trade info and execute order on marginX
@@ -208,41 +214,32 @@ class grpcClient():
                 # tokenprice
                 price=0,
                 # synTokenAmount
-                base_quantity=Decimal(utils.from3dp(amount)),
+                base_quantity=Decimal(Utils.divby10power3(amount)),
                 leverage=1,
                 acc_seq=acc_seq,
                 mode=BROADCAST_MODE_BLOCK,
             )
-            # print(tx_response)
-            # print(tx_response.raw_log)
-            # events = json.loads(tx_response.raw_log)[0]['events']
-            # return tx_response
-        # except:
-        #     # events = json.loads(tx_response.raw_log)[0]['events']
-        #     logging.error("{},{},open_long_position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
 
-        
+
+
     async def close_open_long_position(self, amount):
         pair_id = self.pair_id
         open_long_position = await self.get_open_long_position()
-        # print(open_long_position)
-        # acc_seq = self.get_account_sequence()
+
 
         return lambda acc_seq: self.client.close_position(
             tx_builder = self.tx_builder, 
             pair_id = pair_id, 
             position_id = open_long_position.Id, 
             price = decimal.Decimal(0), 
-            base_quantity = Decimal(utils.from3dp(amount)), 
+            base_quantity = Decimal(Utils.divby10power3(amount)), 
             full_close = False, 
             acc_seq = acc_seq,
             market_close = True, 
             mode=BROADCAST_MODE_BLOCK)
             
-        # except:
-        #     logging.error("{},{},close long position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
     
-    
+
     async def close_open_short_position(self, amount):
         pair_id = self.pair_id
         open_short_position = await self.get_open_short_position()
@@ -253,16 +250,12 @@ class grpcClient():
                 pair_id = pair_id, 
                 position_id = open_short_position.Id, 
                 price = decimal.Decimal(0), 
-                base_quantity = Decimal(utils.from3dp(amount)), 
+                base_quantity = Decimal(Utils.divby10power3(amount)), 
                 full_close = False, 
                 acc_seq = acc_seq, 
                 market_close = True, 
                 mode=BROADCAST_MODE_BLOCK)
-            # events = json.loads(tx_response.raw_log)[0]['events']
-        #     return tx_response
-        # except:
-        #     logging.error("{},{},close short position,{}".format(self.CLIENT_NAME, self.chain_id, tx_response.raw_log))
-
+    
     
     async def _send_tx(self, tx_func, retry_times: int = 3):
         """
@@ -294,12 +287,12 @@ class grpcClient():
                 elif tx_response.code == 20:
                     # Mempool is full, not ideal to continue sending txs
                     # TO-DO: Notify FxDexDerivative so trading logic can be paused
-                    logging.error(f"Error sending transaction (code: {tx_response.code}, mempool is full)")
+                    self.system_logger.error(f"Error sending transaction (code: {tx_response.code}, mempool is full)")
                     await asyncio.sleep(CONSTANTS.MEMPOOL_WAIT_INTERVAL)
                 else:
                     # Report error
                     error_message = f'Error sending transaction (raw_log: {tx_response.raw_log}) (code: {tx_response.code})'
-                    logging.error(error_message)
+                    self.system_logger.error(error_message)
 
                     # No point retrying if error code is fatal
                     if tx_response.code in CONSTANTS.FATAL_ERROR_CODES:
@@ -316,79 +309,76 @@ class grpcClient():
                         raise Exception(error_message)
                 
             except Exception as e:
-                logging.error(f'Error sending transaction {traceback.format_exc()}')
+                self.system_logger.error(f'Error sending transaction {traceback.format_exc()}')
                 self.account_info.sequence = self.get_account_sequence()
                 # ex = e
 
         return tx_response
 
     # --------------------------------manipulate data from transactions---------------------------
-
+    
+    @exception_logger
     def get_mx_order_dict(self, tx_response:list)->dict:
         """
         match this orderid with 
         price i have to loop through dex.order_fill ->agggregate the price
         """
         events = json.loads(tx_response.raw_log)[0]['events']
-        try:
-            order_dict = {}
-            for event in events:
-                if 'type' in event and event['type']=='dex.order_fill':
-                    for attr in event['attributes']:
-                        if attr['key']=='deal_price':
-                            price = attr['value']
-                        elif attr['key']=='order_id':
-                            order_id = attr['value']
-                            order_dict[order_id] = price
-            return order_dict
-        except Exception as e:
-            logging.error("{},{},get_mx_order_dict,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+
+        order_dict = {}
+        for event in events:
+            if 'type' in event and event['type']=='dex.order_fill':
+                for attr in event['attributes']:
+                    if attr['key']=='deal_price':
+                        price = attr['value']
+                    elif attr['key']=='order_id':
+                        order_id = attr['value']
+                        order_dict[order_id] = price
+        return order_dict
 
 
+    @exception_logger
     def get_mx_price(self, order_id:str, order_dict:dict):
         """
         get deal price from order_dict
         """
-        try:
-            return order_dict[order_id]
-        except Exception as e:
-            logging.error("{},{},get_mx_price,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+        return order_dict[order_id]
 
 
 
+    @exception_logger
     def get_order_info(self,tx_response:list)->tuple:
         """
         from events fx.dex.Order get total filled qty & get orderid
         """
         events = json.loads(tx_response.raw_log)[0]['events']
-        try:
-            for event in events:
-                if 'type' in event and event['type']=='fx.dex.Order':
-                    for attr in event['attributes']:
-                        if attr['key'] == 'order_id':
-                            order_id_mx = attr['value']
-                        elif attr['key'] == 'filled_quantity':
-                            filled_quantity_mx = attr['value']
-                        elif attr['key'] == 'pair_id':
-                            pair_id_mx = attr['value']
-                        elif attr['key'] == 'direction':
-                            direction_mx = attr['value']
-                
-                
-                # this is for closing open orders
-                elif 'type' in event and event['type']=='dex.close_position_order':
-                    for attr in event['attributes']:
-                        if attr['key'] == 'order_id':
-                            order_id_mx = attr['value']
-                        elif attr['key'] == 'filled_quantity':
-                            filled_quantity_mx = attr['value']
-                        elif attr['key'] == 'pair_id':
-                            pair_id_mx = attr['value']
-                        elif attr['key'] == 'direction':
-                            direction_mx = attr['value']
-            return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
-        except Exception as e:
-            logging.error("{},{},get_order_info,{},{}".format(self.CLIENT_NAME,self.chain_id, e,type(e)))
+
+        for event in events:
+            if 'type' in event and event['type']=='fx.dex.Order':
+                for attr in event['attributes']:
+                    if attr['key'] == 'order_id':
+                        order_id_mx = attr['value']
+                    elif attr['key'] == 'filled_quantity':
+                        filled_quantity_mx = attr['value']
+                    elif attr['key'] == 'pair_id':
+                        pair_id_mx = attr['value']
+                    elif attr['key'] == 'direction':
+                        direction_mx = attr['value']
+            
+            
+            # this is for closing open orders
+            elif 'type' in event and event['type']=='dex.close_position_order':
+                for attr in event['attributes']:
+                    if attr['key'] == 'order_id':
+                        order_id_mx = attr['value']
+                    elif attr['key'] == 'filled_quantity':
+                        filled_quantity_mx = attr['value']
+                    elif attr['key'] == 'pair_id':
+                        pair_id_mx = attr['value']
+                    elif attr['key'] == 'direction':
+                        direction_mx = attr['value']
+        return pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx
+
     
 
     async def log_order_info(self,tx_response):
@@ -397,7 +387,7 @@ class grpcClient():
             pair_id_mx, direction_mx, filled_quantity_mx, order_id_mx = self.get_order_info(tx_response)
             order_dict = self.get_mx_order_dict(tx_response)
             price_mx = self.get_mx_price(order_id_mx, order_dict)
-            logging.info("{},Execution of order of,{},{},{},{},{}".format(self.CLIENT_NAME, pair_id_mx, direction_mx, price_mx, filled_quantity_mx, order_id_mx))
+            self.tx_logger.info("{},Execution of order of,{},{},{},{},{}".format(self.CLIENT_NAME, pair_id_mx, direction_mx, price_mx, filled_quantity_mx, order_id_mx))
         except:
             pass
     
